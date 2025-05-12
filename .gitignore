@@ -2,3 +2,39 @@
 *.pyc
 __pycache__/
 db.sqlite3
+
+
+
+# === React Frontend (in frontend/zone01web) ===
+
+# Logs
+frontend/zone01web/logs
+frontend/zone01web/*.log
+frontend/zone01web/npm-debug.log*
+frontend/zone01web/yarn-debug.log*
+frontend/zone01web/yarn-error.log*
+frontend/zone01web/pnpm-debug.log*
+frontend/zone01web/lerna-debug.log*
+
+# Dependencies and builds
+frontend/zone01web/node_modules
+frontend/zone01web/dist
+frontend/zone01web/dist-ssr
+
+# Local overrides
+frontend/zone01web/*.local
+
+# Tailwind/Vite cache
+frontend/zone01web/.vite
+frontend/zone01web/.tailwind-cache
+
+# Editor files
+frontend/zone01web/.vscode/*
+!frontend/zone01web/.vscode/extensions.json
+frontend/zone01web/.idea
+frontend/zone01web/.DS_Store
+frontend/zone01web/*.suo
+frontend/zone01web/*.ntvs*
+frontend/zone01web/*.njsproj
+frontend/zone01web/*.sln
+frontend/zone01web/*.sw?
