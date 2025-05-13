@@ -5,36 +5,36 @@ db.sqlite3
 
 
 
-# === React Frontend (in frontend/zone01web) ===
+# === React Frontend (in frontend/01talentweb) ===
 
 # Logs
-frontend/zone01web/logs
-frontend/zone01web/*.log
-frontend/zone01web/npm-debug.log*
-frontend/zone01web/yarn-debug.log*
-frontend/zone01web/yarn-error.log*
-frontend/zone01web/pnpm-debug.log*
-frontend/zone01web/lerna-debug.log*
+frontend/01talentweb/logs
+frontend/01talentweb/*.log
+frontend/01talentweb/npm-debug.log*
+frontend/01talentweb/yarn-debug.log*
+frontend/01talentweb/yarn-error.log*
+frontend/01talentweb/pnpm-debug.log*
+frontend/01talentweb/lerna-debug.log*
 
 # Dependencies and builds
-frontend/zone01web/node_modules
-frontend/zone01web/dist
-frontend/zone01web/dist-ssr
+frontend/01talentweb/node_modules
+frontend/01talentweb/dist
+frontend/01talentweb/dist-ssr
 
 # Local overrides
-frontend/zone01web/*.local
+frontend/01talentweb/*.local
 
 # Tailwind/Vite cache
-frontend/zone01web/.vite
-frontend/zone01web/.tailwind-cache
+frontend/01talentweb/.vite
+frontend/01talentweb/.tailwind-cache
 
 # Editor files
-frontend/zone01web/.vscode/*
-!frontend/zone01web/.vscode/extensions.json
-frontend/zone01web/.idea
-frontend/zone01web/.DS_Store
-frontend/zone01web/*.suo
-frontend/zone01web/*.ntvs*
-frontend/zone01web/*.njsproj
-frontend/zone01web/*.sln
-frontend/zone01web/*.sw?
+frontend/01talentweb/.vscode/*
+!frontend/01talentweb/.vscode/extensions.json
+frontend/01talentweb/.idea
+frontend/01talentweb/.DS_Store
+frontend/01talentweb/*.suo
+frontend/01talentweb/*.ntvs*
+frontend/01talentweb/*.njsproj
+frontend/01talentweb/*.sln
+frontend/01talentweb/*.sw?
