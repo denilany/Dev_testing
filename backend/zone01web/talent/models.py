@@ -14,7 +14,6 @@ class Talent(models.Model):
         db_table = 'talents'
         indexes = [
             models.Index(fields=['email']), 
-            models.Index(fields=['average_rating']),  
             GinIndex(fields=['profile'], name='profile_gin_idx'),
         ]
 
