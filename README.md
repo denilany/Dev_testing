@@ -9,7 +9,7 @@ A modern web application built with Django, React, and PostgreSQL.
 - **Database**: PostgreSQL
 - **Build Tool**: Vite
 - **UI Framework**: Tailwind CSS
-- **API Integration**: Django REST Framework
+- **Page Management**: Inertia.js
 - **Authentication**: Django's built-in authentication
 
 ## 🛠️ Technical Decisions
@@ -17,7 +17,8 @@ A modern web application built with Django, React, and PostgreSQL.
 ### Backend
 - **Django**: Chosen for its robust security features, built-in admin interface, and excellent documentation
 - **PostgreSQL**: Preferred for its reliability, scalability, and ACID compliance
-- **Django REST Framework**: Provides powerful API capabilities with minimal configuration
+- **Inertia.js**: Provides seamless integration between Django and React for server-side rendering
+- **Django Vite**: Optimizes frontend asset management and development workflow
 
 ### Frontend
 - **React**: Modern, component-based UI library with excellent developer experience
