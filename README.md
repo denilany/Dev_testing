@@ -39,44 +39,51 @@ git clone [repository-url]
 cd 01talentke_website
 ```
 
-2. Create and activate virtual environment:
+2. Navigate to the backend directory:
 ```bash
-python -m venv venv
+cd 01talentweb/backend
+```
+
+3. Create and activate virtual environment:
+```bash
+python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-3. Install backend dependencies:
+4. Install backend dependencies:
 ```bash
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
-4. Set up environment variables:
+5. Set up environment variables:
 ```bash
 cp .env.example .env
 # Edit .env with your configuration
 ```
 
-5. Initialize database:
+6. Initialize database:
 ```bash
-python 01talentweb/backend/manage.py makemigrations
-python 01talentweb/backend/manage.py migrate
+python3 manage.py makemigrations
+python3 manage.py migrate
 ```
 
-6. Create superuser (optional):
+7. Create superuser (optional):
 ```bash
-python 01talentweb/backend/manage.py createsuperuser
+python3 manage.py createsuperuser
 ```
 
-7. Start backend server:
+8. Start backend server:
 ```bash
-python 01talentweb/backend/manage.py runserver
+python3 manage.py runserver
 ```
+
+The backend server will be running at http://127.0.0.1:8000/
 
 ### Frontend Setup
 
 1. Navigate to frontend directory:
 ```bash
-cd 01talentweb/frontend
+cd ../frontend
 ```
 
 2. Install frontend dependencies:
@@ -86,8 +93,10 @@ npm install
 
 3. Start frontend development server:
 ```bash
-npm run dev
+npm run dirt-dev
 ```
+
+The frontend development server will be running at http://localhost:3000/
 
 ## 📝 Frontend Developer Guidelines
 
