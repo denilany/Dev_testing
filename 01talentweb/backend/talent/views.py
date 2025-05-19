@@ -1,7 +1,7 @@
 from inertia import inertia
 from .models import Talent
 
-@inertia('Talents/Index')
+@inertia('Talent/Index')
 def talents_list(request):
     talents = Talent.objects.all()
     return {

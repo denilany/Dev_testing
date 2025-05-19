@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django_vite',
     'inertia',
     'profiles',
+    'talent',
 ]
 
 MIDDLEWARE = [
