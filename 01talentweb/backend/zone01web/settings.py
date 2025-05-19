@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_vite',
     'inertia',
-    'profiles',
     'talent',
 ]
 
