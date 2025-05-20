@@ -1,4 +1,5 @@
 import { Link } from "@inertiajs/react";
+import Footer from "@/components/Footer.jsx";
 
 const Layout = ({children}) => (
 <>
@@ -11,6 +12,7 @@ const Layout = ({children}) => (
 <main className="flex justify-center items-center">
        { children }
 </main>
+<Footer />
 </>
 )
 
