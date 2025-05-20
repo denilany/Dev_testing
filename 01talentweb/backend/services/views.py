@@ -1,5 +1,5 @@
-from inertia import render
-from talent.models import Service
+from inertia import inertia
+from services.models import Service
 
 @inertia('Services/Index')
 def services(request):
