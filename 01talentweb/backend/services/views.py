@@ -1,4 +1,4 @@
-from inertia import inertia, render
+from inertia import inertia
 from services.models import Service
 
 @inertia('Services/Index')
@@ -14,6 +14,6 @@ def services(request):
             'created_at': service.created_at
         }
         service_list.append(service_data)
-    return render(request, {
+    return {
         'services': service_list
-    })
+    }
