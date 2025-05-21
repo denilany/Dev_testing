@@ -4,7 +4,7 @@ import Button from './Button.jsx';
 
 export default function Hero() {
   return (
-    <section className="relative h-[85vh] overflow-hidden">
+    <section className="relative h-[85vh] overflow-visible">
   {/* background image + overlay */}
   <img
     src="/static/images/hero_team.JPG"
@@ -21,10 +21,10 @@ export default function Hero() {
   {/* foreground content */}
   <div className="relative z-20 flex items-center justify-start h-full text-white">
   <div className="max-w-4xl px-6 text-left ml-10">
-    <h1 className="text-4xl font-bold mb-4 leading-tight text-[40px]">
+    <h1 className="text-4xl font-bold mb-4 leading-tight text-[30px]">
       PROVIDING YOU WITH THE <span className="text-blue-600">BEST TECH TALENT</span> IN KENYA
     </h1>
-    <p className="mb-6 text-[22px]">
+    <p className="mb-6 text-[20px]">
       We are a software talent agency that is addressing the global need for top tech talent by transforming access to high-tech jobs.
     </p>
     <Button>Hire Here</Button>

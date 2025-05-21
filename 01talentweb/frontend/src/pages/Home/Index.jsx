@@ -8,8 +8,7 @@ import CompanyLogos from '../../components/CompanyLogos.jsx';
 
 export default function Index() {
   return (
-    <div className="font-sans">
-       
+    <div className="font-sans">      
       <Navbar />
       <Hero />
       <Stats />
