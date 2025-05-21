@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Button from './Button.jsx';
-import hero_logo from "../assets/01talent_hero_logo.svg";
+import logoWhite from "/static/images/01talent_hero_logo_white.svg"; // Path to your white logo
+import logoBlack from "/static/images/01talent_hero_logo_black.svg"; // Path to your black logo
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -14,6 +15,9 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const textColorClass = scrolled ? "text-black" : "text-white";
+  const logoSrc = scrolled ? logoBlack : logoWhite;
+
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-30 transition-all duration-300 ${
@@ -22,15 +26,15 @@ export default function Navbar() {
     >
       <div className="flex justify-between items-center py-4 px-6">
         <div className="flex items-center space-x-2">
-          <img src={hero_logo} alt="Logo" className="h-12 md:h-14" />
+          <img src={logoSrc} alt="Logo" className="h-12 md:h-14" />
         </div>
-        <ul className="flex space-x-12 text-white font-medium text-base md:text-lg lg:text-xl">
-          <li><a href="#" className="hover:text-blue-700">Home</a></li>
-          <li><a href="#" className="hover:text-blue-700">Services</a></li>
-          <li><a href="#" className="hover:text-blue-700">Talents</a></li>
-          <li><a href="#" className="hover:text-blue-700">About Us</a></li>
+        <ul className={`flex space-x-12 font-medium text-base md:text-lg lg:text-xl ${textColorClass}`}>
+          <li><a href="#" className={`hover:text-blue-700 ${textColorClass}`}>Home</a></li>
+          <li><a href="#" className={`hover:text-blue-700 ${textColorClass}`}>Services</a></li>
+          <li><a href="#" className={`hover:text-blue-700 ${textColorClass}`}>Talents</a></li>
+          <li><a href="#" className={`hover:text-blue-700 ${textColorClass}`}>About Us</a></li>
         </ul>
-        <Button>Hire Here</Button>
+        <Button textColor={scrolled ? "text-black" : "text-white"} bgColor="bg-blue-600" hoverBgColor="hover:bg-blue-700">Hire Here</Button>
       </div>
     </nav>
   );

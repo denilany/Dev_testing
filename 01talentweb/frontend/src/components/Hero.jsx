@@ -1,13 +1,13 @@
 // File: components/Hero.jsx
 import Button from './Button.jsx';
-import hero_team from "../assets/hero_team.JPG";
+// import hero_team from "../assets/hero_team.JPG";
 
 export default function Hero() {
   return (
     <section className="relative h-[85vh] overflow-hidden">
   {/* background image + overlay */}
   <img
-    src={hero_team}
+    src="/static/images/hero_team.JPG"
     alt="Team"
     // className="absolute inset-0 w-full h-full object-cover z-0"
     className="absolute inset-0 w-full h-full object-cover object-[center_10%] z-0"

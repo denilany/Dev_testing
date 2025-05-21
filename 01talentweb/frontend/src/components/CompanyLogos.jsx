@@ -5,7 +5,15 @@ import pastelCo from "../assets/Pastel&Co..svg";
 import wheelApp from "../assets/Wheelapp.png";
 
 // File: components/CompanyLogos.jsx
-const logos = [omegaMillion, harvest, edgeKart, pastelCo, wheelApp];
+// const logos = [omegaMillion, harvest, edgeKart, pastelCo, wheelApp];
+const logos = [
+  "/static/images/OmegaMillion.svg",
+  "/static/images/Harvest.svg",
+  "/static/images/EdgeKart.svg",
+  "/static/images/Pastel&Co..svg",
+  "/static/images/Wheelapp.png"
+
+];
 
 export default function CompanyLogos() {
   return (
