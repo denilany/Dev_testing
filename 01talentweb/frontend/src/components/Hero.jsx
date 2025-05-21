@@ -1,0 +1,37 @@
+// File: components/Hero.jsx
+import Button from './Button';
+import hero_team from "../assets/hero_team.JPG";
+
+export default function Hero() {
+  return (
+    <section className="relative h-[85vh] overflow-hidden">
+  {/* background image + overlay */}
+  <img
+    src={hero_team}
+    alt="Team"
+    // className="absolute inset-0 w-full h-full object-cover z-0"
+    className="absolute inset-0 w-full h-full object-cover object-[center_10%] z-0"
+    />
+  {/* <div className="absolute inset-0 bg-black bg-opacity-40 z-10" /> */}
+
+  {/* Translucent black overlay */}
+  <div className="absolute inset-0 bg-[rgba(0,0,0,0.5)] z-10"></div>
+
+
+  {/* foreground content */}
+  <div className="relative z-20 flex items-center justify-start h-full text-white">
+  <div className="max-w-4xl px-6 text-left ml-10">
+    <h1 className="text-4xl font-bold mb-4 leading-tight text-[40px]">
+      PROVIDING YOU WITH THE <span className="text-blue-600">BEST TECH TALENT</span> IN KENYA
+    </h1>
+    <p className="mb-6 text-[22px]">
+      We are a software talent agency that is addressing the global need for top tech talent by transforming access to high-tech jobs.
+    </p>
+    <Button>Hire Here</Button>
+  </div>
+</div>
+
+</section>
+
+  );
+}
