@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 import Button from './Button.jsx';
-import logoWhite from "/static/images/01talent_hero_logo_white.svg"; // Path to your white logo
-import logoBlack from "/static/images/01talent_hero_logo_black.svg"; // Path to your black logo
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -16,7 +14,7 @@ export default function Navbar() {
   }, []);
 
   const textColorClass = scrolled ? "text-black" : "text-white";
-  const logoSrc = scrolled ? logoBlack : logoWhite;
+  const logoSrc = scrolled ? "/static/images/01talent_hero_logo_black.svg": "/static/images/white-logo.png";
 
   return (
     <nav
