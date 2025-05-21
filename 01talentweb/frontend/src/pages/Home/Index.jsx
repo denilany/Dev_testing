@@ -1,14 +1,15 @@
 // File: App.jsx
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Stats from './components/Stats';
-import CompanyLogos from './components/CompanyLogos';
+import Navbar from '../../components/Navbar.jsx';
+import Hero from '../../components/Hero.jsx';
+import Stats from '../../components/Stats.jsx';
+import CompanyLogos from '../../components/CompanyLogos.jsx';
 
-import './App.css'; // for animation styling
+// import './App.css'; // for animation styling
 
-export default function App() {
+export default function Index() {
   return (
     <div className="font-sans">
+       
       <Navbar />
       <Hero />
       <Stats />

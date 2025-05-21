@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Button from './Button';
+import Button from './Button.jsx';
 import hero_logo from "../assets/01talent_hero_logo.svg";
 
 export default function Navbar() {

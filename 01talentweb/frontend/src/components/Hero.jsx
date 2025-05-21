@@ -1,5 +1,5 @@
 // File: components/Hero.jsx
-import Button from './Button';
+import Button from './Button.jsx';
 import hero_team from "../assets/hero_team.JPG";
 
 export default function Hero() {
