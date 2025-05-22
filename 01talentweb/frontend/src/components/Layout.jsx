@@ -1,6 +1,6 @@
 import { Link } from "@inertiajs/react";
 import Footer from "@/components/Footer.jsx";
-
+import WhoWeAre from '@/components/WhoWeAre.jsx';
 import Navbar from '@/components/Navbar.jsx';
 import Hero from '@/components/Hero.jsx';
 import Stats from '@/components/Stats.jsx';
@@ -21,6 +21,7 @@ const Layout = ({children}) => (
 <Hero />
 <Stats />
 <CompanyLogos />
+<WhoWeAre />
 <Footer />
 </>
 )
