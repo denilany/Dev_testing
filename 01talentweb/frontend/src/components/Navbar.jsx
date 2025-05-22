@@ -31,7 +31,7 @@ export default function Navbar() {
       <div className="flex justify-between items-center py-4 px-6 md:px-10">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <img src={logoSrc} alt="Logo" className="h-12 md:h-14" />
+          <img src={logoSrc} alt="Logo" className="h-8 md:h-12" />
         </div>
 
         {/* Desktop Menu */}

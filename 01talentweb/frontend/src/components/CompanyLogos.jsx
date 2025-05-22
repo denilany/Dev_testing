@@ -20,11 +20,11 @@ export default function CompanyLogos() {
     <section className="bg-white py-4 overflow-hidden">
                 <div className="max-w-7xl ml-10 mx-auto flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
 
-          <div className="md:w-1/5 text-left md:ml-0">
+          <div className="md:w-1/5 text-left md:ml-0 pt-6">
             <h2 className="text-md font-semibold text-gray-700">
-              Our Talent is<br />
-              trusted by local<br />
-              and global<br />
+              Our Talent is
+              trusted by local
+              and global
               companies
             </h2>
           </div>
