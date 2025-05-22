@@ -5,17 +5,26 @@ import Button from './Button.jsx';
 export default function Hero() {
   return (
     <section className="relative h-[85vh] overflow-visible">
-  {/* background image + overlay */}
-  <img
-    src="/static/images/hero_team.JPG"
-    alt="Team"
-    // className="absolute inset-0 w-full h-full object-cover z-0"
-    className="absolute inset-0 w-full h-full object-cover object-[center_10%] z-0"
-    />
-  {/* <div className="absolute inset-0 bg-black bg-opacity-40 z-10" /> */}
+  {/* Background image for desktop */}
+      <img
+        src="/static/images/hero_team_desktop.JPG"
+        alt="Team"
+        className="hidden md:block absolute inset-0 w-full h-full object-cover object-[center_10%] z-0"
+      />
 
-  {/* Translucent black overlay */}
-  <div className="absolute inset-0 bg-[rgba(0,0,0,0.5)] z-10"></div>
+      {/* Background image for mobile */}
+      <img
+        src="/static/images/hero_team_desktop.JPG" 
+        alt="Team Mobile"
+        className="block md:hidden absolute inset-0 w-full h-full object-cover object-center z-0"
+      />
+
+      {/* Overlay for desktop (semi-transparent black) */}
+      <div className="hidden md:block absolute inset-0 bg-[rgba(0,0,0,0.5)] z-10" />
+
+      {/* Overlay for mobile (bottom-heavy gradient) */}
+      <div className="block md:hidden absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-10" />
+
 
 
   {/* foreground content */}
