@@ -1,6 +1,7 @@
 import { usePage } from '@inertiajs/react';
 import Hero from './components/Hero.jsx';
 import FeaturedProfiles from './components/FeaturedProfiles.jsx';
+import Newsletter from './components/Newsletter.jsx';
 
 
 const sampleTalents = [
@@ -56,6 +57,7 @@ export default function Index() {
         <div className="min-h-screen">
             <Hero />
             <FeaturedProfiles talents={sampleTalents} />
+            <Newsletter />
         </div>
     );
 }
