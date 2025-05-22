@@ -31,10 +31,10 @@ const FeaturedProfiles = ({ talents = [] }) => {
   return (
     <section className="py-20 px-4 bg-white">
       <div className="text-center mb-14">
-        <h2 className="text-4xl font-extrabold text-gray-900">
+        <h2 className="text-h2 font-extrabold text-[var(--color-text-heading)]">
           Featured <span className="text-[--color-primary-500]">Profiles</span>
         </h2>
-        <p className="mt-4 text-gray-600 max-w-2xl mx-auto text-base">
+        <p className="mt-4 text-body-m text-[var(--color-text-muted)] max-w-2xl mx-auto text-base">
           Our approach is personal. Each apprentice has a unique relationship with us from the start,
           allowing us to fully vouch for their expertise and work ethic.
         </p>
