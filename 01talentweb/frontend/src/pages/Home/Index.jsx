@@ -8,11 +8,10 @@ import CompanyLogos from '../../components/CompanyLogos.jsx';
 
 export default function Index() {
   return (
-    <div className="font-sans">      
-      {/* <Navbar />
+    <div className="font-sans w-full overflow-x-hidden">      
       <Hero />
       <Stats />
-      <CompanyLogos /> */}
+      <CompanyLogos />
     </div>
   );
 }
