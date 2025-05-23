@@ -45,6 +45,7 @@ export default function Navbar() {
         {/* Desktop Button */}
         <div className="hidden md:block">
           <Button
+            className="md:h-[36px] lg:w-[150px] lg:h-[40px] xl:text-[18px] 2xl:w-[200px] 2xl:h-[40px] flex justify-center"
             textColor={scrolled ? "text-black" : "text-white"}
             bgColor="bg-blue-600"
             hoverBgColor="hover:bg-blue-700"

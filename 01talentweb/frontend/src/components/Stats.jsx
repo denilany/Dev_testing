@@ -1,8 +1,8 @@
 // File: components/Stats.jsx
 export default function Stats() {
     return (
-<section className="pt-2 pb-0 px-6 relative z-30 -mt-[130px] xl:-mt-[170px] rounded-xl shadow-xl">
-<div className="text-white grid grid-cols-4 gap-6 text-center pt-6">
+<section className="pt-2 pb-0 px-6 relative z-30 -mt-[300px] sm:-mt-[130px] md:-mt-[180px] lg:-mt-[175px] lg:mb-[52px] xl:-mt-[170px] rounded-xl">
+<div className="text-white grid grid-cols-3 sm:grid-cols-4 gap-6 text-center pt-6">
     <div className="border-l border-white/60 pl-4">
       <h3 className="text-[12px] md:text-[20px] xl:text-[40px] font-bold">100K+</h3>
       <p className="text-sm md:text-[18px] xl:text-[22px] font-bold">Tech Talent Globally</p>

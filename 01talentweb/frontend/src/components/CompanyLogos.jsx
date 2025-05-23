@@ -17,8 +17,8 @@ const logos = [
 
 export default function CompanyLogos() {
   return (
-    <section className="bg-white py-4 overflow-hidden">
-        <div className="xl:mb-5 xl:p-6 ml-10 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-6">
+    <section className="bg-white  overflow-hidden mb-10 mt-10">
+        <div className="md:mb-5 xl:mb-5 xl:p-6 ml-10 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-6">
 
           <div className="md:w-1/5 text-left md:ml-0 pt-6">
             <h2 className="text-md font-semibold text-gray-700">
