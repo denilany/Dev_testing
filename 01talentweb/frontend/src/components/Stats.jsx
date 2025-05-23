@@ -5,15 +5,15 @@ export default function Stats() {
 <div className="text-white max-w-5xl mx-auto grid grid-cols-4 gap-6 text-center pt-6">
     <div className="border-l border-white/60 pl-4">
       <h3 className="text-[12px] md:text-[20px] font-bold">100K+</h3>
-      <p className="text-sm text-[18px]">Tech Talent Globally</p>
+      <p className="text-sm md:text-[18px]">Tech Talent Globally</p>
     </div>
     <div className="border-l border-white/60 pl-4">
       <h3 className="text-[12px] md:text-[20px] font-bold">KES 2M P.A.</h3>
-      <p className="text-sm text-[18px]">Cost savings per talent hired through 01Talent Kenya</p>
+      <p className="text-sm md:text-[18px]">Cost savings per talent hired through 01Talent Kenya</p>
     </div>
     <div className="border-l border-white/60 pl-4">
       <h3 className="text-[12px] md:text-[20px] font-bold">69%</h3>
-      <p className="text-sm text-[18px]">Quicker hiring time</p>
+      <p className="text-sm md:text-[18px]">Quicker hiring time</p>
     </div>
     <div className="border-l border-white/60 pl-4">
       <h3 className="text-[12px] md:text-[20px] font-bold">42%</h3>
