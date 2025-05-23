@@ -30,10 +30,10 @@ export default function Hero() {
   {/* foreground content */}
   <div className="relative z-20 flex items-center justify-start h-full text-white">
   <div className="max-w-4xl px-6 text-left ml-10">
-    <h1 className="text-[20px] md:text-4xl font-bold mb-4 leading-tight">
-      PROVIDING YOU WITH THE <span className="text-blue-600">BEST TECH TALENT</span> IN KENYA
+    <h1 className="text-[20px] md:text-4xl 2xl:text-[60px] font-bold mb-4 2xl:leading-[120%] 2xl:tracking-[2%]">
+      PROVIDING YOU WITH THE <span className="text-[--color-hero-text] ">BEST TECH TALENT</span> IN KENYA
     </h1>
-    <p className="mb-6 text-[12px] md:text-[20px]">
+    <p className="mb-6 text-[12px] md:text-[20px] 2xl:text-[32.16px]">
       We are a software talent agency that is addressing the global need for top tech talent by transforming access to high-tech jobs.
     </p>
     <Button>Hire Here</Button>
