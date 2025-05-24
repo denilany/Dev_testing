@@ -5,29 +5,40 @@ import Button from './Button.jsx';
 export default function Hero() {
   return (
     <section className="relative h-[85vh] overflow-visible">
-  {/* background image + overlay */}
-  <img
-    src="/static/images/hero_team.JPG"
-    alt="Team"
-    // className="absolute inset-0 w-full h-full object-cover z-0"
-    className="absolute inset-0 w-full h-full object-cover object-[center_10%] z-0"
-    />
-  {/* <div className="absolute inset-0 bg-black bg-opacity-40 z-10" /> */}
+  {/* Background image for desktop */}
+      <img
+        src="/static/images/hero_team_desktop.JPG"
+        alt="Team"
+        className="hidden md:block absolute inset-0 w-full h-full object-cover object-[center_10%] z-0"
+      />
 
-  {/* Translucent black overlay */}
-  <div className="absolute inset-0 bg-[rgba(0,0,0,0.5)] z-10"></div>
+      {/* Background image for mobile */}
+      <img
+        src="/static/images/hero_team_mobile.JPG" 
+        alt="Team Mobile"
+        className="block md:hidden absolute inset-0 w-full h-full object-cover object-center z-0"
+      />
+
+      {/* Overlay for desktop (semi-transparent black) */}
+      <div className="hidden md:block absolute inset-0 bg-[rgba(0,0,0,0.5)] z-10" />
+
+      {/* Overlay for mobile (bottom-heavy gradient) */}
+      <div className="block md:hidden absolute inset-0 bg-gradient-to-t from-black via-black/90 to-transparent z-10" />
+
 
 
   {/* foreground content */}
   <div className="relative z-20 flex items-center justify-start h-full text-white">
   <div className="max-w-4xl px-6 text-left ml-10">
-    <h1 className="text-[20px] md:text-3xl font-bold mb-4 leading-tight">
-      PROVIDING YOU WITH THE <span className="text-blue-600">BEST TECH TALENT</span> IN KENYA
+    <h1 className="text-[20px] md:text-[40px] lg:text-[40px] md:font-bold 2xl:text-[60px] font-bold mb-4 2xl:leading-[120%] 2xl:tracking-[2%]">
+      PROVIDING YOU WITH THE <span className="text-[--color-hero-text] ">BEST TECH TALENT</span> IN KENYA
     </h1>
-    <p className="mb-6 text-[12px] md:text-[20px]">
+    <p className="mb-6 text-[12px] md:text-[20px] lg:text-[25px] 2xl:text-[32.16px]">
       We are a software talent agency that is addressing the global need for top tech talent by transforming access to high-tech jobs.
     </p>
-    <Button>Hire Here</Button>
+    <Button
+        className="md:w-[240px] md:h-[45px] lg:w-[290px] lg:h-[50px] 2xl:w-[290px] 2xl:h-[50px] flex justify-center"
+    >Hire Here</Button>
   </div>
 </div>
 

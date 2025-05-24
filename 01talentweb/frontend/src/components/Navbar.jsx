@@ -35,19 +35,21 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Menu */}
-        <ul className={`hidden md:flex space-x-8 font-medium text-base md:text-lg lg:text-xl ${textColorClass}`}>
-          <li><a href="#" className={`hover:text-blue-700 ${textColorClass}`}>Home</a></li>
-          <li><a href="#" className={`hover:text-blue-700 ${textColorClass}`}>Services</a></li>
-          <li><a href="#" className={`hover:text-blue-700 ${textColorClass}`}>Talents</a></li>
-          <li><a href="#" className={`hover:text-blue-700 ${textColorClass}`}>About Us</a></li>
+        <ul className={`hidden md:flex space-x-8 font-medium text-base md:text-lg lg:text-xl 2xl:text-[20.1px] ${textColorClass}`}>
+          <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Home</a></li>
+          <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Services</a></li>
+          <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Talents</a></li>
+          <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>About Us</a></li>
         </ul>
 
         {/* Desktop Button */}
         <div className="hidden md:block">
           <Button
+            className="md:h-[36px] lg:w-[150px] lg:h-[40px] xl:text-[18px] 2xl:w-[200px] 2xl:h-[40px] flex justify-center"
             textColor={scrolled ? "text-black" : "text-white"}
             bgColor="bg-blue-600"
             hoverBgColor="hover:bg-blue-700"
+            
           >
             Hire Here
           </Button>
@@ -67,10 +69,10 @@ export default function Navbar() {
       {menuOpen && (
         <div className={`md:hidden bg-white shadow-md px-6 py-4 space-y-4 transition-all duration-300`}>
           <ul className="flex flex-col space-y-4 font-medium text-base text-black">
-            <li><a href="#" className="hover:text-blue-700">Home</a></li>
-            <li><a href="#" className="hover:text-blue-700">Services</a></li>
-            <li><a href="#" className="hover:text-blue-700">Talents</a></li>
-            <li><a href="#" className="hover:text-blue-700">About Us</a></li>
+            <li><a href="#" className="hover:text-blue-500">Home</a></li>
+            <li><a href="#" className="hover:text-blue-500">Services</a></li>
+            <li><a href="#" className="hover:text-blue-500">Talents</a></li>
+            <li><a href="#" className="hover:text-blue-500">About Us</a></li>
           </ul>
           <div className="pt-4">
             <Button
