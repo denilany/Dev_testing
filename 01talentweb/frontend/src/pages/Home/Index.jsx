@@ -55,11 +55,11 @@ export default function Index() {
     const { talents = [] } = usePage().props;
 
     return (
-        <div className="min-h-screen">
-            <Hero />
-            <UniqueTalentSection/>
-            <FeaturedProfiles talents={sampleTalents} />
-            <Newsletter />
-        </div>
+      <>
+        <Hero />
+        <UniqueTalentSection/>
+        <FeaturedProfiles talents={sampleTalents} />
+        <Newsletter />
+      </>
     );
 }
