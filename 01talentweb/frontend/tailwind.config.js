@@ -8,7 +8,9 @@ module.exports = {
     extend: {
       screens: {
         '2xl': '1536px', // Default 2xl
-        'small-tablets': '768px', 
+        'small-tablets': '768px',
+        // 'small-phones': '320px', 
+        'small-phones': {'max': '425px'},
       },
       // ... other theme customizations
     },
