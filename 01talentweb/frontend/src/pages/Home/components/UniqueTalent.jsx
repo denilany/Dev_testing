@@ -5,20 +5,26 @@ import { Link } from '@inertiajs/react';
 const UniqueTalentSection = () => {
   return (
     <section className="bg-[#EFF7FF] py-20 px-6">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
-          WHAT MAKES <span className="text-[--color-primary-500]">OUR TALENT</span> UNIQUE
-        </h2>
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        {/* LEFT COLUMN */}
-        <div>
-          <p className="text-gray-700 mb-6 leading-relaxed">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl md:text-[64px] font-extrabold text-[var(--color-text-heading)] mb-4 md:mb-6 -ml-8 md:-ml-16">
+            <span className="whitespace-normal sm:whitespace-nowrap">WHAT MAKES </span>
+            <span className="whitespace-normal sm:whitespace-nowrap text-[--color-primary-500]">OUR TALENT</span>
+            <span className="whitespace-normal sm:whitespace-nowrap"> UNIQUE</span>
+          </h2>
+          <p className="text-gray-700 mb-6 font-sans font-normal text-[26.43px] leading-none tracking-normal text-center">
             Our tech talents are fully adaptable and equipped with hard and soft skills to work in fast-moving tech environments.
             We rigorously select the best tech talent from tens of thousands of applications across Kenya.
           </p>
-          <h4 className="font-semibold text-gray-800 mb-4">We then train them to:</h4>
+        </div>
+      </div>
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        {/* LEFT COLUMN */}
+        <div>
+          <h4 className="font-medium text-gray-800 mb-4 text-[28.83px] leading-none tracking-normal align-middle font-sans">We then train them to:</h4>
 
           {/* Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
               'Code in Go, Javascript, PHP, C, C#, Python and Rust languages making our talent dynamic',
               'Design and manage projects effectively',
@@ -27,28 +33,45 @@ const UniqueTalentSection = () => {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-white p-5 rounded-lg shadow-sm border border-gray-200"
+                className="w-full h-[200px] p-8 rounded-[29.17px] border border-[#DEDEDE] bg-[#EFF7FF] relative"
+                style={{
+                  boxShadow: '0px 4.81px 4.81px 0px #00000040',
+                  borderWidth: '1.2px'
+                }}
               >
-                <h5 className="font-bold text-[--color-primary-500] text-xl mb-2">0{i + 1}</h5>
-                <p className="text-gray-700 leading-snug">{item}</p>
+                <h5 
+                  className="absolute font-mono font-medium text-[20.44px] leading-none"
+                  style={{
+                    width: '47px',
+                    height: '48px',
+                    top: '30.28px',
+                    left: '25.77px',
+                    color: '#000000'
+                  }}
+                >
+                  0{i + 1}
+                </h5>
+                <p 
+                  className="absolute font-sans text-[18px] leading-none mt-[26.89px] ml-[12.45px]"
+                  style={{
+                    width: '235px',
+                    height: '135px',
+                    color: '#000000',
+                    fontWeight: 400
+                  }}
+                >
+                  {item}
+                </p>
               </div>
             ))}
           </div>
 
-          <div className="mt-8">
-            <Link
-              href="/hire"
-              className="bg-[--color-primary-500] text-white px-6 py-3 rounded-md font-semibold hover:bg-[--color-primary-400] transition"
-            >
-              Hire Developers
-            </Link>
-          </div>
         </div>
 
         {/* RIGHT COLUMN*/}
         <div className="relative h-[500px] md:h-[600px] overflow-hidden">
           
-          {/* Large background gradient blobs - more visible */}
+          {/* Large background gradient blobs */}
           <div 
             className="absolute" 
             style={{
@@ -250,6 +273,14 @@ const UniqueTalentSection = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="flex justify-center mt-8">
+        <Link
+          href="/hire"
+          className="flex items-center justify-center bg-[var(--color-primary-300)] text-white font-medium rounded-[9.17px] hover:opacity-90 transition-opacity w-[377.24px] h-[75.69px] py-[22.92px] px-[91.69px] text-[24.45px] leading-[27.51px] tracking-normal text-center font-sans"
+        >
+          Hire Developers
+        </Link>
       </div>
     </section>
   );
