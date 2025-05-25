@@ -3,25 +3,28 @@ import React from 'react';
 
 const NewsletterSection = () => {
   return (
-    <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] bg-[--color-primary-50] py-8 sm:py-12 md:py-16">
-      <div className="max-w-7xl mx-auto px-4 text-center relative">
-        <h2 className="text-mobile-h2 sm:text-h2 font-semibold text-[var(--color-text-heading)] mb-3 sm:mb-4 px-2 sm:px-0 sm:whitespace-nowrap">
-          Subscribe to our <span className="whitespace-nowrap">Monthly Newsletter</span>
+    <section className="w-full bg-[--color-primary-50] py-8 sm:py-12 md:py-16">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 className="text-4xl sm:text-5xl md:text-[64px] font-extrabold text-[var(--color-text-heading)] mb-4 md:mb-6">
+          Subscribe to our{' '}
+          <span className="text-[--color-primary-500]">Monthly Newsletter</span>
         </h2>
-        <p className="text-body-s sm:text-body-m text-[var(--color-text-muted)] mb-6 sm:mb-8 max-w-2xl mx-auto">
+        <p className="text-lg pb-12 sm:text-xl md:text-[26px] leading-relaxed md:leading-[1.4] font-normal text-[var(--color-text-muted)]">
           Malesuada ut aliquam at ac est nisi, interdum etiam dignissim.
         </p>
 
-        <form className="relative w-full max-w-xs sm:max-w-xl mx-auto">
+        <form className="w-full max-w-xs sm:max-w-md md:max-w-xl mx-auto">
           <div className="relative">
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-full px-3 sm:px-4 pr-20 sm:pr-32 py-1.5 sm:py-3 text-body-s sm:text-body-m rounded-md border border-[var(--color-border)] text-[var(--color-text)] focus:ring-[--color-primary-500] focus:border-[--color-primary-500]"
+              className="w-full px-4 py-4 pr-32 text-base rounded-md border border-[var(--color-border)] text-[var(--color-text)] focus:ring-2 focus:ring-[--color-primary-500] focus:border-[--color-primary-500] outline-none"
+              required
+              aria-label="Email address"
             />
             <button
               type="submit"
-              className="absolute right-1 top-1/2 -translate-y-1/2 px-2 sm:px-4 py-1 sm:py-2 bg-[--color-primary-500] text-white font-semibold rounded-md hover:bg-[--color-primary-400] transition text-body-xs sm:text-body-s whitespace-nowrap"
+              className="absolute right-1.5 top-1/2 -translate-y-1/2 px-6 py-2 bg-[--color-primary-500] text-white font-semibold rounded hover:bg-[--color-primary-400] transition-colors duration-200 text-sm whitespace-nowrap"
             >
               Subscribe
             </button>
