@@ -31,11 +31,11 @@ export default function Navbar() {
       <div className="flex justify-between items-center py-4 px-6 md:px-10">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <img src={logoSrc} alt="Logo" className="h-8 md:h-12" />
+          <img src={logoSrc} alt="Logo" className="h-8 md:h-8" />
         </div>
 
         {/* Desktop Menu */}
-        <ul className={`hidden md:flex space-x-8 font-medium text-base md:text-lg lg:text-xl 2xl:text-[20.1px] ${textColorClass}`}>
+        <ul className={`hidden md:flex space-x-8 font-medium text-base md:text-xs lg:text-xl 2xl:text-[20.1px] ${textColorClass}`}>
           <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Home</a></li>
           <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Services</a></li>
           <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Talents</a></li>
@@ -79,6 +79,7 @@ export default function Navbar() {
               textColor="text-white"
               bgColor="bg-blue-600"
               hoverBgColor="hover:bg-blue-700"
+              className="2xl:w-[200px] 2xl:h-[65px]"
               fullWidth
             >
               Hire Here
