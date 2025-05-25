@@ -93,18 +93,37 @@ const UniqueTalentSection = () => {
               borderRadius: '50%'
             }}
           ></div>
-          
-          {/* Sparkle decorations */}
-          <div className="absolute top-6 left-32 w-8 h-8 text-blue-400 z-20">
-            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
-              <path d="M12 0l2.5 7.5L22 12l-7.5 2.5L12 24l-2.5-7.5L2 12l7.5-2.5L12 0z"/>
-            </svg>
+
+          {/* sparkle decorations */}
+          <div className="absolute z-20 flex items-center justify-center 
+                        w-[60px] h-[60px] top-[30px]
+                        sm:w-[50px] sm:h-[50px] sm:top-[220px] sm:left-[15px]
+                        md:w-[65px] md:h-[65px] md:top-[280px] md:left-[18px]
+                        lg:w-[60px] lg:h-[60px] lg:top-[30px]">
+            <img 
+              src="/static/images/thinsmooth.svg" 
+              alt=""
+              className="w-full h-full drop-shadow-sm"
+              style={{
+                stroke: '#0063F9',
+                strokeWidth: '0.5'
+              }}
+            />
           </div>
-          
-          <div className="absolute bottom-8 right-8 w-6 h-6 text-blue-300 z-20">
-            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
-              <path d="M12 0l2.5 7.5L22 12l-7.5 2.5L12 24l-2.5-7.5L2 12l7.5-2.5L12 0z"/>
-            </svg>
+          <div className="absolute z-20 flex items-center justify-center 
+                        w-[40px] h-[40px] top-[180px] left-[10px]
+                        sm:w-[50px] sm:h-[50px] sm:top-[220px] sm:left-[15px]
+                        md:w-[65px] md:h-[65px] md:top-[280px] md:left-[18px]
+                        lg:w-[72.17px] lg:h-[72.17px] lg:top-[439.88px] lg:left-[22.83px]">
+            <img 
+              src="/static/images/thinsmooth.svg" 
+              alt=""
+              className="w-full h-full drop-shadow-sm"
+              style={{
+                stroke: '#0063F9',
+                strokeWidth: '0.5'
+              }}
+            />
           </div>
 
           {/* Connection lines - more visible */}
@@ -141,13 +160,32 @@ const UniqueTalentSection = () => {
           {/* Developer profiles with placeholder images */}
           
           {/* Top developer */}
-          <div className="absolute top-16 left-20 z-30">
-            <div className="relative w-14 h-14">
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white font-semibold text-xs border-2 border-white shadow-lg">
+          <div className="absolute z-30" style={{
+            width: '132.15px',
+            height: '132.15px',
+            top: '60.07px',
+            left: '58.87px'
+          }}>
+            <div className="relative w-full h-full">
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white font-semibold text-4xl border-2.33 border-white shadow-lg">
                 JM
               </div>
-              <div className="absolute -bottom-1 -right-1 bg-blue-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full shadow-md font-bold">
-                +
+              <div className="absolute" style={{
+                width: '31.44px',
+                height: '30.86px',
+                bottom: '-1px',
+                right: '-1px',
+                backgroundColor: '#64B8FF',
+                border: '1.75px solid white',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontWeight: 'bold',
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+              }}>
+                <span className="text-sm">+</span>
               </div>
             </div>
           </div>
@@ -188,7 +226,7 @@ const UniqueTalentSection = () => {
             </div>
           </div>
 
-          {/* John Doe card - repositioned and enhanced */}
+          {/* John Doe card */}
           <div className="absolute top-1/2 right-4 transform -translate-y-1/2 w-56 bg-white rounded-2xl shadow-2xl p-5 z-40 border border-gray-100">
             {/* Close icon */}
             <div className="absolute top-2 right-3 text-gray-400 hover:text-gray-600 cursor-pointer text-lg">
@@ -211,16 +249,6 @@ const UniqueTalentSection = () => {
               </button>
             </div>
           </div>
-
-          {/* Additional visual enhancements */}
-          <div className="absolute top-20 right-20 w-4 h-4 text-blue-300 z-20">
-            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full opacity-60">
-              <circle cx="12" cy="12" r="2"/>
-            </svg>
-          </div>
-
-          <div className="absolute bottom-32 right-32 w-3 h-3 bg-blue-300 rounded-full opacity-40"></div>
-          <div className="absolute top-48 right-16 w-2 h-2 bg-cyan-300 rounded-full opacity-50"></div>
         </div>
       </div>
     </section>
