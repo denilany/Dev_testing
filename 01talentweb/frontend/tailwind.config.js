@@ -7,10 +7,14 @@ module.exports = {
     theme: {
     extend: {
       screens: {
-        '2xl': '1536px', // Default 2xl
         'small-tablets': '768px',
         // 'small-phones': '320px', 
         'small-phones': {'max': '425px'},
+        // 'ultra-large': {'min': '1710px', 'max': '639px'}, 
+        'ultra-large': {'min': '1710px'}, 
+        'ultra-xl': {'min': '2100px'}, 
+
+
       },
       // ... other theme customizations
     },

@@ -20,8 +20,8 @@ export default function CompanyLogos() {
     <section className="bg-white overflow-hidden mb-10 mt-10 xl:mt-0">
         <div className="md:mb-5 xl:mb-5 xl:p-2 ml-10 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-6">
 
-          <div className=" md:w-1/5 text-left md:ml-0 pt-6 md:pt-10 small-tablets:pt-0 small-tablets:mt-5 small-tablets:text-xs lg:mt-10 xl:mt-2 xl:pt-1">
-            <h2 className="text-sm font-semibold text-gray-700 lg:text-base xl:text-lg">
+          <div className="md:w-1/5 text-left md:ml-0 pt-6 md:pt-10 small-tablets:pt-0 small-tablets:mt-5 small-tablets:text-xs lg:mt-10 xl:mt-2 xl:pt-1">
+            <h2 className="text-sm font-semibold text-gray-700 lg:text-base xl:text-xl 2xl:text-2xl ultra-large:text-3xl">
               Our Talent is
               trusted by local
               and global

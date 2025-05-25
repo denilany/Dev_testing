@@ -5,19 +5,19 @@ export default function Stats() {
 <div className="text-white grid grid-cols-3 sm:grid-cols-4 small-phones:gap-2 gap-6 pt-6">
     <div className="border-l border-white/60 pl-4 small-phones:pl-2">
       <h3 className="text-[12px] md:text-lg xl:text-[40px] font-bold">100K+</h3>
-      <p className="text-sm small-phones:text-xs md:text-sm xl:text-[22px] xl:pt-4 xl:[line-height:35px]">Tech Talent Globally</p>
+      <p className="text-sm small-phones:text-xs md:text-sm xl:text-[22px] xl:pt-4 xl:[line-height:35px] 2xl:text-2xl ultra-large:text-3xl">Tech Talent Globally</p>
     </div>
     <div className="border-l border-white/60 pl-4 small-phones:order-last small-phones:pl-2 small-phones:col-span-2">
       <h3 className="text-[12px] md:text-lg xl:text-[40px] font-bold">KES 2M P.A.</h3>
-      <p className="text-sm small-phones:text-xs md:text-sm xl:text-[22px] xl:pt-4 xl:[line-height:35px]">Cost savings per talent hired through 01Talent Kenya</p>
+      <p className="text-sm small-phones:text-xs md:text-sm xl:text-[22px] xl:pt-4 xl:[line-height:35px] 2xl:text-2xl ultra-large:text-3xl">Cost savings per talent hired through 01Talent Kenya</p>
     </div>
     <div className="border-l border-white/60 pl-4 small-phones:pl-2">
       <h3 className="text-[12px] md:text-lg  xl:text-[40px] font-bold">69%</h3>
-      <p className="text-sm small-phones:text-xs md:text-sm xl:text-[22px] xl:pt-4 xl:[line-height:35px]">Quicker hiring time</p>
+      <p className="text-sm small-phones:text-xs md:text-sm xl:text-[22px] xl:pt-4 xl:[line-height:35px] 2xl:text-2xl ultra-large:text-3xl">Quicker hiring time</p>
     </div>
     <div className="border-l border-white/60 pl-4 small-phones:pl-2">
       <h3 className="text-[12px] md:text-lg xl:text-[40px] font-bold">42%</h3>
-      <p className="text-sm small-phones:text-xs md:text-sm xl:text-[22px] xl:pt-4 xl:[line-height:35px]">Quicker delivery on projects</p>
+      <p className="text-sm small-phones:text-xs md:text-sm xl:text-[22px] xl:pt-4 xl:[line-height:35px] 2xl:text-2xl ultra-large:text-3xl">Quicker delivery on projects</p>
     </div>
   </div>
 </section>

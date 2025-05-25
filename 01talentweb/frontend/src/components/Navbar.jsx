@@ -31,11 +31,11 @@ export default function Navbar() {
       <div className="flex justify-between items-center py-4 px-6 md:px-10">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <img src={logoSrc} alt="Logo" className="h-8 md:h-8" />
+          <img src={logoSrc} alt="Logo" className="h-8 md:h-8 xl:h-12 ultra-large:h-20" />
         </div>
 
         {/* Desktop Menu */}
-        <ul className={`hidden md:flex space-x-8 font-medium text-base md:text-xs lg:text-xl 2xl:text-[20.1px] ${textColorClass}`}>
+        <ul className={`hidden md:flex space-x-8 font-medium text-base md:text-xs lg:text-xl  xl:text-2xl 2xl:text-2xl ultra-large:text-3xl ${textColorClass}`}>
           <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Home</a></li>
           <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Services</a></li>
           <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Talents</a></li>
