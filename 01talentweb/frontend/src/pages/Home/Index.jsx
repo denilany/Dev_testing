@@ -3,6 +3,8 @@ import Navbar from '../../components/Navbar.jsx';
 import Hero from '../../components/Hero.jsx';
 import Stats from '../../components/Stats.jsx';
 import CompanyLogos from '../../components/CompanyLogos.jsx';
+import WhoWeAre from '../../components/WhoWeAre.jsx';
+
 
 // import './App.css'; // for animation styling
 
@@ -12,6 +14,7 @@ export default function Index() {
       <Hero />
       <Stats />
       <CompanyLogos />
+      <WhoWeAre />
     </div>
   );
 }
