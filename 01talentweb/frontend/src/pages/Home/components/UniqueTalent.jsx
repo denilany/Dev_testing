@@ -120,8 +120,8 @@ const UniqueTalentSection = () => {
           {/* sparkle decorations */}
           <div className="absolute z-20 flex items-center justify-center 
                         w-[60px] h-[60px] top-[30px]
-                        sm:w-[50px] sm:h-[50px] sm:top-[220px] sm:left-[15px]
-                        md:w-[65px] md:h-[65px] md:top-[280px] md:left-[18px]
+                        sm:w-[50px] sm:h-[50px] sm:top-[220px]
+                        md:w-[65px] md:h-[65px] md:top-[280px]
                         lg:w-[60px] lg:h-[60px] lg:top-[30px]">
             <img 
               src="/static/images/thinsmooth.svg" 
@@ -149,45 +149,45 @@ const UniqueTalentSection = () => {
             />
           </div>
 
-          {/* Connection lines - more visible */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 400 500">
-            <defs>
-              <marker id="arrowhead" markerWidth="12" markerHeight="10" 
-                      refX="10" refY="5" orient="auto">
-                <polygon points="0 0, 12 5, 0 10" fill="#3B82F6"/>
-              </marker>
-            </defs>
-            
-            {/* Main flowing curve */}
-            <path
-              d="M100 80 Q120 120 110 160 Q100 200 120 240 Q140 280 130 320 Q120 360 100 400"
-              stroke="#3B82F6"
-              strokeWidth="2"
-              fill="none"
-              strokeDasharray="8,4"
-              opacity="0.6"
+          {/* Connection lines - custom SVGs */}
+          <div className="absolute inset-0 w-full h-full pointer-events-none z-10">
+            {/* Single lines SVG */}
+            <img 
+              src="/static/images/singlelines.svg" 
+              alt="Connection lines" 
+              className="absolute"
+              style={{
+                width: '200.14px',
+                height: '202.63px',
+                top: '40.68px',
+                left: '95.41px',
+                transform: 'rotate(10.73deg)',
+              }}
             />
             
-            {/* Arrow pointing to John Doe card */}
-            <path
-              d="M140 260 Q200 280 260 270 Q300 260 320 290"
-              stroke="#3B82F6"
-              strokeWidth="2"
-              fill="none"
-              strokeDasharray="6,3"
-              markerEnd="url(#arrowhead)"
-              opacity="0.7"
+            {/* Double lines SVG */}
+            <img 
+              src="/static/images/doublelines.svg" 
+              alt="Arrow lines" 
+              className="absolute"
+              style={{
+                width: '270.31px',
+                height: '333.99px',
+                top: '225.48px',
+                left: '22.75px',
+                transform: 'rotate(20.23deg)',
+              }}
             />
-          </svg>
+          </div>
 
           {/* Developer profiles with placeholder images */}
           
           {/* Top developer */}
           <div className="absolute z-30" style={{
-            width: '132.15px',
-            height: '132.15px',
-            top: '60.07px',
-            left: '58.87px'
+            width: '80.15px',
+            height: '80.15px',
+            top: '70.07px',
+            left: '78.87px'
           }}>
             <div className="relative w-full h-full">
               <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white font-semibold text-4xl border-2.33 border-white shadow-lg">
@@ -214,41 +214,96 @@ const UniqueTalentSection = () => {
           </div>
 
           {/* Left middle developer */}
-          <div className="absolute top-40 left-8 z-30">
-            <div className="relative w-14 h-14">
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-green-400 to-teal-400 flex items-center justify-center text-white font-semibold text-xs border-2 border-white shadow-lg">
-                SM
+          <div className="absolute z-30" style={{
+            width: '80.15px',
+            height: '80.15px',
+            top: '170.07px',
+            left: '180.87px'
+          }}>
+            <div className="relative w-full h-full">
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white font-semibold text-4xl border-2.33 border-white shadow-lg">
+                JM
               </div>
-              <div className="absolute -bottom-1 -right-1 bg-blue-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full shadow-md font-bold">
-                +
+              <div className="absolute" style={{
+                width: '31.44px',
+                height: '30.86px',
+                bottom: '-1px',
+                right: '-1px',
+                backgroundColor: '#64B8FF',
+                border: '1.75px solid white',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontWeight: 'bold',
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+              }}>
+                <span className="text-sm">+</span>
               </div>
             </div>
           </div>
-
           {/* Center developer */}
-          <div className="absolute top-64 left-16 z-30">
-            <div className="relative w-14 h-14">
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-orange-400 to-red-400 flex items-center justify-center text-white font-semibold text-xs border-2 border-white shadow-lg">
-                MK
+          <div className="absolute z-30" style={{
+            width: '80.15px',
+            height: '80.15px',
+            top: '250.07px',
+            left: '33.87px'
+          }}>
+            <div className="relative w-full h-full">
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white font-semibold text-4xl border-2.33 border-white shadow-lg">
+                JM
               </div>
-              <div className="absolute -bottom-1 -right-1 bg-blue-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full shadow-md font-bold">
-                +
+              <div className="absolute" style={{
+                width: '31.44px',
+                height: '30.86px',
+                bottom: '-1px',
+                right: '-1px',
+                backgroundColor: '#64B8FF',
+                border: '1.75px solid white',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontWeight: 'bold',
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+              }}>
+                <span className="text-sm">+</span>
               </div>
             </div>
           </div>
 
           {/* Bottom developer */}
-          <div className="absolute bottom-16 left-4 z-30">
-            <div className="relative w-14 h-14">
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-indigo-400 to-purple-400 flex items-center justify-center text-white font-semibold text-xs border-2 border-white shadow-lg">
-                AL
+          <div className="absolute z-30" style={{
+            width: '80.15px',
+            height: '80.15px',
+            top: '350.07px',
+            left: '180.87px'
+          }}>
+            <div className="relative w-full h-full">
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white font-semibold text-4xl border-2.33 border-white shadow-lg">
+                JM
               </div>
-              <div className="absolute -bottom-1 -right-1 bg-blue-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full shadow-md font-bold">
-                +
+              <div className="absolute" style={{
+                width: '31.44px',
+                height: '30.86px',
+                bottom: '-1px',
+                right: '-1px',
+                backgroundColor: '#64B8FF',
+                border: '1.75px solid white',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontWeight: 'bold',
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+              }}>
+                <span className="text-sm">+</span>
               </div>
             </div>
           </div>
-
           {/* John Doe card */}
           <div className="absolute top-1/2 right-4 transform -translate-y-1/2 w-56 bg-white rounded-2xl shadow-2xl p-5 z-40 border border-gray-100">
             {/* Close icon */}

@@ -56,7 +56,7 @@ export default function Index() {
 
     return (
       <>
-        <Hero />
+        {/* <Hero /> */}
         <UniqueTalentSection/>
         <FeaturedProfiles talents={sampleTalents} />
         <Newsletter />
