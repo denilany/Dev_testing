@@ -2,10 +2,11 @@ import { usePage } from '@inertiajs/react';
 import Hero from './components/Hero.jsx';
 import FeaturedProfiles from './components/FeaturedProfiles.jsx';
 import Newsletter from './components/Newsletter.jsx';
+import UniqueTalentSection from './components/UniqueTalent.jsx';
 
 
 const sampleTalents = [
-    {
+    { 
       id: 1,
       name: 'Joeylene Rivera',
       image: '/images/talents/joeylene.jpg',
@@ -56,6 +57,7 @@ export default function Index() {
     return (
         <div className="min-h-screen">
             <Hero />
+            <UniqueTalentSection/>
             <FeaturedProfiles talents={sampleTalents} />
             <Newsletter />
         </div>

@@ -63,7 +63,7 @@ const FeaturedProfiles = ({ talents = [] }) => {
               <TalentCard talent={getCard(1)} />
             </div>
 
-            {/* Arrows */}
+            {/* Arrows - Responsive Positioning */}
             <button
               onClick={handlePrev}
               className="absolute -left-16 lg:-left-20 xl:-left-24 top-1/2 transform -translate-y-1/2 z-20 bg-white shadow-xl rounded-full p-3 hover:bg-gray-50 transition-all duration-300 hover:scale-110 hover:shadow-2xl"
