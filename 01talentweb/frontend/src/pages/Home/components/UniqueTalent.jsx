@@ -135,6 +135,21 @@ const UniqueTalentSection = () => {
               }}
             />
           </div>
+          <div className="absolute z-20 flex items-center justify-center 
+                        w-[40px] h-[40px] top-[180px] left-[10px]
+                        sm:w-[50px] sm:h-[50px] sm:top-[220px] sm:left-[15px]
+                        md:w-[65px] md:h-[65px] md:top-[280px] md:left-[18px]
+                        lg:w-[72.17px] lg:h-[72.17px] lg:top-[439.88px] lg:left-[22.83px]">
+            <img 
+              src="/static/images/thinsmooth.svg" 
+              alt=""
+              className="w-full h-full drop-shadow-sm"
+              style={{
+                stroke: '#0063F9',
+                strokeWidth: '0.5'
+              }}
+            />
+          </div>
 
           {/* Connection lines - custom SVGs */}
           <div className="absolute inset-0 w-full h-full pointer-events-none z-10">
@@ -144,11 +159,11 @@ const UniqueTalentSection = () => {
               alt="Connection lines" 
               className="absolute"
               style={{
-                width: '150px',
-                height: '152px',
-                top: '30px',
-                left: '50%',
-                transform: 'translateX(-50%) rotate(10.73deg)',
+                width: '200.14px',
+                height: '202.63px',
+                top: '40.68px',
+                left: '95.41px',
+                transform: 'rotate(10.73deg)',
               }}
             />
             
@@ -158,11 +173,11 @@ const UniqueTalentSection = () => {
               alt="Arrow lines" 
               className="absolute"
               style={{
-                width: '200px',
-                height: '250px',
-                top: '170px',
-                left: '50%',
-                transform: 'translateX(-50%) rotate(20.23deg)',
+                width: '270.31px',
+                height: '333.99px',
+                top: '225.48px',
+                left: '22.75px',
+                transform: 'rotate(20.23deg)',
               }}
             />
           </div>
@@ -171,23 +186,22 @@ const UniqueTalentSection = () => {
           
           {/* Top developer */}
           <div className="absolute z-30" style={{
-            width: '60px',
-            height: '60px',
-            top: '50px',
-            left: '50%',
-            transform: 'translateX(-120%)',
+            width: '80.15px',
+            height: '80.15px',
+            top: '70.07px',
+            left: '78.87px'
           }}>
             <div className="relative w-full h-full">
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white font-semibold text-2xl sm:text-3xl border-2 border-white shadow-lg">
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white font-semibold text-4xl border-2.33 border-white shadow-lg">
                 JM
               </div>
               <div className="absolute" style={{
-                width: '24px',
-                height: '24px',
-                bottom: '-2px',
-                right: '-2px',
+                width: '31.44px',
+                height: '30.86px',
+                bottom: '-1px',
+                right: '-1px',
                 backgroundColor: '#64B8FF',
-                border: '1.5px solid white',
+                border: '1.75px solid white',
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
@@ -196,30 +210,29 @@ const UniqueTalentSection = () => {
                 fontWeight: 'bold',
                 boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
               }}>
-                <span className="text-xs">+</span>
+                <span className="text-sm">+</span>
               </div>
             </div>
           </div>
 
           {/* Left middle developer */}
           <div className="absolute z-30" style={{
-            width: '60px',
-            height: '60px',
-            top: '140px',
-            left: '50%',
-            transform: 'translateX(20%)',
+            width: '80.15px',
+            height: '80.15px',
+            top: '170.07px',
+            left: '180.87px'
           }}>
             <div className="relative w-full h-full">
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white font-semibold text-2xl sm:text-3xl border-2 border-white shadow-lg">
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white font-semibold text-4xl border-2.33 border-white shadow-lg">
                 JM
               </div>
               <div className="absolute" style={{
-                width: '24px',
-                height: '24px',
-                bottom: '-2px',
-                right: '-2px',
+                width: '31.44px',
+                height: '30.86px',
+                bottom: '-1px',
+                right: '-1px',
                 backgroundColor: '#64B8FF',
-                border: '1.5px solid white',
+                border: '1.75px solid white',
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
@@ -228,30 +241,28 @@ const UniqueTalentSection = () => {
                 fontWeight: 'bold',
                 boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
               }}>
-                <span className="text-xs">+</span>
+                <span className="text-sm">+</span>
               </div>
             </div>
           </div>
-
           {/* Center developer */}
           <div className="absolute z-30" style={{
-            width: '60px',
-            height: '60px',
-            top: '200px',
-            left: '50%',
-            transform: 'translateX(-120%)',
+            width: '80.15px',
+            height: '80.15px',
+            top: '250.07px',
+            left: '33.87px'
           }}>
             <div className="relative w-full h-full">
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white font-semibold text-2xl sm:text-3xl border-2 border-white shadow-lg">
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white font-semibold text-4xl border-2.33 border-white shadow-lg">
                 JM
               </div>
               <div className="absolute" style={{
-                width: '24px',
-                height: '24px',
-                bottom: '-2px',
-                right: '-2px',
+                width: '31.44px',
+                height: '30.86px',
+                bottom: '-1px',
+                right: '-1px',
                 backgroundColor: '#64B8FF',
-                border: '1.5px solid white',
+                border: '1.75px solid white',
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
@@ -260,30 +271,29 @@ const UniqueTalentSection = () => {
                 fontWeight: 'bold',
                 boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
               }}>
-                <span className="text-xs">+</span>
+                <span className="text-sm">+</span>
               </div>
             </div>
           </div>
 
           {/* Bottom developer */}
           <div className="absolute z-30" style={{
-            width: '60px',
-            height: '60px',
-            top: '280px',
-            left: '50%',
-            transform: 'translateX(20%)',
+            width: '80.15px',
+            height: '80.15px',
+            top: '350.07px',
+            left: '180.87px'
           }}>
             <div className="relative w-full h-full">
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white font-semibold text-2xl sm:text-3xl border-2 border-white shadow-lg">
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white font-semibold text-4xl border-2.33 border-white shadow-lg">
                 JM
               </div>
               <div className="absolute" style={{
-                width: '24px',
-                height: '24px',
-                bottom: '-2px',
-                right: '-2px',
+                width: '31.44px',
+                height: '30.86px',
+                bottom: '-1px',
+                right: '-1px',
                 backgroundColor: '#64B8FF',
-                border: '1.5px solid white',
+                border: '1.75px solid white',
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
@@ -292,30 +302,29 @@ const UniqueTalentSection = () => {
                 fontWeight: 'bold',
                 boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
               }}>
-                <span className="text-xs">+</span>
+                <span className="text-sm">+</span>
               </div>
             </div>
           </div>
-
           {/* John Doe card */}
-          <div className="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 w-48 sm:w-56 bg-white rounded-2xl shadow-2xl p-4 sm:p-5 z-40 border border-gray-100">
+          <div className="absolute top-1/2 right-4 transform -translate-y-1/2 w-56 bg-white rounded-2xl shadow-2xl p-5 z-40 border border-gray-100">
             {/* Close icon */}
-            <div className="absolute top-2 right-2 sm:right-3 text-gray-400 hover:text-gray-600 cursor-pointer text-base sm:text-lg">
+            <div className="absolute top-2 right-3 text-gray-400 hover:text-gray-600 cursor-pointer text-lg">
               ×
             </div>
 
             {/* Profile section */}
-            <div className="text-center mb-3 sm:mb-4">
-              <div className="relative w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3">
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center text-white font-bold text-xs sm:text-sm border-2 border-white shadow-md">
+            <div className="text-center mb-4">
+              <div className="relative w-12 h-12 mx-auto mb-3">
+                <div className="w-full h-full rounded-full bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center text-white font-bold text-sm border-2 border-white shadow-md">
                   JD
                 </div>
               </div>
               
-              <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-1">John Doe</h4>
-              <p className="text-xs sm:text-sm text-gray-500 mb-3 sm:mb-4">Software Developer</p>
+              <h4 className="text-lg font-bold text-gray-900 mb-1">John Doe</h4>
+              <p className="text-sm text-gray-500 mb-4">Software Developer</p>
               
-              <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 sm:px-6 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-semibold transition-colors duration-200 shadow-md w-full">
+              <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 shadow-md w-full">
                 Hire Me
               </button>
             </div>
