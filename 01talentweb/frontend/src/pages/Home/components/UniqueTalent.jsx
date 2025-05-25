@@ -5,12 +5,12 @@ import { Link } from '@inertiajs/react';
 const UniqueTalentSection = () => {
   return (
     <section className="bg-[#EFF7FF] py-20 px-6">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
+          WHAT MAKES <span className="text-[--color-primary-500]">OUR TALENT</span> UNIQUE
+        </h2>
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         {/* LEFT COLUMN */}
         <div>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
-            WHAT MAKES <span className="text-[--color-primary-500]">OUR TALENT</span> UNIQUE
-          </h2>
           <p className="text-gray-700 mb-6 leading-relaxed">
             Our tech talents are fully adaptable and equipped with hard and soft skills to work in fast-moving tech environments.
             We rigorously select the best tech talent from tens of thousands of applications across Kenya.
