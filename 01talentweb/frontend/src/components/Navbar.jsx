@@ -28,14 +28,14 @@ export default function Navbar() {
         scrolled ? "bg-white shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="flex justify-between items-center py-4 px-6 md:px-10">
+      <div className="flex justify-between items-center py-4 px-6 md:px-10 ultra-xl:max-w-[1900px]">
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <img src={logoSrc} alt="Logo" className="h-8 md:h-8 xl:h-12 ultra-large:h-18" />
         </div>
 
         {/* Desktop Menu */}
-        <ul className={`hidden md:flex space-x-8 font-medium text-base md:text-xs lg:text-xl  xl:text-xl 2xl:text-2xl ultra-large:text-2xl ${textColorClass}`}>
+        <ul className={`hidden md:flex space-x-8 font-medium text-base md:text-xs lg:text-xl  xl:text-xl 2xl:text-sm ultra-large:text-2xl ultra-xl:text-xl ${textColorClass}`}>
           <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Home</a></li>
           <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Services</a></li>
           <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Talents</a></li>
@@ -45,7 +45,7 @@ export default function Navbar() {
         {/* Desktop Button */}
         <div className="hidden md:block">
           <Button
-            className="md:h-[36px] lg:w-[150px] lg:h-[40px] xl:text-[16px] 2xl:w-[200px] 2xl:h-[40px] ultra-large:text-2xl flex justify-center"
+            className="md:h-[36px] lg:w-[150px] lg:h-[40px] xl:text-[16px] 2xl:w-[200px] 2xl:h-[40px] 2xl:text-sm ultra-large:text-2xl ultra-xl:text-xl flex justify-center"
             textColor={scrolled ? "text-black" : "text-white"}
             bgColor="bg-blue-600"
             hoverBgColor="hover:bg-blue-700"
