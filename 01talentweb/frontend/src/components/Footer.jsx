@@ -18,29 +18,31 @@ const Footer = () => {
           </div>
 
           {/* Combined Navigation and Links Container */}
-          <div className="flex flex-1 flex-nowrap min-w-max">
-            {/* Column 2 - Navigation */}
+          <div className="flex flex-[2] flex-nowrap">
+            <div className="flex w-full">
+              {/* Column 2 - Navigation */}
             <div className="flex-1 min-w-[150px] px-4">
-              <div className="text-center sm:text-left">
-                <h4 className="font-semibold mb-4">Navigation</h4>
-                <ul className="space-y-2 text-body-m text-[--color-primary-0]">
-                  <li><a href="/about" className="hover:underline">About Us</a></li>
-                  <li><a href="/services" className="hover:underline">Services</a></li>
-                  <li><a href="/talent" className="hover:underline">Talent</a></li>
-                  <li><a href="/contact" className="hover:underline">Contact</a></li>
-                </ul>
+                <div className="text-center sm:text-left">
+                  <h4 className="font-semibold mb-4">Navigation</h4>
+                  <ul className="space-y-2 text-body-m text-[--color-primary-0]">
+                    <li><a href="/about" className="hover:underline">About Us</a></li>
+                    <li><a href="/services" className="hover:underline">Services</a></li>
+                    <li><a href="/talent" className="hover:underline">Talent</a></li>
+                    <li><a href="/contact" className="hover:underline">Contact</a></li>
+                  </ul>
+                </div>
               </div>
-            </div>
 
-            {/* Column 3 - Links */}
+              {/* Column 3 - Links */}
             <div className="flex-1 min-w-[150px] px-4">
-              <div className="text-center sm:text-left">
-                <h4 className="font-semibold mb-4">Links</h4>
-                <ul className="space-y-2 text-body-m text-[--color-primary-0]">
-                  <li><a href="/faq" className="hover:underline">FAQs</a></li>
-                  <li><a href="/privacy" className="hover:underline">Privacy Policy</a></li>
-                  <li><a href="/blog" className="hover:underline">Blog</a></li>
-                </ul>
+                <div className="text-center sm:text-left">
+                  <h4 className="font-semibold mb-4">Links</h4>
+                  <ul className="space-y-2 text-body-m text-[--color-primary-0]">
+                    <li><a href="/faq" className="hover:underline">FAQs</a></li>
+                    <li><a href="/privacy" className="hover:underline">Privacy Policy</a></li>
+                    <li><a href="/blog" className="hover:underline">Blog</a></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
