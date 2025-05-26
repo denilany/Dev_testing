@@ -5,7 +5,22 @@ module.exports = {
     "./backend/templates/**/*.{html,js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontSize: {
+        'h0': 'var(--text-h0)',
+        'h1': 'var(--text-h1)',
+        'h2': 'var(--text-h2)',
+        'mobile-h1': 'var(--text-mobile-h1)',
+        'mobile-h2': 'var(--text-mobile-h2)',
+        'body-xl': 'var(--text-body-xl)',
+        'body-l': 'var(--text-body-l)',
+        'body-m': 'var(--text-body-m)',
+        'body-s': 'var(--text-body-s)',
+      },
+      fontFamily: {
+        sans: ['var(--font-sans)'],
+      },
+    },
   },
   plugins: [],
 }
