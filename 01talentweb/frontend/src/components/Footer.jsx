@@ -11,7 +11,7 @@ const Footer = () => {
       <Container className="py-12">
         <div className="flex flex-col md:flex-row flex-wrap gap-8">
           {/* Column 1 - Statement */}
-          <div className="flex-1 min-w-[200px] px-4">
+          <div className="flex-1 min-w-[200px] pr-4">
             <p className="text-body-m leading-body-m mb-8 text-center md:text-left">
               Cha mkuu mwanafuu ha <br/>na akili hu, Cha mwanafuu<br/> mkuu hu na akili ha.
             </p>
