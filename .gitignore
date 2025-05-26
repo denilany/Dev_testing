@@ -24,3 +24,5 @@ node_modules/
 
 # Database
 *.sqlite3
+
+runme.md
