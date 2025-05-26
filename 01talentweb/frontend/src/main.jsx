@@ -25,11 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
       showSpinner: true,
     },
     resolve: (name) => {
-      const pages = import.meta.glob('./pages/**/*.jsx', { eager: true });
-      let page = pages[`./pages/${name}.jsx`];
-      page.default.layout = page.default.layout || Layout;
-      return page;
-    },
+  const pages = import.meta.glob('./pages/**/*.jsx', { eager: true });
+  const key = `./pages/${name}.jsx`;
+  if (!pages[key]) {
+    console.error('Available pages:', Object.keys(pages));
+    throw new Error(`Page not found: ${key}`);
+  }
+  let page = pages[key];
+  page.default.layout = page.default.layout || Layout;
+  return page;
+},
     setup({ el, App, props }) {
       createRoot(el).render(<App {...props} />);
     }

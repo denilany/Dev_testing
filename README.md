@@ -78,6 +78,20 @@ python3 manage.py createsuperuser
 python3 manage.py runserver
 ```
 
+#### Note: Running Model Tests (Development)
+- For Testing Services and Talent models
+```bash
+cd backend
+```
+
+```bash
+pytest /services/tests.py
+```
+
+```bash
+pytest /talent/tests.py
+```
+
 The backend server will be running at http://127.0.0.1:8000/
 
 ### Frontend Setup

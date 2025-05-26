@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_vite',
     'inertia',
-    'talent',
+    'talent.apps.TalentConfig',
+    'services.apps.ServicesConfig',
 ]
 
 MIDDLEWARE = [
