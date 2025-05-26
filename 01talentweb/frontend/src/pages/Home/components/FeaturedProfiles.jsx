@@ -69,28 +69,22 @@ const FeaturedProfiles = ({ talents = [] }) => {
         </div>
 
         {/* Carousel Section with Blue Background */}
-        <div className="relative bg-[#FFFFFF] py-10 md:py-0 rounded-xl md:rounded-2xl">
+        <div className="relative bg-[var(--color-primary-0)] py-10 md:py-0 rounded-xl md:rounded-2xl">
           {/* Carousel Items Container */}
           <div className="relative flex items-center justify-center min-h-[450px] md:min-h-[500px]">
             {/* Left Card */}
             <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 z-10 transform md:scale-[0.8] md:opacity-60 transition-all duration-500 ease-out md:translate-x-[80%] hover:md:opacity-80 hover:md:scale-[0.85]">
-              <div className="bg-[#EFF7FF] rounded-[10px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
                 <TalentCard talent={getCard(-1)} />
-              </div>
             </div>
 
             {/* Center Card */}
             <div className="relative z-20 transform transition-all duration-500 ease-out max-w-xs sm:max-w-sm md:max-w-md">
-              <div className="bg-[#EFF7FF] rounded-[10px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
                 <TalentCard talent={getCard(0)} />
-              </div>
             </div>
 
             {/* Right Card */}
             <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 z-10 transform md:scale-[0.8] md:opacity-60 transition-all duration-500 ease-out md:-translate-x-[80%] hover:md:opacity-80 hover:md:scale-[0.85]">
-              <div className="bg-[#EFF7FF] rounded-[10px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
                 <TalentCard talent={getCard(1)} />
-              </div>
             </div>
           </div>
 
@@ -118,11 +112,15 @@ const FeaturedProfiles = ({ talents = [] }) => {
           <div className="text-center mt-10 md:mt-16">
             <Link
               href="/talent"
-              className="inline-flex items-center px-8 sm:px-10 py-3 sm:py-4 border-2 border-[--color-primary-500] text-[--color-primary-500] font-semibold text-base sm:text-lg rounded-lg hover:bg-[--color-primary-50] transition-colors"
+              className="inline-flex items-center justify-center w-[377.24px] h-[80.82px] border-[2.76px] border-[var(--color-primary-300)] rounded-[8.29px] text-[var(--color-primary-300)] text-body-l font-medium hover:bg-[--color-primary-50] transition-colors"
+              style={{
+                padding: '20.72px 82.87px',
+                gap: '13.81px'
+              }}
             >
               View All Talents
-              <svg className="ml-2 sm:ml-3 w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
               </svg>
             </Link>
           </div>

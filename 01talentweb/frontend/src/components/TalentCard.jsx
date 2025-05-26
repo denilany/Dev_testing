@@ -6,21 +6,27 @@ const TalentCard = ({ talent }) => {
   const skills = talent.skills || ['Golang', 'Docker', 'RESTful APIs', 'Database Design'];
 
   return (
-    <div className="bg-[--color-primary-50] shadow-md px-8 py-10 text-center mx-auto rounded-2xl w-[350px] transition-all hover:shadow-lg hover:-translate-y-1">
+    <div className="bg-[--color-primary-50] shadow-md px-12 py-16 text-center mx-auto w-[488px] h-[750px] rounded-[60.8px] transition-all hover:shadow-lg hover:-translate-y-1 flex flex-col items-center">
       {/* Profile Image */}
-      <div className="relative w-28 h-28 mx-auto mb-4">
-        {talent.image ? (
-          <img
-            src={talent.image}
-            alt={talent.name}
-            className="w-full h-full object-cover rounded-full border-[6px] border-white"
-          />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center rounded-full bg-blue-200 text-blue-800 text-3xl font-bold border-[6px] border-white">
-            {initials}
-          </div>
-        )}
-        <div className="absolute inset-0 rounded-full border-4 border-[--color-primary-300] animate-pulse pointer-events-none" />
+      <div className="relative w-[228px] h-[228px] mx-auto mb-4">
+        <div className="relative w-[228px] h-[228px] mx-auto mb-4 rounded-full overflow-hidden border-[2px] border-black">
+          {talent.image ? (
+            <img
+              src={talent.image}
+              alt={talent.name}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center bg-blue-200 text-blue-800 text-3xl font-bold">
+              {initials}
+            </div>
+          )}
+          <div className="absolute inset-0 border-4 border-[--color-primary-300] rounded-full animate-pulse pointer-events-none" />
+        </div>
+        {/* Right half blue ellipse border */}
+        <div className="absolute inset-0 rounded-full border-[6px] border-transparent border-r-[--color-primary-300] border-t-[--color-primary-300] animate-pulse pointer-events-none" style={{
+          clipPath: 'polygon(50% 0, 100% 0, 100% 100%, 50% 100%)'
+        }} />
       </div>
 
       {/* Name + Title */}
@@ -28,7 +34,7 @@ const TalentCard = ({ talent }) => {
       <p className="text-[--color-primary-500] font-medium text-body-xl mb-4">Web Developer</p>
 
       {/* Description */}
-      <p className="text-gray-600 text-body-m mb-4 leading-relaxed px-2">
+      <p className="text-gray-600 text-body-m mb-12 leading-relaxed px-2">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod
         lobortis diam, nec bibendum ipsum tincidunt ut.
       </p>
