@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from '@inertiajs/react';
 import TalentCard from '../../../components/TalentCard.jsx';
 import { Container } from '../../../components/Layout.jsx';
+import './styles/carousel.css';
+
 
 const FeaturedProfiles = ({ talents = [] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -28,19 +30,38 @@ const FeaturedProfiles = ({ talents = [] }) => {
   };
 
   // Get visible cards with wrap-around support
-  const getCard = (offset) => {
-    if (talents.length === 0) {
-      return null; // Should be handled by early return, but as a safeguard
-    }
+  const getCardWithPosition = (offset) => {
     const index = (currentIndex + offset + talents.length) % talents.length;
-    return talents[index];
+    return { 
+      talent: talents[index], 
+      position: offset,
+      id: talents[index]?.id || `card-${offset}`
+    };
+  };
+  
+  const visibleCards = [-1, 0, 1].map(getCardWithPosition);
+  
+  // Get the appropriate classes based on card position
+  const getCardClasses = (position) => {
+    const baseClasses = 'transition-all duration-500 ease-out';
+    
+    switch(position) {
+      case -1: // Left card
+        return `${baseClasses} hidden md:block absolute left-0 top-1/2 -translate-y-1/2 z-10 transform md:scale-[0.8] md:opacity-60 md:translate-x-[80%] hover:md:opacity-80 hover:md:scale-[0.85]`;
+      case 0: // Center card
+        return `${baseClasses} relative z-20 max-w-xs sm:max-w-sm md:max-w-md -translate-x-5 md:translate-x-0`;
+      case 1: // Right card
+        return `${baseClasses} hidden md:block absolute right-0 top-1/2 -translate-y-1/2 z-10 transform md:scale-[0.8] md:opacity-60 md:-translate-x-[80%] hover:md:opacity-80 hover:md:scale-[0.85]`;
+      default:
+        return baseClasses;
+    }
   };
 
   if (!talents || talents.length === 0) {
     return (
       <section className="w-full bg-white">
         <Container className="py-16 md:py-20">
-          <div className="text-center mb-100 md:mb-16 max-w-4xl mx-auto">
+          <div className="text-center mb-100 md:mb-16 mx-auto">
             <h2 className="text-4xl sm:text-5xl md:text-[64px] font-extrabold text-[var(--color-text-heading)] mb-4 md:mb-6">
               Featured <span className="text-[--color-primary-500]">Profiles</span>
             </h2>
@@ -48,7 +69,7 @@ const FeaturedProfiles = ({ talents = [] }) => {
               Our approach is personal. Each apprentice has a unique relationship with us from the start allowing us to fully vouch for their expertise and work ethic. Come meet them, hire them, see how good they are.
             </p>
           </div>
-          <div className="relative mt-12 md:mt-16 bg-[#FFFFFF] pt-10 pb-12 md:pt-16 md:pb-20 rounded-xl md:rounded-2xl text-center min-h-[200px] flex items-center justify-center">
+          <div className="relative mt-12 md:mt-16 bg-[var(--color-primary-0)] pt-10 pb-12 md:pt-16 md:pb-20 rounded-xl md:rounded-2xl text-center min-h-[200px] flex items-center justify-center">
             <p className="text-lg text-[var(--color-text-muted)]">No featured profiles available at the moment.</p>
           </div>
         </Container>
@@ -72,20 +93,14 @@ const FeaturedProfiles = ({ talents = [] }) => {
         <div className="relative bg-[var(--color-primary-0)] py-10 md:py-0 rounded-xl md:rounded-2xl">
           {/* Carousel Items Container */}
           <div className="relative flex items-center justify-center min-h-[450px] md:min-h-[500px]">
-            {/* Left Card */}
-            <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 z-10 transform md:scale-[0.8] md:opacity-60 transition-all duration-500 ease-out md:translate-x-[80%] hover:md:opacity-80 hover:md:scale-[0.85]">
-                <TalentCard talent={getCard(-1)} />
-            </div>
-
-            {/* Center Card */}
-            <div className="relative z-20 transform transition-all duration-500 ease-out max-w-xs sm:max-w-sm md:max-w-md">
-                <TalentCard talent={getCard(0)} />
-            </div>
-
-            {/* Right Card */}
-            <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 z-10 transform md:scale-[0.8] md:opacity-60 transition-all duration-500 ease-out md:-translate-x-[80%] hover:md:opacity-80 hover:md:scale-[0.85]">
-                <TalentCard talent={getCard(1)} />
-            </div>
+            {visibleCards.map(({ talent, position, id }) => (
+              <div 
+                key={`${id}-${position}`} 
+                className={getCardClasses(position)}
+              >
+                <TalentCard talent={talent} />
+              </div>
+            ))}
           </div>
 
           {/* Navigation Arrows */}
