@@ -80,7 +80,7 @@ const FeaturedProfiles = ({ talents = [] }) => {
   return (
     <section className="w-full bg-white">
       <Container className="md:py-20">
-        <div className="text-center max-w-4xl mx-auto mt-8 sm:mt-0">
+        <div className="text-center mx-auto mt-8 sm:mt-0">
           <h2 className="text-4xl sm:text-5xl md:text-[64px] font-extrabold text-[var(--color-text-heading)] mb-4 md:mb-6">
             Featured <span className="text-[--color-primary-500]">Profiles</span>
           </h2>
@@ -106,20 +106,50 @@ const FeaturedProfiles = ({ talents = [] }) => {
           {/* Navigation Arrows */}
           <button
             onClick={handlePrev}
-            className="absolute left-2 sm:left-4 md:left-6 top-1/2 transform -translate-y-1/2 z-30 bg-white shadow-xl rounded-full p-2 md:p-3 hover:bg-gray-100 transition-all duration-300 hover:scale-110"
+            className="absolute left-8 top-1/2 -translate-y-1/2 z-30 bg-white rounded-full border border-gray-200 hover:bg-gray-50 transition-all duration-300"
             aria-label="Previous profile"
+            style={{
+              width: '100px',
+              height: '100px',
+              transform: 'translateY(-50%) rotate(180deg)'
+            }}
           >
-            <svg className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-[--color-primary-500]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-              <path d="M15 19l-7-7 7-7" />
+            <svg 
+              className="w-6 h-6 mx-auto text-[--color-primary-500]" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              style={{
+                width: '100px',
+                height: '100px'
+              }}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 5l7 7-7 7" />
             </svg>
           </button>
           <button
             onClick={handleNext}
-            className="absolute right-2 sm:right-4 md:right-6 top-1/2 transform -translate-y-1/2 z-30 bg-white shadow-xl rounded-full p-2 md:p-3 hover:bg-gray-100 transition-all duration-300 hover:scale-110"
+            className="absolute right-8 top-1/2 -translate-y-1/2 z-30 bg-white rounded-full border border-gray-200 hover:bg-gray-50 transition-all duration-300"
             aria-label="Next profile"
+            style={{
+              width: '100.68px',
+              height: '100.68px',
+              transform: 'translateY(-50%)'
+            }}
           >
-            <svg className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-[--color-primary-500]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-              <path d="M9 5l7 7-7 7" />
+            <svg 
+              className="w-6 h-6 mx-auto text-[--color-primary-500]" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              style={{
+                width: '100px',
+                height: '100px'
+              }}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 5l7 7-7 7" />
             </svg>
           </button>
 
