@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from '@inertiajs/react';
 import TalentCard from '../../../components/TalentCard.jsx';
+import { Container } from '../../../components/Layout.jsx';
 
 const FeaturedProfiles = ({ talents = [] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -38,7 +39,7 @@ const FeaturedProfiles = ({ talents = [] }) => {
   if (!talents || talents.length === 0) {
     return (
       <section className="w-full bg-white">
-        <div className="w-full max-w-[1440px] mx-auto px-4 py-16 md:py-20 sm:px-3 lg:px-8">
+        <Container className="py-16 md:py-20">
           <div className="text-center mb-100 md:mb-16 max-w-4xl mx-auto">
             <h2 className="text-4xl sm:text-5xl md:text-[64px] font-extrabold text-[var(--color-text-heading)] mb-4 md:mb-6">
               Featured <span className="text-[--color-primary-500]">Profiles</span>
@@ -50,14 +51,14 @@ const FeaturedProfiles = ({ talents = [] }) => {
           <div className="relative mt-12 md:mt-16 bg-[#FFFFFF] pt-10 pb-12 md:pt-16 md:pb-20 rounded-xl md:rounded-2xl text-center min-h-[200px] flex items-center justify-center">
             <p className="text-lg text-[var(--color-text-muted)]">No featured profiles available at the moment.</p>
           </div>
-        </div>
+        </Container>
       </section>
     );
   }
 
   return (
     <section className="w-full bg-white">
-      <div className="w-full max-w-[1440px] mx-auto md:py-20 sm:px-6 lg:px-8">
+      <Container className="md:py-20">
         <div className="text-center max-w-4xl mx-auto mt-8 sm:mt-0">
           <h2 className="text-4xl sm:text-5xl md:text-[64px] font-extrabold text-[var(--color-text-heading)] mb-4 md:mb-6">
             Featured <span className="text-[--color-primary-500]">Profiles</span>
@@ -126,7 +127,7 @@ const FeaturedProfiles = ({ talents = [] }) => {
             </Link>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };
