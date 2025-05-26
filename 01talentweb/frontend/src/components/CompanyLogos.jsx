@@ -17,11 +17,11 @@ const logos = [
 
 export default function CompanyLogos() {
   return (
-    <section className="bg-white  overflow-hidden mb-10 mt-10">
-        <div className="md:mb-5 xl:mb-5 xl:p-6 ml-10 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-6">
+    <section className="bg-white overflow-hidden mb-10 mt-10 xl:mt-0 xl:pt-0">
+        <div className="large-phones:mt-10 md:mb-5 mb-5 xl:pt-0 ml-10 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-6 ">
 
-          <div className="md:w-1/5 text-left md:ml-0 pt-6">
-            <h2 className="text-md font-semibold text-gray-700">
+          <div className="md:w-1/5 text-left md:ml-0 pt-6 md:pt-10 small-tablets:pt-0 small-tablets:mt-5 small-tablets:text-xs lg:mt-10 xl:mt-1 xl:pt-0">
+            <h2 className="text-sm lg:pt-10 xl:pt-0 font-semibold text-gray-700 lg:text-base xl:text-sm 2xl:text-xl ultra-large:text-xl ">
               Our Talent is
               trusted by local
               and global

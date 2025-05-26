@@ -5,9 +5,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[--color-primary-500] text-white">
+    <footer className="bg-[--color-primary-500] text-white ">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-y-10 md:gap-y-0">
+      <div className="max-w-[100rem] mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-y-10 md:gap-y-0">
         {/* Left Column - Statement & Copyright */}
         <div className="md:col-span-1">
           <p className="text-body-m leading-body-m mb-8">
@@ -38,8 +38,8 @@ const Footer = () => {
 
         {/* Right Column - Contact & Social */}
         <div className="mt-12 md:mt-0">
-          <div className="flex flex-col space-y-4">
-            <div className="flex items-start space-x-3 text-body-m text-[--color-primary-0]">
+          <div className="flex flex-col space-y-6 items-center md:items-start">
+            <div className="flex items-start space-x-3 text-body-m text-[--color-primary-0] max-w-max">
               <FaLocationDot className="mt-1 flex-shrink-0" />
               <span>Lake Basin Mall -<br/> Kisumu - Vihiga Road</span>
             </div>
@@ -58,7 +58,7 @@ const Footer = () => {
           </div>
 
           {/* Social Icons */}
-          <div className="flex space-x-3 mt-10">
+          <div className="flex justify-center md:justify-start space-x-3 mt-10">
             {[FaFacebook, FaLinkedin, FaTwitter].map((Icon, idx) => (
               <a 
                 key={idx} 
@@ -74,13 +74,13 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom */}
-      <div className="py-6 mt-6 text-sm">
-        <div className="max-w-7xl mx-auto px-6">
+      <div className="py-6 px-6 mt-6 text-sm">
+        <div className="max-w-[100rem] mx-auto">
           <div className="border-t border-white border-opacity-20 pt-6">
-            <div className="w-full flex flex-row justify-between items-center">
-              <div className="flex items-center gap-4">
-              <img src="/static/images/white-logo.png" alt="01Talent Logo" className="h-9" />
-            </div>
+            <div className="w-full flex flex-col sm:flex-row sm:justify-between items-center space-y-6 sm:space-y-0">
+              <div className="flex justify-center sm:justify-start w-full sm:w-auto">
+                <img src="/static/images/white-logo.png" alt="01Talent Logo" className="h-9" />
+              </div>
           </div>
           <div className="w-full flex flex-col items-center space-y-6">
               <p className="text-[--color-primary-0] text-center">

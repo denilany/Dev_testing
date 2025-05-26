@@ -4,7 +4,7 @@ import Button from './Button.jsx';
 
 export default function Hero() {
   return (
-    <section className="relative h-[85vh] overflow-visible">
+    <section className="relative  h-[85vh]  overflow-visible">
   {/* Background image for desktop */}
       <img
         src="/static/images/hero_team_desktop.JPG"
@@ -23,21 +23,21 @@ export default function Hero() {
       <div className="hidden md:block absolute inset-0 bg-[rgba(0,0,0,0.5)] z-10" />
 
       {/* Overlay for mobile (bottom-heavy gradient) */}
-      <div className="block md:hidden absolute inset-0 bg-gradient-to-t from-black via-black/90 to-transparent z-10" />
+      <div className="block md:hidden absolute inset-0 bg-gradient-to-t from-black via-black/95 to-transparent z-10" />
 
 
 
   {/* foreground content */}
   <div className="relative z-20 flex items-center justify-start h-full text-white">
-  <div className="max-w-4xl px-6 text-left ml-10">
-    <h1 className="text-[20px] md:text-[40px] lg:text-[40px] md:font-bold 2xl:text-[60px] font-bold mb-4 2xl:leading-[120%] 2xl:tracking-[2%]">
+  <div className="lg:max-w-2xl  xl:max-w-3xl ultra-large:max-w-5xl mx-auto px-6 text-left ml-10 small-phones:ml-0">
+    <h1 className="text-[20px] sm:text-2xl md:text-2xl lg:text-[40px] md:font-bold  xl:text-[55px] 2xl:text-5xl ultra-large:text-5xl font-bold mb-4 lg:leading-[120%] 2xl:leading-[120%] 2xl:tracking-[2%]">
       PROVIDING YOU WITH THE <span className="text-[--color-hero-text] ">BEST TECH TALENT</span> IN KENYA
     </h1>
-    <p className="mb-6 text-[12px] md:text-[20px] lg:text-[25px] 2xl:text-[32.16px]">
+    <p className="mb-6 text-[12px] sm:text-xl md:text-base lg:text-lg xl:text-1xl 2xl:text-2xl lg:leading-[120%]  ultra-large:text-xl ultra-xl:text-2xl">
       We are a software talent agency that is addressing the global need for top tech talent by transforming access to high-tech jobs.
     </p>
     <Button
-        className="md:w-[240px] md:h-[45px] lg:w-[290px] lg:h-[50px] 2xl:w-[290px] 2xl:h-[50px] flex justify-center"
+        className="md:w-[240px] md:h-[45px] sm:w-[250px] sm:h-[50px] large-phones:w-[190px] large-phones:h-[35px] small-phones:w-[180px] small-phones:h-[35px] lg:w-[290px] lg:h-[50px] 2xl:w-[290px] 2xl:h-[50px] ultra-large:w-[290px] ultra-large:h-[50px] flex justify-center"
     >Hire Here</Button>
   </div>
 </div>
