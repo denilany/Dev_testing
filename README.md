@@ -80,7 +80,9 @@ python3 manage.py runserver
 
 #### Note: Running Model Tests (Development)
 - For Testing Services and Talent models
+```bash
 cd backend
+```
 
 ```bash
 pytest /services/tests.py
