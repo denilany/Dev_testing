@@ -70,17 +70,10 @@ export default function Index() {
         <Hero />
         <Stats />
         <CompanyLogos />
+        <WhoWeAre />
         <UniqueTalentSection/>
         <FeaturedProfiles talents={sampleTalents} />
         <Newsletter />
       </>
     );
-  return (
-    <div className="font-sans w-full overflow-x-hidden">      
-      <Hero />
-      <Stats />
-      <CompanyLogos />
-      <WhoWeAre />
-    </div>
-  );
 }
