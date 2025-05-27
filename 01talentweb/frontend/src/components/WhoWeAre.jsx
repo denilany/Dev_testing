@@ -2,12 +2,12 @@ import React from "react";
 
 const WhoWeAre = () => {
   return (
-    <section className="relative bg-white px-6 py-12 md:py-20 lg:py-24 overflow-hidden">
+    <section className="relative bg-[#EFF7FF] px-6 py-12 md:py-20 lg:py-24 overflow-hidden">
       {/* Background Strokes - bottom left */}
       <img
         src="/static/images/strokes.svg"
         alt="Strokes Background"
-        className="absolute left-0 bottom-0 w-40 md:w-64 lg:w-80 opacity-80 pointer-events-none"
+        className="absolute left-0 bottom-0 w-40 md:w-64 lg:w-70 opacity-80 pointer-events-none"
       />
 
       {/* Zigzag - top left */}
@@ -19,12 +19,12 @@ const WhoWeAre = () => {
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Title */}
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 text-center">
           <span className="text-blue-600">WHO</span> WE ARE
         </h2>
 
         {/* Intro Text */}
-        <p className="text-gray-700 text-sm md:text-base leading-relaxed max-w-3xl mb-8">
+        <p className="text-gray-700 text-sm font-normal md:text-base leading-relaxed max-w-screen mb-8">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod lobortis
           diam, nec bibendum ipsum tincidunt ut. Sed id pulvinar quam, et euismod ipsum.
           Nulla ut fermentum ante. Ut vitae lacus fringilla urna viverra rhoncus. Fusce
@@ -51,7 +51,7 @@ const WhoWeAre = () => {
 
           {/* Right-side Text */}
           <div>
-            <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+            <p className="text-gray-700 text-sm font-normal md:text-base leading-relaxed">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod
               lobortis diam, nec bibendum ipsum tincidunt ut. Sed id pulvinar quam, et
               euismod ipsum. Nulla ut fermentum ante. Ut vitae lacus fringilla urna
@@ -63,7 +63,7 @@ const WhoWeAre = () => {
 
         {/* Know More Button */}
         <div className="mt-10 flex justify-center">
-          <button className="px-6 py-2 text-sm border border-blue-500 text-blue-600 hover:bg-blue-50 transition rounded">
+          <button className="px-10 py-2 text-sm border border-blue-500 text-blue-600 hover:bg-blue-50 transition rounded">
             Know More...
           </button>
         </div>
