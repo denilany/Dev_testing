@@ -42,7 +42,7 @@ export default function WhoWeAre() {
             <img
               src="/static/images/strokes.svg" 
               alt="Strokes background"
-              className="absolute xl:-left-[30%] xl:max-w-1/9 max-h-1/2 xl:top-20  xl:mb-20 z-0"
+              className="absolute xl:-left-[30%] xl:h-[420px] xl:w-[450px] xl:-top-25 z-0"
             />
           </div>
 
