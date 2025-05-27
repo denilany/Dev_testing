@@ -96,14 +96,14 @@ const HiringModel = () => {
             <img
               src="/static/images/arrows.svg"
               alt="Chevron Top Left"
-              className="absolute top-4 left-4 w-5 md:w-6 z-30"
+              className="absolute top-4 left-4 w-5 md:w-15 z-30"
             />
 
             {/* Bottom Right Chevron */}
             <img
               src="/static/images/arrows.svg"
               alt="Chevron Bottom Right"
-              className="absolute bottom-4 right-4 w-5 md:w-6 z-30"
+              className="absolute bottom-4 right-4 w-5 md:w-15 z-30"
             />
           </div>
         </div>
