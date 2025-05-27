@@ -26,6 +26,7 @@
     --text-mobile-h2: 13px;    /* 13px */
     
     /* Body Text */
+    --text-body-xxl: 36px;
     --text-body-xl: 28px;   /* 28px */
     --text-body-l: 24px;
     --text-body-m: 18px;   /* 18px */
@@ -58,6 +59,8 @@
     --color-primary-400: #005AED;
     --color-primary-500: #0052CC;  /* Primary brand color */
     --color-primary-600: #2B5290;
+    --color-primary-700: #000000;
+    
     
     /* Color Palette - Informational */
     --color-error: #EA191D;
