@@ -3,6 +3,7 @@ import Hero from './components/Hero.jsx';
 import FeaturedProfiles from './components/FeaturedProfiles.jsx';
 import Newsletter from './components/Newsletter.jsx';
 import UniqueTalentSection from './components/UniqueTalent.jsx';
+import WhatsMoreSection from './components/Whatsmore.jsx';
 
 
 const sampleTalents = [
@@ -57,6 +58,7 @@ export default function Index() {
     return (
       <>
         {/* <Hero /> */}
+        <WhatsMoreSection/>
         <UniqueTalentSection/>
         <FeaturedProfiles talents={sampleTalents} />
         <Newsletter />
