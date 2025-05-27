@@ -1,69 +1,75 @@
-// File: components/WhoWeAre.jsx
-import React from 'react';
+import React from "react";
 
-export default function WhoWeAre() {
+const WhoWeAre = () => {
   return (
-<section className="bg-[#F7F9FC] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-12 md:py-20 lg:py-24">
-    <div className="max-w-screen-ultra-large mx-[3%]">        
-           <img
-              src="/static/images/zigzag.svg" 
-              alt="icon"
-              className="absolute xl:-left-20 xl:ml-20"
-            />
-        {/* Header */}
-        <div className="mb-8">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-[60px] xl:leading-[100%] font-bold text-center">
-            <span className="text-blue-600">WHO</span> WE ARE
-          </h2>
-          <p className="mt-4 text-gray-700 text-sm md:text-base  xl:text-2xl font-normal xl:leading-[120%]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod lobortis diam, nec bibendum ipsum tincidunt ut.
-            Sed id pulvinar quam, et euismod ipsum. Nulla ut fermentum ante. Ut vitae lacus fringilla urna viverra rhoncus. Fusce
-            elit felis, aliquam quis consectetur sed, fermentum a justo.
-          </p>
-        </div>
+    <section className="relative bg-white px-6 py-12 md:py-20 lg:py-24 overflow-hidden">
+      {/* Background Strokes - bottom left */}
+      <img
+        src="/static/images/strokes.svg"
+        alt="Strokes Background"
+        className="absolute left-0 bottom-0 w-40 md:w-64 lg:w-80 opacity-80 pointer-events-none"
+      />
 
-        {/* Content */}
-        <div className="mt-12 flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
-          {/* Image with SVG decoration */}
-          <div className="relative w-1/2 h-1/3 ">
-            <img
-              src="/static/images/triangle.svg" 
-              alt="icon"
-              className="absolute xl:-right-50  xl:top-40"
-            />
+      {/* Zigzag - top left */}
+      <img
+        src="/static/images/zigzag.svg"
+        alt="Zigzag"
+        className="absolute top-6 left-6 w-10 md:w-14 lg:w-20 pointer-events-none"
+      />
 
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Section Title */}
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          <span className="text-blue-600">WHO</span> WE ARE
+        </h2>
+
+        {/* Intro Text */}
+        <p className="text-gray-700 text-sm md:text-base leading-relaxed max-w-3xl mb-8">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod lobortis
+          diam, nec bibendum ipsum tincidunt ut. Sed id pulvinar quam, et euismod ipsum.
+          Nulla ut fermentum ante. Ut vitae lacus fringilla urna viverra rhoncus. Fusce
+          elit felis, aliquam quis consectetur sed, fermentum a justo.
+        </p>
+
+        {/* Content Row */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          {/* Image with Triangle Decor */}
+          <div className="relative">
             <img
-              src="/static/images/who_we_are.jpg" 
+              src="/static/images/who_we_are.jpg"
               alt="Team"
-              className="relative rounded-md shadow-lg object-cover xl:ml-18 z-10"
+              className="rounded-lg shadow-lg w-full object-cover"
             />
 
-             {/* Decorative SVG in back-left */}
+            {/* Triangle Decor - top right of image */}
             <img
-              src="/static/images/strokes.svg" 
-              alt="Strokes background"
-              className="absolute xl:-left-[30%] xl:h-[420px] xl:w-[450px] xl:-top-25 z-0"
+              src="/static/images/triangle.svg"
+              alt="Triangle Decoration"
+              className="absolute -top-4 -right-4 w-8 md:w-10 lg:w-12"
             />
           </div>
 
-          {/* Text content */}
-          <div className="w-full md:w-1/2 text-left">
-            <p className="text-gray-700 text-sm md:text-base mb-4 xl:mx-18 xl:text-2xl font-normal xl:leading-[120%]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod lobortis diam, nec bibendum ipsum tincidunt ut.
-              Sed id pulvinar quam, et euismod ipsum. Nulla ut fermentum ante. Ut vitae lacus fringilla urna viverra rhoncus. Fusce
-              elit felis, aliquam quis consectetur sed, fermentum a justo.
+          {/* Right-side Text */}
+          <div>
+            <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod
+              lobortis diam, nec bibendum ipsum tincidunt ut. Sed id pulvinar quam, et
+              euismod ipsum. Nulla ut fermentum ante. Ut vitae lacus fringilla urna
+              viverra rhoncus. Fusce elit felis, aliquam quis consectetur sed, fermentum
+              a justo.
             </p>
-
           </div>
-          
         </div>
-        {/* Button */}
-            <div className="flex justify-center mt-20">
-            <button className="mt-4 px-6 py-2 border border-blue-600 text-blue-600 font-medium rounded-full hover:bg-blue-600 hover:text-white transition duration-300">
-                Know More...
-              </button>
-            </div>
+
+        {/* Know More Button */}
+        <div className="mt-10 flex justify-center">
+          <button className="px-6 py-2 text-sm border border-blue-500 text-blue-600 hover:bg-blue-50 transition rounded">
+            Know More...
+          </button>
+        </div>
       </div>
     </section>
   );
-}
+};
+
+export default WhoWeAre;
