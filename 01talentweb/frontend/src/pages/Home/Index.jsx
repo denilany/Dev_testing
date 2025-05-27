@@ -7,6 +7,8 @@ import FeaturedProfiles from './components/FeaturedProfiles.jsx';
 import Newsletter from './components/Newsletter.jsx';
 import UniqueTalentSection from './components/UniqueTalent.jsx';
 import WhoWeAre from '../../components/WhoWeAre.jsx';
+import HiringModel from '../../components/HiringModel.jsx';
+
 
 
 const sampleTalents = [
@@ -71,6 +73,7 @@ export default function Index() {
         <Stats />
         <CompanyLogos />
         <WhoWeAre />
+        <HiringModel />
         <UniqueTalentSection/>
         <FeaturedProfiles talents={sampleTalents} />
         <Newsletter />
