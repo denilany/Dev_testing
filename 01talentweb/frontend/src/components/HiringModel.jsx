@@ -44,68 +44,53 @@ const HiringModel = () => {
 
   return (
     <section className="bg-white w-full py-12 px-4 md:px-16 relative overflow-visible">
-      {/* Title */}
       <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
         WHY <span className="text-blue-600">OUR HIRING MODEL</span> WORKS FOR YOU
       </h2>
 
-      {/* Section wrapper with enough scroll space */}
-      <div style={{ height: `${imageHeight * features.length}px` }} className="relative">
-        {/* Sticky block containing scrollable left and static right */}
+      <div className="grid md:grid-cols-2 max-w-7xl mx-auto gap-10">
+        {/* Left Scrollable Column */}
+        <div className="space-y-10">
+          {features.map((item, i) => (
+            <div key={i}>
+              <h3 className="text-lg font-semibold">{item.title}</h3>
+              <p className="text-sm text-gray-700 mt-2">{item.text}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Right Static Image */}
         <div
-          className="sticky top-0 grid md:grid-cols-2 max-w-7xl mx-auto gap-10 bg-white"
-          style={{ height: `${imageHeight}px` }}
+          ref={imageRef}
+          className="sticky top-0 self-start"
         >
-          {/* Left Scrollable Column */}
-          <div
-            className="pr-4 space-y-10 pb-6 overflow-y-scroll"
-            style={{
-              height: `${imageHeight}px`,
-              maxHeight: "80vh",
-              maskImage: "linear-gradient(to bottom, black 90%, transparent)"
-            }}
-          >
-            {features.map((item, i) => (
-              <div key={i}>
-                <h3 className="text-lg font-semibold">{item.title}</h3>
-                <p className="text-sm text-gray-700 mt-2">{item.text}</p>
-              </div>
-            ))}
-          </div>
+          {/* Background Brush */}
+          <img
+            src="/static/images/brush-mask.png"
+            alt="Brush"
+            className="absolute z-10 top-0 left-0 w-full h-full object-contain pointer-events-none"
+          />
 
-          {/* Right Static Image */}
-          <div
-            ref={imageRef}
-            className="relative flex items-center justify-center min-h-[500px] h-full"
-          >
-            {/* Background Brush */}
-            <img
-              src="/static/images/brush-mask.png"
-              alt="Brush"
-              className="absolute z-10 top-0 left-0 w-full h-full object-contain pointer-events-none"
-            />
+          {/* Main Image */}
+          <img
+            src="/static/images/hiring_model_image.png"
+            alt="Hiring Visual"
+            className="relative z-20 w-full max-w-md rounded shadow-md object-cover"
+          />
 
-            {/* Main Image */}
-            <img
-              src="/static/images/hiring_model_image.png"
-              alt="Hiring Visual"
-              className="relative z-20 w-full max-w-md rounded shadow-md object-cover"
-            />
+          {/* Top Left Chevron */}
+          <img
+            src="/static/images/arrows.svg"
+            alt="Chevron Top Left"
+            className="absolute top-4 left-4 w-5 md:w-15 z-30"
+          />
 
-            {/* Top Left Chevron */}
-            <img
-              src="/static/images/arrows.svg"
-              alt="Chevron Top Left"
-              className="absolute top-4 left-4 w-5 md:w-15 z-30"
-            />
-
-            {/* Bottom Right Chevron */}
-            <img
-              src="/static/images/arrows.svg"
-              alt="Chevron Bottom Right"
-              className="absolute bottom-4 right-4 w-5 md:w-15 z-30"
-            />
-          </div>
+          {/* Bottom Right Chevron */}
+          <img
+            src="/static/images/arrows.svg"
+            alt="Chevron Bottom Right"
+            className="absolute bottom-4 right-4 w-5 md:w-15 z-30"
+          />
         </div>
       </div>
 
