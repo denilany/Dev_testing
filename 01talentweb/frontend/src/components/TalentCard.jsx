@@ -6,7 +6,7 @@ const TalentCard = ({ talent }) => {
   const skills = talent.skills || ['Golang', 'Docker', 'RESTful APIs', 'Database Design'];
 
   return (
-    <div className="bg-[--color-primary-50] shadow-md px-12 py-16 text-center mx-auto w-[488px] h-[750px] rounded-[60.8px] transition-all hover:shadow-lg hover:-translate-y-1 flex flex-col items-center">
+    <div className="bg-[--color-primary-50] shadow-md px-12 py-16 text-center w-[488px] h-[750px] rounded-[60.8px] transition-all hover:shadow-lg hover:-translate-y-1 flex flex-col items-center">
       {/* Profile Image */}
       <div className="relative w-[228px] h-[228px] mx-auto mb-4">
         <div className="relative w-[228px] h-[228px] mx-auto mb-4 rounded-full overflow-hidden border-[2px] border-black">

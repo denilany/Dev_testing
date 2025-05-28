@@ -47,35 +47,35 @@ const FeaturedProfiles = ({ talents = [] }) => {
     
     switch(position) {
       case -1: // Left card
-        return `${baseClasses} hidden md:block absolute left-0 top-1/2 -translate-y-1/2 z-10 transform md:scale-[0.8] md:opacity-60 md:translate-x-[80%] hover:md:opacity-80 hover:md:scale-[0.85]`;
+        return `${baseClasses} hidden md:block absolute left-0 top-1/2 -translate-y-1/2 z-10 transform md:scale-[0.8] md:opacity-60 md:translate-x-[75%] hover:md:opacity-80 hover:md:scale-[0.85]`;
       case 0: // Center card
-        return `${baseClasses} relative z-20 max-w-xs sm:max-w-sm md:max-w-md -translate-x-5 md:translate-x-0`;
+        return `${baseClasses} relative z-20 mx-auto`;
       case 1: // Right card
-        return `${baseClasses} hidden md:block absolute right-0 top-1/2 -translate-y-1/2 z-10 transform md:scale-[0.8] md:opacity-60 md:-translate-x-[80%] hover:md:opacity-80 hover:md:scale-[0.85]`;
+        return `${baseClasses} hidden md:block absolute right-0 top-1/2 -translate-y-1/2 z-10 transform md:scale-[0.8] md:opacity-60 md:-translate-x-[75%] hover:md:opacity-80 hover:md:scale-[0.85]`;
       default:
         return baseClasses;
     }
   };
 
-  if (!talents || talents.length === 0) {
-    return (
-      <section className="w-full bg-white">
-        <Container className="py-16 md:py-20">
-          <div className="text-center mb-100 md:mb-16 mx-auto">
-            <h2 className="text-4xl sm:text-5xl md:text-h1 font-bold text-[var(--color-text-heading)] mb-4 md:mb-6">
-              Featured <span className="text-[--color-primary-500]">Profiles</span>
-            </h2>
-            <p className="text-lg sm:text-xl md:text-[26px] leading-relaxed md:leading-[1.4] font-normal text-[var(--color-text-muted)]">
-              Our approach is personal. Each apprentice has a unique relationship with us from the start allowing us to fully vouch for their expertise and work ethic. Come meet them, hire them, see how good they are.
-            </p>
-          </div>
-          <div className="relative mt-12 md:mt-16 bg-[var(--color-primary-0)] pt-10 pb-12 md:pt-16 md:pb-20 rounded-xl md:rounded-2xl text-center min-h-[200px] flex items-center justify-center">
-            <p className="text-lg text-[var(--color-text-muted)]">No featured profiles available at the moment.</p>
-          </div>
-        </Container>
-      </section>
-    );
-  }
+  // if (!talents || talents.length === 0) {
+  //   return (
+  //     <section className="w-full bg-white">
+  //       <Container className="py-16 md:py-20">
+  //         <div className="text-center mb-100 md:mb-16 mx-auto">
+  //           <h2 className="text-4xl sm:text-5xl md:text-h1 font-bold text-[var(--color-text-heading)] mb-4 md:mb-6">
+  //             Featured <span className="text-[--color-primary-500]">Profiles</span>
+  //           </h2>
+  //           <p className="text-lg sm:text-xl md:text-[26px] leading-relaxed md:leading-[1.4] font-normal text-[var(--color-text-muted)]">
+  //             Our approach is personal. Each apprentice has a unique relationship with us from the start allowing us to fully vouch for their expertise and work ethic. Come meet them, hire them, see how good they are.
+  //           </p>
+  //         </div>
+  //         <div className="relative mt-12 md:mt-16 bg-[var(--color-primary-0)] pt-10 pb-12 md:pt-16 md:pb-20 rounded-xl md:rounded-2xl text-center min-h-[200px] flex items-center justify-center">
+  //           <p className="text-lg text-[var(--color-text-muted)]">No featured profiles available at the moment.</p>
+  //         </div>
+  //       </Container>
+  //     </section>
+  //   );
+  // }
 
   return (
     <section className="w-full bg-white">
@@ -92,10 +92,10 @@ const FeaturedProfiles = ({ talents = [] }) => {
         {/* Carousel Section with Blue Background */}
         <div className="relative bg-[var(--color-primary-0)] py-10 md:py-0 rounded-xl md:rounded-2xl">
           {/* Carousel Items Container */}
-          <div className="relative flex items-center justify-center min-h-[450px] md:min-h-[500px]">
+          <div className="relative flex items-center justify-center min-h-[450px] md:min-h-[500px] px-4 md:px-8">
             {visibleCards.map(({ talent, position, id }) => (
-              <div 
-                key={`${id}-${position}`} 
+              <div
+                key={`${id}-${position}`}
                 className={getCardClasses(position)}
               >
                 <TalentCard talent={talent} />
@@ -111,7 +111,7 @@ const FeaturedProfiles = ({ talents = [] }) => {
             style={{
               width: '100px',
               height: '100px',
-              transform: 'rotate(180deg)'
+              transform: 'translateY(-50%) rotate(180deg)'
             }}
           >
             <svg 
