@@ -86,7 +86,7 @@ const HiringModel = () => {
       
       className="grid md:grid-cols-2 max-w-screen mx-auto gap-10 ">
         {/* Left Scrollable Column */}
-        <div className="space-y-10 " >
+        <div className="space-y-10" >
           {features.map((item, i) => (
             <div key={i}>
               <h3 className="text-lg font-semibold ultra-large:text-h3">{item.title}</h3>
