@@ -43,35 +43,27 @@ const FeaturedProfiles = ({ talents = [] }) => {
 
   // Calculate the transform offset for the carousel container
   const getTransformOffset = () => {
-    const cardWidth = 33.333; 
-    const offset = (currentIndex + 2 - 1) * cardWidth;
-    return `translateX(-${offset}%)`;
+    const cardWidth = 100 / 3; // 3 cards visible
+    const offset = (currentIndex + 2) * cardWidth;
+    return `translateX(calc(-${offset}% + 46.333%))`;
   };
+  
   // Get card classes based on its position relative to center
-  const getCardClasses = (index, totalCards) => {
-    const centerIndex = currentIndex + 2; // Adjust for the 2 prepended items
+  const getCardClasses = (index) => {
+    const centerIndex = currentIndex + 2; // Adjust for extended array
     const position = index - centerIndex;
-    
-    const baseClasses = 'flex-shrink-0 w-1/3 px-2 flex justify-center items-center transition-all duration-600 ease-out'; // Added px-2 for better spacing
-    
-    if (position === -2) {
-      // Far left (partially visible)
-      return `${baseClasses} opacity-20 scale-50`;
-    } else if (position === -1) {
-      // Left card
-      return `${baseClasses} opacity-60 scale-75`;
-    } else if (position === 0) {
-      // Center card
-      return `${baseClasses} opacity-100 scale-100 z-10`;
-    } else if (position === 1) {
-      // Right card
-      return `${baseClasses} opacity-60 scale-75`;
-    } else if (position === 2) {
-      // Far right (partially visible)
-      return `${baseClasses} opacity-20 scale-50`;
-    } else {
-      // Hidden cards
-      return `${baseClasses} opacity-0 scale-50`;
+  
+    const base = 'flex-shrink-0 w-1/3 px-4 flex justify-center items-center transition-all duration-500 ease-out';
+  
+    switch (position) {
+      case -1:
+        return `${base} opacity-70 scale-90 -mr-[10rem] z-0`; // left card
+      case 0:
+        return `${base} opacity-100 scale-100 z-10`; // center card
+      case 1:
+        return `${base} opacity-70 scale-90 -ml-[10rem] z-0`; // right card
+      default:
+        return `${base} opacity-0 scale-75 z-0 pointer-events-none`; // hidden
     }
   };
 
@@ -90,15 +82,15 @@ const FeaturedProfiles = ({ talents = [] }) => {
         {/* Carousel Section with Blue Background */}
         <div className="relative bg-[var(--color-primary-0)] py-10 md:py-0 rounded-xl md:rounded-2xl overflow-hidden">
           {/* Carousel Items Container */}
-          <div className="relative px-4 md:px-8 min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px]">
-            <div 
-              className="flex transition-transform duration-600 ease-out"
-              style={{ transform: getTransformOffset()}}
+          <div className="relative min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px] mx-auto w-[70%] overflow-hidden">
+            <div
+              className="carousel-track flex duration-600 ease-out"
+              style={{ transform: getTransformOffset() }}
             >
               {extendedTalents.map((talent, index) => (
                 <div
                   key={`${talent.id}-${index}`}
-                  className={getCardClasses(index, extendedTalents.length)}
+                  className={getCardClasses(index)}
                 >
                   <TalentCard talent={talent} />
                 </div>
