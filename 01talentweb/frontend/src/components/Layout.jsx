@@ -11,12 +11,12 @@ export const Container = ({ children, className = "" }) => (
 const Layout = ({children}) => (
 <>
 <main className="w-full h-screen overflow-hidden overflow-y-scroll">
-       <nav className="border border-gray-400 mb-2 flex justify-center items-center">
+       {/* <nav className="border border-gray-400 mb-2 flex justify-center items-center">
               <ul className="flex gap-2">
                      <li><Link href="/">Home</Link></li>
                      <li><Link href="/contact">Contact</Link></li>
               </ul>
-       </nav>
+       </nav> */}
        { children }
        <Footer />
 </main>
