@@ -24,6 +24,7 @@ module.exports = {
         'h2': 'var(--text-h2)',
         'mobile-h1': 'var(--text-mobile-h1)',
         'mobile-h2': 'var(--text-mobile-h2)',
+        'body-xxl': 'var(--text-body-xxl)',
         'body-xl': 'var(--text-body-xl)',
         'body-l': 'var(--text-body-l)',
         'body-m': 'var(--text-body-m)',
