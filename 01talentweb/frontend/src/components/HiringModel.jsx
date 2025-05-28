@@ -29,17 +29,22 @@ const HiringModel = () => {
       text: "You can easily hire highly trained and diverse software engineers for full-time, short-term, or project basis."
     },
     {
-      title: "Rapid Onboarding",
-      text: "Skip lengthy recruitment processes and get engineers contributing within days."
+      title: "Low Turnover Risk",
+      text: "You will avoid employee turnover"
     },
     {
-      title: "Global Reach",
-      text: "Hire exceptional developers across borders without infrastructure limitations."
+      title: "Curriculum Integration",
+      text: "You will be able to integrate your business needs to our curriculum"
     },
     {
-      title: "Scalable Teams",
-      text: "Easily scale up or down based on your changing product needs."
+      title: "Cost Savings",
+      text: "You will save tens of thousands of shillings in hiring, training and retaining talent."
+    },
+    {
+      title: "Agile and Adaptive Talent",
+      text: "Agile talent - Our tech talent can adapt to any technology/language your company"
     }
+    
   ];
 
   return (
@@ -48,7 +53,10 @@ const HiringModel = () => {
         WHY <span className="text-blue-600">OUR HIRING MODEL</span> WORKS FOR YOU
       </h2>
 
-      <div className="grid md:grid-cols-2 max-w-7xl mx-auto gap-10">
+      <div 
+                ref={imageRef}
+      
+      className="grid md:grid-cols-2 max-w-7xl mx-auto gap-10 ">
         {/* Left Scrollable Column */}
         <div className="space-y-10">
           {features.map((item, i) => (
@@ -61,7 +69,7 @@ const HiringModel = () => {
 
         {/* Right Static Image */}
         <div
-          ref={imageRef}
+          // ref={imageRef}
           className="sticky top-0 self-start"
         >
           {/* Background Brush */}
