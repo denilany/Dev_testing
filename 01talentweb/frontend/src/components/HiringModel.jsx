@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Container } from './Layout.jsx';
+
 
 const HiringModel = () => {
   const imageRef = useRef(null);
@@ -49,19 +51,20 @@ const HiringModel = () => {
 
   return (
     <section className="bg-white w-full py-12 px-4 md:px-16 relative overflow-visible">
-      <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
+      <Container>
+      <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 ultra-large:text-h2 ultra-large:pb-20">
         WHY <span className="text-blue-600">OUR HIRING MODEL</span> WORKS FOR YOU
       </h2>
 
       <div 
       
-      className="grid md:grid-cols-2 max-w-7xl mx-auto gap-10 ">
+      className="grid md:grid-cols-2 max-w-screen mx-auto gap-10 ">
         {/* Left Scrollable Column */}
         <div className="space-y-10">
           {features.map((item, i) => (
             <div key={i}>
-              <h3 className="text-lg font-semibold">{item.title}</h3>
-              <p className="text-sm text-gray-700 mt-2">{item.text}</p>
+              <h3 className="text-lg font-semibold ultra-large:text-h3">{item.title}</h3>
+              <p className="text-sm text-gray-700 mt-2 ultra-large:text-body-m">{item.text}</p>
             </div>
           ))}
         </div>
@@ -71,18 +74,18 @@ const HiringModel = () => {
         ref={imageRef} className="sticky top-0 self-start"
         
         >
-          {/* Background Brush */}
+          {/* Brush mask */}
           <img
             src="/static/images/brush-mask.png"
             alt="Brush"
-            className="absolute z-10 top-0 left-0 w-full h-full object-contain pointer-events-none"
+            className="absolute z-20 top-0 left-0 w-full ultra-large:-top-8 object-contain pointer-events-none"
           />
 
           {/* Main Image */}
           <img
             src="/static/images/hiring_model_image.png"
             alt="Hiring Visual"
-            className="relative z-20 w-full max-w-md rounded shadow-md object-cover"
+            className="relative z-10 w-full top-0 left-0 w-full h-full rounded shadow-md object-cover"
           />
 
           {/* Top Left Chevron */}
@@ -105,8 +108,10 @@ const HiringModel = () => {
       <div className="flex justify-center mt-12">
         <img src="/static/images/dots.svg" alt="dots" className="w-20" />
       </div>
+    </Container>
     </section>
   );
 };
 
 export default HiringModel;
+
