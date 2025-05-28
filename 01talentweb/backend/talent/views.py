@@ -47,7 +47,6 @@ def featured_developers(request):
                 dev.save()
         
         # Get the next batch of featured developers
-        # Get the highest featured order that has been featured
         max_featured_order = all_devs.filter(featured_order__isnull=False).order_by('-featured_order').first()
         if max_featured_order:
             current_order = max_featured_order.featured_order
@@ -76,8 +75,18 @@ def featured_developers(request):
             featured_order__isnull=False
         ).order_by('featured_order')[:FEATURED_COUNT]
     
+    # Format the data to match what the frontend expects
+    formatted_devs = []
+    for dev in featured_devs:
+        skills = dev.profile.get('skills', [])
+        formatted_devs.append({
+            'id': str(dev.id),
+            'name': dev.name,
+            'image': f'/images/talents/{dev.name.lower().replace(" ", "_")}.jpg',
+            'skills': skills,
+            'average_rating': dev.profile.get('average_rating', 4.5)
+        })
+    
     return {
-        'featured_developers': list(featured_devs.values(
-            'id', 'email', 'name', 'profile', 'created_at'
-        ))
+        'featured_developers': formatted_devs
     }
