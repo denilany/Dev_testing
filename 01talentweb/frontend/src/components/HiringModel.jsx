@@ -76,15 +76,17 @@ const HiringModel = () => {
   return (
     <section className="bg-white w-full py-12 px-4 md:px-16 relative overflow-visible">
       <Container>
-      <h2 ref={imageRef} className=" sticky top-0 self-start text-2xl md:text-3xl font-bold text-center mb-10 ultra-large:text-h2 ultra-large:pb-20">
+        <div className="sticky top-20 self-start bg-white py-4 z-20">
+      <h2 className=" text-2xl md:text-3xl font-bold text-center mb-10 ultra-large:text-h2 ultra-large:pb-20">
         WHY <span className="text-blue-600">OUR HIRING MODEL</span> WORKS FOR YOU
       </h2>
+        </div>
 
       <div 
       
       className="grid md:grid-cols-2 max-w-screen mx-auto gap-10 ">
         {/* Left Scrollable Column */}
-        <div className="space-y-10 overflow-hidden">
+        <div className="space-y-10 " >
           {features.map((item, i) => (
             <div key={i}>
               <h3 className="text-lg font-semibold ultra-large:text-h3">{item.title}</h3>
@@ -95,8 +97,8 @@ const HiringModel = () => {
 
         {/* Right Static Image */}
         <div 
-        // ref={imageRef} 
-        className="sticky top-0 self-start"
+         ref={imageRef} 
+        className="sticky top-24 self-start z-10"
         
         >
           {/* Brush mask */}
