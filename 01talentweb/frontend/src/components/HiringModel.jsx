@@ -54,7 +54,6 @@ const HiringModel = () => {
       </h2>
 
       <div 
-                ref={imageRef}
       
       className="grid md:grid-cols-2 max-w-7xl mx-auto gap-10 ">
         {/* Left Scrollable Column */}
@@ -68,9 +67,9 @@ const HiringModel = () => {
         </div>
 
         {/* Right Static Image */}
-        <div
-          // ref={imageRef}
-          className="sticky top-0 self-start"
+        <div 
+        ref={imageRef} className="sticky top-0 self-start"
+        
         >
           {/* Background Brush */}
           <img
