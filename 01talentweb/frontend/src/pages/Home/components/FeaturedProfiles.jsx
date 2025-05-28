@@ -47,11 +47,27 @@ const FeaturedProfiles = ({ talents = [] }) => {
     
     switch(position) {
       case -1: // Left card
-        return `${baseClasses} hidden md:block absolute left-0 top-1/2 -translate-y-1/2 z-10 transform md:scale-[0.8] md:opacity-60 md:translate-x-[75%] hover:md:opacity-80 hover:md:scale-[0.85]`;
+        return `${baseClasses} absolute left-0 top-1/2 -translate-y-1/2 z-10 transform
+                scale-[0.3] opacity-5 translate-x-[5%]
+                xs:scale-[0.4] xs:opacity-10 xs:translate-x-[10%]
+                sm:scale-[0.5] sm:opacity-20 sm:translate-x-[20%]
+                md:scale-[0.6] md:opacity-30 md:translate-x-[30%]
+                lg:scale-[0.7] lg:opacity-45 lg:translate-x-[45%]
+                xl:scale-[0.75] xl:opacity-55 xl:translate-x-[60%]
+                2xl:scale-[0.8] 2xl:opacity-65 2xl:translate-x-[75%]
+                hover:opacity-80 hover:scale-[0.85]`;
       case 0: // Center card
         return `${baseClasses} relative z-20 mx-auto`;
       case 1: // Right card
-        return `${baseClasses} hidden md:block absolute right-0 top-1/2 -translate-y-1/2 z-10 transform md:scale-[0.8] md:opacity-60 md:-translate-x-[75%] hover:md:opacity-80 hover:md:scale-[0.85]`;
+        return `${baseClasses} absolute right-0 top-1/2 -translate-y-1/2 z-10 transform
+                scale-[0.3] opacity-5 -translate-x-[5%]
+                xs:scale-[0.4] xs:opacity-10 xs:-translate-x-[10%]
+                sm:scale-[0.5] sm:opacity-20 sm:-translate-x-[20%]
+                md:scale-[0.6] md:opacity-30 md:-translate-x-[30%]
+                lg:scale-[0.7] lg:opacity-45 lg:-translate-x-[45%]
+                xl:scale-[0.75] xl:opacity-55 xl:-translate-x-[60%]
+                2xl:scale-[0.8] 2xl:opacity-65 2xl:-translate-x-[75%]
+                hover:opacity-80 hover:scale-[0.85]`;
       default:
         return baseClasses;
     }
@@ -92,7 +108,8 @@ const FeaturedProfiles = ({ talents = [] }) => {
         {/* Carousel Section with Blue Background */}
         <div className="relative bg-[var(--color-primary-0)] py-10 md:py-0 rounded-xl md:rounded-2xl">
           {/* Carousel Items Container */}
-          <div className="relative flex items-center justify-center min-h-[450px] md:min-h-[500px] px-4 md:px-8">
+          <div className="relative flex items-center justify-center px-4 md:px-8
+                          min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px]">
             {visibleCards.map(({ talent, position, id }) => (
               <div
                 key={`${id}-${position}`}
@@ -106,65 +123,84 @@ const FeaturedProfiles = ({ talents = [] }) => {
           {/* Navigation Arrows */}
           <button
             onClick={handlePrev}
-            className="absolute left-8 top-1/2 -translate-y-1/2 z-30 bg-white rounded-full border border-gray-200 hover:bg-gray-50 transition-all duration-300"
+            className="absolute top-1/2 -translate-y-1/2 z-30 bg-white rounded-full border border-gray-200 hover:bg-gray-50 transition-all duration-300
+                       w-[50px] h-[50px] left-2
+                       xs:w-[60px] xs:h-[60px] xs:left-3
+                       sm:w-[70px] sm:h-[70px] sm:left-4
+                       md:w-[80px] md:h-[80px] md:left-6
+                       lg:w-[90px] lg:h-[90px] lg:left-7
+                       xl:w-[100px] xl:h-[100px] xl:left-8
+                       2xl:w-[100px] 2xl:h-[100px] 2xl:left-8"
             aria-label="Previous profile"
             style={{
-              width: '100px',
-              height: '100px',
               transform: 'translateY(-50%) rotate(180deg)'
             }}
           >
-            <svg 
-              className="w-6 h-6 mx-auto text-[--color-primary-500]" 
-              fill="none" 
-              stroke="currentColor" 
+            <svg
+              className="mx-auto text-[--color-primary-500]
+                         w-[25px] h-[25px]
+                         xs:w-[30px] xs:h-[30px]
+                         sm:w-[35px] sm:h-[35px]
+                         md:w-[40px] md:h-[40px]
+                         lg:w-[45px] lg:h-[45px]
+                         xl:w-[50px] xl:h-[50px]
+                         2xl:w-[50px] 2xl:h-[50px]"
+              fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
               aria-hidden="true"
-              style={{
-                width: '100px',
-                height: '100px'
-              }}
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 5l7 7-7 7" />
             </svg>
           </button>
           <button
             onClick={handleNext}
-            className="absolute right-8 top-1/2 -translate-y-1/2 z-30 bg-white rounded-full border border-gray-200 hover:bg-gray-50 transition-all duration-300"
+            className="absolute top-1/2 -translate-y-1/2 z-30 bg-white rounded-full border border-gray-200 hover:bg-gray-50 transition-all duration-300
+                       w-[50px] h-[50px] right-2
+                       xs:w-[60px] xs:h-[60px] xs:right-3
+                       sm:w-[70px] sm:h-[70px] sm:right-4
+                       md:w-[80px] md:h-[80px] md:right-6
+                       lg:w-[90px] lg:h-[90px] lg:right-7
+                       xl:w-[100px] xl:h-[100px] xl:right-8
+                       2xl:w-[100px] 2xl:h-[100px] 2xl:right-8"
             aria-label="Next profile"
             style={{
-              width: '100.68px',
-              height: '100.68px',
               transform: 'translateY(-50%)'
             }}
           >
-            <svg 
-              className="w-6 h-6 mx-auto text-[--color-primary-500]" 
-              fill="none" 
-              stroke="currentColor" 
+            <svg
+              className="mx-auto text-[--color-primary-500]
+                         w-[25px] h-[25px]
+                         xs:w-[30px] xs:h-[30px]
+                         sm:w-[35px] sm:h-[35px]
+                         md:w-[40px] md:h-[40px]
+                         lg:w-[45px] lg:h-[45px]
+                         xl:w-[50px] xl:h-[50px]
+                         2xl:w-[50px] 2xl:h-[50px]"
+              fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
               aria-hidden="true"
-              style={{
-                width: '100px',
-                height: '100px'
-              }}
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 5l7 7-7 7" />
             </svg>
           </button>
 
           {/* CTA Button */}
-          <div className="text-center mt-10 md:mt-16">
+          <div className="flex justify-center mt-6 xs:mt-8 sm:mt-10 md:mt-12 lg:mt-14 xl:mt-16 2xl:mt-16">
             <Link
               href="/talent"
-              className="inline-flex items-center justify-center w-[377.24px] h-[80.82px] border-[2.76px] border-[var(--color-primary-300)] rounded-[8.29px] text-[var(--color-primary-300)] text-body-l font-medium hover:bg-[--color-primary-50] transition-colors"
-              style={{
-                padding: '20.72px 82.87px',
-                gap: '13.81px'
-              }}
+              className="flex items-center justify-center border-[var(--color-primary-300)] text-[var(--color-primary-300)] font-medium hover:bg-[--color-primary-50] transition-colors whitespace-nowrap
+                         w-full max-w-[280px] h-10 border-[1.5px] rounded-md text-sm gap-2
+                         xs:max-w-[300px] xs:h-11 xs:border-[1.8px] xs:rounded-md xs:text-base xs:gap-2
+                         sm:max-w-[320px] sm:h-12 sm:border-[2px] sm:rounded-lg sm:text-lg sm:gap-2
+                         md:max-w-[350px] md:h-14 md:border-[2.2px] md:rounded-lg md:text-xl md:gap-3
+                         lg:max-w-[370px] lg:h-16 lg:border-[2.4px] lg:rounded-lg lg:text-2xl lg:gap-3
+                         xl:max-w-[377px] xl:h-[75px] xl:border-[2.6px] xl:rounded-[8px] xl:text-body-l xl:gap-[13px]
+                         2xl:max-w-[377px] 2xl:h-[80.82px] 2xl:border-[2.76px] 2xl:rounded-[8.29px] 2xl:text-body-l 2xl:gap-[13.81px]"
             >
               View All Talents
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 xs:w-4 xs:h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-6 xl:h-6 2xl:w-6 2xl:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
               </svg>
             </Link>
