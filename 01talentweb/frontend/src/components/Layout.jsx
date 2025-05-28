@@ -1,4 +1,5 @@
 import { Link } from "@inertiajs/react";
+import Navbar from "@/components/Navbar.jsx";
 import Footer from "@/components/Footer.jsx";
 
 // Create a container component for consistent spacing
@@ -18,8 +19,11 @@ const Layout = ({children}) => (
               </ul>
        </nav> */}
        { children }
+              <Navbar />
+
        <Footer />
 </main>
+
 </>
 )
 

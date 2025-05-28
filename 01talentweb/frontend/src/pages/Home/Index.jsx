@@ -69,7 +69,7 @@ export default function Index() {
     return (
       <>
         {/* <Hero /> */}
-        <Navbar />
+        {/* <Navbar /> */}
         <Hero />
         <Stats />
         <CompanyLogos />
