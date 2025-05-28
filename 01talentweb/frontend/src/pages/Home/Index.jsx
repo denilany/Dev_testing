@@ -6,6 +6,7 @@ import CompanyLogos from '../../components/CompanyLogos.jsx';
 import FeaturedProfiles from './components/FeaturedProfiles.jsx';
 import Newsletter from './components/Newsletter.jsx';
 import UniqueTalentSection from './components/UniqueTalent.jsx';
+import WhatsMoreSection from './components/Whatsmore.jsx';
 
 
 const sampleTalents = [
@@ -64,6 +65,7 @@ export default function Index() {
         <Hero />
         <Stats />
         <CompanyLogos />
+        <WhatsMoreSection/>
         <UniqueTalentSection/>
         <FeaturedProfiles talents={sampleTalents} />
         <Newsletter />

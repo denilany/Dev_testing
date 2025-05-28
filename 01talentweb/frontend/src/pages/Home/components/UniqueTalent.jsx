@@ -4,24 +4,22 @@ import { Link } from '@inertiajs/react';
 import { Container } from '../../../components/Layout.jsx';
 const UniqueTalentSection = () => {
   return (
-    <section className="bg-[#EFF7FF] py-12 md:py-16 lg:py-20">
-      <Container>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center lg:text-left">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-extrabold text-[var(--color-text-heading)] mb-4 md:mb-6 mx-auto lg:mx-0 lg:-ml-16">
-            <div className="inline-block">
+    <section className="bg-[#EFF7FF]">
+      <Container className="py-12 md:py-16 lg:py-20">
+        <div className="mx-auto text-center lg:text-left">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] text-center font-bold text-[var(--color-text-heading)] mb-4 md:mb-6 mx-auto lg:mx-0 lg:-ml-16">
               <span className="whitespace-normal sm:whitespace-nowrap">WHAT MAKES </span>
               <span className="whitespace-normal sm:whitespace-nowrap text-[--color-primary-500]">OUR TALENT</span>
               <span className="whitespace-normal sm:whitespace-nowrap"> UNIQUE</span>
-            </div>
           </h2>
-          <p className="text-gray-700 mb-8 sm:mb-10 md:mb-12 font-sans font-normal text-lg sm:text-xl md:text-2xl lg:text-[26.43px] leading-tight sm:leading-snug md:leading-normal tracking-normal text-center">
+          <p className="text-gray-700 mb-8 sm:mb-10 md:mb-12 font-sans font-normal text-lg sm:text-xl md:text-2xl lg:text-[26.43px] leading-tight sm:leading-snug md:leading-normal tracking-normal">
             Our tech talents are fully adaptable and equipped with hard and soft skills to work in fast-moving tech environments.
             We rigorously select the best tech talent from tens of thousands of applications across Kenya.
           </p>
         </div>
     
       
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start mt-8 md:mt-12">
+      <div className="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start mt-8 md:mt-12">
         {/* LEFT COLUMN */}
         <div className="px-4 sm:px-6 lg:px-0">
           <h4 className="font-medium text-gray-800 mb-6 text-2xl md:text-3xl lg:text-[28.83px] leading-tight tracking-normal font-sans text-center lg:text-left">
