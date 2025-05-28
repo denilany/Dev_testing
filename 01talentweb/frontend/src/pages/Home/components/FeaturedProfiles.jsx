@@ -7,6 +7,7 @@ import './styles/carousel.css';
 
 const FeaturedProfiles = ({ talents = [] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const maxIndex = talents.length > 0 ? talents.length - 1 : 0;
 
@@ -14,84 +15,65 @@ const FeaturedProfiles = ({ talents = [] }) => {
     if (talents.length <= 1) return; // No rotation if 0 or 1 talent
 
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+      handleNext();
     }, 5000);
     return () => clearInterval(interval);
-  }, [maxIndex, talents.length]);
+  }, [talents.length]);
 
   const handlePrev = () => {
-    if (talents.length <= 1) return;
+    if (talents.length <= 1 || isTransitioning) return;
+    setIsTransitioning(true);
     setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
+    setTimeout(() => setIsTransitioning(false), 600);
   };
 
   const handleNext = () => {
-    if (talents.length <= 1) return;
+    if (talents.length <= 1 || isTransitioning) return;
+    setIsTransitioning(true);
     setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+    setTimeout(() => setIsTransitioning(false), 600);
   };
 
-  // Get visible cards with wrap-around support
-  const getCardWithPosition = (offset) => {
-    const index = (currentIndex + offset + talents.length) % talents.length;
-    return { 
-      talent: talents[index], 
-      position: offset,
-      id: talents[index]?.id || `card-${offset}`
-    };
+  // Create extended array for smooth infinite scrolling
+  const extendedTalents = talents.length > 0 ? [
+    ...talents.slice(-2), 
+    ...talents,
+    ...talents.slice(0, 2) 
+  ] : [];
+
+  // Calculate the transform offset for the carousel container
+  const getTransformOffset = () => {
+    const cardWidth = 33.333; 
+    const offset = (currentIndex + 2 - 1) * cardWidth;
+    return `translateX(-${offset}%)`;
   };
-  
-  const visibleCards = [-1, 0, 1].map(getCardWithPosition);
-  
-  // Get the appropriate classes based on card position
-  const getCardClasses = (position) => {
-    const baseClasses = 'transition-all duration-500 ease-out';
+  // Get card classes based on its position relative to center
+  const getCardClasses = (index, totalCards) => {
+    const centerIndex = currentIndex + 2; // Adjust for the 2 prepended items
+    const position = index - centerIndex;
     
-    switch(position) {
-      case -1: // Left card
-        return `${baseClasses} absolute left-0 top-1/2 -translate-y-1/2 z-10 transform
-                scale-[0.3] opacity-5 translate-x-[5%]
-                xs:scale-[0.4] xs:opacity-10 xs:translate-x-[10%]
-                sm:scale-[0.5] sm:opacity-20 sm:translate-x-[20%]
-                md:scale-[0.6] md:opacity-30 md:translate-x-[30%]
-                lg:scale-[0.7] lg:opacity-45 lg:translate-x-[45%]
-                xl:scale-[0.75] xl:opacity-55 xl:translate-x-[60%]
-                2xl:scale-[0.8] 2xl:opacity-65 2xl:translate-x-[75%]
-                hover:opacity-80 hover:scale-[0.85]`;
-      case 0: // Center card
-        return `${baseClasses} relative z-20 mx-auto`;
-      case 1: // Right card
-        return `${baseClasses} absolute right-0 top-1/2 -translate-y-1/2 z-10 transform
-                scale-[0.3] opacity-5 -translate-x-[5%]
-                xs:scale-[0.4] xs:opacity-10 xs:-translate-x-[10%]
-                sm:scale-[0.5] sm:opacity-20 sm:-translate-x-[20%]
-                md:scale-[0.6] md:opacity-30 md:-translate-x-[30%]
-                lg:scale-[0.7] lg:opacity-45 lg:-translate-x-[45%]
-                xl:scale-[0.75] xl:opacity-55 xl:-translate-x-[60%]
-                2xl:scale-[0.8] 2xl:opacity-65 2xl:-translate-x-[75%]
-                hover:opacity-80 hover:scale-[0.85]`;
-      default:
-        return baseClasses;
+    const baseClasses = 'flex-shrink-0 w-1/3 px-2 flex justify-center items-center transition-all duration-600 ease-out'; // Added px-2 for better spacing
+    
+    if (position === -2) {
+      // Far left (partially visible)
+      return `${baseClasses} opacity-20 scale-50`;
+    } else if (position === -1) {
+      // Left card
+      return `${baseClasses} opacity-60 scale-75`;
+    } else if (position === 0) {
+      // Center card
+      return `${baseClasses} opacity-100 scale-100 z-10`;
+    } else if (position === 1) {
+      // Right card
+      return `${baseClasses} opacity-60 scale-75`;
+    } else if (position === 2) {
+      // Far right (partially visible)
+      return `${baseClasses} opacity-20 scale-50`;
+    } else {
+      // Hidden cards
+      return `${baseClasses} opacity-0 scale-50`;
     }
   };
-
-  // if (!talents || talents.length === 0) {
-  //   return (
-  //     <section className="w-full bg-white">
-  //       <Container className="py-16 md:py-20">
-  //         <div className="text-center mb-100 md:mb-16 mx-auto">
-  //           <h2 className="text-4xl sm:text-5xl md:text-h1 font-bold text-[var(--color-text-heading)] mb-4 md:mb-6">
-  //             Featured <span className="text-[--color-primary-500]">Profiles</span>
-  //           </h2>
-  //           <p className="text-lg sm:text-xl md:text-[26px] leading-relaxed md:leading-[1.4] font-normal text-[var(--color-text-muted)]">
-  //             Our approach is personal. Each apprentice has a unique relationship with us from the start allowing us to fully vouch for their expertise and work ethic. Come meet them, hire them, see how good they are.
-  //           </p>
-  //         </div>
-  //         <div className="relative mt-12 md:mt-16 bg-[var(--color-primary-0)] pt-10 pb-12 md:pt-16 md:pb-20 rounded-xl md:rounded-2xl text-center min-h-[200px] flex items-center justify-center">
-  //           <p className="text-lg text-[var(--color-text-muted)]">No featured profiles available at the moment.</p>
-  //         </div>
-  //       </Container>
-  //     </section>
-  //   );
-  // }
 
   return (
     <section className="w-full bg-white">
@@ -106,18 +88,22 @@ const FeaturedProfiles = ({ talents = [] }) => {
         </div>
 
         {/* Carousel Section with Blue Background */}
-        <div className="relative bg-[var(--color-primary-0)] py-10 md:py-0 rounded-xl md:rounded-2xl">
+        <div className="relative bg-[var(--color-primary-0)] py-10 md:py-0 rounded-xl md:rounded-2xl overflow-hidden">
           {/* Carousel Items Container */}
-          <div className="relative flex items-center justify-center px-4 md:px-8
-                          min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px]">
-            {visibleCards.map(({ talent, position, id }) => (
-              <div
-                key={`${id}-${position}`}
-                className={getCardClasses(position)}
-              >
-                <TalentCard talent={talent} />
-              </div>
-            ))}
+          <div className="relative px-4 md:px-8 min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px]">
+            <div 
+              className="flex transition-transform duration-600 ease-out"
+              style={{ transform: getTransformOffset()}}
+            >
+              {extendedTalents.map((talent, index) => (
+                <div
+                  key={`${talent.id}-${index}`}
+                  className={getCardClasses(index, extendedTalents.length)}
+                >
+                  <TalentCard talent={talent} />
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Navigation Arrows */}

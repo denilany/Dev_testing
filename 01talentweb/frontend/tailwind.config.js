@@ -29,6 +29,9 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-sans)'],
       },
+      transitionDuration: {
+        '600': '600ms',
+      },
     },
   },
   plugins: [],
