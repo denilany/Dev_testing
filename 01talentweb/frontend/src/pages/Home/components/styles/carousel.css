@@ -1,0 +1,59 @@
+.card-wrapper {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    opacity: 0;
+  }
+  
+  .card-left {
+    left: 0;
+    transform: translateX(-100%) translateY(-50%) scale(0.8);
+    opacity: 0.5;
+    z-index: 1;
+  }
+  
+  .card-center {
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+    opacity: 1;
+    z-index: 2;
+  }
+  
+  .card-right {
+    right: 0;
+    transform: translateX(100%) translateY(-50%) scale(0.8);
+    opacity: 0.5;
+    z-index: 1;
+  }
+  
+  .card-entering {
+    animation: enterFromRight 0.8s ease forwards;
+  }
+  
+  .card-exiting {
+    animation: exitToLeft 0.8s ease forwards;
+  }
+  
+  @keyframes enterFromRight {
+    from {
+      transform: translateX(150%) translateY(-50%) scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(100%) translateY(-50%) scale(0.8);
+      opacity: 0.5;
+    }
+  }
+  
+  @keyframes exitToLeft {
+    from {
+      transform: translateX(-100%) translateY(-50%) scale(0.8);
+      opacity: 0.5;
+    }
+    to {
+      transform: translateX(-150%) translateY(-50%) scale(0.8);
+      opacity: 0;
+    }
+  }
+  

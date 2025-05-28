@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from '@inertiajs/react';
 import TalentCard from '../../../components/TalentCard.jsx';
+import { Container } from '../../../components/Layout.jsx';
+import './styles/carousel.css';
+
 
 const FeaturedProfiles = ({ talents = [] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -27,19 +30,38 @@ const FeaturedProfiles = ({ talents = [] }) => {
   };
 
   // Get visible cards with wrap-around support
-  const getCard = (offset) => {
-    if (talents.length === 0) {
-      return null; // Should be handled by early return, but as a safeguard
-    }
+  const getCardWithPosition = (offset) => {
     const index = (currentIndex + offset + talents.length) % talents.length;
-    return talents[index];
+    return { 
+      talent: talents[index], 
+      position: offset,
+      id: talents[index]?.id || `card-${offset}`
+    };
+  };
+  
+  const visibleCards = [-1, 0, 1].map(getCardWithPosition);
+  
+  // Get the appropriate classes based on card position
+  const getCardClasses = (position) => {
+    const baseClasses = 'transition-all duration-500 ease-out';
+    
+    switch(position) {
+      case -1: // Left card
+        return `${baseClasses} hidden md:block absolute left-0 top-1/2 -translate-y-1/2 z-10 transform md:scale-[0.8] md:opacity-60 md:translate-x-[80%] hover:md:opacity-80 hover:md:scale-[0.85]`;
+      case 0: // Center card
+        return `${baseClasses} relative z-20 max-w-xs sm:max-w-sm md:max-w-md -translate-x-5 md:translate-x-0`;
+      case 1: // Right card
+        return `${baseClasses} hidden md:block absolute right-0 top-1/2 -translate-y-1/2 z-10 transform md:scale-[0.8] md:opacity-60 md:-translate-x-[80%] hover:md:opacity-80 hover:md:scale-[0.85]`;
+      default:
+        return baseClasses;
+    }
   };
 
   if (!talents || talents.length === 0) {
     return (
       <section className="w-full bg-white">
-        <div className="w-full max-w-[1440px] mx-auto px-4 py-16 md:py-20 sm:px-3 lg:px-8">
-          <div className="text-center mb-100 md:mb-16 max-w-4xl mx-auto">
+        <Container className="py-16 md:py-20">
+          <div className="text-center mb-100 md:mb-16 mx-auto">
             <h2 className="text-4xl sm:text-5xl md:text-[64px] font-extrabold text-[var(--color-text-heading)] mb-4 md:mb-6">
               Featured <span className="text-[--color-primary-500]">Profiles</span>
             </h2>
@@ -47,18 +69,18 @@ const FeaturedProfiles = ({ talents = [] }) => {
               Our approach is personal. Each apprentice has a unique relationship with us from the start allowing us to fully vouch for their expertise and work ethic. Come meet them, hire them, see how good they are.
             </p>
           </div>
-          <div className="relative mt-12 md:mt-16 bg-[#FFFFFF] pt-10 pb-12 md:pt-16 md:pb-20 rounded-xl md:rounded-2xl text-center min-h-[200px] flex items-center justify-center">
+          <div className="relative mt-12 md:mt-16 bg-[var(--color-primary-0)] pt-10 pb-12 md:pt-16 md:pb-20 rounded-xl md:rounded-2xl text-center min-h-[200px] flex items-center justify-center">
             <p className="text-lg text-[var(--color-text-muted)]">No featured profiles available at the moment.</p>
           </div>
-        </div>
+        </Container>
       </section>
     );
   }
 
   return (
     <section className="w-full bg-white">
-      <div className="w-full max-w-[1440px] mx-auto md:py-20 sm:px-6 lg:px-8">
-        <div className="text-center max-w-4xl mx-auto mt-8 sm:mt-0">
+      <Container className="md:py-20">
+        <div className="text-center mx-auto mt-8 sm:mt-0">
           <h2 className="text-4xl sm:text-5xl md:text-[64px] font-extrabold text-[var(--color-text-heading)] mb-4 md:mb-6">
             Featured <span className="text-[--color-primary-500]">Profiles</span>
           </h2>
@@ -68,48 +90,66 @@ const FeaturedProfiles = ({ talents = [] }) => {
         </div>
 
         {/* Carousel Section with Blue Background */}
-        <div className="relative bg-[#FFFFFF] py-10 md:py-0 rounded-xl md:rounded-2xl">
+        <div className="relative bg-[var(--color-primary-0)] py-10 md:py-0 rounded-xl md:rounded-2xl">
           {/* Carousel Items Container */}
           <div className="relative flex items-center justify-center min-h-[450px] md:min-h-[500px]">
-            {/* Left Card */}
-            <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 z-10 transform md:scale-[0.8] md:opacity-60 transition-all duration-500 ease-out md:translate-x-[80%] hover:md:opacity-80 hover:md:scale-[0.85]">
-              <div className="bg-[#EFF7FF] rounded-[10px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
-                <TalentCard talent={getCard(-1)} />
+            {visibleCards.map(({ talent, position, id }) => (
+              <div 
+                key={`${id}-${position}`} 
+                className={getCardClasses(position)}
+              >
+                <TalentCard talent={talent} />
               </div>
-            </div>
-
-            {/* Center Card */}
-            <div className="relative z-20 transform transition-all duration-500 ease-out max-w-xs sm:max-w-sm md:max-w-md">
-              <div className="bg-[#EFF7FF] rounded-[10px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
-                <TalentCard talent={getCard(0)} />
-              </div>
-            </div>
-
-            {/* Right Card */}
-            <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 z-10 transform md:scale-[0.8] md:opacity-60 transition-all duration-500 ease-out md:-translate-x-[80%] hover:md:opacity-80 hover:md:scale-[0.85]">
-              <div className="bg-[#EFF7FF] rounded-[10px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
-                <TalentCard talent={getCard(1)} />
-              </div>
-            </div>
+            ))}
           </div>
 
           {/* Navigation Arrows */}
           <button
             onClick={handlePrev}
-            className="absolute left-2 sm:left-4 md:left-6 top-1/2 transform -translate-y-1/2 z-30 bg-white shadow-xl rounded-full p-2 md:p-3 hover:bg-gray-100 transition-all duration-300 hover:scale-110"
+            className="absolute left-8 top-1/2 -translate-y-1/2 z-30 bg-white rounded-full border border-gray-200 hover:bg-gray-50 transition-all duration-300"
             aria-label="Previous profile"
+            style={{
+              width: '100px',
+              height: '100px',
+              transform: 'translateY(-50%) rotate(180deg)'
+            }}
           >
-            <svg className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-[--color-primary-500]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-              <path d="M15 19l-7-7 7-7" />
+            <svg 
+              className="w-6 h-6 mx-auto text-[--color-primary-500]" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              style={{
+                width: '100px',
+                height: '100px'
+              }}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 5l7 7-7 7" />
             </svg>
           </button>
           <button
             onClick={handleNext}
-            className="absolute right-2 sm:right-4 md:right-6 top-1/2 transform -translate-y-1/2 z-30 bg-white shadow-xl rounded-full p-2 md:p-3 hover:bg-gray-100 transition-all duration-300 hover:scale-110"
+            className="absolute right-8 top-1/2 -translate-y-1/2 z-30 bg-white rounded-full border border-gray-200 hover:bg-gray-50 transition-all duration-300"
             aria-label="Next profile"
+            style={{
+              width: '100.68px',
+              height: '100.68px',
+              transform: 'translateY(-50%)'
+            }}
           >
-            <svg className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-[--color-primary-500]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-              <path d="M9 5l7 7-7 7" />
+            <svg 
+              className="w-6 h-6 mx-auto text-[--color-primary-500]" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              style={{
+                width: '100px',
+                height: '100px'
+              }}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 5l7 7-7 7" />
             </svg>
           </button>
 
@@ -117,16 +157,20 @@ const FeaturedProfiles = ({ talents = [] }) => {
           <div className="text-center mt-10 md:mt-16">
             <Link
               href="/talent"
-              className="inline-flex items-center px-8 sm:px-10 py-3 sm:py-4 border-2 border-[--color-primary-500] text-[--color-primary-500] font-semibold text-base sm:text-lg rounded-lg hover:bg-[--color-primary-50] transition-colors"
+              className="inline-flex items-center justify-center w-[377.24px] h-[80.82px] border-[2.76px] border-[var(--color-primary-300)] rounded-[8.29px] text-[var(--color-primary-300)] text-body-l font-medium hover:bg-[--color-primary-50] transition-colors"
+              style={{
+                padding: '20.72px 82.87px',
+                gap: '13.81px'
+              }}
             >
               View All Talents
-              <svg className="ml-2 sm:ml-3 w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
               </svg>
             </Link>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

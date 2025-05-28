@@ -1,11 +1,11 @@
 // resources/js/components/UniqueTalentSection.jsx
 import React from 'react';
 import { Link } from '@inertiajs/react';
-
+import { Container } from '../../../components/Layout.jsx';
 const UniqueTalentSection = () => {
   return (
-    <section className="bg-[#EFF7FF] py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-[#EFF7FF] py-12 md:py-16 lg:py-20">
+      <Container>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center lg:text-left">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-extrabold text-[var(--color-text-heading)] mb-4 md:mb-6 mx-auto lg:mx-0 lg:-ml-16">
             <div className="inline-block">
@@ -19,7 +19,7 @@ const UniqueTalentSection = () => {
             We rigorously select the best tech talent from tens of thousands of applications across Kenya.
           </p>
         </div>
-      </div>
+    
       
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start mt-8 md:mt-12">
         {/* LEFT COLUMN */}
@@ -339,6 +339,7 @@ const UniqueTalentSection = () => {
           Hire Developers
         </Link>
       </div>
+      </Container>
     </section>
   );
 };
