@@ -57,11 +57,11 @@ const FeaturedProfiles = ({ talents = [] }) => {
   
     switch (position) {
       case -1:
-        return `${base} opacity-70 scale-90 -mr-[10rem] z-0`; // left card
+        return `${base} opacity-70 scale-75 -mr-[10rem] z-0`; // left card
       case 0:
         return `${base} opacity-100 scale-100 z-10`; // center card
       case 1:
-        return `${base} opacity-70 scale-90 -ml-[10rem] z-0`; // right card
+        return `${base} opacity-70 scale-75 -ml-[10rem] z-0`; // right card
       default:
         return `${base} opacity-0 scale-75 z-0 pointer-events-none`; // hidden
     }
