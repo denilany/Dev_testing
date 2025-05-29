@@ -74,7 +74,7 @@ const HiringModel = () => {
   ];
 
   return (
-    <section className="bg-white w-full ultra-large:mb-10 py-12 px-4 md:px-16 relative overflow-visible">
+    <section className="bg-white w-full ultra-large:mb-20 py-12 px-4 md:px-16 relative overflow-visible">
       <Container>
         <div className="sticky top-20 self-start bg-white py-4 z-20">
       <h2 className=" text-2xl md:text-3xl font-bold text-center mb-10 ultra-large:text-h2 ultra-large:pb-18">
@@ -82,9 +82,13 @@ const HiringModel = () => {
       </h2>
         </div>
 
-      <div 
-      
-      className="grid md:grid-cols-2 max-w-screen  mx-auto gap-10">
+      <div className="grid md:grid-cols-2 max-w-screen  mx-auto gap-10">
+          {/* Diamonds*/}
+          <img
+            src="/static/images/diamonds.svg"
+            alt="Brush"
+            className=" absolute z-10 top-10 left-5 ultra-large:top-20  ultra-large:h-[200px] object-contain pointer-events-none"
+          />
         {/* Left Scrollable Column */}
         <div className="space-y-10" >
           {features.map((item, i) => (
