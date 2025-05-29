@@ -8,6 +8,8 @@ import Newsletter from './components/Newsletter.jsx';
 import UniqueTalentSection from './components/UniqueTalent.jsx';
 import WhoWeAre from '../../components/WhoWeAre.jsx';
 import HiringModel from '../../components/HiringModel.jsx';
+import HiringModelMobile from '../../components/HiringModelMobile.jsx';
+
 
 import WhatsMoreSection from './components/Whatsmore.jsx';
 
@@ -74,7 +76,9 @@ export default function Index() {
         <Stats />
         <CompanyLogos />
         <WhoWeAre />
-        <HiringModel />
+        {/* <HiringModel /> */}
+                <HiringModelMobile />
+
         <WhatsMoreSection/>
         <UniqueTalentSection/>
         <FeaturedProfiles talents={sampleTalents} />

@@ -76,21 +76,21 @@ const HiringModel = () => {
   return (
     <section className="bg-white w-full ultra-large:mb-20 py-12 px-4 md:px-16 relative overflow-visible">
       <Container>
-        <div className="sticky top-20 self-start bg-white py-4 z-20">
-      <h2 className=" text-2xl md:text-3xl font-bold text-center mb-10 ultra-large:text-h2 ultra-large:pb-18">
-        WHY <span className="text-blue-600">OUR HIRING MODEL</span> WORKS FOR YOU
-      </h2>
-        </div>
+        {/* <div className="sticky top-20 self-start bg-white py-4 z-20 max-w-screen ">
+          <h2 className=" text-2xl md:text-3xl font-bold text-center mb-10 bg-black ultra-large:text-h2 ultra-large:pb-18 max-w-screen">
+            WHY <span className="text-blue-600">OUR HIRING MODEL</span> WORKS FOR YOU
+          </h2>
+        </div> */}
 
-      <div className="grid md:grid-cols-2 max-w-screen  mx-auto gap-10">
+      <div className="grid small-phones:grid-cols-1 md:grid-cols-2 max-w-screen  mx-auto gap-10">
           {/* Diamonds*/}
           <img
             src="/static/images/diamonds.svg"
             alt="Brush"
-            className=" absolute z-10 top-10 left-5 ultra-large:top-20  small-phones:h-[60px] small-phones:top-40 ultra-large:h-[200px] object-contain pointer-events-none"
+            className="small-phones:hidden absolute z-10 top-10 left-5 ultra-large:top-20  small-phones:h-[60px] small-phones:top-40 ultra-large:h-[200px] object-contain pointer-events-none"
           />
         {/* Left Scrollable Column */}
-        <div className="space-y-10" >
+        <div className="space-y-10 small-phones:relative small-phones:pt-160" >
           {features.map((item, i) => (
             <div key={i}>
               <h3 className="text-lg font-semibold ultra-large:text-h3">{item.title}</h3>
@@ -101,8 +101,8 @@ const HiringModel = () => {
 
         {/* Right Static Image */}
         <div 
-         ref={imageRef} 
-        className="sticky top-24 self-start z-10 mb-20"
+           ref={imageRef} 
+           className="sticky top-24 self-start small-phones:order-1 small-phones:mb-30 small-phones:absolute z-10 mb-20 small-phones:max-w-screen small-phones:max-h-screen"
         
         >
            {/* Top Left Chevron */}
@@ -113,18 +113,18 @@ const HiringModel = () => {
           />
 
           {/* Brush mask */}
-          <img
+          {/* <img
             src="/static/images/brush-mask.png"
             alt="Brush"
-            className="absolute z-10 top-10 left-0 ultra-large:top-20  ultra-large:h-[500px] object-contain pointer-events-none"
-          />
+            className="absolute z-10 top-10  left-0 ultra-large:top-20  ultra-large:h-[500px]  object-contain pointer-events-none"
+          /> */}
 
           {/* Main Image */}
-          <img
+          {/* <img
             src="/static/images/hiring_model_image.png"
             alt="Hiring Visual"
-            className="relative z-0 ultra-large:w-[620px] top-0 ultra-large:top-24  ultra-large:h-[480px] left-0 ultra-large:left-12 rounded shadow-md object-cover"
-          />
+            className="relative z-0 ultra-large:w-[620px] small-phones:top-35 top-0 ultra-large:top-24  ultra-large:h-[480px] left-0 ultra-large:left-12   rounded shadow-md object-cover"
+          /> */}
 
 
           {/* Bottom Right Chevron */}
@@ -133,9 +133,6 @@ const HiringModel = () => {
             alt="Chevron Bottom Right"
             className="absolute -bottom-40 right-20 w-5 md:w-15 z-30 ultra-large:w-[60px]"
           />
-
-         
-
 
           <img 
           src="/static/images/dots.svg" 
