@@ -87,7 +87,7 @@ const HiringModel = () => {
           <img
             src="/static/images/diamonds.svg"
             alt="Brush"
-            className=" absolute z-10 top-10 left-5 ultra-large:top-20  ultra-large:h-[200px] object-contain pointer-events-none"
+            className=" absolute z-10 top-10 left-5 ultra-large:top-20  small-phones:h-[60px] small-phones:top-40 ultra-large:h-[200px] object-contain pointer-events-none"
           />
         {/* Left Scrollable Column */}
         <div className="space-y-10" >
