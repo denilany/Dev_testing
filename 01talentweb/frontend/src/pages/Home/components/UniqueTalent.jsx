@@ -1,8 +1,38 @@
 // resources/js/components/UniqueTalentSection.jsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from '@inertiajs/react';
 import { Container } from '../../../components/Layout.jsx';
+// Test data for developer images
+const developerImages = [
+  'https://randomuser.me/api/portraits/men/1.jpg',
+  'https://randomuser.me/api/portraits/women/1.jpg',
+  'https://randomuser.me/api/portraits/men/2.jpg',
+  'https://randomuser.me/api/portraits/women/2.jpg',
+  'https://randomuser.me/api/portraits/men/3.jpg',
+  'https://randomuser.me/api/portraits/women/3.jpg',
+  'https://randomuser.me/api/portraits/men/4.jpg',
+  'https://randomuser.me/api/portraits/women/4.jpg'
+];
+
 const UniqueTalentSection = () => {
+  const [currentDevelopers, setCurrentDevelopers] = useState(developerImages.slice(0, 4));
+  const [currentIndex, setCurrentIndex] = useState(4);
+
+  useEffect(() => {
+    const rotateImages = () => {
+      setCurrentDevelopers(prevDevelopers => {
+        const newDevelopers = [...prevDevelopers];
+        newDevelopers.shift(); // Remove the first developer
+        newDevelopers.push(developerImages[currentIndex % developerImages.length]); // Add next developer
+        return newDevelopers;
+      });
+      setCurrentIndex(prevIndex => (prevIndex + 1) % developerImages.length);
+    };
+
+    const interval = setInterval(rotateImages, 3000); // Rotate every 3 seconds
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
   return (
     <section className="bg-[#EFF7FF]">
       <Container className="py-12 md:py-16 lg:py-20">
@@ -190,8 +220,12 @@ const UniqueTalentSection = () => {
             left: '78.87px'
           }}>
             <div className="relative w-full h-full">
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white font-semibold text-4xl border-2.33 border-white shadow-lg">
-                JM
+              <div className="w-full h-full rounded-full overflow-hidden border-2.33 border-white shadow-lg">
+                <img 
+                  src={currentDevelopers[0]} 
+                  alt="Developer"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="absolute" style={{
                 width: '31.44px',
@@ -221,8 +255,12 @@ const UniqueTalentSection = () => {
             left: '180.87px'
           }}>
             <div className="relative w-full h-full">
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white font-semibold text-4xl border-2.33 border-white shadow-lg">
-                JM
+              <div className="w-full h-full rounded-full overflow-hidden border-2.33 border-white shadow-lg">
+                <img 
+                  src={currentDevelopers[1]} 
+                  alt="Developer"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="absolute" style={{
                 width: '31.44px',
@@ -251,8 +289,12 @@ const UniqueTalentSection = () => {
             left: '33.87px'
           }}>
             <div className="relative w-full h-full">
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white font-semibold text-4xl border-2.33 border-white shadow-lg">
-                JM
+              <div className="w-full h-full rounded-full overflow-hidden border-2.33 border-white shadow-lg">
+                <img 
+                  src={currentDevelopers[2]} 
+                  alt="Developer"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="absolute" style={{
                 width: '31.44px',
@@ -282,8 +324,12 @@ const UniqueTalentSection = () => {
             left: '180.87px'
           }}>
             <div className="relative w-full h-full">
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white font-semibold text-4xl border-2.33 border-white shadow-lg">
-                JM
+              <div className="w-full h-full rounded-full overflow-hidden border-2.33 border-white shadow-lg">
+                <img 
+                  src={currentDevelopers[3]} 
+                  alt="Developer"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="absolute" style={{
                 width: '31.44px',
