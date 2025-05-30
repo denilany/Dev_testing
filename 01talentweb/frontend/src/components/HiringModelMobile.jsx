@@ -35,17 +35,73 @@ const HiringModelMobile = () => {
   return (
     <div className="block md:hidden h-screen w-full flex flex-col bg-white mt-30 mb-40">
       {/* Sticky header + image */}
-      <div className="sticky top-0 z-10 bg-white pb-4">
+      <div className="sticky top-10 z-10 bg-white pb-4">
         <h2 className="text-xl font-bold text-center px-4 pt-6">
           WHY <span className="text-blue-600">OUR HIRING MODEL</span> WORKS FOR YOU
         </h2>
-        <div className="w-full px-4 mt-4">
+        {/* <div className="w-full px-4 mt-4">
+          <img
+            src="/static/images/brush-mask.png"
+            alt="Brush"
+            className=" absolute w-full rounded-md shadow-md object-contain z-10 "
+          />
+
           <img
             src="/static/images/hiring_model_image.png"
             alt="Hiring Visual"
-            className="w-full rounded-md shadow-md object-cover"
+            className=" relative w-full rounded-md shadow-md object-cover"
           />
-        </div>
+        </div> */}
+        {/* Diamonds */}
+    <img
+      src="/static/images/diamonds.svg"
+      alt="Diamonds"
+      className="absolute top-10  left-0 w-8 h-8 z-20"
+    />
+      <div className="w-full py-4 px-4 mt-4">
+  <div className="relative  py-6 mx-auto" style={{ width: "65%" }}>
+    {/* bottom-left dots */}
+    <img
+      src="/static/images/dots.svg"
+      alt="dots bottom left"
+      className="absolute top-24 mt-12 left-2 w-10 h-10 z-20"
+    />
+
+
+
+    {/* Top-left arrow */}
+    <img
+      src="/static/images/arrows.svg"
+      alt="Arrow Bottom Left"
+      className="absolute top-0 left-0 w-6 h-6 z-20"
+    />
+
+    {/* Bottom-right arrow */}
+    <img
+      src="/static/images/arrows.svg"
+      alt="Arrow Bottom Right"
+      className="absolute top-24 pt-4 mt-12 right-0 w-6 h-6 z-20"
+    />
+
+    {/* Brush mask */}
+    <img
+      src="/static/images/brush-mask.png"
+      alt="Brush"
+      className="absolute top-0 left-0 w-full h-full object-cover z-10 pointer-events-none"
+      style={{ transform: "scaleY(0.8)" }}
+    />
+
+    {/* Actual image */}
+    <img
+      src="/static/images/hiring_model_image.png"
+      alt="Hiring Visual"
+      className="w-full rounded-md shadow-md object-cover relative z-0"
+    />
+  </div>
+</div>
+
+
+
       </div>
 
       {/* Scrollable content */}
