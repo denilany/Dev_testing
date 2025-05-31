@@ -77,7 +77,17 @@ export default function Index() {
         <CompanyLogos />
         <WhoWeAre />
         {/* <HiringModel /> */}
-                <HiringModelMobile />
+                {/* <HiringModelMobile /> */}
+
+        {/* Desktop version: hidden on small screens */}
+<div className="hidden md:block">
+  <HiringModel />
+</div>
+
+{/* Mobile version: only visible on small screens */}
+<div className="block md:hidden">
+  <HiringModelMobile />
+</div>
 
         <WhatsMoreSection/>
         <UniqueTalentSection/>
