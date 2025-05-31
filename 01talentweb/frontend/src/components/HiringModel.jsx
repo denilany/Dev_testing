@@ -76,7 +76,7 @@ const HiringModel = () => {
   return (
     <section className="bg-white w-full ultra-large:mb-20 py-12 px-4 md:px-16 relative overflow-visible">
       <Container>
-        <div className="sticky top-20 self-start bg-white py-4 z-20 max-w-screen ">
+        <div className="sticky top-20 mid-tablets:top-16 self-start bg-white py-4 z-20 max-w-screen ">
           <h2 className=" text-2xl md:text-3xl font-bold text-center mb-10 ultra-large:text-h2 ultra-large:pb-18 max-w-screen">
             WHY <span className="text-blue-600">OUR HIRING MODEL</span> WORKS FOR YOU
           </h2>
@@ -102,7 +102,7 @@ const HiringModel = () => {
         {/* Right Static Image */}
 <div
   ref={imageRef}
-  className="sticky top-24 self-start z-10 mb-20 small-phones:mb-30 small-phones:absolute small-phones:order-1 small-phones:max-w-screen small-phones:max-h-screen"
+  className="sticky top-24 mid-tablets:top-30 self-start z-10 mb-20 small-phones:mb-30 small-phones:absolute small-phones:order-1 small-phones:max-w-screen small-phones:max-h-screen"
 >
   {/* Top Chevron */}
   <div className="flex justify-start px-6 py-12">
@@ -126,7 +126,7 @@ const HiringModel = () => {
     <img
       src="/static/images/hiring_model_image.png"
       alt="Hiring Visual"
-      className="relative z-0 w-full h-auto object-cover rounded shadow-md"
+      className="relative z-0 w-full h-auto object-cover rounded shadow-md mid-tablets:[transform:scaleY(1.8)]"
                   style={{ transform: "scaleY(1.2)" }}
 
     />

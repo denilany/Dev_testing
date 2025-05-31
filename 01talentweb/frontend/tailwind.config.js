@@ -9,6 +9,8 @@ module.exports = {
     extend: {
       screens: {
         'small-tablets': '768px',
+        'mid-tablets': {'min': '768px','max': '900px'},
+        
         // 'small-phones': '320px',
         'large-phones': {'min': '439px','max': '766px'},
 
