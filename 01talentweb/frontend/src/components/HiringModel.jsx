@@ -105,7 +105,7 @@ const HiringModel = () => {
   className="sticky top-24 self-start z-10 mb-20 small-phones:mb-30 small-phones:absolute small-phones:order-1 small-phones:max-w-screen small-phones:max-h-screen"
 >
   {/* Top Chevron */}
-  <div className="flex justify-start px-6 py-4">
+  <div className="flex justify-start px-6 py-12">
     <img
       src="/static/images/arrows.svg"
       alt="Chevron Top Left"
@@ -127,6 +127,8 @@ const HiringModel = () => {
       src="/static/images/hiring_model_image.png"
       alt="Hiring Visual"
       className="relative z-0 w-full h-auto object-cover rounded shadow-md"
+                  style={{ transform: "scaleY(1.2)" }}
+
     />
   </div>
 
