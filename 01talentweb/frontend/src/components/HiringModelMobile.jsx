@@ -58,21 +58,14 @@ const HiringModelMobile = () => {
       alt="Diamonds"
       className="absolute top-10  left-0 w-8 h-8 z-20"
     />
-      <div className="w-full py-4 px-4 mt-4">
-  <div className="relative  py-6 mx-auto" style={{ width: "65%" }}>
-    {/* bottom-left dots */}
-    <img
-      src="/static/images/dots.svg"
-      alt="dots bottom left"
-      className="absolute top-24 mt-12 left-2 w-10 h-10 z-20"
-    />
 
-
-
+    
+    <div className="w-full py-4 px-4 mt-4">
+  <div className="mx-auto w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg relative py-10">
     {/* Top-left arrow */}
     <img
       src="/static/images/arrows.svg"
-      alt="Arrow Bottom Left"
+      alt="Arrow Top Left"
       className="absolute top-0 left-0 w-6 h-6 z-20"
     />
 
@@ -80,10 +73,17 @@ const HiringModelMobile = () => {
     <img
       src="/static/images/arrows.svg"
       alt="Arrow Bottom Right"
-      className="absolute top-24 pt-4 mt-12 right-0 w-6 h-6 z-20"
+      className="absolute bottom-0 right-0 w-6 h-6 z-20"
     />
 
-    {/* Brush mask */}
+    {/* Bottom-left dots */}
+    <img
+      src="/static/images/dots.svg"
+      alt="Dots Bottom Left"
+      className="absolute bottom-0 left-0 w-10 h-10 z-20"
+    />
+
+    {/* Optional Brush Mask */}
     <img
       src="/static/images/brush-mask.png"
       alt="Brush"
@@ -91,7 +91,7 @@ const HiringModelMobile = () => {
       style={{ transform: "scaleY(0.8)" }}
     />
 
-    {/* Actual image */}
+    {/* Main image */}
     <img
       src="/static/images/hiring_model_image.png"
       alt="Hiring Visual"
@@ -99,6 +99,7 @@ const HiringModelMobile = () => {
     />
   </div>
 </div>
+
 
 
 
