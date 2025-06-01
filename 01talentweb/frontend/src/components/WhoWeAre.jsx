@@ -10,8 +10,14 @@ const WhoWeAre = () => {
       <img
         src="/static/images/strokes.svg"
         alt="Strokes Background"
-        className="absolute left-0 bottom-0 w-40 md:w-64 lg:w-70 opacity-80 pointer-events-none"
+        className="small-phones:hidden absolute left-0 bottom-0 w-40 md:w-64 lg:w-70  pointer-events-none"
       />
+
+      {/* <img
+        src="/static/images/phone_strokes.svg"
+        alt="Strokes Background"
+        className="md:hidden absolute left-0 pt-25 small-phones:w-48 small-phones:h-40  pointer-events-none"
+      /> */}
 
       {/* Zigzag - top left */}
       <img
@@ -27,16 +33,24 @@ const WhoWeAre = () => {
         </h2>
 
         {/* Intro Text */}
-        <p className="text-gray-700 text-sm font-normal md:text-base ultra-large:text-body-l leading-relaxed ultra-large:[line-height:200%] max-w-screen mb-8">
+        <p className="small-phones:hidden text-gray-700 text-sm font-normal md:text-base ultra-large:text-body-l leading-relaxed ultra-large:[line-height:200%] max-w-screen mb-8">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod lobortis
           diam, nec bibendum ipsum tincidunt ut. Sed id pulvinar quam, et euismod ipsum.
           Nulla ut fermentum ante. Ut vitae lacus fringilla urna viverra rhoncus. Fusce
           elit felis, aliquam quis consectetur sed, fermentum a justo.  Ut vitae lacus fringilla urna viverra rhoncus. Fusce
           elit felis, aliquam quis consectetur sed, fermentum a justo.
         </p>
+        <p className="large-phones:hidden text-gray-700 text-sm font-normal md:text-base ultra-large:text-body-l leading-relaxed ultra-large:[line-height:200%]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod  lobortis diam, nec bibendum ipsum tincidunt ut. 
+        </p>
 
         {/* Content Row */}
         <div className="grid grid-cols-1 md:grid-cols-2  gap-8 items-center">
+             <img
+        src="/static/images/phone_strokes.svg"
+        alt="Strokes Background"
+        className="md:hidden absolute -left-10 bottom-48 small-phones:w-48 small-phones:h-40  pointer-events-none"
+      />
           {/* Image with Triangle Decor */}
           <div className="relative">
             <img
@@ -44,6 +58,8 @@ const WhoWeAre = () => {
               alt="Team"
               className="rounded-lg shadow-lg w-full object-cover"
             />
+
+          
 
             {/* Triangle Decor - top right of image */}
             <img
@@ -55,7 +71,7 @@ const WhoWeAre = () => {
 
           {/* Right-side Text */}
           <div>
-            <p className="text-gray-700 text-sm font-normal md:text-base ultra-large:text-body-l leading-relaxed ultra-large:[line-height:200%]">
+            <p className="small-phones:hidden text-gray-700 text-sm font-normal md:text-base ultra-large:text-body-l leading-relaxed ultra-large:[line-height:200%]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod
               lobortis diam, nec bibendum ipsum tincidunt ut. Sed id pulvinar quam, et
               euismod ipsum. Nulla ut fermentum ante. Ut vitae lacus fringilla urna
@@ -65,6 +81,9 @@ const WhoWeAre = () => {
               a justo. Nulla ut fermentum ante. Ut vitae lacus fringilla urna
               viverra rhoncus. Fusce elit felis, aliquam quis consectetur sed, fermentum
               a justo.
+            </p>
+            <p className="large-phones:hidden text-gray-700 text-sm font-normal md:text-base ultra-large:text-body-l leading-relaxed ultra-large:[line-height:200%]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod  lobortis diam, nec bibendum ipsum tincidunt ut. 
             </p>
           </div>
         </div>
