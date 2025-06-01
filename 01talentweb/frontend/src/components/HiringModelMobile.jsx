@@ -35,7 +35,7 @@ const HiringModelMobile = () => {
   return (
     <div className="block md:hidden h-screen w-full flex flex-col bg-white mt-30 mb-40">
       {/* Sticky header + image */}
-      <div className="sticky top-10 z-10  pb-2">
+      <div className="sticky top-10 z-10  pb-2 ">
         <h2 className="text-lg font-bold text-center px-4 pt-8">
           WHY <span className="text-blue-600">OUR HIRING MODEL</span> WORKS FOR YOU
         </h2>
@@ -60,8 +60,8 @@ const HiringModelMobile = () => {
     />
 
     
-    <div className="w-full py-4 px-4 mt-4 top-10">
-  <div className="mx-auto w-full   sm:max-w-sm md:max-w-md lg:max-w-lg relative py-6">
+    <div className="w-full py-0 px-4 mt-4 top-10 ">
+  <div className="mx-auto w-full bg-white  sm:max-w-sm md:max-w-md lg:max-w-lg relative py-4">
     {/* Top-left arrow */}
     <img
       src="/static/images/arrows.svg"
@@ -73,14 +73,14 @@ const HiringModelMobile = () => {
     <img
       src="/static/images/arrows.svg"
       alt="Arrow Bottom Right"
-      className="absolute bottom-4 right-0 w-8 h-6 z-20"
+      className="absolute bottom-5 right-0 w-8 h-6 z-20"
     />
 
     {/* Bottom-left dots */}
     <img
       src="/static/images/dots.svg"
       alt="Dots Bottom Left"
-      className="absolute bottom-4  left-0 w-12 h-11 z-20"
+      className="absolute bottom-2  left-0 w-12 h-11 z-20"
     />
 
     {/* Optional Brush Mask */}
@@ -96,7 +96,7 @@ const HiringModelMobile = () => {
       src="/static/images/hiring_model_image.png"
       alt="Hiring Visual"
       className="w-full rounded-md shadow-md object-cover relative z-0"
-            style={{ transform: "scaleY(0.7)" }}
+            style={{ transform: "scaleY(0.6)" }}
 
     />
   </div>

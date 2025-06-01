@@ -114,7 +114,7 @@ const HiringModel = () => {
   </div>
 
   {/* Image & Mask */}
-  <div className="relative px-6 py-8 overflow-hidden">
+  <div className="relative px-6  py-8 overflow-hidden">
     {/* Brush Mask */}
     <img
       src="/static/images/brush-mask.png"
@@ -126,7 +126,7 @@ const HiringModel = () => {
     <img
       src="/static/images/hiring_model_image.png"
       alt="Hiring Visual"
-      className="relative z-0 w-full h-auto object-cover rounded shadow-md mid-tablets:[transform:scaleY(1.8)]"
+      className="relative z-0 w-full h-auto object-cover rounded shadow-md mid-tablets:[ scaleY(1.8)]"
                   style={{ transform: "scaleY(1.2)" }}
 
     />
@@ -138,7 +138,7 @@ const HiringModel = () => {
     <img
       src="/static/images/dots.svg"
       alt="Dots"
-      className="absolute w-12 h-12 left-0 ultra-large:w-40"
+      className="absolute bottom-0 w-12 h-12 left-0 ultra-large:w-40"
     />
     
     {/* Bottom Right Chevron */}
