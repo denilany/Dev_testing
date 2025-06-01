@@ -1,5 +1,8 @@
 import { usePage } from '@inertiajs/react';
-import Hero from './components/Hero.jsx';
+import Navbar from '../../components/Navbar.jsx';
+import Hero from '../../components/Hero.jsx';
+import Stats from '../../components/Stats.jsx';
+import CompanyLogos from '../../components/CompanyLogos.jsx';
 import FeaturedProfiles from './components/FeaturedProfiles.jsx';
 import Newsletter from './components/Newsletter.jsx';
 import UniqueTalentSection from './components/UniqueTalent.jsx';
@@ -58,6 +61,10 @@ export default function Index() {
     return (
       <>
         {/* <Hero /> */}
+        <Navbar />
+        <Hero />
+        <Stats />
+        <CompanyLogos />
         <WhatsMoreSection/>
         <UniqueTalentSection/>
         <FeaturedProfiles talents={sampleTalents} />

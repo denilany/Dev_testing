@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';
 module.exports = {
  plugins: [
   react({
-    include: '**/*.disabled',
+     include: '**/*.disabled',
   }),
  ],
  root: resolve(__dirname, './src'),
@@ -19,7 +19,7 @@ module.exports = {
    },
  },
  resolve: {
-   extensions: ['.js', '.json'],
+   extensions: ['.js', '.jsx', '.json'],
    alias: {
     '@': resolve(__dirname, './src')
   }
@@ -36,4 +36,5 @@ module.exports = {
      },
    },
  },
+  assetsInclude: ['**/*.JPG', '**/*.jpg'],
 };

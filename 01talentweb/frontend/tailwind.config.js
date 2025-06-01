@@ -14,6 +14,18 @@ module.exports = {
       '2xl': '1536px',
     },
     extend: {
+      screens: {
+        'small-tablets': '768px',
+        // 'small-phones': '320px',
+        'large-phones': {'min': '439px','max': '766px'},
+
+        'small-phones': {'max': '425px'},
+        // 'ultra-large': {'min': '1710px', 'max': '639px'}, 
+        'ultra-large': {'min': '1710px'}, 
+        'ultra-xl': {'min': '1932px'}, 
+
+
+      },
       fontSize: {
         'h0': 'var(--text-h0)',
         'h1': 'var(--text-h1)',
