@@ -56,7 +56,7 @@ const WhoWeAre = () => {
             <img
               src="/static/images/who_we_are.jpg"
               alt="Team"
-              className="rounded-lg shadow-lg w-full object-cover"
+              className="pt-4 rounded-lg shadow-lg w-full object-cover"
             />
 
           
@@ -65,13 +65,13 @@ const WhoWeAre = () => {
             <img
               src="/static/images/triangle.svg"
               alt="Triangle Decoration"
-              className="absolute -top-4 -right-4 w-8 md:w-10 lg:w-12"
+              className="absolute pt-4 -top-4 -right-4 w-8 md:w-10 lg:w-12"
             />
           </div>
 
           {/* Right-side Text */}
           <div>
-            <p className="small-phones:hidden text-gray-700 text-sm font-normal md:text-base ultra-large:text-body-l leading-relaxed ultra-large:[line-height:200%]">
+            <p className="small-phones:hidden mid-tablets:hidden text-gray-700 text-sm font-normal md:text-base ultra-large:text-body-l leading-relaxed ultra-large:[line-height:200%]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod
               lobortis diam, nec bibendum ipsum tincidunt ut. Sed id pulvinar quam, et
               euismod ipsum. Nulla ut fermentum ante. Ut vitae lacus fringilla urna
@@ -82,7 +82,7 @@ const WhoWeAre = () => {
               viverra rhoncus. Fusce elit felis, aliquam quis consectetur sed, fermentum
               a justo.
             </p>
-            <p className="large-phones:hidden text-gray-700 text-sm font-normal md:text-base ultra-large:text-body-l leading-relaxed ultra-large:[line-height:200%]">
+            <p className="lg:hidden  text-gray-700 text-sm font-normal md:text-base ultra-large:text-body-l leading-relaxed ultra-large:[line-height:200%]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod  lobortis diam, nec bibendum ipsum tincidunt ut. 
             </p>
           </div>
