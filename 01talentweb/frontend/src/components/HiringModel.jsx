@@ -74,15 +74,15 @@ const HiringModel = () => {
   ];
 
   return (
-    <section className="bg-white w-full ultra-large:mb-20 py-12 px-4 md:px-16 relative overflow-visible">
+    <section className="bg-white w-full ultra-large:mb-20 py-12 px-4 **md:px-16** md:px-2 relative overflow-visible">
       <Container>
         <div className="sticky top-20 mid-tablets:top-16 self-start bg-white py-4 z-20 max-w-screen ">
-          <h2 className=" text-2xl md:text-3xl font-bold text-center mb-10 ultra-large:text-h2 ultra-large:pb-18 max-w-screen">
+          <h2 className=" text-2xl **md:text-5xl** lg:text-5xl md:text-4xl font-bold text-center mb-10 ultra-large:text-h2 ultra-large:pb-18 max-w-screen">
             WHY <span className="text-blue-600">OUR HIRING MODEL</span> WORKS FOR YOU
           </h2>
         </div>
 
-      <div className="grid small-phones:grid-cols-1 md:grid-cols-2 max-w-screen  mx-auto gap-10">
+      <div className="grid small-phones:grid-cols-1 md:grid-cols-2 max-w-screen  mx-auto  gap-10">
           {/* Diamonds*/}
           <img
             src="/static/images/diamonds.svg"
@@ -93,8 +93,8 @@ const HiringModel = () => {
         <div className="space-y-10 small-phones:relative small-phones:pt-160" >
           {features.map((item, i) => (
             <div key={i}>
-              <h3 className="text-lg font-semibold ultra-large:text-h3">{item.title}</h3>
-              <p className="text-sm text-gray-700 mt-2 ultra-large:text-body-m">{item.text}</p>
+              <h3 className="**text-lg**md:text-2xl lg:text-3xl font-semibold ultra-large:text-h3">{item.title}</h3>
+              <p className="**text-sm** md:text-lg lg:text-xl text-gray-700 mt-2 ultra-large:text-body-m">{item.text}</p>
             </div>
           ))}
         </div>
