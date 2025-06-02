@@ -35,7 +35,7 @@ const HiringModelMobile = () => {
   return (
     <div className="block md:hidden h-screen w-full flex flex-col bg-white mt-30 mb-40">
       {/* Sticky header + image */}
-      <div className="sticky top-10 z-10  pb-2 ">
+      <div className="sticky top-10 z-10 bg-white  pb-2 ">
         <h2 className="text-lg font-bold text-center px-4 pt-8">
           WHY <span className="text-blue-600">OUR HIRING MODEL</span> WORKS FOR YOU
         </h2>
