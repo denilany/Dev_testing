@@ -6,6 +6,14 @@ module.exports = {
     "./backend/templates/**/*.{html,js,jsx,ts,tsx}",
   ],
   theme: {
+    screens: {
+      'xs': '475px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
     extend: {
       screens: {
         'small-tablets': '768px',
@@ -35,6 +43,9 @@ module.exports = {
       },
       fontFamily: {
         sans: ['var(--font-sans)'],
+      },
+      transitionDuration: {
+        '600': '600ms',
       },
     },
   },

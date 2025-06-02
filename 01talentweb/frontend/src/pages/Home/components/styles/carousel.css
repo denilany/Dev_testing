@@ -1,3 +1,29 @@
+/* Custom duration classes for smooth carousel transitions */
+.duration-600 {
+  transition-duration: 600ms;
+}
+
+/* Carousel container styles */
+.carousel-container {
+  overflow: hidden;
+}
+
+.carousel-track {
+  will-change: transform;
+  transition: transform 0.6s ease-out;
+}
+
+
+.carousel-card {
+  flex-shrink: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 600ms ease-out;
+}
+
+/* Legacy styles (keeping for backward compatibility) */
 .card-wrapper {
     position: absolute;
     top: 50%;
