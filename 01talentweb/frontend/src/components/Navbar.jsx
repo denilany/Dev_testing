@@ -1,19 +1,35 @@
 import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react'; // You can also use Heroicons or any other icon set
 import Button from './Button.jsx';
+import { Container } from './Layout.jsx';
+
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setScrolled(window.scrollY > 50);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
+  useEffect(() => {
+  const mainEl = document.querySelector('main');
+  const handleScroll = () => {
+    if (mainEl) {
+      setScrolled(mainEl.scrollTop > 50);
+    }
+  };
+
+  mainEl?.addEventListener('scroll', handleScroll);
+  handleScroll();
+
+  return () => mainEl?.removeEventListener('scroll', handleScroll);
+}, []);
+
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
@@ -24,18 +40,18 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-30 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
         scrolled ? "bg-white shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="flex justify-between items-center py-4 px-6 md:px-10 ultra-xl:max-w-[1900px]">
+      <div className="flex justify-between items-center py-4 px-6 md:px-10 ultra-xl:max-w-screen">
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <img src={logoSrc} alt="Logo" className="h-8 md:h-8 xl:h-12 ultra-large:h-18" />
         </div>
 
         {/* Desktop Menu */}
-        <ul className={`hidden md:flex space-x-8 font-medium text-base md:text-xs lg:text-xl  xl:text-xl 2xl:text-sm ultra-large:text-2xl ultra-xl:text-xl ${textColorClass}`}>
+        <ul className={`hidden md:flex space-x-8 font-medium text-base md:text-xs lg:text-xl  xl:text-lg 2xl:text-sm ultra-large:text-2xl ultra-xl:text-2xl ${textColorClass}`}>
           <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Home</a></li>
           <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Services</a></li>
           <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Talents</a></li>

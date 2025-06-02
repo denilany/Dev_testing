@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  mode: 'jit',
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
     "./backend/templates/**/*.{html,js,jsx,ts,tsx}",
@@ -16,6 +17,8 @@ module.exports = {
     extend: {
       screens: {
         'small-tablets': '768px',
+        'mid-tablets': {'min': '768px','max': '900px'},
+        
         // 'small-phones': '320px',
         'large-phones': {'min': '439px','max': '766px'},
 
@@ -46,5 +49,17 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+  //    function ({ addUtilities }) {
+  //   addUtilities({
+  //     '.scrollbar-none': {
+  //       '-ms-overflow-style': 'none',
+  //       'scrollbar-width': 'none',
+  //     },
+  //     '.scrollbar-none::-webkit-scrollbar': {
+  //       display: 'none',
+  //     },
+  //   });
+  // },
+  ],
 }

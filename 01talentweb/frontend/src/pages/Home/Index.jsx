@@ -6,6 +6,11 @@ import CompanyLogos from '../../components/CompanyLogos.jsx';
 import FeaturedProfiles from './components/FeaturedProfiles.jsx';
 import Newsletter from './components/Newsletter.jsx';
 import UniqueTalentSection from './components/UniqueTalent.jsx';
+import WhoWeAre from '../../components/WhoWeAre.jsx';
+import HiringModel from '../../components/HiringModel.jsx';
+import HiringModelMobile from '../../components/HiringModelMobile.jsx';
+
+
 import WhatsMoreSection from './components/Whatsmore.jsx';
 
 
@@ -55,16 +60,35 @@ const sampleTalents = [
   ];
 
   
+
+
+
+// import './App.css'; // for animation styling
+
 export default function Index() {
     const { talents = [] } = usePage().props;
 
     return (
       <>
         {/* <Hero /> */}
-        <Navbar />
+        {/* <Navbar /> */}
         <Hero />
         <Stats />
         <CompanyLogos />
+        <WhoWeAre />
+        {/* <HiringModel /> */}
+                {/* <HiringModelMobile /> */}
+
+        {/* Desktop version: hidden on small screens */}
+<div className="hidden md:block">
+  <HiringModel />
+</div>
+
+{/* Mobile version: only visible on small screens */}
+<div className="block md:hidden">
+  <HiringModelMobile />
+</div>
+
         <WhatsMoreSection/>
         <UniqueTalentSection/>
         <FeaturedProfiles talents={sampleTalents} />
