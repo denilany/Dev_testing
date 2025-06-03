@@ -1,9 +1,5 @@
 from inertia import inertia
-from inertia import render
 from talent.models import Talent
-from django.utils import timezone
-from django.db.models import Q
-import random
 
 @inertia('Home/Index')
 def index(request):
@@ -19,7 +15,11 @@ def index(request):
             'name': dev.name,
             'image': f'/images/talents/{dev.name.lower().replace(" ", "_")}.jpg',
             'skills': skills,
-            'average_rating': dev.profile.get('average_rating', 4.5)
+            'average_rating': dev.profile.get('average_rating', 4.5),
+            'profile': {
+                'role': dev.profile.get('role', ''),
+                'bio': dev.profile.get('bio', ''),
+            }
         })
     
     return {
