@@ -59,14 +59,10 @@
     --color-primary-400: #005AED;
     --color-primary-500: #0052CC;  /* Primary brand color */
     --color-primary-600: #2B5290;
-    --color-primary-700: #000000;
+     --color-primary-700: #284B81;
+    --color-primary-800: #000000;
     --color-primary-button-600: #0063F9; 
-    --color-hero-text: #005AE0;
-
-
-
-    --color-primary-700: #000000;
-    
+    --color-hero-text: #005AE0;    
     
     /* Color Palette - Informational */
     --color-error: #EA191D;
