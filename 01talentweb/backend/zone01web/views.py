@@ -3,10 +3,17 @@ from talent.models import Talent
 
 @inertia('Home/Index')
 def index(request):
+    """
+    Inertia view for the homepage that provides featured developers.
+
+    Fetches all Talent objects with a non-null 'featured_order', orders them,
+    and formats each developer's data to include id, name, image, skills, average_rating,
+    and a profile object with role and bio. The formatted list is returned as
+    'featured_developers' for use in the frontend.
+    """
     # Get all talents with featured_order
     all_devs = Talent.objects.filter(featured_order__isnull=False).order_by('featured_order')
     
-    # Format the data to match what the frontend expects
     formatted_devs = []
     for dev in all_devs:
         skills = dev.profile.get('skills', [])
