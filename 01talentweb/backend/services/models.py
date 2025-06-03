@@ -1,3 +1,8 @@
+"""
+Model definitions for the Services app.
+Defines the Service model, which represents a service offered and its related metadata.
+"""
+
 from django.db import models
 import uuid
 
