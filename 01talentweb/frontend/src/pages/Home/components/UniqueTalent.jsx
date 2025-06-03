@@ -284,7 +284,7 @@ const UniqueTalentSection = () => {
             {/* Single lines SVG - positioned for top connections */}
             <div className="absolute" style={{
               width: '40%',
-              aspectRatio: '1',
+              aspectRatio: '1.1',
               top: '0%',
               left: '13%',
               transform: 'rotate(8.73deg)'
@@ -300,9 +300,8 @@ const UniqueTalentSection = () => {
             <div className="absolute" style={{
               width: '50%',
               aspectRatio: '1.1',
-              top: '35%',
+              top: '32%',
               left: '15%',
-              transform: 'rotate(15.23deg)'
             }}>
               <img 
                 src="/static/images/doublelines.svg" 
@@ -330,7 +329,7 @@ const UniqueTalentSection = () => {
               className="absolute z-30 cursor-pointer hover:scale-105 transition-transform duration-300" 
               style={{
                 width: pos.size,
-                aspectRatio: '1',
+                aspectRatio: '1.1',
                 top: pos.top,
                 left: pos.left,
                 transform: 'translate(-50%, -50%)'
@@ -368,11 +367,10 @@ const UniqueTalentSection = () => {
 
           {/* Responsive Profile Card */}
           {showProfile && selectedDeveloper && (
-            <div className="fixed sm:absolute z-50 w-[90%] sm:w-80 bg-white rounded-2xl shadow-2xl p-4 sm:p-6 border border-gray-100 animate-fade-in"
+            <div className="absolute w-[40%] bg-white rounded-2xl shadow-2xl p-4 sm:p-6 border border-gray-100 animate-fade-in"
                  style={{
                    top: '50%',
-                   left: '80%',
-                   right: 'auto',
+                   left: '79%',
                    bottom: 'auto',
                    transform: 'translate(-50%, -50%)',
                    maxWidth: 'calc(100% - 2rem)'
@@ -386,8 +384,8 @@ const UniqueTalentSection = () => {
               </div>
 
               {/* Profile section */}
-              <div className="relative mb-4 sm:mb-5">
-                <div className="text-center w-14 h-14 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4">
+              <div className="text-center mb-4">
+                <div className="relative w-12 h-12 mx-auto mb-3">
                   <img 
                     src={selectedDeveloper.image} 
                     alt={selectedDeveloper.name}

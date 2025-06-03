@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from '@inertiajs/react';
+
 import { Container } from './Layout.jsx';
 
 
@@ -89,11 +91,19 @@ const WhoWeAre = () => {
         </div>
 
         {/* Know More Button */}
-        <div className="mt-10 flex justify-center">
+        {/* <div className="mt-10 flex justify-center">
           <button className="px-10 py-2 text-sm border border-blue-500 text-blue-600 hover:bg-blue-50 lg:w-[400px] ultra-large:w-[300px] transition rounded">
             Know More...
           </button>
-        </div>
+        </div> */}
+         <div className="flex justify-center mt-12 md:mt-16">
+            <Link
+              href="/hire"
+              className="flex items-center justify-center bg-[var(--color-primary-300)] text-white font-medium rounded-lg md:rounded-[9.17px] hover:opacity-90 transition-opacity w-full max-w-sm sm:max-w-md h-14 sm:h-16 md:h-[75.69px] py-3 px-6 sm:px-8 md:py-[22.92px] md:px-[91.69px] text-lg sm:text-xl md:text-2xl lg:text-[24.45px] leading-none md:leading-[27.51px] tracking-normal text-center font-sans"
+            >
+              Know more...
+            </Link>
+         </div>
       </div>
       </Container>
     </section>

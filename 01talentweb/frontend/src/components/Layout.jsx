@@ -4,7 +4,7 @@ import Footer from "@/components/Footer.jsx";
 
 // Create a container component for consistent spacing
 export const Container = ({ children, className = "" }) => (
-  <div className={`mx-4 sm:mx-20 mx-auto ${className}`}>
+  <div className={`mx-4 xxs:mx-4 sm:mx-20 mx-auto ${className}`}>
     {children}
   </div>
 );
