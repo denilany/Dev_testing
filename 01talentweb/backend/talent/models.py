@@ -1,3 +1,8 @@
+"""
+Model definitions for the Talent app.
+Defines the Talent model, which represents a tech talent with profile information and metadata.
+"""
+
 from django.db import models
 from django.contrib.postgres.indexes import GinIndex
 import uuid
