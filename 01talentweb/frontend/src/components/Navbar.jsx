@@ -63,8 +63,14 @@ export default function Navbar() {
           <Button
             className="md:h-[36px] lg:w-[150px] lg:h-[40px] xl:text-[16px] 2xl:w-[200px] 2xl:h-[40px] 2xl:text-sm ultra-large:text-2xl ultra-xl:text-xl flex justify-center"
             textColor={scrolled ? "text-black" : "text-white"}
-            bgColor="bg-blue-600"
-            hoverBgColor="hover:bg-blue-700"
+            style={{
+              backgroundColor: 'var(--color-primary-300)',
+              color: '#FFFFFF',
+              padding: '12px 40px',
+              width: '100%',
+              maxWidth: '200px',
+              height: '49px',
+            }}
             
           >
             Hire Here
