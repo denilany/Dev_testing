@@ -1,3 +1,4 @@
+from datetime import date
 from inertia import inertia
 from talent.models import Talent
 
@@ -6,16 +7,29 @@ def index(request):
     """
     Inertia view for the homepage that provides featured developers.
 
-    Fetches all Talent objects with a non-null 'featured_order', orders them,
-    and formats each developer's data to include id, name, image, skills, average_rating,
-    and a profile object with role and bio. The formatted list is returned as
-    'featured_developers' for use in the frontend.
+    Randomly selects 10 developers to feature each day, rotating through all developers
+    before repeating the cycle. The selection is based on the current day and ensures
+    all developers are featured before the cycle restarts.
     """
-    # Get all talents with featured_order
-    all_devs = Talent.objects.filter(featured_order__isnull=False).order_by('featured_order')
+    all_devs = list(Talent.objects.all().order_by('id'))
+    total = len(all_devs)
+    if total == 0:
+        return {'featured_developers': []}
     
+    # Calculate the daily offset for rotation
+    devs_per_day = 10
+    today = date.today()
+    cycle_length = (total + devs_per_day - 1) // devs_per_day
+    day_index = (today.toordinal()) % cycle_length
+    start = day_index * devs_per_day
+    end = start + devs_per_day
+    featured = all_devs[start:end]
+
+    # If at the end, wrap around to the beginning
+    if len(featured) < devs_per_day:
+        featured += all_devs[:devs_per_day - len(featured)]
     formatted_devs = []
-    for dev in all_devs:
+    for dev in featured:
         skills = dev.profile.get('skills', [])
         formatted_devs.append({
             'id': str(dev.id),
@@ -28,7 +42,6 @@ def index(request):
                 'bio': dev.profile.get('bio', ''),
             }
         })
-    
     return {
         'featured_developers': formatted_devs
     }
