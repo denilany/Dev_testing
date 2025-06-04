@@ -4,6 +4,8 @@ import { Link } from '@inertiajs/react';
 const TalentCard = ({ talent }) => {
   const initials = talent.name ? talent.name[0].toUpperCase() : '?';
   const skills = talent.skills || ['Golang', 'Docker', 'RESTful APIs', 'Database Design'];
+  const role = talent.profile?.role || 'Web Developer';
+  const bio = talent.profile?.bio || 'No bio available.';
 
   return (
     <div className="bg-[--color-primary-50] shadow-md px-8 py-10 text-center mx-auto rounded-2xl w-[350px] transition-all hover:shadow-lg hover:-translate-y-1">
@@ -25,12 +27,11 @@ const TalentCard = ({ talent }) => {
 
       {/* Name + Title */}
       <h2 className="text-h0 font-bold text-gray-900">{talent.name}</h2>
-      <p className="text-[--color-primary-500] font-medium text-body-xl mb-4">Web Developer</p>
+      <p className="text-[--color-primary-500] font-medium text-body-xl mb-4">{role}</p>
 
       {/* Description */}
       <p className="text-gray-600 text-body-m mb-4 leading-relaxed px-2">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod
-        lobortis diam, nec bibendum ipsum tincidunt ut.
+        {bio}
       </p>
       {/* Action Buttons */}
       <div className="flex justify-center gap-6">

@@ -1,3 +1,14 @@
+"""
+Views for the Services app.
+
+This module provides endpoints for listing and managing service data.
+
+Key Views:
+- services: Returns a list of all services for the frontend.
+
+Additional endpoints can be added here to support CRUD operations or custom queries for the Service model.
+"""
+
 from inertia import inertia
 from services.models import Service
 
