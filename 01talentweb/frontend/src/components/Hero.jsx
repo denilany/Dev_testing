@@ -44,14 +44,14 @@ export default function Hero() {
       <Button
         onClick={() => {}}
         style={{
-          backgroundColor: 'var(--color-primary-300)',
+          // backgroundColor: 'var(--color-primary-300)',
           color: '#FFFFFF',
           padding: '22.92px 91.69px',
           width: '100%',
           maxWidth: '377.24px',
           height: '75.69px'
         }}
-        className="hover:bg-[var(--color-primary-700)] transition-colors duration-300 md:text-xl lg:text-2xl xl:text-3xl"
+        className="hover:bg-[#284B81] bg-[var(--color-primary-300)] transition-colors duration-300 md:text-xl lg:text-2xl xl:text-3xl"
       >
         Hire Here
       </Button>

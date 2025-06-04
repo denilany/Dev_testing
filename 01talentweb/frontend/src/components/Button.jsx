@@ -41,7 +41,7 @@ const Button = ({
   return (
     <button
       style={baseStyle}
-      className={`${className} hover:opacity-90`}
+      className={`${className}`}
       onClick={onClick}
       {...props}
     >

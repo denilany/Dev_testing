@@ -64,10 +64,10 @@ export default function Navbar() {
         </div> */}
           <div className="hidden md:block">
           <Button
-            className="md:h-[36px] md:text-lg lg:text-xl lg:w-[150px] lg:h-[40px] 2xl:w-[200px] 2xl:h-[40px] flex justify-center"
+            className="hover:bg-[#284B81] bg-[var(--color-primary-300)] md:h-[36px] md:text-lg lg:text-xl lg:w-[150px] lg:h-[40px] 2xl:w-[200px] 2xl:h-[40px] flex justify-center"
             textColor={scrolled ? "text-black" : "text-white"}
             style={{
-              backgroundColor: 'var(--color-primary-300)',
+              // backgroundColor: 'var(--color-primary-300)',
               color: '#FFFFFF',
               padding: '12px 40px',
               width: '100%',
@@ -105,10 +105,10 @@ export default function Navbar() {
               textColor="text-white"
               // bgColor="bg-blue-600"
               // hoverBgColor="hover:bg-blue-700"
-              className="2xl:w-[200px] 2xl:h-[65px]"
+              className="2xl:w-[200px] 2xl:h-[65px] hover:bg-[#284B81] bg-[var(--color-primary-300)]"
               // fullWidth
               style={{
-              backgroundColor: 'var(--color-primary-300)',
+              // backgroundColor: 'var(--color-primary-300)',
               color: '#FFFFFF',
               padding: '12px 40px',
               width: '100%',
