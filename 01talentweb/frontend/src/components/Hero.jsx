@@ -34,18 +34,22 @@ export default function Hero() {
     <p className="mb-6 text-[12px] sm:text-xl md:text-base lg:text-lg xl:text-1xl 2xl:text-2xl lg:leading-[120%]  ultra-large:text-xl ultra-xl:text-4xl">
       We are a software talent agency that is addressing the global need for top tech talent by transforming access to high-tech jobs.
     </p>
-    <div className="relative mt-8">
+    {/* <Button
+        className="md:w-[240px] md:h-[45px] sm:w-[250px] sm:h-[50px] large-phones:w-[190px] large-phones:h-[35px] small-phones:w-[180px] small-phones:h-[35px] lg:w-[290px] lg:h-[50px] 2xl:w-[290px] 2xl:h-[50px] ultra-large:w-[290px] ultra-large:h-[50px] ultra-xl:w-[320px] flex justify-center"
+    >Hire Here
+    </Button> */}
+     <div className="relative mt-8">
       <Button
         onClick={() => {}}
         style={{
-          backgroundColor: 'var(--color-primary-300)',
+          // backgroundColor: 'var(--color-primary-300)',
           color: '#FFFFFF',
           padding: '22.92px 91.69px',
           width: '100%',
           maxWidth: '377.24px',
           height: '75.69px'
         }}
-        className="hover:bg-[var(--color-primary-700)] transition-colors duration-300"
+        className="hover:bg-[#284B81] bg-[var(--color-primary-300)] transition-colors duration-300 md:text-xl lg:text-2xl xl:text-3xl"
       >
         Hire Here
       </Button>

@@ -8,14 +8,6 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setScrolled(window.scrollY > 50);
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
   useEffect(() => {
   const mainEl = document.querySelector('main');
   const handleScroll = () => {
@@ -51,7 +43,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Menu */}
-        <ul className={`hidden md:flex space-x-8 font-medium text-base md:text-xs lg:text-xl  xl:text-lg 2xl:text-sm ultra-large:text-2xl ultra-xl:text-2xl ${textColorClass}`}>
+        <ul className={`hidden md:flex space-x-8 font-medium text-base md:text-base lg:text-xl  xl:text-2xl 2xl:text-3xl ultra-large:text-2xl ultra-xl:text-3xl ${textColorClass}`}>
           <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Home</a></li>
           <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Services</a></li>
           <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Talents</a></li>
@@ -59,7 +51,7 @@ export default function Navbar() {
         </ul>
 
         {/* Desktop Button */}
-        <div className="hidden md:block">
+        {/* <div className="hidden md:block">
           <Button
             className="md:h-[36px] lg:w-[150px] lg:h-[40px] xl:text-[16px] 2xl:w-[200px] 2xl:h-[40px] 2xl:text-sm ultra-large:text-2xl ultra-xl:text-xl flex justify-center"
             textColor={scrolled ? "text-black" : "text-white"}
@@ -72,6 +64,24 @@ export default function Navbar() {
               height: '49px',
             }}
             
+          >
+            Hire Here
+          </Button>
+        </div> */}
+          <div className="hidden md:block">
+          <Button
+            className="hover:bg-[#284B81] bg-[var(--color-primary-300)] md:h-[36px] md:text-lg lg:text-xl lg:w-[150px] lg:h-[40px] 2xl:w-[200px] 2xl:h-[40px] flex justify-center"
+            textColor={scrolled ? "text-black" : "text-white"}
+            style={{
+              // backgroundColor: 'var(--color-primary-300)',
+              color: '#FFFFFF',
+              padding: '12px 40px',
+              width: '100%',
+              maxWidth: '200px',
+              height: '49px',
+            }}
+            
+         
           >
             Hire Here
           </Button>
@@ -99,10 +109,18 @@ export default function Navbar() {
           <div className="pt-4">
             <Button
               textColor="text-white"
-              bgColor="bg-blue-600"
-              hoverBgColor="hover:bg-blue-700"
-              className="2xl:w-[200px] 2xl:h-[65px]"
-              fullWidth
+              // bgColor="bg-blue-600"
+              // hoverBgColor="hover:bg-blue-700"
+              className="2xl:w-[200px] 2xl:h-[65px] hover:bg-[#284B81] bg-[var(--color-primary-300)]"
+              // fullWidth
+              style={{
+              // backgroundColor: 'var(--color-primary-300)',
+              color: '#FFFFFF',
+              padding: '12px 40px',
+              width: '100%',
+              maxWidth: '200px',
+              height: '49px',
+            }}
             >
               Hire Here
             </Button>
