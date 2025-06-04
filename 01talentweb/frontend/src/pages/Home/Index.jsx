@@ -7,7 +7,6 @@ import FeaturedProfiles from './components/FeaturedProfiles.jsx';
 import Newsletter from './components/Newsletter.jsx';
 import UniqueTalentSection from './components/UniqueTalent.jsx';
 
-
 const sampleTalents = [
     { 
       id: 1,
@@ -53,20 +52,18 @@ const sampleTalents = [
     },
   ];
 
-  
 export default function Index() {
-    const { talents = [] } = usePage().props;
+  const { statistics = [], clients = [], talents = [] } = usePage().props;
 
-    return (
-      <>
-        {/* <Hero /> */}
-        <Navbar />
-        <Hero />
-        <Stats />
-        <CompanyLogos />
-        <UniqueTalentSection/>
-        <FeaturedProfiles talents={sampleTalents} />
-        <Newsletter />
-      </>
-    );
+  return (
+    <>
+      <Navbar />
+      <Hero />
+      <Stats statistics={statistics} />
+      <CompanyLogos clients={clients} />
+      <UniqueTalentSection />
+      <FeaturedProfiles talents={sampleTalents} />
+      <Newsletter />
+    </>
+  );
 }
