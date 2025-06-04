@@ -70,17 +70,21 @@ export default function Navbar() {
         </div> */}
           <div className="hidden md:block">
           <Button
-            className="hover:bg-[#284B81] bg-[var(--color-primary-300)] md:h-[36px] md:text-lg lg:text-xl lg:w-[150px] lg:h-[40px] 2xl:w-[200px] 2xl:h-[40px] flex justify-center"
+            // className="hover:bg-[#284B81] bg-[var(--color-primary-300)] md:h-[36px] lg:w-[150px] lg:h-[40px] 2xl:w-[200px] 2xl:h-[40px] flex justify-center"
+            className="border-[1.5px] border-[var(--color-primary-300)] text-white bg-[var(--color-primary-300)] hover:bg-[#284B81] whitespace-nowrap
+            px-6 py-3 h-12 rounded-lg
+            sm:px-8 sm:py-3.5 sm:h-14 sm:rounded-lg
+            md:px-10 md:py-4 md:h-16"
             textColor={scrolled ? "text-black" : "text-white"}
-            style={{
-              // backgroundColor: 'var(--color-primary-300)',
-              color: '#FFFFFF',
-              padding: '12px 40px',
-              width: '100%',
-              maxWidth: '200px',
-              height: '49px',
-            }}
-            
+            // style={{
+            //   color: '#FFFFFF',
+            //   padding: '12px 40px',
+            //   width: '100%',
+            //   maxWidth: '200px',
+            //   height: '49px',
+            // }}
+            style={{ minWidth: 'fit-content' }}
+
          
           >
             Hire Here
@@ -111,16 +115,20 @@ export default function Navbar() {
               textColor="text-white"
               // bgColor="bg-blue-600"
               // hoverBgColor="hover:bg-blue-700"
-              className="2xl:w-[200px] 2xl:h-[65px] hover:bg-[#284B81] bg-[var(--color-primary-300)]"
+              // className="2xl:w-[200px] 2xl:h-[65px] hover:bg-[#284B81] bg-[var(--color-primary-300)]"
+              className="border-[1.5px] border-[var(--color-primary-300)] text-white bg-[var(--color-primary-300)] hover:bg-[#284B81] whitespace-nowrap
+                       px-6 py-3 h-12 rounded-lg
+                       sm:px-8 sm:py-3.5 sm:h-14 sm:rounded-lg
+                       md:px-10 md:py-4 md:h-16"
               // fullWidth
-              style={{
-              // backgroundColor: 'var(--color-primary-300)',
-              color: '#FFFFFF',
-              padding: '12px 40px',
-              width: '100%',
-              maxWidth: '200px',
-              height: '49px',
-            }}
+            //   style={{
+            //   color: '#FFFFFF',
+            //   padding: '12px 40px',
+            //   width: '100%',
+            //   maxWidth: '200px',
+            //   height: '49px',
+            // }}
+            style={{ minWidth: 'fit-content' }}
             >
               Hire Here
             </Button>
