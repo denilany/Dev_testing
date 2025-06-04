@@ -11,13 +11,18 @@ import Newsletter from './components/Newsletter.jsx';
 export default function Index() {
     const { props } = usePage();
     const featured_developers = props.featured_developers || [];
+    const stats = props.stats || [];
+    const company_logos = props.company_logos || [];
+
+    console.log('Stats:', stats);
+    console.log('Company Logos:', company_logos);
 
     return (
       <>
         <Navbar />
         <Hero />
-        <Stats />
-        <CompanyLogos />
+        <Stats stats={stats} />
+        <CompanyLogos logos={company_logos} />
         <UniqueTalentSection/>
         <FeaturedProfiles talents={featured_developers} />
         <Newsletter />
