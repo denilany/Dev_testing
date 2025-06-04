@@ -43,7 +43,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Menu */}
-        <ul className={`hidden md:flex space-x-8 font-medium text-base md:text-xs lg:text-xl  xl:text-lg 2xl:text-sm ultra-large:text-2xl ultra-xl:text-2xl ${textColorClass}`}>
+        <ul className={`hidden md:flex space-x-8 font-medium text-base md:text-base lg:text-xl  xl:text-2xl 2xl:text-3xl ultra-large:text-2xl ultra-xl:text-3xl ${textColorClass}`}>
           <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Home</a></li>
           <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Services</a></li>
           <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Talents</a></li>
@@ -64,7 +64,7 @@ export default function Navbar() {
         </div> */}
           <div className="hidden md:block">
           <Button
-            className="md:h-[36px] lg:w-[150px] lg:h-[40px] xl:text-[16px] 2xl:w-[200px] 2xl:h-[40px] 2xl:text-sm ultra-large:text-2xl ultra-xl:text-xl flex justify-center"
+            className="md:h-[36px] md:text-lg lg:text-xl lg:w-[150px] lg:h-[40px] 2xl:w-[200px] 2xl:h-[40px] flex justify-center"
             textColor={scrolled ? "text-black" : "text-white"}
             style={{
               backgroundColor: 'var(--color-primary-300)',
@@ -75,6 +75,7 @@ export default function Navbar() {
               height: '49px',
             }}
             
+         
           >
             Hire Here
           </Button>

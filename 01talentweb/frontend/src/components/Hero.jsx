@@ -51,7 +51,7 @@ export default function Hero() {
           maxWidth: '377.24px',
           height: '75.69px'
         }}
-        className="hover:bg-[var(--color-primary-700)] transition-colors duration-300"
+        className="hover:bg-[var(--color-primary-700)] transition-colors duration-300 md:text-xl lg:text-2xl xl:text-3xl"
       >
         Hire Here
       </Button>

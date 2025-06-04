@@ -18,6 +18,7 @@ const Button = ({
   children,
   onClick,
   style = {},
+  fontSize = {},
   className = '',
   ...props
 }) => {
@@ -25,7 +26,7 @@ const Button = ({
     borderRadius: '9.17px',
     fontFamily: 'Montserrat, sans-serif',
     fontWeight: 500,
-    fontSize: '24.45px',
+    // fontSize: '24.45px',
     lineHeight: '27.51px',
     textAlign: 'center',
     display: 'flex',
