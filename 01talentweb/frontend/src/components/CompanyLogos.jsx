@@ -1,4 +1,4 @@
-export default function CompanyLogos({ clients = [] }) {
+export default function CompanyLogos({ logos = [] }) {
   return (
     <section className="bg-white overflow-hidden mb-10 mt-10 xl:mt-0 xl:pt-0">
       <div className="large-phones:mt-10 md:mb-5 mb-5 xl:pt-0 ml-10 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-6 ">
@@ -7,7 +7,7 @@ export default function CompanyLogos({ clients = [] }) {
             Our Talent is
             trusted by local
             and global
-            companies
+            companies.
           </h2>
         </div>
         <div className="w-full overflow-hidden">
@@ -19,7 +19,7 @@ export default function CompanyLogos({ clients = [] }) {
             }}
           >
             {/* Repeat logos for seamless looping */}
-            {[...clients, ...clients, ...clients].map((client, i) => (
+            {[...logos, ...logos, ...logos].map((client, i) => (
               <a
                 key={i}
                 href={client.website || "#"}
