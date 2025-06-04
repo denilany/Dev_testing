@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from '@inertiajs/react';
 import { Container } from '../../../components/Layout.jsx';
+import Button from '../../../components/Button.jsx';
 
 const WhatsMoreSection = () => {
   return (
@@ -69,19 +70,17 @@ const WhatsMoreSection = () => {
         </div>
 
         <div className="w-full flex justify-center p-8 xs:p-10 sm:p-12 md:p-16 lg:p-18 xl:p-20 2xl:p-20">
-          <Link
+          <Button
             href="/contact"
-            className="flex items-center justify-center border-[var(--color-primary-300)] text-[var(--color-primary-300)] font-medium hover:bg-[--color-primary-50] transition-opacity whitespace-nowrap
-                       w-full max-w-sm h-14 border-[2px] rounded-lg text-lg
-                       xs:max-w-md xs:h-15 xs:border-[2.2px] xs:rounded-lg xs:text-xl
-                       sm:max-w-md sm:h-16 sm:border-[2.4px] sm:rounded-lg sm:text-xl
-                       md:max-w-lg md:h-[70px] md:border-[2.6px] md:rounded-[9px] md:text-2xl
-                       lg:max-w-xl lg:h-[73px] lg:border-[2.8px] lg:rounded-[9px] lg:text-2xl
-                       xl:max-w-[23rem] xl:h-[75px] xl:border-[3.2px] xl:rounded-[10px] xl:text-[1.8rem]
-                       2xl:max-w-[23.58rem] 2xl:h-[87.68px] 2xl:border-[3.85px] 2xl:rounded-[11.52px] 2xl:text-[1.93rem] 2xl:leading-[2.17]"
+            className="border-[1.5px] border-[var(--color-primary-300)] text-[var(--color-primary-300)] hover:bg-[--color-primary-50] whitespace-nowrap
+                       px-6 py-3 h-12 rounded-lg
+                       sm:px-8 sm:py-3.5 sm:h-14 sm:rounded-lg
+                       md:px-10 md:py-4 md:h-16"
+            style={{ minWidth: 'fit-content' }}
+
           >
             Talk to Us
-          </Link>
+          </Button>
         </div>
       </Container>
     </section>

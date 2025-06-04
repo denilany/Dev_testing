@@ -1,6 +1,7 @@
 // resources/js/components/NewsletterSection.jsx
 import React from 'react';
 import { Container } from '../../../components/Layout.jsx';
+import Button from '../../../components/Button.jsx';
 
 const NewsletterSection = () => {
   return (
@@ -15,20 +16,28 @@ const NewsletterSection = () => {
         </p>
 
         <form className="w-full max-w-[1200px] mx-auto px-4 sm:px-6">
-          <div className="relative">
+          <div className="relative w-full">
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-full h-14 sm:h-20 md:h-[100px] px-4 py-2 sm:py-4 pr-32 sm:pr-[400px] text-sm sm:text-base rounded-md border border-[var(--color-border)] text-[var(--color-text)] focus:ring-2 focus:ring-[--color-primary-500] focus:border-[--color-primary-500] outline-none"
+              className="w-full h-12 xs:h-14 sm:h-16 md:h-20 lg:h-24 xl:h-[100px] px-3 xs:px-4 py-2 pr-24 xs:pr-28 sm:pr-36 md:pr-48 lg:pr-64 xl:pr-[400px] 
+                         text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl 
+                         rounded-md border border-[var(--color-border)] text-[var(--color-text)] 
+                         focus:ring-2 focus:ring-[--color-primary-500] focus:border-[--color-primary-500] outline-none"
               required
               aria-label="Email address"
             />
-            <button
+            <Button
               type="submit"
-              className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 w-24 sm:w-32 md:w-96 h-10 sm:h-14 md:h-[84px] bg-[--color-primary-500] text-xs sm:text-sm md:text-body-m text-white font-bold rounded sm:rounded-[6px] hover:bg-[--color-primary-400] transition-colors duration-200 whitespace-nowrap flex items-center justify-center px-2 sm:px-4"
+              className="absolute right-1 top-1/2 -translate-y-1/2 
+                         bg-[--color-primary-300] hover:bg-[--color-primary-400] text-white
+                         px-6 py-3 h-12 rounded-lg
+                         sm:px-8 sm:py-3.5 sm:h-14 sm:rounded-lg
+                         md:px-10 md:py-4 md:h-16"
+              style={{ minWidth: 'fit-content' }}
             >
               Subscribe
-            </button>
+            </Button>
           </div>
         </form>
       </Container>

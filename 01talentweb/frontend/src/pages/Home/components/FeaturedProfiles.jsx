@@ -3,6 +3,7 @@ import { Link } from '@inertiajs/react';
 import TalentCard from '../../../components/TalentCard.jsx';
 import { Container } from '../../../components/Layout.jsx';
 import './styles/carousel.css';
+import Button from '../../../components/Button.jsx';
 
 
 const FeaturedProfiles = ({ talents = [] }) => {
@@ -166,22 +167,19 @@ const FeaturedProfiles = ({ talents = [] }) => {
 
           {/* CTA Button */}
           <div className="flex justify-center mt-6 xs:mt-8 sm:mt-10 md:mt-12 lg:mt-14 xl:mt-16 2xl:mt-16">
-            <Link
+            <Button
               href="/talent"
-              className="flex items-center justify-center border-[var(--color-primary-300)] text-[var(--color-primary-300)] font-medium hover:bg-[--color-primary-50] transition-colors whitespace-nowrap
-                         w-full max-w-[280px] h-10 border-[1.5px] rounded-md text-sm gap-2
-                         xs:max-w-[300px] xs:h-11 xs:border-[1.8px] xs:rounded-md xs:text-base xs:gap-2
-                         sm:max-w-[320px] sm:h-12 sm:border-[2px] sm:rounded-lg sm:text-lg sm:gap-2
-                         md:max-w-[350px] md:h-14 md:border-[2.2px] md:rounded-lg md:text-xl md:gap-3
-                         lg:max-w-[370px] lg:h-16 lg:border-[2.4px] lg:rounded-lg lg:text-2xl lg:gap-3
-                         xl:max-w-[377px] xl:h-[75px] xl:border-[2.6px] xl:rounded-[8px] xl:text-body-l xl:gap-[13px]
-                         2xl:max-w-[377px] 2xl:h-[80.82px] 2xl:border-[2.76px] 2xl:rounded-[8.29px] 2xl:text-body-l 2xl:gap-[13.81px]"
+              className="border-[1.5px] border-[var(--color-primary-300)] text-[var(--color-primary-300)] hover:bg-[--color-primary-50] whitespace-nowrap
+                       px-6 py-3 h-12 rounded-lg
+                       sm:px-8 sm:py-3.5 sm:h-14 sm:rounded-lg
+                       md:px-10 md:py-4 md:h-16"
+              style={{ minWidth: 'fit-content' }}
             >
               View All Talents
               <svg className="w-4 h-4 xs:w-4 xs:h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-6 xl:h-6 2xl:w-6 2xl:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
               </svg>
-            </Link>
+            </Button>
           </div>
         </div>
       </Container>

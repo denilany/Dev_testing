@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from '@inertiajs/react';
 import { Container } from '../../../components/Layout.jsx';
+import Button from '../../../components/Button.jsx';
 // Test data for developers
 const developers = [
   {
@@ -405,12 +406,15 @@ const UniqueTalentSection = () => {
         </div>
       </div>
       <div className="flex justify-center mt-12 md:mt-16">
-        <Link
+        <Button
           href="/hire"
-          className="flex items-center justify-center bg-[var(--color-primary-300)] text-white font-medium rounded-lg md:rounded-[9.17px] hover:opacity-90 transition-opacity w-full max-w-sm sm:max-w-md h-14 sm:h-16 md:h-[75.69px] py-3 px-6 sm:px-8 md:py-[22.92px] md:px-[91.69px] text-lg sm:text-xl md:text-2xl lg:text-[24.45px] leading-none md:leading-[27.51px] tracking-normal text-center font-sans"
+          className="bg-[var(--color-primary-300)] text-white hover:opacity-90 px-6 py-3 h-12 rounded-lg
+                       sm:px-8 sm:py-3.5 sm:h-14 sm:rounded-lg
+                       md:px-10 md:py-4 md:h-16"
+          style={{ minWidth: 'fit-content' }}
         >
           Hire Developers
-        </Link>
+        </Button>
       </div>
       </Container>
     </section>
