@@ -9,12 +9,10 @@ import UniqueTalentSection from './components/UniqueTalent.jsx';
 import WhoWeAre from '../../components/WhoWeAre.jsx';
 import HiringModel from '../../components/HiringModel.jsx';
 import HiringModelMobile from '../../components/HiringModelMobile.jsx';
-
-
 import WhatsMoreSection from './components/Whatsmore.jsx';
 
 
-const sampleTalents = [
+export const SampleTalents = [
     { 
       id: 1,
       name: 'Joeylene Rivera',
@@ -80,18 +78,18 @@ export default function Index() {
                 {/* <HiringModelMobile /> */}
 
         {/* Desktop version: hidden on small screens */}
-<div className="hidden md:block">
-  <HiringModel />
-</div>
+        <div className="hidden md:block">
+          <HiringModel />
+        </div>
 
-{/* Mobile version: only visible on small screens */}
-<div className="block md:hidden">
-  <HiringModelMobile />
-</div>
+        {/* Mobile version: only visible on small screens */}
+        <div className="block md:hidden">
+          <HiringModelMobile />
+        </div>
 
         <WhatsMoreSection/>
         <UniqueTalentSection/>
-        <FeaturedProfiles talents={sampleTalents} />
+        <FeaturedProfiles talents={SampleTalents} />
         <Newsletter />
       </>
     );
