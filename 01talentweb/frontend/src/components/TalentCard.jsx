@@ -4,6 +4,8 @@ import { Link } from '@inertiajs/react';
 const TalentCard = ({ talent }) => {
   const initials = talent.name ? talent.name[0].toUpperCase() : '?';
   const skills = talent.skills || ['Golang', 'Docker', 'RESTful APIs', 'Database Design'];
+  const role = talent.profile?.role || 'Web Developer';
+  const bio = talent.profile?.bio || 'No bio available.';
 
   return (
     <div className="bg-[--color-primary-50] shadow-md text-center transition-all hover:shadow-lg hover:-translate-y-1 flex flex-col items-center
@@ -51,18 +53,13 @@ const TalentCard = ({ talent }) => {
       </div>
 
       {/* Name + Title */}
-      <h2 className="font-bold text-gray-900
-                     text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-h0">{talent.name}</h2>
-      <p className="text-[--color-primary-500] font-medium
-                    text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-body-xl 2xl:text-body-xl
-                    mb-1 xs:mb-2 sm:mb-2 md:mb-3 lg:mb-3 xl:mb-4 2xl:mb-4">Web Developer</p>
+
+      <h2 className="text-h0 font-bold text-gray-900">{talent.name}</h2>
+      <p className="text-[--color-primary-500] font-medium text-body-xl mb-4">{role}</p>
 
       {/* Description */}
-      <p className="text-gray-600 leading-relaxed px-1
-                    text-xs xs:text-xs sm:text-sm md:text-base lg:text-lg xl:text-body-m 2xl:text-body-m
-                    mb-3 xs:mb-4 sm:mb-5 md:mb-6 lg:mb-8 xl:mb-10 2xl:mb-12">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod
-        lobortis diam, nec bibendum ipsum tincidunt ut.
+      <p className="text-gray-600 text-body-m mb-4 leading-relaxed px-2">
+        {bio}
       </p>
       {/* Action Buttons */}
       <div className="flex justify-center gap-1 xs:gap-2 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6 2xl:gap-6">

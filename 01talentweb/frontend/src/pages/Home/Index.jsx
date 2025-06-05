@@ -1,11 +1,12 @@
+import React from 'react';
 import { usePage } from '@inertiajs/react';
 import Navbar from '../../components/Navbar.jsx';
 import Hero from '../../components/Hero.jsx';
 import Stats from '../../components/Stats.jsx';
 import CompanyLogos from '../../components/CompanyLogos.jsx';
+import UniqueTalentSection from './components/UniqueTalent.jsx';
 import FeaturedProfiles from './components/FeaturedProfiles.jsx';
 import Newsletter from './components/Newsletter.jsx';
-import UniqueTalentSection from './components/UniqueTalent.jsx';
 import WhoWeAre from '../../components/WhoWeAre.jsx';
 import HiringModel from '../../components/HiringModel.jsx';
 import HiringModelMobile from '../../components/HiringModelMobile.jsx';
@@ -64,14 +65,12 @@ const sampleTalents = [
 
 
 // import './App.css'; // for animation styling
-
 export default function Index() {
-    const { talents = [] } = usePage().props;
+    const { props } = usePage();
+    const featured_developers = props.featured_developers || [];
 
     return (
       <>
-        {/* <Hero /> */}
-        {/* <Navbar /> */}
         <Hero />
         <Stats />
         <CompanyLogos />
@@ -80,18 +79,18 @@ export default function Index() {
                 {/* <HiringModelMobile /> */}
 
         {/* Desktop version: hidden on small screens */}
-<div className="hidden md:block">
-  <HiringModel />
-</div>
+        <div className="hidden md:block">
+          <HiringModel />
+        </div>
 
-{/* Mobile version: only visible on small screens */}
-<div className="block md:hidden">
-  <HiringModelMobile />
-</div>
+        {/* Mobile version: only visible on small screens */}
+        <div className="block md:hidden">
+          <HiringModelMobile />
+        </div>
 
         <WhatsMoreSection/>
         <UniqueTalentSection/>
-        <FeaturedProfiles talents={sampleTalents} />
+        <FeaturedProfiles talents={featured_developers} />
         <Newsletter />
       </>
     );

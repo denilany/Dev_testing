@@ -1,3 +1,8 @@
+"""
+Django admin configuration for the Talent app.
+Registers the Talent model to make it manageable via the Django admin interface.
+"""
+
 from django.contrib import admin
 from .models import Talent
 

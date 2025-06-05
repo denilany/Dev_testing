@@ -1,21 +1,4 @@
-import omegaMillion from "../assets/OmegaMillion.svg";
-import harvest from "../assets/Harvest.svg";
-import edgeKart from "../assets/EdgeKart.svg";
-import pastelCo from "../assets/Pastel&Co..svg";
-import wheelApp from "../assets/Wheelapp.png";
-
-// File: components/CompanyLogos.jsx
-// const logos = [omegaMillion, harvest, edgeKart, pastelCo, wheelApp];
-const logos = [
-  "/static/images/OmegaMillion.svg",
-  "/static/images/Harvest.svg",
-  "/static/images/EdgeKart.svg",
-  "/static/images/Pastel&Co..svg",
-  "/static/images/Wheelapp.png"
-
-];
-
-export default function CompanyLogos() {
+export default function CompanyLogos({ clients = [] }) {
   return (
     <section className="bg-white overflow-hidden mb-10 mt-10 xl:mt-0 xl:pt-0">
         <div className="large-phones:mt-10 md:mb-5 mb-5 xl:pt-0 ml-10 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-6 ">
@@ -36,18 +19,22 @@ export default function CompanyLogos() {
               animation: 'marquee 10s linear infinite',
             }}
           >
-            {/* Repeat logos twice for seamless looping */}
-            {[...logos, ...logos, ...logos].map((logo, i) => (
-              <img
+            {/* Repeat logos for seamless looping */}
+            {[...clients, ...clients, ...clients].map((client, i) => (
+              <a
                 key={i}
-                src={logo}
-                alt={`Logo ${i}`}
-                className="h-8 md:h-10 mx-5"
-              />
+                href={client.website || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={client.logo}
+                  alt={client.name}
+                  className="h-8 md:h-10 mx-5"
+                />
+              </a>
             ))}
           </div>
-
-          {/* Inline keyframes */}
           <style>
             {`
               @keyframes marquee {
@@ -57,12 +44,7 @@ export default function CompanyLogos() {
             `}
           </style>
         </div>
-
-
-
       </div>
     </section>
   );
 }
-
-
