@@ -2,14 +2,14 @@ import React from 'react';
 import { usePage } from '@inertiajs/react';
 import Navbar from '../../components/Navbar.jsx';
 import Hero from '../../components/Hero.jsx';
-import Stats from '../../components/Stats.jsx';
-import CompanyLogos from '../../components/CompanyLogos.jsx';
+import Stats from './components/Stats.jsx';
+import CompanyLogos from './components/CompanyLogos.jsx';
 import UniqueTalentSection from './components/UniqueTalent.jsx';
 import FeaturedProfiles from './components/FeaturedProfiles.jsx';
 import Newsletter from './components/Newsletter.jsx';
-import WhoWeAre from '../../components/WhoWeAre.jsx';
-import HiringModel from '../../components/HiringModel.jsx';
-import HiringModelMobile from '../../components/HiringModelMobile.jsx';
+import WhoWeAre from './components/WhoWeAre.jsx';
+import HiringModel from './components/HiringModel.jsx';
+import HiringModelMobile from './components/HiringModelMobile.jsx';
 
 
 import WhatsMoreSection from './components/Whatsmore.jsx';
