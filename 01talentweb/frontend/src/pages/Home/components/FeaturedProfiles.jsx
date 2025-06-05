@@ -95,6 +95,7 @@ const FeaturedProfiles = ({ talents = [] }) => {
                 >
                   <TalentCard 
                     talent={talent}
+                    variant="default"
                     showTitle={true}
                     showDescription={true}
                     showPortfolioButton={true}

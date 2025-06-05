@@ -8,11 +8,8 @@ const DeveloperSection = ({ talent: talents }) => {
       <Container>
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Meet Our Talents
+            Developers
           </h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Discover skilled professionals ready to join your team and help you achieve your goals.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -21,6 +18,7 @@ const DeveloperSection = ({ talent: talents }) => {
               <div key={talent.id} className="h-full">
                 <TalentCard 
                     talent={talent}
+                    variant="compact"
                     showTitle={true}
                     showAvailability={true}
                     showDescription={true}
