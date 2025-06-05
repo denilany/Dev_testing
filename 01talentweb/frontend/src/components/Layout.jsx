@@ -1,10 +1,13 @@
 import { Link } from "@inertiajs/react";
+import Navbar from "@/components/Navbar.jsx";
 import Footer from "@/components/Footer.jsx";
 
-import Navbar from '@/components/Navbar.jsx';
-import Hero from '@/components/Hero.jsx';
-import Stats from '@/components/Stats.jsx';
-import CompanyLogos from '@/components/CompanyLogos.jsx';
+// Create a container component for consistent spacing
+export const Container = ({ children, className = "" }) => (
+  <div className={`mx-4 xxs:mx-4 sm:mx-20 mx-auto ${className}`}>
+    {children}
+  </div>
+);
 
 const Layout = ({children}) => (
 <>
@@ -16,8 +19,11 @@ const Layout = ({children}) => (
               </ul>
        </nav> */}
        { children }
+              <Navbar />
+
        <Footer />
 </main>
+
 </>
 )
 
