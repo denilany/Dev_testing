@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from '@inertiajs/react';
 import TalentCard from '../../../components/TalentCard.jsx';
+import { Container } from '../../../components/Layout.jsx';
+import './styles/carousel.css';
+import Button from '../../../components/Button.jsx';
+
 
 const FeaturedProfiles = ({ talents = [] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const maxIndex = talents.length > 0 ? talents.length - 1 : 0;
 
@@ -11,55 +16,63 @@ const FeaturedProfiles = ({ talents = [] }) => {
     if (talents.length <= 1) return; // No rotation if 0 or 1 talent
 
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+      handleNext();
     }, 5000);
     return () => clearInterval(interval);
-  }, [maxIndex, talents.length]);
+  }, [talents.length]);
 
   const handlePrev = () => {
-    if (talents.length <= 1) return;
+    if (talents.length <= 1 || isTransitioning) return;
+    setIsTransitioning(true);
     setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
+    setTimeout(() => setIsTransitioning(false), 600);
   };
 
   const handleNext = () => {
-    if (talents.length <= 1) return;
+    if (talents.length <= 1 || isTransitioning) return;
+    setIsTransitioning(true);
     setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+    setTimeout(() => setIsTransitioning(false), 600);
   };
 
-  // Get visible cards with wrap-around support
-  const getCard = (offset) => {
-    if (talents.length === 0) {
-      return null; // Should be handled by early return, but as a safeguard
+  // Create extended array for smooth infinite scrolling
+  const extendedTalents = talents.length > 0 ? [
+    ...talents.slice(-2), 
+    ...talents,
+    ...talents.slice(0, 2) 
+  ] : [];
+
+  // Calculate the transform offset for the carousel container
+  const getTransformOffset = () => {
+    const cardWidth = 100 / 3; // 3 cards visible
+    const offset = (currentIndex + 2) * cardWidth;
+    return `translateX(calc(-${offset}% + 46.333%))`;
+  };
+  
+  // Get card classes based on its position relative to center
+  const getCardClasses = (index) => {
+    const centerIndex = currentIndex + 2; // Adjust for extended array
+    const position = index - centerIndex;
+  
+    const base = 'flex-shrink-0 w-1/3 px-4 flex justify-center items-center transition-all duration-500 ease-out';
+  
+    switch (position) {
+      case -1:
+        return `${base} opacity-70 scale-75 -mr-[10rem] z-0`; // left card
+      case 0:
+        return `${base} opacity-100 scale-100 z-10`; // center card
+      case 1:
+        return `${base} opacity-70 scale-75 -ml-[10rem] z-0`; // right card
+      default:
+        return `${base} opacity-0 scale-75 z-0 pointer-events-none`; // hidden
     }
-    const index = (currentIndex + offset + talents.length) % talents.length;
-    return talents[index];
   };
-
-  if (!talents || talents.length === 0) {
-    return (
-      <section className="w-full bg-white">
-        <div className="w-full max-w-[1440px] mx-auto px-4 py-16 md:py-20 sm:px-3 lg:px-8">
-          <div className="text-center mb-100 md:mb-16 max-w-4xl mx-auto">
-            <h2 className="text-4xl sm:text-5xl md:text-[64px] font-extrabold text-[var(--color-text-heading)] mb-4 md:mb-6">
-              Featured <span className="text-[--color-primary-500]">Profiles</span>
-            </h2>
-            <p className="text-lg sm:text-xl md:text-[26px] leading-relaxed md:leading-[1.4] font-normal text-[var(--color-text-muted)]">
-              Our approach is personal. Each apprentice has a unique relationship with us from the start allowing us to fully vouch for their expertise and work ethic. Come meet them, hire them, see how good they are.
-            </p>
-          </div>
-          <div className="relative mt-12 md:mt-16 bg-[#FFFFFF] pt-10 pb-12 md:pt-16 md:pb-20 rounded-xl md:rounded-2xl text-center min-h-[200px] flex items-center justify-center">
-            <p className="text-lg text-[var(--color-text-muted)]">No featured profiles available at the moment.</p>
-          </div>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section className="w-full bg-white">
-      <div className="w-full max-w-[1440px] mx-auto md:py-20 sm:px-6 lg:px-8">
-        <div className="text-center max-w-4xl mx-auto mt-8 sm:mt-0">
-          <h2 className="text-4xl sm:text-5xl md:text-[64px] font-extrabold text-[var(--color-text-heading)] mb-4 md:mb-6">
+      <Container className="md:py-20">
+        <div className="mx-auto mt-8 sm:mt-0">
+          <h2 className="text-4xl sm:text-5xl md:text-h1 text-center font-bold text-[var(--color-text-heading)] mb-4 md:mb-6">
             Featured <span className="text-[--color-primary-500]">Profiles</span>
           </h2>
           <p className="text-lg pb-12 sm:text-xl md:text-[26px] leading-relaxed md:leading-[1.4] font-normal text-[var(--color-text-muted)]">
@@ -68,65 +81,108 @@ const FeaturedProfiles = ({ talents = [] }) => {
         </div>
 
         {/* Carousel Section with Blue Background */}
-        <div className="relative bg-[#FFFFFF] py-10 md:py-0 rounded-xl md:rounded-2xl">
+        <div className="relative bg-[var(--color-primary-0)] py-10 md:py-0 rounded-xl md:rounded-2xl overflow-hidden">
           {/* Carousel Items Container */}
-          <div className="relative flex items-center justify-center min-h-[450px] md:min-h-[500px]">
-            {/* Left Card */}
-            <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 z-10 transform md:scale-[0.8] md:opacity-60 transition-all duration-500 ease-out md:translate-x-[80%] hover:md:opacity-80 hover:md:scale-[0.85]">
-              <div className="bg-[#EFF7FF] rounded-[10px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
-                <TalentCard talent={getCard(-1)} />
-              </div>
-            </div>
-
-            {/* Center Card */}
-            <div className="relative z-20 transform transition-all duration-500 ease-out max-w-xs sm:max-w-sm md:max-w-md">
-              <div className="bg-[#EFF7FF] rounded-[10px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
-                <TalentCard talent={getCard(0)} />
-              </div>
-            </div>
-
-            {/* Right Card */}
-            <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 z-10 transform md:scale-[0.8] md:opacity-60 transition-all duration-500 ease-out md:-translate-x-[80%] hover:md:opacity-80 hover:md:scale-[0.85]">
-              <div className="bg-[#EFF7FF] rounded-[10px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
-                <TalentCard talent={getCard(1)} />
-              </div>
+          <div className="relative min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px] mx-auto w-[70%] overflow-hidden">
+            <div
+              className="carousel-track flex duration-600 ease-out"
+              style={{ transform: getTransformOffset() }}
+            >
+              {extendedTalents.map((talent, index) => (
+                <div
+                  key={`${talent.id}-${index}`}
+                  className={getCardClasses(index)}
+                >
+                  <TalentCard talent={talent} />
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Navigation Arrows */}
           <button
             onClick={handlePrev}
-            className="absolute left-2 sm:left-4 md:left-6 top-1/2 transform -translate-y-1/2 z-30 bg-white shadow-xl rounded-full p-2 md:p-3 hover:bg-gray-100 transition-all duration-300 hover:scale-110"
+            className="absolute top-1/2 -translate-y-1/2 z-30 bg-white rounded-full border border-gray-200 hover:bg-gray-50 transition-all duration-300
+                       w-[50px] h-[50px] left-2
+                       xs:w-[60px] xs:h-[60px] xs:left-3
+                       sm:w-[70px] sm:h-[70px] sm:left-4
+                       md:w-[80px] md:h-[80px] md:left-6
+                       lg:w-[90px] lg:h-[90px] lg:left-7
+                       xl:w-[100px] xl:h-[100px] xl:left-8
+                       2xl:w-[100px] 2xl:h-[100px] 2xl:left-8"
             aria-label="Previous profile"
+            style={{
+              transform: 'translateY(-50%) rotate(180deg)'
+            }}
           >
-            <svg className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-[--color-primary-500]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-              <path d="M15 19l-7-7 7-7" />
+            <svg
+              className="mx-auto text-[--color-primary-500]
+                         w-[25px] h-[25px]
+                         xs:w-[30px] xs:h-[30px]
+                         sm:w-[35px] sm:h-[35px]
+                         md:w-[40px] md:h-[40px]
+                         lg:w-[45px] lg:h-[45px]
+                         xl:w-[50px] xl:h-[50px]
+                         2xl:w-[50px] 2xl:h-[50px]"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 5l7 7-7 7" />
             </svg>
           </button>
           <button
             onClick={handleNext}
-            className="absolute right-2 sm:right-4 md:right-6 top-1/2 transform -translate-y-1/2 z-30 bg-white shadow-xl rounded-full p-2 md:p-3 hover:bg-gray-100 transition-all duration-300 hover:scale-110"
+            className="absolute top-1/2 -translate-y-1/2 z-30 bg-white rounded-full border border-gray-200 hover:bg-gray-50 transition-all duration-300
+                       w-[50px] h-[50px] right-2
+                       xs:w-[60px] xs:h-[60px] xs:right-3
+                       sm:w-[70px] sm:h-[70px] sm:right-4
+                       md:w-[80px] md:h-[80px] md:right-6
+                       lg:w-[90px] lg:h-[90px] lg:right-7
+                       xl:w-[100px] xl:h-[100px] xl:right-8
+                       2xl:w-[100px] 2xl:h-[100px] 2xl:right-8"
             aria-label="Next profile"
+            style={{
+              transform: 'translateY(-50%)'
+            }}
           >
-            <svg className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-[--color-primary-500]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-              <path d="M9 5l7 7-7 7" />
+            <svg
+              className="mx-auto text-[--color-primary-500]
+                         w-[25px] h-[25px]
+                         xs:w-[30px] xs:h-[30px]
+                         sm:w-[35px] sm:h-[35px]
+                         md:w-[40px] md:h-[40px]
+                         lg:w-[45px] lg:h-[45px]
+                         xl:w-[50px] xl:h-[50px]
+                         2xl:w-[50px] 2xl:h-[50px]"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 5l7 7-7 7" />
             </svg>
           </button>
 
           {/* CTA Button */}
-          <div className="text-center mt-10 md:mt-16">
-            <Link
+          <div className="flex justify-center mt-6 xs:mt-8 sm:mt-10 md:mt-12 lg:mt-14 xl:mt-16 2xl:mt-16">
+            <Button
               href="/talent"
-              className="inline-flex items-center px-8 sm:px-10 py-3 sm:py-4 border-2 border-[--color-primary-500] text-[--color-primary-500] font-semibold text-base sm:text-lg rounded-lg hover:bg-[--color-primary-50] transition-colors"
+              className="border-[1.5px] border-[var(--color-primary-300)] text-[var(--color-primary-300)] hover:bg-[--color-primary-50] whitespace-nowrap
+                       px-6 py-3 h-12 rounded-lg
+                       sm:px-8 sm:py-3.5 sm:h-14 sm:rounded-lg
+                       md:px-10 md:py-4 md:h-16"
+              style={{ minWidth: 'fit-content' }}
             >
               View All Talents
-              <svg className="ml-2 sm:ml-3 w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+              <svg className="w-4 h-4 xs:w-4 xs:h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-6 xl:h-6 2xl:w-6 2xl:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
               </svg>
-            </Link>
+            </Button>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

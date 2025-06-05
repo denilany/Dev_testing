@@ -1,16 +1,45 @@
-// File: components/Button.jsx
-export default function Button({ children, onClick, variant = 'primary', className = '' }) {
-  // const base = 'px-6 py-2 rounded font-semibold transition';
-  const base = 'flex justify-center items-center text-[12px] xl:text-[22px] px-4 md:text-base rounded font-semibold transition text-center';
-  const styles = {
-    primary: `${base} bg-blue-600 text-white hover:bg-blue-700`,
-    secondary: `${base} border border-blue-600 text-blue-600 hover:bg-blue-50`,
+import React from 'react';
+
+const Button = ({
+  children,
+  onClick,
+  style = {},
+  className = '',
+  ...props
+}) => {
+  const baseStyle = {
+    borderRadius: '9.17px',
+    fontFamily: 'Montserrat, sans-serif',
+    fontWeight: 500,
+    textAlign: 'center',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    cursor: 'pointer',
+    transition: 'all 0.3s ease',
+    ...style, 
   };
 
   return (
-       <button className={`${styles[variant]} ${className}`} onClick={onClick} text-center>
-     {/* <button className={styles[variant]} onClick={onClick} text-center> */}
+    <button
+      style={baseStyle}
+      className={`${className} 
+        text-sm 
+        xs:text-base 
+        sm:text-lg 
+        md:text-xl 
+        lg:text-2xl 
+        xl:text-3xl 
+        2xl:text-4xl 
+        leading-normal 
+        hover:opacity-90
+      `}
+      onClick={onClick}
+      {...props}
+    >
       {children}
     </button>
   );
-}
+};
+
+export default Button;

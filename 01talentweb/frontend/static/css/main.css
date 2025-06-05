@@ -26,6 +26,7 @@
     --text-mobile-h2: 13px;    /* 13px */
     
     /* Body Text */
+    --text-body-xxl: 36px;
     --text-body-xl: 28px;   /* 28px */
     --text-body-l: 24px;
     --text-body-m: 18px;   /* 18px */
@@ -58,11 +59,10 @@
     --color-primary-400: #005AED;
     --color-primary-500: #0052CC;  /* Primary brand color */
     --color-primary-600: #2B5290;
+    --color-primary-700: #284B81;
+    --color-primary-800: #000000;
     --color-primary-button-600: #0063F9; 
-    --color-hero-text: #005AE0;
-
-
-
+    --color-hero-text: #005AE0;    
     
     /* Color Palette - Informational */
     --color-error: #EA191D;
