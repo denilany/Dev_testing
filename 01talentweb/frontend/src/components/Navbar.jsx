@@ -48,10 +48,10 @@ export default function Navbar() {
         <ul className={`hidden md:flex space-x-8 font-medium text-base md:text-base lg:text-xl  xl:text-2xl 2xl:text-3xl ultra-large:text-2xl ultra-xl:text-3xl ${textColorClass}`}>
           <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Home</a></li>
           <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Services</a></li>
-          {/* <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Talents</a></li> */}
-          <Link href="/talents" className={`hover:text-blue-500 ${textColorClass}`}>
+          <li><a href="/talent" className={`hover:text-blue-500 ${textColorClass}`}>Talents</a></li>
+          {/* <Link href="/talents" className={`hover:text-blue-500 ${textColorClass}`}>
             Talents
-          </Link>
+          </Link> */}
 
           <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>About Us</a></li>
         </ul>

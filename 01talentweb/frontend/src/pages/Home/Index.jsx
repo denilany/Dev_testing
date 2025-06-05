@@ -71,14 +71,14 @@ export default function Index() {
 
     return (
       <>
-        <Hero />
+       <Hero
+        desktopBg="/static/images/hero_team_desktop.JPG"
+        mobileBg="/static/images/hero_team_mobile.JPG"
+      />
+        {/* <Hero /> */}
         <Stats />
         <CompanyLogos />
         <WhoWeAre />
-        {/* <HiringModel /> */}
-                {/* <HiringModelMobile /> */}
-
-        {/* Desktop version: hidden on small screens */}
         <div className="hidden md:block">
           <HiringModel />
         </div>

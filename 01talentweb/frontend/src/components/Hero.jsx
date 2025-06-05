@@ -1,18 +1,21 @@
 import Button from './Button.jsx';
 
-export default function Hero() {
+export default function Hero({desktopBg, mobileBg}) {
   return (
     <section className="relative  h-[85vh]  overflow-visible">
   {/* Background image for desktop */}
       <img
-        src="/static/images/hero_team_desktop.JPG"
+        // src="/static/images/hero_team_desktop.JPG"
+        src={desktopBg}
         alt="Team"
         className="hidden md:block absolute inset-0 w-full h-full object-cover object-[center_10%] z-0"
       />
 
       {/* Background image for mobile */}
       <img
-        src="/static/images/hero_team_mobile.JPG" 
+        
+        src={mobileBg}
+        // src="/static/images/hero_team_mobile.JPG" 
         alt="Team Mobile"
         className="block md:hidden absolute inset-0 w-full h-full object-cover object-center z-0"
       />
