@@ -1,5 +1,5 @@
 from inertia import inertia
-from .models import About, Statistic, Client
+from .models import About
 
 @inertia('Info/About')
 def about_page(request):
@@ -11,21 +11,3 @@ def about_page(request):
         'updated_at': about.updated_at if about else None,
     }
     return {'about': data}
-
-@inertia('Info/Statistics')
-def statistics_page(request):
-    stats = Statistic.objects.all().values('label', 'value', 'icon')
-    return {'statistics': list(stats)}
-
-@inertia('Info/Clients')
-def clients_page(request):
-    clients = Client.objects.all()
-    client_list = [
-        {
-            'name': client.name,
-            'logo': request.build_absolute_uri(client.logo.url) if client.logo else None,
-            'website': client.website,
-        }
-        for client in clients
-    ]
-    return {'clients': client_list}

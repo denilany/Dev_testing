@@ -1,6 +1,20 @@
 from datetime import date
 from inertia import inertia
+from info.models import Statistic, Client
 from talent.models import Talent
+
+def get_stats():
+    return list(Statistic.objects.all().values('label', 'value', 'icon'))
+
+def get_company_logos(request):
+    return [
+        {
+            'name': client.name,
+            'logo': request.build_absolute_uri(client.logo.url) if client.logo else None,
+            'website': client.website,
+        }
+        for client in Client.objects.all()
+    ]
 
 @inertia('Home/Index')
 def index(request):
@@ -42,6 +56,12 @@ def index(request):
                 'bio': dev.profile.get('bio', ''),
             }
         })
+    stats = get_stats()
+    company_logos = get_company_logos(request)
+    print('DEBUG stats:', stats)
+    print('DEBUG company_logos:', company_logos)
     return {
-        'featured_developers': formatted_devs
+        'featured_developers': formatted_devs,
+        'stats': stats,
+        'company_logos': company_logos,
     }
