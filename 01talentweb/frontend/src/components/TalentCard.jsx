@@ -39,7 +39,7 @@ const TalentCard = ({
       image: 'w-[120px] h-[120px] mb-3',
       name: 'text-body-l font-bold',
       role: 'text-body-s mb-3',
-      description: 'font-montserrat font-[8px] mb-6 line-clamp-3',
+      description: 'font-montserrat text-[12px] mb-6 line-clamp-3',
       skills: 'mb-3',
       buttonContainer: 'gap-12 mt-4',
       button: 'text-body-xs py-2 w-[110px] h-[36px]',
