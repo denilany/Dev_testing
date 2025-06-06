@@ -21,7 +21,7 @@ const TalentCard = ({
   // Size variants
   const variants = {
     default: {
-      card: 'w-[488px] h-[790px] rounded-[60.8px] p-12',
+      card: 'w-[488px] h-[790px] rounded-[60.8px] p-12 bg-[--color-primary-50]',
       image: 'w-[228px] h-[228px] mb-4',
       name: 'text-3xl',
       title: 'text-xl mb-4',
@@ -34,7 +34,7 @@ const TalentCard = ({
       availability: 'mb-4'
     },
     compact: {
-      card: 'w-[375px] h-[485px] rounded-[35px] p-8',
+      card: 'w-[375px] h-[485px] rounded-[34px] p-8 bg-[--color-primary-0]',
       image: 'w-[120px] h-[120px] mb-3',
       name: 'text-xl',
       title: 'text-lg mb-3',
@@ -52,7 +52,7 @@ const TalentCard = ({
 
   return (
     <div 
-      className={`bg-[--color-primary-50] shadow-md text-center transition-all hover:shadow-lg hover:-translate-y-1 flex flex-col items-center
+      className={`shadow-md text-center transition-all hover:shadow-lg hover:-translate-y-1 flex flex-col items-center
         ${currentVariant.card} ${className}`}
       {...props}
     >
