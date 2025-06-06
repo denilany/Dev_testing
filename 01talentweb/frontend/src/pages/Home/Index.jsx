@@ -10,6 +10,8 @@ import Newsletter from './components/Newsletter.jsx';
 import WhoWeAre from './components/WhoWeAre.jsx';
 import HiringModel from './components/HiringModel.jsx';
 import HiringModelMobile from './components/HiringModelMobile.jsx';
+import Button from '../../components/Button.jsx';
+
 
 
 import WhatsMoreSection from './components/Whatsmore.jsx';
@@ -79,8 +81,22 @@ export default function Index() {
                   PROVIDING YOU WITH THE <span className="text-[--color-hero-text] ">BEST TECH TALENT</span> IN KENYA
                 </>
               }
-              description="We are a software talent agency that is addressing the global need for top tech talent by transforming access to high-tech jobs."
-                  
+        description="We are a software talent agency that is addressing the global need for top tech talent by transforming access to high-tech jobs."
+        button={
+          <Button
+            onClick={() => {}}
+            style={{
+              color: '#FFFFFF',
+              padding: '22.92px 91.69px',
+              width: '100%',
+              maxWidth: '377.24px',
+              height: '75.69px',
+            }}
+            className="hover:bg-[#284B81] bg-[var(--color-primary-300)] transition-colors duration-300 md:text-xl lg:text-2xl xl:text-3xl"
+          >
+            Hire Here
+          </Button>
+        }          
       />
         {/* <Hero /> */}
         <Stats />

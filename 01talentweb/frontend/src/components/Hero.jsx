@@ -1,6 +1,6 @@
 import Button from './Button.jsx';
 
-export default function Hero({desktopBg, mobileBg, title, description}) {
+export default function Hero({desktopBg, mobileBg, title, description, button = null}) {
   return (
     <section className="relative  h-[85vh]  overflow-visible">
   {/* Background image for desktop */}
@@ -39,15 +39,18 @@ export default function Hero({desktopBg, mobileBg, title, description}) {
       {/* We are a software talent agency that is addressing the global need for top tech talent by transforming access to high-tech jobs. */}
       {description}
     </p>
-    {/* <Button
-        className="md:w-[240px] md:h-[45px] sm:w-[250px] sm:h-[50px] large-phones:w-[190px] large-phones:h-[35px] small-phones:w-[180px] small-phones:h-[35px] lg:w-[290px] lg:h-[50px] 2xl:w-[290px] 2xl:h-[50px] ultra-large:w-[290px] ultra-large:h-[50px] ultra-xl:w-[320px] flex justify-center"
-    >Hire Here
-    </Button> */}
-     <div className="relative mt-8">
+
+    {/* Optional button prop */}
+          {button && (
+            <div className="relative mt-8">
+              {button}
+            </div>
+          )}
+
+     {/* <div className="relative mt-8">
       <Button
         onClick={() => {}}
         style={{
-          // backgroundColor: 'var(--color-primary-300)',
           color: '#FFFFFF',
           padding: '22.92px 91.69px',
           width: '100%',
@@ -58,7 +61,7 @@ export default function Hero({desktopBg, mobileBg, title, description}) {
       >
         Hire Here
       </Button>
-    </div>
+    </div> */}
   </div>
 </div>
 
