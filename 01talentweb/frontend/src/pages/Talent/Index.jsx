@@ -44,6 +44,8 @@ import React from 'react';
 import { usePage } from '@inertiajs/react';
 import Navbar from '../../components/Navbar.jsx';
 import Hero from '../../components/Hero.jsx';
+import SearchSection from './components/SearchSection.jsx';
+
 
 export default function Index() {
     return (
@@ -59,7 +61,7 @@ export default function Index() {
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod  lobortis diam, nec bibendum ipsum tincidunt ut."
                   
             />
-     
+            <SearchSection/>
        </>
      );
  }
