@@ -1,8 +1,12 @@
 import { FaSearch } from "react-icons/fa";
+import { Container } from '../../../components/Layout.jsx';
+
 
 export default function SearchSection() {
   return (
-    <div className="bg-[#f0f8ff] p-6 rounded-2xl w-full max-w-5xl mx-auto shadow-sm">
+       <Container>
+
+    <div className="bg-[#f0f8ff] p-6 rounded-2xl w-full max-w-screen mx-auto my-10 shadow-sm">
       {/* Top row: search bar and button */}
       <div className="flex flex-col sm:flex-row sm:items-center gap-4">
         <div className="flex-1">
@@ -27,5 +31,7 @@ export default function SearchSection() {
         </div>
       </div>
     </div>
+          </Container>
+
   );
 }
