@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from '@inertiajs/react';
+import Button from './Button';
 
 const TalentCard = ({ 
   talent,
@@ -24,7 +25,7 @@ const TalentCard = ({
       card: 'w-[488px] h-[790px] rounded-[60.8px] p-12 bg-[--color-primary-50]',
       image: 'w-[228px] h-[228px] mb-4',
       name: 'text-3xl',
-      title: 'text-xl mb-4',
+      role: 'text-xl mb-4',
       description: 'text-body-m mb-12',
       skills: 'mb-4',
       buttonContainer: 'gap-6 mt-auto',
@@ -34,14 +35,14 @@ const TalentCard = ({
       availability: 'mb-4'
     },
     compact: {
-      card: 'w-[375px] h-[485px] rounded-[34px] p-8 bg-[--color-primary-0]',
+      card: 'w-[375px] h-[500px] rounded-[34px] p-8 bg-[--color-primary-0]',
       image: 'w-[120px] h-[120px] mb-3',
-      name: 'text-xl',
-      title: 'text-lg mb-3',
-      description: 'text-sm mb-6 line-clamp-3',
+      name: 'text-body-l font-bold',
+      role: 'text-body-s mb-3',
+      description: 'font-montserrat font-[8px] mb-6 line-clamp-3',
       skills: 'mb-3',
-      buttonContainer: 'gap-3 mt-4',
-      button: 'text-sm py-2 w-[110px] h-[36px]',
+      buttonContainer: 'gap-12 mt-4',
+      button: 'text-body-xs py-2 w-[110px] h-[36px]',
       socialIcons: 'mt-6 gap-3',
       socialIcon: 'w-[24px] h-[28px]',
       availability: 'mb-3'
@@ -52,7 +53,7 @@ const TalentCard = ({
 
   return (
     <div 
-      className={`shadow-md text-center transition-all hover:shadow-lg hover:-translate-y-1 flex flex-col items-center
+      className={`text-center transition-all hover:shadow-lg hover:-translate-y-1 flex flex-col items-center
         ${currentVariant.card} ${className}`}
       {...props}
     >
@@ -70,21 +71,22 @@ const TalentCard = ({
               {initials}
             </div>
           )}
-          <div className="absolute inset-0 border-4 border-[--color-primary-300] rounded-full animate-pulse pointer-events-none" />
+          {/* <div className="absolute inset-0 border-4 border-[--color-primary-300] rounded-full animate-pulse pointer-events-none" /> */}
         </div>
-        <div className="absolute inset-0 rounded-full border-[6px] border-transparent border-r-[--color-primary-300] border-t-[--color-primary-300] animate-pulse pointer-events-none" style={{
-          clipPath: 'polygon(50% 0, 100% 0, 100% 100%, 50% 100%)'
+        <div className="absolute inset-0 rounded-full border-[3px] border-transparent border-r-[--color-primary-300] border-t-[--color-primary-300] border-b-[--color-primary-300] animate-pulse pointer-events-none" style={{
+          clipPath: 'polygon(25% 0, 100% 0, 100% 100%, 25% 100%)',
+          transform: 'scale(1.1)'
         }} />
       </div>
 
       {/* Name + Title */}
-      <h2 className={`font-bold text-gray-900 ${currentVariant.name}`}>
+      <h2 className={`font-montserrat font-bold text-gray-900 ${currentVariant.name}`}>
         {talent.name}
       </h2>
       
       {showTitle && (
-        <p className={`text-[--color-primary-500] font-medium ${currentVariant.title}`}>
-          Web Developer
+        <p className={`font-montserrat text-[--color-primary-500] font-medium ${currentVariant.role}`}>
+          {talent.role}
         </p>
       )}
 
@@ -128,24 +130,32 @@ const TalentCard = ({
       {(showPortfolioButton || showHireButton) && (
         <div className={`flex justify-center ${currentVariant.buttonContainer}`}>
           {showPortfolioButton && (
-            <Link
+            <Button
+              as={Link}
               href={`/talent/${talent.id}`}
-              className={`bg-[--color-primary-500] text-white font-medium flex items-center justify-center rounded-lg hover:bg-[--color-primary-400] transition ${currentVariant.button}`}
+              variant="filled"
+              className={currentVariant.button}
+              style={{
+                '--color-primary-500': 'var(--color-primary-500)',
+                '--color-primary-400': 'var(--color-primary-400)',
+              }}
             >
               Portfolio
-            </Link>
+            </Button>
           )}
           {showHireButton && (
-            <button
-              className={`font-medium flex items-center justify-center rounded-lg transition ${currentVariant.button} ${
-                isAvailable 
-                  ? 'text-[--color-primary-500] border border-[--color-primary-500] hover:bg-[--color-primary-100]' 
-                  : 'text-gray-400 border border-gray-300 cursor-not-allowed'
-              }`}
+            <Button
+              variant={isAvailable ? 'outline' : 'filled'}
               disabled={!isAvailable}
+              className={`${currentVariant.button} ${!isAvailable ? '!bg-gray-100 !text-gray-400 !border-gray-300' : ''}`}
+              style={{
+                '--color-primary-500': 'var(--color-primary-500)',
+                '--color-primary-100': 'var(--color-primary-100)'
+              }}
+              onClick={() => {}}
             >
               {isAvailable ? 'Hire' : 'Not Available'}
-            </button>
+            </Button>
           )}
         </div>
       )}

@@ -16,6 +16,7 @@ export const SampleTalents = [
     { 
       id: 1,
       name: 'Joeylene Rivera',
+      role: 'Web Developer',
       image: '/images/talents/joeylene.jpg',
       skills: ['Golang', 'Docker', 'RESTful APIs', 'Database Design'],
       average_rating: 4.8,
@@ -23,6 +24,7 @@ export const SampleTalents = [
     {
       id: 2,
       name: 'Amara Njeri',
+      role: 'Data Analyst',
       image: '/images/talents/amara.jpg',
       skills: ['Python', 'Data Analysis', 'Pandas', 'Jupyter'],
       average_rating: 4.5,
@@ -30,6 +32,7 @@ export const SampleTalents = [
     {
       id: 3,
       name: 'Ezekiel Mwangi',
+      role: 'Full Stack Developer',
       image: '/images/talents/ezekiel.jpg',
       skills: ['React', 'Tailwind CSS', 'Next.js', 'TypeScript'],
       average_rating: 4.9,
@@ -37,6 +40,7 @@ export const SampleTalents = [
     {
       id: 4,
       name: 'Fatima Khalid',
+      role: 'UX Designer',
       image: '/images/talents/fatima.jpg',
       skills: ['UX Design', 'Figma', 'Accessibility', 'Design Systems'],
       average_rating: 4.6,
@@ -44,6 +48,7 @@ export const SampleTalents = [
     {
       id: 5,
       name: 'Brian Ochieng',
+      role: 'Backend Engineer',
       image: '/images/talents/brian.jpg',
       skills: ['Java', 'Spring Boot', 'MySQL', 'APIs'],
       average_rating: 4.7,
@@ -51,6 +56,7 @@ export const SampleTalents = [
     {
       id: 6,
       name: 'Zainab Yusuf',
+      role: 'Cybersecurity Engineer',
       image: '/images/talents/zainab.jpg',
       skills: ['Cybersecurity', 'Linux', 'Networking', 'Ethical Hacking'],
       average_rating: 4.4,

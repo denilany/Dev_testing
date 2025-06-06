@@ -14,7 +14,7 @@ const DeveloperSection = ({ talent: talents }) => {
     <section className="py-16 bg-[--color-primary-50]">
       <Container>
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-h2 font-extrabold text-gray-900 mb-4">
             Developers
           </h1>
         </div>
@@ -32,7 +32,7 @@ const DeveloperSection = ({ talent: talents }) => {
                     showPortfolioButton={true}
                     showHireButton={true}
                     showSocialIcons={false}
-                    showSkills={true}
+                    showSkills={false}
                   />
               </div>
             ))
@@ -48,7 +48,7 @@ const DeveloperSection = ({ talent: talents }) => {
           <div className="justify-center flex items-center">
             <Button
               onClick={handleLoadMore}
-              variant="outline"
+              variant="outline-light"
               size="lg"
               fontWeight="var(--font-bold)"
               padding="px-20 py-3"
