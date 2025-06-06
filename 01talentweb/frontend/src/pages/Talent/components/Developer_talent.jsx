@@ -45,10 +45,14 @@ const DeveloperSection = ({ talent: talents }) => {
         
         {/* Load More Button */}
         {visibleDevelopers <= talents.length && (
-          <div className="text-center">
+          <div className="justify-center flex items-center">
             <Button
               onClick={handleLoadMore}
-              className="border border-[#0063f9] text-[#0063f9] text-[13px] font-bold font-montserrat leading-[17px] px-[82px] py-[11px] rounded-[4px] hover:bg-blue-50"
+              variant="outline"
+              size="lg"
+              fontWeight="var(--font-bold)"
+              padding="px-20 py-3"
+              className="h-[52px]"
             >
               Load More
             </Button>
