@@ -51,6 +51,13 @@ export default function Index() {
             <Hero
                 desktopBg="/static/images/talent_hero.JPG"
                 // mobileBg="/static/images/another_mobile_image.JPG"
+                title={
+                  <>
+                    HIRE THE <span className="text-[--color-hero-text] ">BEST DEVELOPERS</span> WITH US
+                  </>
+                }
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod  lobortis diam, nec bibendum ipsum tincidunt ut."
+                  
             />
      
        </>

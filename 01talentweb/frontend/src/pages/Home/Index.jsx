@@ -74,6 +74,13 @@ export default function Index() {
        <Hero
         desktopBg="/static/images/hero_team_desktop.JPG"
         mobileBg="/static/images/hero_team_mobile.JPG"
+        title={
+                <>
+                  PROVIDING YOU WITH THE <span className="text-[--color-hero-text] ">BEST TECH TALENT</span> IN KENYA
+                </>
+              }
+              description="We are a software talent agency that is addressing the global need for top tech talent by transforming access to high-tech jobs."
+                  
       />
         {/* <Hero /> */}
         <Stats />
