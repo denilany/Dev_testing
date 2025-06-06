@@ -46,8 +46,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_vite',
     'inertia',
-    'talent.apps.TalentConfig',
-    'services.apps.ServicesConfig',
+    'talent',
+    'services',
+    'info'
 ]
 
 MIDDLEWARE = [
@@ -67,6 +68,9 @@ MIDDLEWARE = [
 
 STORAGES = {
     # ...
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },

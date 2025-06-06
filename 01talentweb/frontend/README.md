@@ -1,5 +1,16 @@
-# starting postgres manually
-$HOME/pgsql/bin/pg_ctl -D $HOME/pgsql/data start
+# Running postgres using downloaded binaries
 
-# connect with psql
+## starting postgres manually
+```bash
+$HOME/pgsql/bin/pg_ctl -D $HOME/pgsql/data start
+```
+
+## connect with psql
+```bash
 $HOME/pgsql/bin/psql -U rotieno -d postgres
+```
+
+# Installing react icons e.g search icon
+```bash
+npm install react-icons
+```

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from '@inertiajs/react';
 
-import { Container } from './Layout.jsx';
-import Button from "./Button.jsx";
+import { Container } from '../../../components/Layout.jsx';
+import Button from "../../../components/Button.jsx";
 
 
 const WhoWeAre = () => {

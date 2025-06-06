@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Container } from './Layout.jsx';
+import { Container } from '../../../components/Layout.jsx';
 
 
 const HiringModel = () => {
