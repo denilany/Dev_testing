@@ -68,7 +68,7 @@ export default function Index() {
 
         <WhatsMoreSection/>
         <UniqueTalentSection/>
-        <FeaturedProfiles talents={SampleTalents} />
+        <FeaturedProfiles talents={featured_developers} />
         <Newsletter />
       </>
     );
