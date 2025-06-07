@@ -9,12 +9,13 @@ const Button = ({
   fontWeight = 500,
   padding = 'px-6 py-3',
   className = '',
+  fontFamily = 'var(--font-sans)',
   ...props
 }) => {
   // Base styles that apply to all buttons
   const baseStyle = {
     borderRadius: '9.17px',
-    fontFamily: 'Montserrat',
+    fontFamily: fontFamily,
     fontWeight: fontWeight,
     textAlign: 'center',
     display: 'flex',

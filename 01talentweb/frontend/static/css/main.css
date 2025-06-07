@@ -6,6 +6,7 @@
   :root {
     /* Typography */
     --font-sans: 'Montserrat', system-ui, -apple-system, sans-serif;
+    --font-roboto: 'Roboto', system-ui, -apple-system, sans-serif;
     
     /* Font Weights */
     --font-light: 300;

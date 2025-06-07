@@ -77,28 +77,21 @@ const HowWeVet = () => {
   };
 
   return (
-    <section className="py-8 md:py-16">
+    <section className='pt-20'>
       <Container>
         {/* Section Title */}
-        <h2 className="text-[#0f172a] text-h2 font-extrabold font-montserrat leading-tight text-center mb-8 md:mb-16 px-4">
+        <h2 className="text-[--color-text] text-h2 font-extrabold font-montserrat leading-tight text-center mb-20 px-4">
           HOW WE VET OUR TALENTS
         </h2>
 
-        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 xl:gap-12 px-4 lg:px-0">
+        <div className="flex flex-col lg:flex-row justify-start gap-12">
           {/* Profile Image */}
-          <div className="w-full max-w-[280px] md:max-w-[320px] lg:max-w-none lg:w-1/2 xl:w-[45%] flex-shrink-0 relative ml-0 lg:ml-12 xl:ml-16">
-            <div className="relative pb-[100%] lg:pb-0 lg:h-0 lg:pt-[100%]">
+          <div className=" w-full md:w-[40%] flex-shrink-0 relative aspect-square justify-center items-center lg:ml-12 xl:ml-16">
+            <div className="relative aspect-square">
               {/* Outer blue ring */}
-              <div className="absolute inset-0 rounded-full border-[3px] md:border-[4px] border-[#0063f9] p-3 sm:p-4 md:p-6 lg:p-8 xl:p-10">
+              <div className="absolute inset-0 rounded-full border-[3px] md:border-[4px] border-[--color-primary-300] p-20 sm:p-4 md:p-6 lg:p-8 xl:p-10 md:mb-20 md:ml-20">
                 {/* Inner blue ring */}
-                <div className="absolute inset-0 rounded-full border-2 border-[#2563eb] pointer-events-none" 
-                  style={{
-                    top: '12%',
-                    left: '12%',
-                    right: '12%',
-                    bottom: '12%',
-                  }} 
-                />
+                <div className="absolute inset-0 rounded-full border-2 border-[--color-primary-300] pointer-events-none top-[12%] left-[12%] right-[12%] bottom-[12%]"/>
                 
                 {/* Image container */}
                 <div className="relative w-full h-full rounded-full overflow-hidden">
@@ -106,6 +99,7 @@ const HowWeVet = () => {
                     src="/images/img_ellipse_21.png"
                     alt="Talent Profile"
                     className="w-full h-full object-cover"
+                    loading='lazy'
                   />
                 </div>
               </div>
@@ -113,7 +107,7 @@ const HowWeVet = () => {
           </div>
           
           {/* Vetting Process Steps */}
-          <div className="w-full lg:w-1/2 xl:w-[55%] h-[400px] md:h-[400px] lg:h-[400px] overflow-y-auto mt-[64px] pr-2 md:pr-4 relative">
+          <div className="w-full md:w-[60%] h-[400px] md:h-[400px] 2xl:h-[600px] overflow-y-auto mt-[32px] pr-2 md:pr-4 relative">
             <div className="space-y-2 md:space-y-4">
                 {sections.map((section) => {
                   const isExpanded = expandedSection === section.id;
@@ -142,11 +136,12 @@ const HowWeVet = () => {
                           
                           {section.buttonText && (
                             <Button
+                              variant='filled'
                               onClick={e => {
                                 e.stopPropagation();
                                 section.id === 'rigorous' ? handleHireTalent() : handleGetStarted();
                               }}
-                              className="bg-[#2563eb] text-white text-lg md:text-xl lg:text-2xl font-bold font-roboto leading-6 px-6 md:px-8 lg:px-12 py-3 md:py-4 rounded-lg border-2 border-[#2563eb] hover:bg-blue-700 transition-colors duration-200 w-full sm:w-auto"
+                              fontFamily="var(--font-roboto)"
                             >
                               {section.buttonText}
                             </Button>
@@ -159,7 +154,7 @@ const HowWeVet = () => {
                 })}
             
             {/* Gradient overlay at bottom */}
-            <div className="sticky bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+            <div className="sticky bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
           </div>
           </div>
         </div>
