@@ -91,16 +91,17 @@ const HowWeVet = () => {
               {/* Outer blue ring */}
               <div className="absolute inset-0 rounded-full border-[3px] md:border-[4px] border-[--color-primary-300] p-20 sm:p-4 md:p-6 lg:p-8 xl:p-10 md:mb-20 md:ml-20">
                 {/* Inner blue ring */}
-                <div className="absolute inset-0 rounded-full border-2 border-[--color-primary-300] pointer-events-none top-[12%] left-[12%] right-[12%] bottom-[12%]"/>
+                <div className="absolute inset-0 rounded-full border-2 border-[--color-primary-300] pointer-events-none top-[12%] left-[12%] right-[12%] bottom-[12%]">
                 
-                {/* Image container */}
-                <div className="relative w-full h-full rounded-full overflow-hidden">
-                  <img
-                    src="/images/img_ellipse_21.png"
-                    alt="Talent Profile"
-                    className="w-full h-full object-cover"
-                    loading='lazy'
-                  />
+                  {/* Image container */}
+                  <div className="absolute inset-0 w-full h-full rounded-full overflow-hidden">
+                    <img
+                      src="../../static/images/hiring_model_image3.JPG"
+                      alt="Talent Profile"
+                      className="w-full h-full object-cover"
+                      loading='lazy'
+                    />
+                  </div>
                 </div>
               </div>
             </div>
