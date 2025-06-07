@@ -35,7 +35,7 @@ const TalentCard = ({
       availability: 'mb-4'
     },
     compact: {
-      card: 'w-[375px] h-[500px] rounded-[34px] p-8 bg-[--color-primary-0]',
+      card: 'w-[375px] h-[485px] rounded-[34px] p-8 bg-[--color-primary-0]',
       image: 'w-[120px] h-[120px] mb-3',
       name: 'text-body-l font-bold',
       role: 'text-body-s mb-3',

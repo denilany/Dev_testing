@@ -19,12 +19,12 @@ const DeveloperSection = ({ talent: talents }) => {
           </h1>
         </div>
 
-        <div className="relative overflow-y-auto" style={{ maxHeight: '70vh', scrollbarWidth: 'thin', scrollBehavior: 'smooth' }}>
+        <div className="relative overflow-y-auto" style={{ maxHeight: '80vh', scrollbarWidth: 'thin', scrollBehavior: 'smooth' }}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" 
                >
             {talents && talents.length > 0 ? (
               talents.map((talent) => (
-                <div key={talent.id} className="w-full h-full p-2 my-12 justify-items-center">
+                <div key={talent.id} className="w-full h-full p-2 justify-items-center">
                   <TalentCard 
                     talent={talent}
                     variant="compact"
@@ -39,7 +39,7 @@ const DeveloperSection = ({ talent: talents }) => {
                 </div>
               ))
             ) : (
-              <div className="col-span-full text-center py-12">
+              <div className="col-span-full text-center pt-12">
                 <p className="text-gray-500 text-lg">No talents available at the moment. Please check back later.</p>
               </div>
             )}
