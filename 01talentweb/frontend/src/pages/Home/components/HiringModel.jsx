@@ -132,12 +132,13 @@ const HiringModel = () => {
 
     />
   </div> */}
-  <div className="relative px-6 py-8 overflow-hidden">
+  <div className="relative px-0 py-0 w-full aspect-[4/3] overflow-hidden">
   {/* Brush Mask */}
   <img
     src="/static/images/brush-mask.png"
     alt="Brush"
-    className="absolute top-0 left-0 w-full h-full object-cover z-10 pointer-events-none"
+    class="absolute inset-0 w-full h-full object-cover z-10 pointer-events-none"
+    // className="absolute top-0 left-0 w-full h-full object-cover z-10 pointer-events-none"
   />
 
   {/* Carousel */}
