@@ -6,6 +6,16 @@ module.exports = {
     "./backend/templates/**/*.{html,js,jsx,ts,tsx}",
   ],
   theme: {
+    screens: {
+      'xxs': '320px',
+      'xs': '475px',
+      's': '525px',
+      'sm': '320px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
     extend: {
       fontSize: {
         'h0': 'var(--text-h0)',

@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Container } from '../../../components/Layout.jsx';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
 
 
 const HiringModel = () => {
@@ -114,15 +117,13 @@ const HiringModel = () => {
   </div>
 
   {/* Image & Mask */}
-  <div className="relative px-6  py-8 overflow-hidden">
-    {/* Brush Mask */}
+  {/* <div className="relative px-6  py-8 overflow-hidden">
     <img
       src="/static/images/brush-mask.png"
       alt="Brush"
       className="absolute top-0 left-0 w-full h-full object-cover z-10 pointer-events-none"
     />
 
-    {/* Main Image */}
     <img
       src="/static/images/hiring_model_image.png"
       alt="Hiring Visual"
@@ -130,7 +131,62 @@ const HiringModel = () => {
                   style={{ transform: "scaleY(1.2)" }}
 
     />
-  </div>
+  </div> */}
+  <div className="relative px-0 py-0 w-full aspect-[4/3] overflow-hidden">
+  {/* Brush Mask */}
+  <img
+    src="/static/images/brush-mask.png"
+    alt="Brush"
+    class="absolute inset-0 w-full h-full object-cover z-10 pointer-events-none"
+    // className="absolute top-0 left-0 w-full h-full object-cover z-10 pointer-events-none"
+  />
+
+  {/* Carousel */}
+  <Carousel
+    showArrows={false}
+    showStatus={false}
+    showIndicators={false}
+        showThumbs={false}
+    infiniteLoop={true}
+    autoPlay={true}
+    interval={3000}
+    className="relative z-0 w-full h-auto object-cover rounded shadow-md"
+  >
+    <div>
+      <img
+        src="/static/images/hiring_model_image.png"
+        alt="Hiring Visual 1"
+        className="w-full h-auto object-cover"
+        style={{ transform: 'scaleY(1.0)' }}
+      />
+    </div>
+    <div>
+      <img
+        src="/static/images/hiring_model_image2.JPG"
+        alt="Hiring Visual 2"
+        className="w-full h-auto object-cover"
+        style={{ transform: 'scaleY(1.0)' }}
+      />
+    </div>
+    <div>
+      <img
+        src="/static/images/hiring_model_image3.JPG"
+        alt="Hiring Visual 3"
+        className="w-full h-auto object-cover"
+        style={{ transform: 'scaleY(1.0)' }}
+      />
+    </div>
+    <div>
+      <img
+        src="/static/images/hiring_model_image4.JPG"
+        alt="Hiring Visual 4"
+        className="w-full h-auto object-cover"
+        style={{ transform: 'scaleY(1.0)' }}
+      />
+    </div>
+  </Carousel>
+</div>
+
 
   {/* Bottom Decorations */}
   <div className="flex justify-between px-6 py-4 items-end">

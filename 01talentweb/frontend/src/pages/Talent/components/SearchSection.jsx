@@ -22,11 +22,11 @@ export default function SearchSection() {
       </div>
 
       {/* Filter buttons below */}
-      <div className="mt-4 flex flex-col sm:flex-row gap-4">
-        <div className="bg-white rounded-full shadow px-6 py-3 text-center text-gray-900 w-full sm:w-1/2">
+      <div className="mt-4 flex flex-col s:flex-row gap-4">
+        <div className="bg-white rounded-full shadow px-6 py-3 text-center text-gray-900 w-full s:w-1/2">
           All Roles
         </div>
-        <div className="bg-white rounded-full shadow px-6 py-3 text-center text-gray-900 w-full sm:w-1/2">
+        <div className="bg-white rounded-full shadow px-6 py-3 text-center text-gray-900 w-full s:w-1/2">
           Availability
         </div>
       </div>
