@@ -105,10 +105,11 @@ const HiringModel = () => {
         {/* Right Static Image */}
 <div
   ref={imageRef}
-  className="sticky top-24 mid-tablets:top-30 self-start z-10 mb-20 small-phones:mb-30 small-phones:absolute small-phones:order-1 small-phones:max-w-screen small-phones:max-h-screen w-3/4 mx-auto" // Added w-3/4 and mx-auto
+  className="sticky top-24 mid-tablets:top-30 self-start z-10 mb-20 small-phones:mb-30 small-phones:absolute small-phones:order-1 small-phones:max-w-screen small-phones:max-h-screen w-3/4 mx-auto"
 >
   {/* Top Chevron */}
-  <div className="flex justify-start px-6 py-12">
+  <div 
+  className="flex justify-start px-6 py-6 **py-12**">
     <img
       src="/static/images/arrows.svg"
       alt="Chevron Top Left"
