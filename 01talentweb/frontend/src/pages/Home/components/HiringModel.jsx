@@ -105,7 +105,7 @@ const HiringModel = () => {
         {/* Right Static Image */}
 <div
   ref={imageRef}
-  className="sticky top-24 mid-tablets:top-30 self-start z-10 mb-20 small-phones:mb-30 small-phones:absolute small-phones:order-1 small-phones:max-w-screen small-phones:max-h-screen"
+  className="sticky top-24 mid-tablets:top-30 self-start z-10 mb-20 small-phones:mb-30 small-phones:absolute small-phones:order-1 small-phones:max-w-screen small-phones:max-h-screen w-3/4 mx-auto" // Added w-3/4 and mx-auto
 >
   {/* Top Chevron */}
   <div className="flex justify-start px-6 py-12">
@@ -117,78 +117,61 @@ const HiringModel = () => {
   </div>
 
   {/* Image & Mask */}
-  {/* <div className="relative px-6  py-8 overflow-hidden">
+  <div className="relative px-0 py-4 w-full **aspect-[4/3]** overflow-hidden">
+    {/* Brush Mask */}
     <img
       src="/static/images/brush-mask.png"
       alt="Brush"
-      className="absolute top-0 left-0 w-full h-full object-cover z-10 pointer-events-none"
+      class="absolute inset-0 w-full h-full object-cover z-10 pointer-events-none"
     />
 
-    <img
-      src="/static/images/hiring_model_image.png"
-      alt="Hiring Visual"
-      className="relative z-0 w-full h-auto object-cover rounded shadow-md mid-tablets:[ scaleY(1.8)]"
-                  style={{ transform: "scaleY(1.2)" }}
-
-    />
-  </div> */}
-  <div className="relative px-0 py-0 w-full aspect-[4/3] overflow-hidden">
-  {/* Brush Mask */}
-  <img
-    src="/static/images/brush-mask.png"
-    alt="Brush"
-    class="absolute inset-0 w-full h-full object-cover z-10 pointer-events-none"
-    // className="absolute top-0 left-0 w-full h-full object-cover z-10 pointer-events-none"
-  />
-
-  {/* Carousel */}
-  <Carousel
-    showArrows={false}
-    showStatus={false}
-    showIndicators={false}
-        showThumbs={false}
-    infiniteLoop={true}
-    autoPlay={true}
-    animationHandler="fade"
-  swipeable={false}
-    interval={3000}
-    className="relative z-0 w-full h-auto object-cover rounded shadow-md"
-  >
-    <div>
-      <img
-        src="/static/images/hiring_model_image.png"
-        alt="Hiring Visual 1"
-        className="w-full h-auto object-cover"
-        style={{ transform: 'scaleY(1.0])' }}
-      />
-    </div>
-    <div>
-      <img
-        src="/static/images/hiring_model_image2.JPG"
-        alt="Hiring Visual 2"
-        className="w-full h-auto object-cover"
-        style={{ transform: 'scaleY(1.0)' }}
-      />
-    </div>
-    <div>
-      <img
-        src="/static/images/hiring_model_image3.JPG"
-        alt="Hiring Visual 3"
-        className="w-full h-auto object-cover"
-        style={{ transform: 'scaleY(1.0)' }}
-      />
-    </div>
-    <div>
-      <img
-        src="/static/images/hiring_model_image4.JPG"
-        alt="Hiring Visual 4"
-        className="w-full h-auto object-cover"
-        style={{ transform: 'scaleY(1.0)' }}
-      />
-    </div>
-  </Carousel>
-</div>
-
+    {/* Carousel */}
+    <Carousel
+      showArrows={false}
+      showStatus={false}
+      showIndicators={false}
+      showThumbs={false}
+      infiniteLoop={true}
+      autoPlay={true}
+      animationHandler="fade"
+      swipeable={false}
+      interval={4000}
+      className="relative z-0 w-full h-auto object-cover rounded shadow-md"
+    >
+      <div>
+        <img
+          src="/static/images/hiring_model_image.png"
+          alt="Hiring Visual 1"
+          className="w-full h-auto object-cover leading-none"
+          style={{ transform: 'scaleY(1.0])' }}
+        />
+      </div>
+      <div>
+        <img
+          src="/static/images/hiring_model_image2.JPG"
+          alt="Hiring Visual 2"
+          className="w-full h-auto object-cover leading-none"
+          style={{ transform: 'scaleY(1.0)' }}
+        />
+      </div>
+      <div>
+        <img
+          src="/static/images/hiring_model_image3.JPG"
+          alt="Hiring Visual 3"
+          className="w-full h-auto object-cover leading-none"
+          style={{ transform: 'scaleY(1.0)' }}
+        />
+      </div>
+      <div>
+        <img
+          src="/static/images/hiring_model_image4.JPG"
+          alt="Hiring Visual 4"
+          className="w-full h-auto object-cover leading-none"
+          style={{ transform: 'scaleY(1.0)' }}
+        />
+      </div>
+    </Carousel>
+  </div>
 
   {/* Bottom Decorations */}
   <div className="flex justify-between px-6 py-4 items-end">
@@ -198,7 +181,7 @@ const HiringModel = () => {
       alt="Dots"
       className="absolute bottom-0 w-12 h-12 left-0 ultra-large:w-40"
     />
-    
+
     {/* Bottom Right Chevron */}
     <img
       src="/static/images/arrows.svg"
@@ -212,10 +195,7 @@ const HiringModel = () => {
 
       </div>
 
-      {/* Bottom Decorative Dots */}
-      {/* <div className="flex left-0 mt-12">
-        <img src="/static/images/dots.svg" alt="dots" className="w-20 ultra-large:w-40" />
-      </div> */}
+     
     </Container>
     </section>
   );
