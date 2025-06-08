@@ -149,6 +149,8 @@ const HiringModel = () => {
         showThumbs={false}
     infiniteLoop={true}
     autoPlay={true}
+    animationHandler="fade"
+  swipeable={false}
     interval={3000}
     className="relative z-0 w-full h-auto object-cover rounded shadow-md"
   >
@@ -157,7 +159,7 @@ const HiringModel = () => {
         src="/static/images/hiring_model_image.png"
         alt="Hiring Visual 1"
         className="w-full h-auto object-cover"
-        style={{ transform: 'scaleY(1.0)' }}
+        style={{ transform: 'scaleY(1.0])' }}
       />
     </div>
     <div>
