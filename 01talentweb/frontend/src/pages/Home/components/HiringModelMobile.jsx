@@ -1,4 +1,6 @@
 import React from "react";
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const features = [
   {
@@ -39,20 +41,7 @@ const HiringModelMobile = () => {
         <h2 className="**text-lg** text-3xl font-bold text-center px-4 pt-8">
           WHY <span className="text-blue-600">OUR HIRING MODEL</span> WORKS FOR YOU
         </h2>
-        {/* <div className="w-full px-4 mt-4">
-          <img
-            src="/static/images/brush-mask.png"
-            alt="Brush"
-            className=" absolute w-full rounded-md shadow-md object-contain z-10 "
-          />
-
-          <img
-            src="/static/images/hiring_model_image.png"
-            alt="Hiring Visual"
-            className=" relative w-full rounded-md shadow-md object-cover"
-          />
-        </div> */}
-        {/* Diamonds */}
+        
     <img
       src="/static/images/diamonds.svg"
       alt="Diamonds"
@@ -60,45 +49,81 @@ const HiringModelMobile = () => {
     />
 
     
-    <div className="w-full py-0 px-4 mt-4 top-10 ">
-  <div className="mx-auto w-full bg-white  sm:max-w-sm md:max-w-md lg:max-w-lg relative py-4">
+  
+<div className="w-full py-4 px-4 mt-4 top-10">
+  <div className="mx-auto w-full bg-white sm:max-w-[280px] **md:max-w-sm lg:max-w-md** relative py-4">
     {/* Top-left arrow */}
     <img
       src="/static/images/arrows.svg"
       alt="Arrow Top Left"
-      className="absolute top-4 left-0 w-8 h-6 z-20"
+      className="absolute -top-6 mb-2 left-0 w-8 h-6 z-20"
     />
 
     {/* Bottom-right arrow */}
     <img
       src="/static/images/arrows.svg"
       alt="Arrow Bottom Right"
-      className="absolute bottom-5 right-0 w-8 h-6 z-20"
+      className="absolute -bottom-5 right-0 w-8 h-6 z-20"
     />
 
     {/* Bottom-left dots */}
     <img
       src="/static/images/dots.svg"
       alt="Dots Bottom Left"
-      className="absolute bottom-2  left-0 w-12 h-11 z-20"
+      className="absolute -bottom-8 left-0 w-12 h-11 z-20"
     />
 
-    {/* Optional Brush Mask */}
     <img
       src="/static/images/brush-mask.png"
       alt="Brush"
       className="absolute top-0 left-0 w-full h-full object-cover z-10 pointer-events-none"
-      style={{ transform: "scaleY(0.6)" }}
     />
 
-    {/* Main image */}
-    <img
-      src="/static/images/hiring_model_image.png"
-      alt="Hiring Visual"
-      className="w-full rounded-md shadow-md object-cover relative z-0"
-            style={{ transform: "scaleY(0.6)" }}
-
-    />
+    {/* Carousel of images within the mask */}
+    <Carousel
+      showArrows={false}       // Hide navigation arrows
+      showStatus={false}       // Hide current slide number
+      showIndicators={false}   // Hide dot indicators
+      showThumbs={false}       // Hide thumbnail navigation
+      infiniteLoop={true}      // Loop through images indefinitely
+      autoPlay={true}          // Auto-play the carousel
+      interval={4000}          // Change image every 4 seconds
+      transitionTime={500}     // Smooth transition over 0.5 seconds
+      stopOnHover={false}      // Keep auto-playing even if hovered
+      animationHandler="fade"  // Use fade animation for transitions
+      swipeable={false}        // Disable swiping for touch devices if not desired
+      className="relative z-0 w-full rounded-md shadow-md" // Ensure carousel itself has relevant styling
+      // style={{ transform: "scaleY(0.6)" }} // This might cause odd scaling, better to let parent control
+    >
+      <div>
+        <img
+          src="/static/images/hiring_model_image.png"
+          alt="Hiring Visual 1"
+          className="w-full h-full object-cover block" // Added 'block' to remove baseline space
+        />
+      </div>
+      <div>
+        <img
+          src="/static/images/hiring_model_image2.JPG"
+          alt="Hiring Visual 2"
+          className="w-full h-full object-cover block" // Added 'block'
+        />
+      </div>
+      <div>
+        <img
+          src="/static/images/hiring_model_image3.JPG"
+          alt="Hiring Visual 3"
+          className="w-full h-full object-cover block" // Added 'block'
+        />
+      </div>
+      <div>
+        <img
+          src="/static/images/hiring_model_image4.JPG"
+          alt="Hiring Visual 4"
+          className="w-full h-full object-cover block" // Added 'block'
+        />
+      </div>
+    </Carousel>
   </div>
 </div>
 
