@@ -27,7 +27,7 @@ def talents_list(request):
             Q(profile__bio__icontains=search_query) |
             Q(profile__role__icontains=search_query) |
             Q(profile__location__icontains=search_query) |
-            Q(profile__skills__contains=[search_query])
+            Q(profile__skills__icontains=search_query)
         )
         
         # Combine queries
