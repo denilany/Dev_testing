@@ -51,8 +51,8 @@ export default function Index() {
     return (
       <>
             <Hero
-                desktopBg="/static/images/talent_hero_desktop.JPG"
-                mobileBg="/static/images/talent_hero_mobile.JPG"
+                desktopBg="/static/images/talent_hero_desktop.jpg"
+                mobileBg="/static/images/talent_hero_mobile.jpg"
                 title={
                   <>
                     HIRE THE <span className="text-[--color-hero-text] ">BEST DEVELOPERS</span> WITH US
