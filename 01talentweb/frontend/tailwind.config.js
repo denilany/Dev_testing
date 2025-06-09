@@ -28,27 +28,23 @@ module.exports = {
         'body-m': '1.32',
       },
       screens: {
-        // Base breakpoints
-        'xxs': '320px',
-        'xs': '475px',
-        'sm': '320px',
-        's': '525px',
+        // Standard breakpoints
+        'sm': '640px',
         'md': '768px',
         'lg': '1024px',
         'xl': '1280px',
-        '2xl': '2000px',
+        '2xl': '1536px',
         
-        // Responsive ranges
-        'small-phones': { 'max': '424px' },  // 0-424px
-        'large-phones': { 'min': '425px', 'max': '767px' },  // 425px-767px
-        'small-tablets': { 'min': '768px', 'max': '1023px' }, // 768px-1023px
-        'mid-tablets': { 'min': '1024px', 'max': '1279px' }, // 1024px-1279px
-        'large-tablets': { 'min': '1280px', 'max': '1535px' }, // 1280px-1535px
-        'desktop': { 'min': '1536px' },  // 1536px and up
+        // Additional custom breakpoints
+        'xxs': '320px',
+        'xs': '475px',
+        's': '525px',
         
-        // Additional breakpoints
-        'ultra-large': { 'min': '1710px' },  // 1710px and up
-        'ultra-xl': { 'min': '1932px' },     // 1932px and up
+        // Responsive ranges (if needed)
+        'small-phones': { 'max': '424px' },
+        'large-phones': { 'min': '425px', 'max': '767px' },
+        'tablet': { 'min': '768px', 'max': '1023px' },
+        'desktop': { 'min': '1024px' }
       },
       fontFamily: {
         sans: ['var(--font-sans)'],

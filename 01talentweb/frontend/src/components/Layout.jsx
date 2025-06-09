@@ -3,11 +3,13 @@ import Navbar from "@/components/Navbar.jsx";
 import Footer from "@/components/Footer.jsx";
 
 // Create a container component for consistent spacing
-export const Container = ({ children, className = "" }) => (
-  <div className={`mx-[80px] xxs:mx-[80px] sm:mx-30 mx-auto ${className}`}>
-    {children}
-  </div>
-);
+export const Container = ({ children, className = "" }) => {
+  return (
+    <div className={`mx-4 sm:mx-8 md:mx-12 lg:mx-20 xl:mx-24 2xl:mx-48 ${className}`}>
+      {children}
+    </div>
+  );
+};
 
 const Layout = ({children}) => (
 <>
