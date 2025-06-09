@@ -41,7 +41,7 @@ export default function Navbar() {
     >
     <Container>
 
-      <div className="flex justify-between items-center py-4 px-6 md:px-10 ultra-xl:max-w-screen">
+      <div className="flex justify-between items-center py-4 px-6 md:px-8 ultra-xl:max-w-screen">
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <img src={logoSrc} alt="Logo" className="h-8 md:h-8 xl:h-12 ultra-large:h-18" />
