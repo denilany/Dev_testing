@@ -52,7 +52,6 @@ module.exports = {
       },
       fontFamily: {
         sans: ['var(--font-sans)'],
-        roboto: ['var(--font-roboto)'],
       },
       transitionDuration: {
         '600': '600ms',
