@@ -6,7 +6,6 @@
   :root {
     /* Typography */
     --font-sans: 'Montserrat', system-ui, -apple-system, sans-serif;
-    --font-roboto: 'Roboto', system-ui, -apple-system, sans-serif;
     
     /* Font Weights */
     --font-light: 300;
@@ -64,7 +63,8 @@
     --color-primary-700: #284B81;
     --color-primary-800: #000000;
     --color-primary-button-600: #0063F9; 
-    --color-hero-text: #005AE0;    
+    --color-hero-text: #005AE0;
+    --color-newsletter-border: #0A142F;   
     
     /* Color Palette - Informational */
     --color-error: #EA191D;
