@@ -93,7 +93,17 @@ const FeaturedProfiles = ({ talents = [] }) => {
                   key={`${talent.id}-${index}`}
                   className={getCardClasses(index)}
                 >
-                  <TalentCard talent={talent} />
+                  <TalentCard 
+                    talent={talent}
+                    variant="default"
+                    showTitle={true}
+                    showDescription={true}
+                    showPortfolioButton={true}
+                    showHireButton={true}
+                    showSocialIcons={true}
+                    showSkills={false}
+                    showAvailability={false}
+                  />
                 </div>
               ))}
             </div>

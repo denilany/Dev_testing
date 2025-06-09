@@ -6,31 +6,7 @@ module.exports = {
     "./backend/templates/**/*.{html,js,jsx,ts,tsx}",
   ],
   theme: {
-    screens: {
-      'xxs': '320px',
-      'xs': '475px',
-      's': '525px',
-      'sm': '320px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1536px',
-    },
     extend: {
-      screens: {
-        'small-tablets': '768px',
-        'mid-tablets': {'min': '768px','max': '900px'},
-        
-        // 'small-phones': '320px',
-        'large-phones': {'min': '439px','max': '766px'},
-
-        'small-phones': {'max': '425px'},
-        // 'ultra-large': {'min': '1710px', 'max': '639px'}, 
-        'ultra-large': {'min': '1710px'}, 
-        'ultra-xl': {'min': '1932px'}, 
-
-
-      },
       fontSize: {
         'h0': 'var(--text-h0)',
         'h1': 'var(--text-h1)',
@@ -41,7 +17,38 @@ module.exports = {
         'body-xl': 'var(--text-body-xl)',
         'body-l': 'var(--text-body-l)',
         'body-m': 'var(--text-body-m)',
+        'body-xs': 'var(--text-body-xs)',
         'body-s': 'var(--text-body-s)',
+      },
+      lineHeight: {
+        'h1': '1.3',
+        'h2': '1.04',
+        'mobile-headlines': '1.44',
+        'body-l': '1.44',
+        'body-m': '1.32',
+      },
+      screens: {
+        // Base breakpoints
+        'xxs': '320px',
+        'xs': '475px',
+        'sm': '320px',
+        's': '525px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '2000px',
+        
+        // Responsive ranges
+        'small-phones': { 'max': '424px' },  // 0-424px
+        'large-phones': { 'min': '425px', 'max': '767px' },  // 425px-767px
+        'small-tablets': { 'min': '768px', 'max': '1023px' }, // 768px-1023px
+        'mid-tablets': { 'min': '1024px', 'max': '1279px' }, // 1024px-1279px
+        'large-tablets': { 'min': '1280px', 'max': '1535px' }, // 1280px-1535px
+        'desktop': { 'min': '1536px' },  // 1536px and up
+        
+        // Additional breakpoints
+        'ultra-large': { 'min': '1710px' },  // 1710px and up
+        'ultra-xl': { 'min': '1932px' },     // 1932px and up
       },
       fontFamily: {
         sans: ['var(--font-sans)'],

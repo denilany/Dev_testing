@@ -6,6 +6,7 @@
   :root {
     /* Typography */
     --font-sans: 'Montserrat', system-ui, -apple-system, sans-serif;
+    --font-roboto: 'Roboto', system-ui, -apple-system, sans-serif;
     
     /* Font Weights */
     --font-light: 300;
@@ -29,7 +30,8 @@
     --text-body-xxl: 36px;
     --text-body-xl: 28px;   /* 28px */
     --text-body-l: 24px;
-    --text-body-m: 18px;   /* 18px */
+    --text-body-m: 20px;   /* 20px */
+    --text-body-xs: 18px;
     --text-body-s: 16px;       /* 16px */
     
     /* Line Heights */
