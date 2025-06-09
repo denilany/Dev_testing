@@ -4,16 +4,17 @@ import Navbar from '../../components/Navbar.jsx';
 import Hero from '../../components/Hero.jsx';
 import SearchSection from './components/SearchSection.jsx';
 import DeveloperSection from './components/Developer_talent.jsx';
-import { SampleTalents } from '../Home/Index';
 import VetTalentSection from './components/How_we_vet.jsx';
 
 
 export default function Index() {
+  const { props } = usePage('../Home/Index');
+  const featured_developers = props.featured_developers || [];
     return (
       <>
             <Hero
-                desktopBg="/static/images/talent_hero_desktop.JPG"
-                mobileBg="/static/images/talent_hero_mobile.JPG"
+                desktopBg="/static/images/talent_hero_desktop.jpg"
+                mobileBg="/static/images/talent_hero_mobile.jpg"
                 title={
                   <>
                     HIRE THE <span className="text-[--color-hero-text] ">BEST DEVELOPERS</span> WITH US
@@ -23,7 +24,7 @@ export default function Index() {
                   
             />
             <SearchSection/>
-            <DeveloperSection talent={SampleTalents} />
+            <DeveloperSection talent={featured_developers} />
             <VetTalentSection />
        </>
      );
