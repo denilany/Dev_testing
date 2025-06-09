@@ -9,20 +9,18 @@ const DeveloperSection = ({ talent: talents }) => {
   const handleLoadMore = () => {
     setVisibleDevelopers((prev) => prev + 3);
   };
-  
-  // Get the current visible talents
+
   const visibleTalents = talents ? talents.slice(0, visibleDevelopers) : [];
 
   return (
     <section className="py-16 bg-[--color-primary-50]">
       <Container>
         <div className="text-center mb-6">
-          <h1 className="text-h2 font-extrabold text-gray-900 mb-4">
-            Developers
-          </h1>
+          <h1 className="text-h2 font-extrabold text-gray-900 mb-4">DEVELOPERS</h1>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" 
-              >
+
+        {/* Talent Cards Grid or No Results */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {visibleTalents.length > 0 ? (
             visibleTalents.map((talent) => (
               <div key={talent.id} className="w-full h-full p-2 justify-items-center">
@@ -40,26 +38,42 @@ const DeveloperSection = ({ talent: talents }) => {
               </div>
             ))
           ) : (
-            <div className="col-span-full text-center pt-12">
-              <p className="text-gray-500 text-lg">No talents available at the moment. Please check back later.</p>
-            </div>
-          )}
-        </div>
-          {/* Load More Button */}
-          {talents && visibleDevelopers < talents.length && (
-            <div className="justify-center flex items-center mt-6">
+            <div className="col-span-full flex flex-col items-center text-center pt-16">
+              {/* Replace this with an actual image/icon if needed */}
+              <div className="mb-2">
+                <img src="../../static/images/Search.svg" alt="No results" className="w-350 h-350" />
+              </div>
+              <h2 className="text-h0 font-semibold text-gray-800 mb-2">
+                No Results Found for <span className="font-bold">“Placeholder”</span>
+              </h2>
+              <p className="text-body-m mb-6 max-w-md">
+                We’re constantly updating our directory, try again soon or refine your search.
+              </p>
               <Button
-                onClick={handleLoadMore}
-                variant="outline-light"
-                size="lg"
-                padding="px-20 py-3"
-                className="h-[52px] sticky !font-bold bottom-4 z-10 !bg-[--color-primary-50] !text-[--color-primary-300] shadow-md hover:shadow-lg transition-shadow"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                variant="filled"
+                className="!font-bold !px-10 !py-5 !text-body-m"
               >
-                Load More
+                Edit Search
               </Button>
             </div>
           )}
-      
+        </div>
+
+        {/* Load More Button */}
+        {talents && visibleDevelopers < talents.length && (
+          <div className="justify-center flex items-center mt-6">
+            <Button
+              onClick={handleLoadMore}
+              variant="outline-light"
+              size="lg"
+              padding="px-20 py-3"
+              className="h-[52px] sticky !font-bold bottom-4 z-10 !bg-[--color-primary-50] !text-[--color-primary-300] shadow-md hover:shadow-lg transition-shadow"
+            >
+              Load More
+            </Button>
+          </div>
+        )}
       </Container>
     </section>
   );
