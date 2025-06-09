@@ -100,7 +100,9 @@ const WhoWeAre = () => {
          <div className="flex justify-center mt-12 md:mt-16">
             <Button
               href="/hire"
-              className="flex items-center justify-center hover:bg-blue-500 hover:text-white bg-transparent border-2 border-blue-500 text-blue-500  font-medium rounded-lg md:rounded-[9.17px] hover:opacity-90 transition-opacity w-full max-w-sm sm:max-w-md h-14 sm:h-16 md:h-[75.69px] py-3 px-6 sm:px-8 md:py-[22.92px] md:px-[91.69px] text-lg sm:text-xl md:text-2xl lg:text-[24.45px] leading-none md:leading-[27.51px] tracking-normal text-center font-sans"
+              variant="outline"
+
+              className="flex items-center justify-center text-blue-600 hover:bg-blue-500 hover:text-white bg-transparent border-2 border-blue-500 text-blue-500  font-medium rounded-lg md:rounded-[9.17px] hover:opacity-90 transition-opacity w-full max-w-sm sm:max-w-md h-14 sm:h-16 md:h-[75.69px] py-3 px-6 sm:px-8 md:py-[22.92px] md:px-[91.69px] text-lg sm:text-xl md:text-2xl lg:text-[24.45px] leading-none md:leading-[27.51px] tracking-normal text-center font-sans"
             >
               Know more...
             </Button>
