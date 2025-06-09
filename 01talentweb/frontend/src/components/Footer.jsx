@@ -13,7 +13,7 @@ const Footer = () => {
           {/* Column 1 - Statement */}
           <div className="flex-1 min-w-[300px] pr-4 space-y-10">
             <div className="flex justify-center md:justify-start w-full sm:w-auto">
-              <img src="/static/images/white-logo.png" alt="01Talent Logo" className="h-20" />
+              <img src="/static/images/white-logo.png" alt="01Talent Logo" className="h-16 md:h-20" />
             </div>
             <p className="font-sans text-body-xs leading-body-xs mb-8 text-center md:text-left">
               <span className="block md:hidden text-left pl-[3rem]">Cha mkuu mwanafuu ha na akili hu, Cha mwanafuu mkuu hu na akili ha.</span>
