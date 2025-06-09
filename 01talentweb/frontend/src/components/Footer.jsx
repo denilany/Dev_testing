@@ -12,13 +12,14 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row flex-wrap gap-8">
           {/* Column 1 - Statement */}
           <div className="flex-1 min-w-[300px] pr-4 space-y-10">
-            <div className="w-4/5 flex flex-col sm:flex-row sm:justify-between items-center space-y-6 sm:space-y-0">
-                <div className="flex justify-center sm:justify-start w-full sm:w-auto">
-                  <img src="/static/images/white-logo.png" alt="01Talent Logo" className="h-20" />
-                </div>
+            <div className="flex justify-center md:justify-start w-full sm:w-auto">
+              <img src="/static/images/white-logo.png" alt="01Talent Logo" className="h-16 md:h-20" />
             </div>
             <p className="font-sans text-body-xs leading-body-xs mb-8 text-center md:text-left">
-              Cha mkuu mwanafuu ha <br/>na akili hu, Cha mwanafuu<br/> mkuu hu na akili ha.
+              <span className="block md:hidden text-left pl-[3rem]">Cha mkuu mwanafuu ha na akili hu, Cha mwanafuu mkuu hu na akili ha.</span>
+              <span className="hidden md:block">
+                Cha mkuu mwanafuu ha <br/>na akili hu, Cha mwanafuu<br/> mkuu hu na akili ha.
+              </span>
             </p>
           </div>
 
@@ -27,7 +28,7 @@ const Footer = () => {
             <div className="flex w-full">
               {/* Column 2 - Navigation */}
             <div className="flex-1 min-w-[150px] px-4">
-                <div className="text-center sm:text-left">
+                <div className="text-center md:text-left">
                   <h4 className="font-sans text-body-m font-bold mb-4">Navigation</h4>
                   <ul className="space-y-2 text-body-xs font-normal font-sans text-[--color-primary-0]">
                     <li><a href="/about" className="hover:underline">About Us</a></li>
@@ -40,7 +41,7 @@ const Footer = () => {
 
               {/* Column 3 - Links */}
             <div className="flex-1 min-w-[150px] px-4">
-                <div className="text-center sm:text-left">
+                <div className="text-center md:text-left">
                   <h4 className="font-sans text-body-m font-bold mb-4">Links</h4>
                   <ul className="space-y-2 text-body-xs font-normal font-sans text-[--color-primary-0]">
                     <li><a href="/faq" className="hover:underline">FAQs</a></li>
@@ -57,7 +58,10 @@ const Footer = () => {
             <div className="flex flex-col space-y-6 items-center md:items-start">
               <div className="flex items-start space-x-3 text-body-xs font-sans text-[--color-primary-0] max-w-max">
                 <FaLocationDot className="mt-1 flex-shrink-0" />
-                <span>Lake Basin Mall -<br/> Kisumu - Vihiga Road</span>
+                <span>
+                  <span className="block md:hidden">Lake Basin Mall - Kisumu - Vihiga Road</span>
+                  <span className="hidden md:block">Lake Basin Mall -<br/> Kisumu - Vihiga Road</span>
+                </span>
               </div>
               <div className="flex items-center space-x-3 text-body-xs font-sans">
                 <span className="text-[--color-primary-0]">✉️</span>
@@ -92,7 +96,7 @@ const Footer = () => {
 
       {/* Footer Bottom */}
       
-      <Container className="py-6 text-sm border-t border-white sm:flex-row justify-center items-center">
+      <Container className="py-6 text-sm border-t border-white justify-center items-center">
         <div className="w-full pt-6 sm:pt-0 space-y-6 text-center">
           <p className="font-sans text-[--color-primary-0] font-bold text-body-xs">
             Copyright @01Talent.
