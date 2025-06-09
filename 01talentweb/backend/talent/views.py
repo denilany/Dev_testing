@@ -9,15 +9,36 @@ Key Views:
 Additional endpoints can be added here to support CRUD operations or custom queries for the Talent model.
 """
 
+from django.db.models import Q
 from inertia import inertia
 from .models import Talent
 
 @inertia('Talent/Index')
 def talents_list(request):
+    search_query = request.GET.get('q', '').strip()
     talents = Talent.objects.all()
+    
+    if search_query:
+        # Search in name field
+        name_query = Q(name__icontains=search_query)
+        
+        # Search in JSON fields
+        profile_query = (
+            Q(profile__bio__icontains=search_query) |
+            Q(profile__role__icontains=search_query) |
+            Q(profile__location__icontains=search_query) |
+            Q(profile__skills__contains=[search_query])
+        )
+        
+        # Combine queries
+        talents = talents.filter(name_query | profile_query)
+
     return {
         'talents': list(talents.values(
             'id', 'email', 'name', 'profile', 'created_at'
-        ))
+        )),
+        'filters': {
+            'search': search_query
+        }
     }
 
