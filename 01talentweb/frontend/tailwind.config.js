@@ -19,6 +19,10 @@ module.exports = {
         'body-m': 'var(--text-body-m)',
         'body-xs': 'var(--text-body-xs)',
         'body-s': 'var(--text-body-s)',
+
+        // 'h1-fluid': 'clamp(2rem, 5vw + 1rem, 4rem)',
+        'h2-fluid': 'clamp(20px, 4vw + 12px, 48px)',
+
       },
       lineHeight: {
         'h1': '1.3',
