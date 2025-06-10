@@ -128,7 +128,9 @@ const UniqueTalentSection = () => {
     <section className="bg-[#EFF7FF] relative">
       <Container className="py-12 md:py-16 lg:py-20">
         <div className="mx-auto text-center lg:text-left">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] text-center font-bold text-[var(--color-text-heading)] mb-4 md:mb-6 mx-auto lg:mx-0 lg:-ml-16">
+          {/* <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] text-center font-bold text-[var(--color-text-heading)] mb-4 md:mb-6 mx-auto lg:mx-0 lg:-ml-16"> */}
+          <h2 className="text-h2-fluid text-center text-gray-900 font-bold">
+
               <span className="whitespace-normal sm:whitespace-nowrap">WHAT MAKES </span>
               <span className="whitespace-normal sm:whitespace-nowrap text-[--color-primary-500]">OUR TALENT</span>
               <span className="whitespace-normal sm:whitespace-nowrap"> UNIQUE</span>

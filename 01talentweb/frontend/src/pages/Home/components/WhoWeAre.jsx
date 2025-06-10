@@ -31,7 +31,8 @@ const WhoWeAre = () => {
 
       <div className="max-w-screen mx-auto relative z-10">
         {/* Section Title */}
-        <h2 className="text-3xl md:text-3xl lg:text-5xl ultra-large:text-h1 font-bold text-gray-900 mb-4 ultra-large:mb-8 text-center">
+        {/* <h2 className="text-3xl md:text-3xl lg:text-5xl ultra-large:text-h1 font-bold text-gray-900 mb-4 ultra-large:mb-8 text-center"> */}
+       <h2 className="text-h2-fluid text-center text-gray-900 font-bold">
           <span className="text-blue-600">WHO</span> WE ARE
         </h2>
 

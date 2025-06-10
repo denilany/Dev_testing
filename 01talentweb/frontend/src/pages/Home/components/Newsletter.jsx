@@ -7,7 +7,9 @@ const NewsletterSection = () => {
   return (
     <section className="w-full bg-[--color-primary-50] py-8 sm:py-12 md:py-16">
       <Container className="text-center">
-        <h2 className="text-4xl sm:text-5xl md:text-h1 font-bold text-[var(--color-text-heading)] mb-4 md:mb-6">
+        {/* <h2 className="text-4xl sm:text-5xl md:text-h1 font-bold text-[var(--color-text-heading)] mb-4 md:mb-6"> */}
+        <h2 className="text-h2-fluid text-center text-gray-900 font-bold">
+
           Subscribe to our{' '}
           <span className="text-[--color-primary-500]">Monthly Newsletter</span>
         </h2>
