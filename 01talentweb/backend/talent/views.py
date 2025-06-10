@@ -41,10 +41,20 @@ def talents_list(request):
     # Get unique roles for filter dropdown
     all_roles = Talent.objects.exclude(profile__role='').values_list('profile__role', flat=True).distinct()
 
+    talents_list = []
+    for talent in talents:
+        talent_dict = {
+            'id': talent.id,
+            'email': talent.email,
+            'name': talent.name,
+            'profile': talent.profile,
+            'created_at': talent.created_at,
+            'image': talent.image.url if talent.image else None
+        }
+        talents_list.append(talent_dict)
+
     return {
-        'talents': list(talents.values(
-            'id', 'email', 'name', 'profile', 'created_at'
-        )),
+        'talents': talents_list,
         'filters': {
             'search': search_query,
             'role': role_filter,
