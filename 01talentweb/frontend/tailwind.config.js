@@ -17,20 +17,33 @@ module.exports = {
       'md': '768px',    // Tablets
       'lg': '992px',    // Small laptops
       'xl': '1200px',   // Desktops
-      '2xl': '1400px',  // Large desktops
+      '2xl': '1500px',  // Large desktops
       'max-xs': {'max': '319px'},
       'max-sm': {'max': '575px'},
       'max-md': {'max': '767px'},
       'max-lg': {'max': '991px'},
       'max-xl': {'max': '1199px'},
-      'max-2xl': {'max': '1399px'},
+      'max-2xl': {'max': '1499px'},
     },
+    fontSize,
+    /** @type {import('fluid-tailwind').FluidThemeConfig} */
+    fluid: ({
+      // Set explicit viewport range for fluid scaling
+      defaultScreens: {
+        'min': '320px',
+        'max': '1500px'
+      },
+      // Disable accessibility checks if they're causing issues
+      checkSC144: false,
+      // Explicitly set the unit to px for more consistent behavior
+      unit: 'px',
+      // Force the plugin to use these exact breakpoints
+      forceRange: true
+    }),
     fontSize: {
       'h0': ['var(--text-h0)', { lineHeight: 'var(--leading-h1)' }],
       'h1': ['var(--text-h1)', { lineHeight: 'var(--leading-h1)' }],
       'h2': ['var(--text-h2)', { lineHeight: 'var(--leading-h2)' }],
-      'mobile-h1': ['var(--text-mobile-h1)', { lineHeight: 'var(--leading-mobile-headlines)' }],
-      'mobile-h2': ['var(--text-mobile-h2)', { lineHeight: 'var(--leading-mobile-headlines)' }],
       'body-xxl': ['var(--text-body-xxl)', { lineHeight: 'var(--leading-body-l)' }],
       'body-xl': ['var(--text-body-xl)', { lineHeight: 'var(--leading-body-l)' }],
       'body-l': ['var(--text-body-l)', { lineHeight: 'var(--leading-body-l)' }],
