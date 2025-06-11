@@ -81,7 +81,7 @@ const HiringModel = () => {
       <Container>
         <div className="sticky top-20 mid-tablets:top-16 self-start bg-white py-4 z-20 max-w-screen ">
           {/* <h2 className=" text-2xl **md:text-5xl** lg:text-5xl md:text-4xl font-bold text-center mb-10 ultra-large:text-h2 ultra-large:pb-18 max-w-screen"> */}
-          <h2 className="text-h2-fluid text-center text-gray-900 font-bold">
+          <h2 className="text-h2 text-center text-gray-900 font-bold">
             WHY <span className="text-blue-600">OUR HIRING MODEL</span> WORKS FOR YOU
           </h2>
         </div>
@@ -97,8 +97,12 @@ const HiringModel = () => {
         <div className="space-y-10 small-phones:relative small-phones:pt-160" >
           {features.map((item, i) => (
             <div key={i}>
-              <h3 className="**text-lg**md:text-2xl lg:text-3xl font-semibold ultra-large:text-h3">{item.title}</h3>
-              <p className="**text-sm** md:text-lg lg:text-xl text-gray-700 mt-2 ultra-large:text-2xl">{item.text}</p>
+              {/* <h3 className="**text-lg**md:text-2xl lg:text-3xl font-semibold ultra-large:text-h3">{item.title}</h3> */}
+              {/* <p className="**text-sm** md:text-lg lg:text-xl text-gray-700 mt-2 ultra-large:text-2xl">{item.text}</p> */}
+              <h3 className="text-h3 font-semibold ">{item.title}</h3>
+              <p className="text-body-s">{item.text}</p>
+
+
             </div>
           ))}
         </div>
