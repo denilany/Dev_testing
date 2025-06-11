@@ -31,7 +31,7 @@ export default function Hero({desktopBg, mobileBg, title, description, button = 
   {/* foreground content */}
   <div className="relative z-20 flex items-center justify-start h-full text-white">
   <div className="lg:max-w-2xl  xl:max-w-3xl ultra-large:max-w-5xl mx-auto px-6 text-left ml-10 small-phones:ml-0">
-    <h1 className="text-[20px] sm:text-2xl md:text-2xl lg:text-[40px] md:font-bold  xl:text-3xl 2xl:text-5xl ultra-large:text-5xl ultra-xl:text-7xl font-bold mb-4 lg:leading-[120%] 2xl:leading-[120%] 2xl:tracking-[2%]">
+    <h1 className="text-[20px] sm:text-2xl md:text-2xl lg:text-5xl md:font-bold  xl:text-6xl 2xl:text-7xl ultra-large:text-8xl ultra-xl:text-9xl font-bold mb-4 lg:leading-[120%] 2xl:leading-[120%] 2xl:tracking-[2%]">
       {/* PROVIDING YOU WITH THE <span className="text-[--color-hero-text] ">BEST TECH TALENT</span> IN KENYA */}
       {title}
     </h1>
