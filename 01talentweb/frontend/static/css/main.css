@@ -17,23 +17,28 @@
     
     --text-h0: clamp(28px, 3.5vw, 38px);
     --text-h1: clamp(40px, 5vw, 64px);
-    --text-h2: clamp(14px, 4vw, 60px);
-    
-    /* Mobile Headlines */
-    --text-mobile-h1: clamp(32px, 4vw, 40px);
-    --text-mobile-h2: clamp(13px, 2vw, 24px);
+    --text-h2: clamp(20px, 4vw, 60px);
+    --text-h3: clamp(16px, 1.5vw, 38px)
     
     /* Body Text - using clamp for fluid scaling */
     --text-body-xxl: clamp(28px, 3vw, 36px);
     --text-body-xl: clamp(24px, 2.5vw, 28px);
     --text-body-l: clamp(20px, 2vw, 24px);
-    --text-body-m: clamp(18px, 1.5vw, 20px);
-    --text-body-s: clamp(14px, 1.25vw, 16px);
-    --text-body-xs: clamp(16px, 1.125vw, 18px);
+    --text-body-m: clamp(16px, 1.5vw, 22px);
+    --text-body-s: clamp(5px, 1.25vw, 18px);
+    --text-body-xs: clamp(4px, 1.125vw, 10px);
+
+    /*buttons texts*/
+    --text-button-s: clamp(7px, 1.125vw, 18px);
+    --text-button-l: clamp(14px, 1.5vw, 24px);
+    --text-button-cards: clamp(7px, 1.125vw, 14px);
+    --text-button-cardm: clamp(8px, 1.25vw, 24px);
+
     
     /* Line Heights - adjusted for better readability */
     --leading-h1: 1.3;
     --leading-h2: 1.15;
+    --leading-h3: 1.05;
     --leading-body-l: 1.5;
     --leading-body-m: 1.4;
     --leading-normal: 1.5;

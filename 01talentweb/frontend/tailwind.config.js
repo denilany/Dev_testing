@@ -44,12 +44,17 @@ module.exports = {
       'h0': ['var(--text-h0)', { lineHeight: 'var(--leading-h1)' }],
       'h1': ['var(--text-h1)', { lineHeight: 'var(--leading-h1)' }],
       'h2': ['var(--text-h2)', { lineHeight: 'var(--leading-h2)' }],
+      'h3': ['var(--text-h3)', {lineHeight: 'var(--leading-h3)'}],
       'body-xxl': ['var(--text-body-xxl)', { lineHeight: 'var(--leading-body-l)' }],
       'body-xl': ['var(--text-body-xl)', { lineHeight: 'var(--leading-body-l)' }],
       'body-l': ['var(--text-body-l)', { lineHeight: 'var(--leading-body-l)' }],
       'body-m': ['var(--text-body-m)', { lineHeight: 'var(--leading-body-m)' }],
       'body-s': ['var(--text-body-s)', { lineHeight: 'var(--leading-normal)' }],
       'body-xs': ['var(--text-body-xs)', { lineHeight: 'var(--leading-normal)' }],
+      'button-s': ['var(--text-button-s)', { lineHeight: 'var(--leading-normal)' }],
+      'button-l': ['var(--text-button-l)', { lineHeight: 'var(--leading-normal)' }],
+      'button-cards': ['var(--text-button-cards)', { lineHeight: 'var(--leading-normal)' }],
+      'button-cardm': ['var(--text-button-cardm)', { lineHeight: 'var(--leading-normal)' }],
     },
     extend: {
       colors: {

@@ -11,7 +11,7 @@ const NewsletterSection = () => {
           Subscribe to our{' '}
           <span className="text-[--color-primary-500]">Monthly Newsletter</span>
         </h2>
-        <p className="text-body-s sm:text-body-m md:text-body-l leading-body-m md:leading-body-l font-normal text-[var(--color-text-muted)] max-w-3xl mx-auto">
+        <p className="text-body-m font-normal text-[var(--color-text-muted)] max-w-3xl mx-auto">
           Malesuada ut aliquam at ac est nisi, interdum etiam dignissim.
         </p>
 
@@ -31,7 +31,7 @@ const NewsletterSection = () => {
               type="submit"
               variant='filled'
               className="absolute right-1 top-1/2 -translate-y-1/2 !mr-8 
-                       !text-body-xs sm:!text-body-s !font-bold
+                       !text-button-s !font-bold
                        !px-4 sm:!px-8 !py-5"
               style={{ minWidth: 'fit-content' }}
             >
@@ -42,7 +42,7 @@ const NewsletterSection = () => {
         <div className="flex justify-center mt-12 md:mt-16">
           <Button
             href="/hire"
-            className="!text-body-s sm:!text-body-m md:!text-body-l !font-bold
+            className="!text-button-l !font-bold
                      !px-8 sm:!px-12 !py-6 sm:!py-8"
             style={{ minWidth: 'fit-content' }}
           >
