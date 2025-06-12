@@ -61,9 +61,9 @@ const TalentCard = ({
       {/* Profile Image */}
       <div className={`relative mx-auto ${currentVariant.image}`}>
         <div className={`relative mx-auto rounded-full overflow-hidden border-[2px] border-black ${currentVariant.image}`}>
-          {talent.image ? (
+          {talent.profile?.image ? (
             <img
-              src={talent.image}
+              src={`/media/talents/${talent.profile.image}`}
               alt={talent.name}
               className="w-full h-full object-cover"
             />
@@ -87,7 +87,7 @@ const TalentCard = ({
       
       {showTitle && (
         <p className={`font-montserrat text-[--color-primary-500] font-medium ${currentVariant.role}`}>
-          {talent.role}
+          {talent.profile?.role || 'Developer'}
         </p>
       )}
 
@@ -104,7 +104,7 @@ const TalentCard = ({
       {/* Description */}
       {showDescription && (
         <p className={`text-gray-600 leading-relaxed px-1 ${currentVariant.description}`}>
-          {talent.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod lobortis diam, nec bibendum ipsum tincudint ut.'}
+          {talent.profile?.bio || 'No bio available'}
         </p>
       )}
 
