@@ -8,15 +8,16 @@ const HireFormModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-start justify-center p-4 overflow-y-auto">
       {/* Blur background */}
       <div
-        className="absolute inset-0 bg-black bg-opacity-30 backdrop-blur-sm"
+        className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm"
         onClick={onClose}
       />
 
       {/* Modal content */}
-      <div className="relative z-10 bg-[--color-primary-50] rounded-2xl max-w-xl w-full p-8 shadow-xl">
+      <div className="relative z-10 bg-[--color-primary-50] rounded-2xl w-full max-w-xl my-8 shadow-xl overflow-hidden flex flex-col">
+        <div className="overflow-y-auto p-6 md:p-8">
         {/* Close button */}
         <button
           onClick={onClose}
@@ -179,6 +180,7 @@ const HireFormModal = ({ isOpen, onClose }) => {
             Send Project Inquiry
           </button>
         </form>
+        </div>
       </div>
     </div>
   );
