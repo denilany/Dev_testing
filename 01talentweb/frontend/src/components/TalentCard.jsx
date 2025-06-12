@@ -61,9 +61,9 @@ const TalentCard = ({
       {/* Profile Image */}
       <div className={`relative mx-auto ${currentVariant.image}`}>
         <div className={`relative mx-auto rounded-full overflow-hidden border-[2px] border-black ${currentVariant.image}`}>
-          {talent.profile?.image ? (
+          {talent.image ? (
             <img
-              src={`/media/talents/${talent.profile.image}`}
+              src={talent.image}
               alt={talent.name}
               className="w-full h-full object-cover"
             />
