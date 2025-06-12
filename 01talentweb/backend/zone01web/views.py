@@ -54,6 +54,7 @@ def index(request):
             'profile': {
                 'role': dev.profile.get('role', ''),
                 'bio': dev.profile.get('bio', ''),
+                'is_available': dev.profile.get('is_available', True),  # Default to available
             }
         })
     stats = get_stats()
