@@ -48,7 +48,7 @@ def index(request):
         formatted_devs.append({
             'id': str(dev.id),
             'name': dev.name,
-            'image': f'/images/talents/{dev.name.lower().replace(" ", "_")}.jpg',
+            'image': request.build_absolute_uri(dev.image.url) if dev.image else None,
             'skills': skills,
             'average_rating': dev.profile.get('average_rating', 4.5),
             'profile': {
