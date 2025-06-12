@@ -51,7 +51,10 @@ def talents_list(request):
             'image': request.build_absolute_uri(talent.image.url) if talent.image else None,
             'skills': skills,
             'average_rating': talent.profile.get('average_rating', 4.5),
-            'profile': talent.profile,
+            'profile': {
+                **talent.profile,
+                'is_available': talent.profile.get('is_available', True),  # Default to available
+            },
             'created_at': talent.created_at,
         }
         talents_list.append(talent_dict)
