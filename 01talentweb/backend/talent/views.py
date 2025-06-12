@@ -43,13 +43,16 @@ def talents_list(request):
 
     talents_list = []
     for talent in talents:
+        skills = talent.profile.get('skills', [])
         talent_dict = {
             'id': talent.id,
             'email': talent.email,
             'name': talent.name,
+            'image': request.build_absolute_uri(talent.image.url) if talent.image else None,
+            'skills': skills,
+            'average_rating': talent.profile.get('average_rating', 4.5),
             'profile': talent.profile,
             'created_at': talent.created_at,
-            'image': talent.image.url if talent.image else None
         }
         talents_list.append(talent_dict)
 
@@ -75,16 +78,13 @@ def talent_page(request):
         formatted_talents.append({
             'id': str(talent.id),
             'name': talent.name,
-            'image': f'/images/talents/{talent.name.lower().replace(" ", "_")}.jpg',
+            'image': request.build_absolute_uri(talent.image.url) if talent.image else None,
             'skills': skills,
             'average_rating': talent.profile.get('average_rating', 4.5),
-            'profile': {
-                'role': talent.profile.get('role', ''),
-                'bio': talent.profile.get('bio', ''),
-            }
+            'profile': talent.profile,
         })
     
     return {
-        'talents': formatted_talents  # Changed from featured_developers to talents
+        'talents': formatted_talents
     }
 
