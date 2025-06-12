@@ -99,5 +99,8 @@ module.exports = {
       }
     }
   },
-  plugins: [fluid],
+  plugins: [
+    fluid,
+    // require('@tailwindcss/aspect-ratio'),
+  ],
 }
