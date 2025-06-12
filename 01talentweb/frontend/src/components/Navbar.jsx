@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react'; // You can also use Heroicons or any other icon set
 import Button from './Button.jsx';
 import { Container } from './Layout.jsx';
+// import { Link } from '@inertiajs/inertia-react';
+
 
 
 export default function Navbar() {
@@ -31,12 +33,15 @@ export default function Navbar() {
     : "/static/images/white-logo.png";
 
   return (
+
     <nav
       className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
         scrolled ? "bg-white shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="flex justify-between items-center py-4 px-6 md:px-10 ultra-xl:max-w-screen">
+    <Container>
+
+      <div className="flex justify-between items-center py-4 px-6 md:px-8 ultra-xl:max-w-screen">
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <img src={logoSrc} alt="Logo" className="h-8 md:h-8 xl:h-12 ultra-large:h-18" />
@@ -44,9 +49,13 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <ul className={`hidden md:flex space-x-8 font-medium text-base md:text-base lg:text-xl  xl:text-2xl 2xl:text-3xl ultra-large:text-2xl ultra-xl:text-3xl ${textColorClass}`}>
-          <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Home</a></li>
+          <li><a href="/" className={`hover:text-blue-500 ${textColorClass}`}>Home</a></li>
           <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Services</a></li>
-          <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>Talents</a></li>
+          <li><a href="/talent" className={`hover:text-blue-500 ${textColorClass}`}>Talents</a></li>
+          {/* <Link href="/talents" className={`hover:text-blue-500 ${textColorClass}`}>
+            Talents
+          </Link> */}
+
           <li><a href="#" className={`hover:text-blue-500 ${textColorClass}`}>About Us</a></li>
         </ul>
 
@@ -135,6 +144,9 @@ export default function Navbar() {
           </div>
         </div>
       )}
+          </Container>
+
     </nav>
+
   );
 }
