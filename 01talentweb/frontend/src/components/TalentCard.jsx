@@ -18,7 +18,7 @@ const TalentCard = ({
 }) => {
   const initials = talent.name ? talent.name[0].toUpperCase() : '?';
   const skills = talent.skills || ['Golang', 'Docker', 'RESTful APIs', 'Database Design'];
-  const isAvailable = talent.availability !== false;
+  const isAvailable = talent.profile?.is_available !== false;  // Default to available if not specified
 
   // Size variants
   const variants = {
