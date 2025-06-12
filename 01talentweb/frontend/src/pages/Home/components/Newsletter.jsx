@@ -31,8 +31,7 @@ const NewsletterSection = () => {
               type="submit"
               variant='filled'
               className="absolute right-1 top-1/2 -translate-y-1/2 !mr-8 
-                       !text-button-s !font-bold
-                       !px-4 sm:!px-8 !py-5"
+                       !text-button-s !font-bold !px-4 !py-5"
               style={{ minWidth: 'fit-content' }}
             >
               Subscribe
@@ -42,8 +41,7 @@ const NewsletterSection = () => {
         <div className="flex justify-center mt-12 md:mt-16">
           <Button
             href="/hire"
-            className="!text-button-l !font-bold
-                     !px-8 sm:!px-12 !py-6 sm:!py-8"
+            className="!text-button-l !font-bold !px-8 !py-6"
             style={{ minWidth: 'fit-content' }}
           >
             Hire Developers
