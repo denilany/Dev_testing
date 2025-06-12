@@ -125,13 +125,13 @@ const HowWeVet = () => {
                       }}
                     >
                     <div className="p-4 md:p-6">
-                      <h3 className="text-[#0f172a] text-lg md:text-xl font-medium font-roboto leading-6 mb-3 md:mb-4">
+                      <h3 className="text-[#0f172a] text-lg md:text-xl font-medium font-sans leading-6 mb-3 md:mb-4">
                         {section.title}
                       </h3>
                       
                       {section.description && (
                         <div className="animate-fadeIn">
-                          <p className="text-[#0f172a] text-base md:text-lg font-normal font-roboto leading-relaxed md:leading-7 mb-4 md:mb-6">
+                          <p className="text-[#0f172a] text-base md:text-lg font-normal font-sans leading-relaxed md:leading-7 mb-4 md:mb-6">
                             {section.description}
                           </p>
                           
@@ -142,7 +142,7 @@ const HowWeVet = () => {
                                 e.stopPropagation();
                                 section.id === 'rigorous' ? handleHireTalent() : handleGetStarted();
                               }}
-                              fontFamily="var(--font-roboto)"
+                              fontFamily="var(--font-sans)"
                             >
                               {section.buttonText}
                             </Button>
