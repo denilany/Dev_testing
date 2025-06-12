@@ -100,7 +100,7 @@ const HiringModel = () => {
               {/* <h3 className="**text-lg**md:text-2xl lg:text-3xl font-semibold ultra-large:text-h3">{item.title}</h3> */}
               {/* <p className="**text-sm** md:text-lg lg:text-xl text-gray-700 mt-2 ultra-large:text-2xl">{item.text}</p> */}
               <h3 className="text-h3 font-semibold ">{item.title}</h3>
-              <p className="text-body-s">{item.text}</p>
+              <p className="text-body-l">{item.text}</p>
 
 
             </div>

@@ -140,7 +140,7 @@ const HiringModelMobile = () => {
             {/* <h3 className="text-base font-semibold">{item.title}</h3> */}
             {/* <p className="text-sm text-gray-700 mt-1">{item.text}</p> */}
             <h3 className="text-h3 font-semibold">{item.title}</h3>
-            <p className="text-body-s text-gray-700 mt-1">{item.text}</p>
+            <p className="text-body-l text-gray-700 mt-1">{item.text}</p>
           </div>
         ))}
       </div>
