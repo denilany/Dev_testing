@@ -72,7 +72,9 @@ const FeaturedProfiles = ({ talents = [] }) => {
     <section className="w-full bg-white">
       <Container className="md:py-20">
         <div className="mx-auto mt-8 sm:mt-0">
-          <h2 className="text-4xl sm:text-5xl md:text-h1 text-center font-bold text-[var(--color-text-heading)] mb-4 md:mb-6">
+          {/* <h2 className="text-4xl sm:text-5xl md:text-h1 text-center font-bold text-[var(--color-text-heading)] mb-4 md:mb-6"> */}
+          <h2 className="text-h2-fluid text-center text-gray-900 font-bold">
+
             Featured <span className="text-[--color-primary-500]">Profiles</span>
           </h2>
           <p className="text-lg pb-12 sm:text-xl md:text-[26px] leading-relaxed md:leading-[1.4] font-normal text-[var(--color-text-muted)]">

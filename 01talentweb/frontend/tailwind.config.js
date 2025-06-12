@@ -71,7 +71,23 @@ module.exports = {
           600: 'var(--color-primary-600)',
           700: 'var(--color-primary-700)',
           800: 'var(--color-primary-800)',
-        }
+        },
+         screens: {
+        'small-tablets': '768px',
+        'mid-tablets': {'min': '768px','max': '900px'},
+        
+        // 'small-phones': '320px',
+        'large-phones': {'min': '439px','max': '766px'},
+
+        'small-phones': {'max': '425px'},
+        // 'ultra-large': {'min': '1710px', 'max': '639px'}, 
+        'ultra-large': {'min': '1710px'}, 
+        'ultra-xl': {'min': '1932px'}, 
+
+
+      },
+
+
       },
       fontFamily: {
         sans: ['var(--font-sans)'],

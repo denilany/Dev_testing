@@ -38,7 +38,8 @@ const HiringModelMobile = () => {
     <div className="block md:hidden h-screen w-full flex flex-col bg-white mt-30 mb-40">
       {/* Sticky header + image */}
       <div className="sticky top-10 z-10 bg-white  pb-2 ">
-        <h2 className="**text-lg** text-3xl font-bold text-center px-4 pt-8">
+        {/* <h2 className="**text-lg** text-3xl font-bold text-center px-4 pt-8"> */}
+        <h2 className="text-h2 font-bold text-center">
           WHY <span className="text-blue-600">OUR HIRING MODEL</span> WORKS FOR YOU
         </h2>
         
@@ -136,8 +137,10 @@ const HiringModelMobile = () => {
       <div className="flex-1 overflow-y-auto px-4 pt-4 pb-12 space-y-8">
         {features.map((item, i) => (
           <div key={i}>
-            <h3 className="text-base font-semibold">{item.title}</h3>
-            <p className="text-sm text-gray-700 mt-1">{item.text}</p>
+            {/* <h3 className="text-base font-semibold">{item.title}</h3> */}
+            {/* <p className="text-sm text-gray-700 mt-1">{item.text}</p> */}
+            <h3 className="text-h3 font-semibold">{item.title}</h3>
+            <p className="text-body-s text-gray-700 mt-1">{item.text}</p>
           </div>
         ))}
       </div>

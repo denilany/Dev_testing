@@ -47,7 +47,7 @@ export default function Index() {
               maxWidth: '377.24px',
               height: '75.69px',
             }}
-            className="hover:bg-[#284B81] bg-[var(--color-primary-300)] transition-colors duration-300 md:text-xl lg:text-2xl xl:text-3xl"
+            className="hover:bg-[#284B81] bg-[var(--color-primary-300)] transition-colors duration-300 **md:text-xl lg:text-2xl xl:text-3xl** text-button-l"
           >
             Hire Here
           </Button>
