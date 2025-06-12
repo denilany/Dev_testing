@@ -8,8 +8,9 @@ import VetTalentSection from './components/How_we_vet.jsx';
 
 
 export default function Index() {
-  const { props } = usePage('../Home/Index');
-  const featured_developers = props.featured_developers || [];
+  const { props } = usePage();
+  const talents = props.talents || [];
+
     return (
       <>
             <Hero
@@ -24,7 +25,7 @@ export default function Index() {
                   
             />
             <SearchSection/>
-            <DeveloperSection talent={featured_developers} />
+            <DeveloperSection talent={talents} />
             <VetTalentSection />
        </>
      );
