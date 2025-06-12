@@ -38,7 +38,7 @@ const WhoWeAre = () => {
 
         {/* Intro Text */}
         {/* <p className="small-phones:hidden text-gray-700 text-sm font-normal **md:text-base** md:text-xl ultra-large:text-body-l leading-relaxed ultra-large:[line-height:200%] max-w-screen mb-8"> */}
-        <p className="small-phones:hidden text-body-m text-gray-700 font-normal max-w-screen mb-8"> 
+        <p className="small-phones:hidden text-body-l text-gray-700 font-normal max-w-screen mb-8"> 
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod lobortis
           diam, nec bibendum ipsum tincidunt ut. Sed id pulvinar quam, et euismod ipsum.
           Nulla ut fermentum ante. Ut vitae lacus fringilla urna viverra rhoncus. Fusce
@@ -46,7 +46,7 @@ const WhoWeAre = () => {
           elit felis, aliquam quis consectetur sed, fermentum a justo.
         </p>
         {/* <p className="large-phones:hidden text-gray-700 text-md font-normal **md:text-base** md:text-xl ultra-large:text-body-l leading-relaxed ultra-large:[line-height:200%]"> */}
-        <p className="large-phones:hidden text-body-m text-gray-700 font-normal max-w-screen mb-8"> 
+        <p className="large-phones:hidden text-body-l text-gray-700 font-normal max-w-screen mb-8"> 
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod  lobortis diam, nec bibendum ipsum tincidunt ut. 
         </p>
 
@@ -78,7 +78,7 @@ const WhoWeAre = () => {
           {/* Right-side Text */}
           <div>
             {/* <p className="small-phones:hidden mid-tablets:hidden text-gray-700 text-sm font-normal **md:text-base** md:text-xl ultra-large:text-body-l leading-relaxed ultra-large:[line-height:200%]"> */}
-            <p className="small-phones:hidden mid-tablets:hidden text-body-m text-gray-700 font-normal max-w-screen mb-8"> 
+            <p className="small-phones:hidden mid-tablets:hidden text-body-l text-gray-700 font-normal max-w-screen mb-8"> 
 
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod
               lobortis diam, nec bibendum ipsum tincidunt ut. Sed id pulvinar quam, et
@@ -91,7 +91,7 @@ const WhoWeAre = () => {
               a justo.
             </p>
             {/* <p className="lg:hidden  text-gray-700 text-md font-normal md:text-xl ultra-large:text-body-l leading-relaxed ultra-large:[line-height:200%]"> */}
-            <p className="lg:hidden text-body-m text-gray-700 font-normal max-w-screen mb-8"> 
+            <p className="lg:hidden text-body-l text-gray-700 font-normal max-w-screen mb-8"> 
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod  lobortis diam, nec bibendum ipsum tincidunt ut. 
             </p>
           </div>

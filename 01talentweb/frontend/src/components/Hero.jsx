@@ -36,7 +36,7 @@ export default function Hero({desktopBg, mobileBg, title, description, button = 
       {title}
     </h1>
     {/* <p className="mb-6 text-[12px] sm:text-xl md:text-base lg:text-lg xl:text-1xl 2xl:text-2xl lg:leading-[120%]  ultra-large:text-xl ultra-xl:text-4xl"> */}
-     <p className="text-body-m mb-6">
+     <p className="text-body-l mb-6">
       {/* We are a software talent agency that is addressing the global need for top tech talent by transforming access to high-tech jobs. */}
       {description}
     </p>

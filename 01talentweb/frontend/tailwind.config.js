@@ -76,12 +76,10 @@ module.exports = {
         'small-tablets': '768px',
         'mid-tablets': {'min': '768px','max': '900px'},
         
-        // 'small-phones': '320px',
         'large-phones': {'min': '439px','max': '766px'},
 
-        'small-phones': {'max': '425px'},
-        // 'ultra-large': {'min': '1710px', 'max': '639px'}, 
-        'ultra-large': {'min': '1710px'}, 
+        'small-phones': {'min': '320px','max': '425px'},
+        'ultra-large': {'min': '1710px', 'max': '639px'}, 
         'ultra-xl': {'min': '1932px'}, 
 
 

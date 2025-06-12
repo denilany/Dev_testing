@@ -73,12 +73,12 @@ const FeaturedProfiles = ({ talents = [] }) => {
       <Container className="md:py-20">
         <div className="mx-auto mt-8 sm:mt-0">
           {/* <h2 className="text-4xl sm:text-5xl md:text-h1 text-center font-bold text-[var(--color-text-heading)] mb-4 md:mb-6"> */}
-          <h2 className="text-h2-fluid text-center text-gray-900 font-bold">
+          <h2 className="text-h2 font-sans text-center text-gray-900 font-bold">
 
             Featured <span className="text-[--color-primary-500]">Profiles</span>
           </h2>
-          <p className="text-lg pb-12 sm:text-xl md:text-[26px] leading-relaxed md:leading-[1.4] font-normal text-[var(--color-text-muted)]">
-            Our approach is personal. Each apprentice has a unique relationship with us from the start allowing us to fully vouch for their expertise and work ethic. Come meet them, hire them, see how good they are.
+          <p className="text-body-l text-center font-sans pb-12 font-normal text-[var(--color-text-muted)]">
+          Our approach is personal. Each apprentice has a unique relationship with us from the start allowing us to fully vouch for their expertise and work ethic. Come meet them, hire them, see how good they are.
           </p>
         </div>
 

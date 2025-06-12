@@ -17,14 +17,14 @@
     
     --text-h0: clamp(28px, 3.5vw, 38px);
     --text-h1: clamp(40px, 5vw, 64px);
-    --text-h2: clamp(20px, 4vw, 60px);
+    --text-h2: clamp(22px, 4vw, 60px);
     --text-h3: clamp(16px, 1.5vw, 38px);
     
     /* Body Text - using clamp for fluid scaling */
     --text-body-xxl: clamp(28px, 3vw, 36px);
     --text-body-xl: clamp(24px, 2.5vw, 28px);
-    --text-body-l: clamp(20px, 2vw, 24px);
-    --text-body-m: clamp(16px, 1.5vw, 22px);
+    --text-body-l: clamp(16px, 2vw, 22px);
+    --text-body-m: clamp(14px, 1.5vw, 20px);
     --text-body-s: clamp(5px, 1.25vw, 18px);
     --text-body-xs: clamp(4px, 1.125vw, 10px);
 
