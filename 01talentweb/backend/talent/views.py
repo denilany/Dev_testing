@@ -62,3 +62,29 @@ def talents_list(request):
         'available_roles': list(all_roles)
     }
 
+@inertia('Talent/Index')
+def talent_page(request):
+    """
+    Inertia view for the talent page that provides all developers.
+    """
+    talents = list(Talent.objects.all().order_by('id'))
+    formatted_talents = []
+    
+    for talent in talents:
+        skills = talent.profile.get('skills', [])
+        formatted_talents.append({
+            'id': str(talent.id),
+            'name': talent.name,
+            'image': f'/images/talents/{talent.name.lower().replace(" ", "_")}.jpg',
+            'skills': skills,
+            'average_rating': talent.profile.get('average_rating', 4.5),
+            'profile': {
+                'role': talent.profile.get('role', ''),
+                'bio': talent.profile.get('bio', ''),
+            }
+        })
+    
+    return {
+        'talents': formatted_talents  # Changed from featured_developers to talents
+    }
+
