@@ -36,13 +36,13 @@ const TalentCard = ({
       availability: 'mb-4'
     },
     compact: {
-      card: 'w-[375px] h-[485px] rounded-[34px] p-8 bg-[--color-primary-0]',
+      card: 'w-[275px] mid-tablets:w-[325px] xl:w-[375px] h-[485px] rounded-[34px] p-8 bg-[--color-primary-0]',
       image: 'w-[120px] h-[120px] mb-3',
       name: 'text-body-l font-bold',
       role: 'text-body-s mb-3',
       description: 'font-montserrat text-[12px] mb-6 line-clamp-3',
       skills: 'mb-3',
-      buttonContainer: 'gap-12 mt-4',
+      buttonContainer: 'gap-6 lg:gap-12 mt-4',
       button: 'text-body-xs py-2 w-[110px] h-[36px]',
       socialIcons: 'mt-6 gap-3',
       socialIcon: 'w-[24px] h-[28px]',

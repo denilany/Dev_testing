@@ -76,7 +76,7 @@ module.exports = {
       },
       screens: {
       'small-tablets': '768px',
-      'mid-tablets': {'min': '768px','max': '900px'},
+      'mid-tablets': {'min': '768px','max': '1200px'},
       'large-phones': {'min': '439px','max': '766px'},
       'small-phones': {'min': '320px','max': '425px'},
       'ultra-large': {'min': '1710px', 'max': '639px'}, 

@@ -277,10 +277,10 @@ const TalentSection = ({ talent: talents }) => {
             <p className="text-body-xl font-normal text-[--color-text]">Loading...</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
             {visibleTalents.length > 0 ? (
               visibleTalents.map((talent) => (
-                <div key={talent.id} className="w-full h-full p-2 justify-items-center">
+                <div key={talent.id} className="w-full h-full mx-1 sm:mx-0 justify-items-center">
                   <TalentCard 
                     talent={talent}
                     variant="compact"
