@@ -22,6 +22,7 @@ const TalentSection = ({ talent: talents }) => {
   const [visibleDevelopers, setVisibleDevelopers] = React.useState(6);
   const [loading, setLoading] = React.useState(true);
   const [searchQuery, setSearchQuery] = React.useState('');
+  const [searchTerms, setSearchTerms] = React.useState([]);
   const [role, setRole] = React.useState('All Roles');
   const [showOnlyAvailable, setShowOnlyAvailable] = React.useState(false);
   const [showRoleDropdown, setShowRoleDropdown] = React.useState(false);
@@ -66,6 +67,17 @@ const TalentSection = ({ talent: talents }) => {
 
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
+    if (e.key === 'Enter' && e.target.value.trim()) {
+      const newTerm = e.target.value.trim();
+      if (!searchTerms.includes(newTerm)) {
+        setSearchTerms(prev => [...prev, newTerm]);
+      }
+      setSearchQuery('');
+    }
+  };
+
+  const removeSearchTerm = (termToRemove) => {
+    setSearchTerms(prev => prev.filter(term => term !== termToRemove));
   };
 
   const selectRole = (newRole) => {
@@ -77,12 +89,21 @@ const TalentSection = ({ talent: talents }) => {
     setShowOnlyAvailable(prev => !prev);
   };
 
-  // Filter talents based on search query and filters
+  // Filter talents based on search terms and filters
   const filteredTalents = React.useMemo(() => {
     if (!talents) return [];
     
     return talents.filter(talent => {
-      const matchesSearch = searchQuery === '' || 
+      // If we have search terms, check if ALL terms match
+      const matchesSearch = searchTerms.length === 0 || 
+        searchTerms.every(term => {
+          const lowercaseTerm = term.toLowerCase();
+          return talent.name?.toLowerCase().includes(lowercaseTerm) ||
+                 talent.profile?.role?.toLowerCase().includes(lowercaseTerm) ||
+                 talent.skills?.some(skill => skill.toLowerCase().includes(lowercaseTerm));
+        });
+      
+      const matchesCurrentSearch = !searchQuery || 
         talent.name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
         talent.profile?.role?.toLowerCase().includes(searchQuery.toLowerCase()) ||
         talent.skills?.some(skill => skill.toLowerCase().includes(searchQuery.toLowerCase()));
@@ -92,9 +113,9 @@ const TalentSection = ({ talent: talents }) => {
       
       const matchesAvailability = !showOnlyAvailable || (talent.profile?.is_available ?? true);
       
-      return matchesSearch && matchesRole && matchesAvailability;
+      return (matchesSearch && matchesCurrentSearch && matchesRole && matchesAvailability);
     });
-  }, [talents, searchQuery, role, showOnlyAvailable]);
+  }, [talents, searchQuery, searchTerms, role, showOnlyAvailable]);
 
   // Get visible talents
   const visibleTalents = filteredTalents.slice(0, visibleDevelopers);
@@ -109,10 +130,24 @@ const TalentSection = ({ talent: talents }) => {
               <input
                 type="text"
                 value={searchQuery}
-                onChange={handleSearch}
-                placeholder="Search by name, role, tech stack etc"
+                onChange={e => setSearchQuery(e.target.value)}
+                onKeyDown={e => {
+                  if (e.key === 'Enter' && e.target.value.trim()) {
+                    const newTerm = e.target.value.trim();
+                    if (!searchTerms.includes(newTerm)) {
+                      setSearchTerms(prev => [...prev, newTerm]);
+                    }
+                    setSearchQuery('');
+                  }
+                }}
+                placeholder="Search by name, role, tech stack etc (press Enter to add multiple terms)"
                 className="w-full bg-white rounded-full shadow-sm px-6 py-4 text-gray-700 placeholder-gray-400 outline-none focus:ring-2 focus:ring-[--color-primary-300] transition-shadow"
               />
+              {searchQuery && (
+                <div className="absolute right-20 top-1/2 -translate-y-1/2 text-sm text-gray-400">
+                  Press Enter to add filter
+                </div>
+              )}
             </div>
             <button className="flex-shrink-0 bg-[--color-primary-300] hover:bg-[#284B81] text-white rounded-full p-4 transition-colors duration-200 self-start sm:self-auto shadow-sm hover:shadow-md">
               <FaSearch className="w-5 h-5" />
@@ -170,7 +205,7 @@ const TalentSection = ({ talent: talents }) => {
           </div>
           
           {/* Active Filter Tags */}
-          {(role !== 'All Roles' || showOnlyAvailable || searchQuery) && (
+          {(role !== 'All Roles' || showOnlyAvailable || searchTerms.length > 0 || searchQuery) && (
             <div className="mt-6 flex flex-wrap gap-2">
               {/* Role filter tag */}
               {role !== 'All Roles' && (
@@ -198,23 +233,25 @@ const TalentSection = ({ talent: talents }) => {
                 </div>
               )}
               
-              {/* Search query tag - only show if it looks like a skill search */}
-              {searchQuery && !searchQuery.includes(' ') && (
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm">
-                  <span className="text-sm text-gray-700">Search: {searchQuery}</span>
+              {/* Search term tags */}
+              {searchTerms.map((term, index) => (
+                <div key={index} className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm">
+                  <span className="text-sm text-gray-700">{term}</span>
                   <button
-                    onClick={() => setSearchQuery('')}
+                    onClick={() => removeSearchTerm(term)}
                     className="text-gray-400 hover:text-gray-600"
                   >
                     ×
                   </button>
                 </div>
-              )}
+              ))}
               
               {/* Clear all filters tag */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[--color-primary-50] text-[--color-primary-300] rounded-full shadow-sm cursor-pointer hover:bg-[--color-primary-100]"
+              <div 
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[--color-primary-50] text-[--color-primary-300] rounded-full shadow-sm cursor-pointer hover:bg-[--color-primary-100]"
                 onClick={() => {
                   setSearchQuery('');
+                  setSearchTerms([]);
                   setRole('All Roles');
                   setShowOnlyAvailable(false);
                 }}
