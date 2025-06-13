@@ -4,8 +4,6 @@ import { Container } from '../../../components/Layout.jsx';
 import TalentCard from '../../../components/TalentCard.jsx';
 import Button from '../../../components/Button.jsx';
 
-const availabilityOptions = ['All', 'Available', 'Not Available'];
-
 const TalentSection = ({ talent: talents }) => {
   // Get unique roles from talents
   const roleOptions = React.useMemo(() => {
@@ -25,9 +23,8 @@ const TalentSection = ({ talent: talents }) => {
   const [loading, setLoading] = React.useState(true);
   const [searchQuery, setSearchQuery] = React.useState('');
   const [role, setRole] = React.useState('All Roles');
-  const [availability, setAvailability] = React.useState('All');
+  const [showOnlyAvailable, setShowOnlyAvailable] = React.useState(false);
   const [showRoleDropdown, setShowRoleDropdown] = React.useState(false);
-  const [showAvailabilityDropdown, setShowAvailabilityDropdown] = React.useState(false);
 
   // Effects
   React.useEffect(() => {
@@ -37,12 +34,11 @@ const TalentSection = ({ talent: talents }) => {
 
   // Click handlers for dropdowns
   const handleRoleClick = () => setShowRoleDropdown(!showRoleDropdown);
-  const handleAvailabilityClick = () => setShowAvailabilityDropdown(!showAvailabilityDropdown);
   
   // Close dropdowns when clicking outside
   React.useEffect(() => {
     const handleClickOutside = (event) => {
-      if (showRoleDropdown || showAvailabilityDropdown) {
+      if (showRoleDropdown) {
         const dropdowns = document.querySelectorAll('.dropdown-content');
         let clickedInside = false;
         
@@ -55,14 +51,13 @@ const TalentSection = ({ talent: talents }) => {
         
         if (!clickedInside) {
           setShowRoleDropdown(false);
-          setShowAvailabilityDropdown(false);
         }
       }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [showRoleDropdown, showAvailabilityDropdown]);
+  }, [showRoleDropdown]);
 
   // Handlers
   const handleLoadMore = () => {
@@ -78,9 +73,8 @@ const TalentSection = ({ talent: talents }) => {
     setShowRoleDropdown(false);
   };
 
-  const selectAvailability = (newAvailability) => {
-    setAvailability(newAvailability);
-    setShowAvailabilityDropdown(false);
+  const toggleAvailability = () => {
+    setShowOnlyAvailable(prev => !prev);
   };
 
   // Filter talents based on search query and filters
@@ -96,13 +90,11 @@ const TalentSection = ({ talent: talents }) => {
       const matchesRole = role === 'All Roles' || 
         talent.profile?.role === role;
       
-      const matchesAvailability = availability === 'All' ||
-        (availability === 'Available' && talent.profile?.is_available) ||
-        (availability === 'Not Available' && !talent.profile?.is_available);
+      const matchesAvailability = !showOnlyAvailable || (talent.profile?.is_available ?? true);
       
       return matchesSearch && matchesRole && matchesAvailability;
     });
-  }, [talents, searchQuery, role, availability]);
+  }, [talents, searchQuery, role, showOnlyAvailable]);
 
   // Get visible talents
   const visibleTalents = filteredTalents.slice(0, visibleDevelopers);
@@ -127,8 +119,9 @@ const TalentSection = ({ talent: talents }) => {
             </button>
           </div>
 
-          {/* Filter buttons with dropdowns */}
+          {/* Filter buttons with dropdown and toggle */}
           <div className="mt-6 flex flex-col sm:flex-row gap-4">
+            {/* Role dropdown */}
             <div className="relative w-full sm:w-1/2">
               <button
                 onClick={handleRoleClick}
@@ -151,27 +144,28 @@ const TalentSection = ({ talent: talents }) => {
                 </div>
               )}
             </div>
-            <div className="relative w-full sm:w-1/2">
+
+            {/* Availability toggle */}
+            <div className="w-full sm:w-1/2">
               <button
-                onClick={handleAvailabilityClick}
-                className="dropdown-trigger w-full bg-white rounded-full shadow-sm px-6 py-4 text-gray-900 hover:shadow-md transition-shadow text-center relative"
+                onClick={toggleAvailability}
+                className={`w-full rounded-full shadow-sm px-6 py-4 text-center relative transition-all duration-200 border border-transparent hover:shadow-md ${
+                  showOnlyAvailable 
+                    ? 'bg-[--color-primary-300] text-white hover:bg-[#284B81]' 
+                    : 'bg-white text-gray-900 hover:border-[--color-primary-300]'
+                }`}
               >
-                {availability}
-                <span className={`absolute right-6 top-1/2 transform -translate-y-1/2 transition-transform duration-200 ${showAvailabilityDropdown ? 'rotate-180' : ''}`}>▼</span>
-              </button>
-              {showAvailabilityDropdown && (
-                <div className="dropdown-content absolute mt-2 w-full bg-white rounded-lg shadow-lg z-50 py-2">
-                  {availabilityOptions.map((option) => (
-                    <div
-                      key={option}
-                      className={`px-6 py-2 hover:bg-[--color-primary-50] cursor-pointer ${option === availability ? 'bg-[--color-primary-50] text-[--color-primary-300] font-medium' : ''}`}
-                      onClick={() => selectAvailability(option)}
-                    >
-                      {option}
-                    </div>
-                  ))}
+                <div className="flex items-center justify-center space-x-2">
+                  <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center transition-colors ${
+                    showOnlyAvailable ? 'bg-white border-white' : 'border-gray-400'
+                  }`}>
+                    {showOnlyAvailable && (
+                      <div className="w-2 h-2 rounded-full bg-[--color-primary-300]" />
+                    )}
+                  </div>
+                  <span>Available Developers Only</span>
                 </div>
-              )}
+              </button>
             </div>
           </div>
         </div>
@@ -222,7 +216,7 @@ const TalentSection = ({ talent: talents }) => {
                   onClick={() => {
                     setSearchQuery('');
                     setRole('All Roles');
-                    setAvailability('All');
+                    setShowOnlyAvailable(false);
                   }}
                   variant="filled"
                   className="!font-bold !px-10 !py-5 !text-body-m"
