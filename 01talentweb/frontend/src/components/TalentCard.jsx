@@ -30,7 +30,7 @@ const TalentCard = ({
       description: 'text-montserrat text-body-xs',
       skills: 'mb-4',
       buttonContainer: 'gap-12 mt-auto',
-      button: 'text-body-l mt-6 w-[174px] h-[48px]',
+      button: 'text-body-l px-6 md:px-10 py-2 text-button-cards',
       socialIcons: 'my-12',
       socialIcon: 'w-[35px] h-[42px]',
       availability: 'mb-4'
@@ -40,13 +40,13 @@ const TalentCard = ({
       image: 'w-[120px] h-[120px] mb-3',
       name: 'text-body-l font-bold',
       role: 'text-body-s mb-3',
-      description: 'font-montserrat text-[12px] mb-6 line-clamp-3',
+      description: 'font-sans text-[12px] mb-6',
       skills: 'mb-3',
       buttonContainer: 'gap-6 lg:gap-12 mt-4',
-      button: 'text-body-xs py-2 w-[110px] h-[36px]',
+      button: 'text-button-cards font-bold px-6 md:px-10 py-2 ',
       socialIcons: 'mt-6 gap-3',
       socialIcon: 'w-[24px] h-[28px]',
-      availability: 'mb-3'
+      availability: ' text-body-xs mb-3'
     }
   };
 
@@ -86,14 +86,14 @@ const TalentCard = ({
       </h2>
       
       {showTitle && (
-        <p className={`font-montserrat text-[--color-primary-500] font-medium ${currentVariant.role}`}>
+        <p className={`font-montserrat text-[--color-primary-900] font-medium ${currentVariant.role}`}>
           {talent.profile?.role || 'Developer'}
         </p>
       )}
 
       {/* Availability Status */}
       {showAvailability && (
-        <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${currentVariant.availability} ${
+        <div className={`inline-flex items-center px-3 py-1 rounded-full font-medium ${currentVariant.availability} ${
           isAvailable ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'
         }`}>
           <span className={`w-2 h-2 rounded-full mr-2 ${isAvailable ? 'bg-green-500' : 'bg-gray-500'}`}></span>
@@ -136,10 +136,7 @@ const TalentCard = ({
               href={`/talent/${talent.id}`}
               variant="filled"
               className={currentVariant.button}
-              style={{
-                '--color-primary-500': 'var(--color-primary-500)',
-                '--color-primary-400': 'var(--color-primary-400)',
-              }}
+              style={{ minWidth: 'fit-content' }}
             >
               Portfolio
             </Button>
@@ -149,10 +146,7 @@ const TalentCard = ({
               variant={isAvailable ? 'outline' : 'filled'}
               disabled={!isAvailable}
               className={`${currentVariant.button} ${!isAvailable ? '!bg-gray-100 !text-gray-400 !border-gray-300' : ''}`}
-              style={{
-                '--color-primary-500': 'var(--color-primary-500)',
-                '--color-primary-100': 'var(--color-primary-100)'
-              }}
+              style={{ minWidth: 'fit-content' }}
               onClick={() => {}}
             >
               {isAvailable ? 'Hire' : 'Not Available'}
