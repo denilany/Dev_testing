@@ -51,7 +51,7 @@
     --space-4: clamp(2rem, 4vw, 2.5rem);
     --space-5: clamp(2.5rem, 5vw, 3rem);
     --space-6: clamp(3rem, 6vw, 3.5rem);
-    --space-8: clamp(4rem, 8vw, 5rem);
+    --space-8: clamp(3rem, 8vw, 6rem);
     
     /* Color Palette - Primary Blues */
     --color-primary-0: #FFFFFF;
