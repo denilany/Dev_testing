@@ -4,10 +4,22 @@ import { Container } from '../../../components/Layout.jsx';
 import TalentCard from '../../../components/TalentCard.jsx';
 import Button from '../../../components/Button.jsx';
 
-const roleOptions = ['All Roles', 'Frontend', 'Backend', 'Full Stack', 'DevOps', 'Mobile'];
 const availabilityOptions = ['All', 'Available', 'Not Available'];
 
 const TalentSection = ({ talent: talents }) => {
+  // Get unique roles from talents
+  const roleOptions = React.useMemo(() => {
+    if (!talents) return ['All Roles'];
+    
+    const uniqueRoles = ['All Roles', ...new Set(talents
+      .map(t => t.profile?.role)
+      .filter(role => role && role.trim())
+      .sort()
+    )];
+    
+    return uniqueRoles;
+  }, [talents]);
+
   // States
   const [visibleDevelopers, setVisibleDevelopers] = React.useState(6);
   const [loading, setLoading] = React.useState(true);
@@ -19,9 +31,38 @@ const TalentSection = ({ talent: talents }) => {
 
   // Effects
   React.useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1500); // simulate loading delay
+    const timer = setTimeout(() => setLoading(false), 1500);
     return () => clearTimeout(timer);
   }, []);
+
+  // Click handlers for dropdowns
+  const handleRoleClick = () => setShowRoleDropdown(!showRoleDropdown);
+  const handleAvailabilityClick = () => setShowAvailabilityDropdown(!showAvailabilityDropdown);
+  
+  // Close dropdowns when clicking outside
+  React.useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (showRoleDropdown || showAvailabilityDropdown) {
+        const dropdowns = document.querySelectorAll('.dropdown-content');
+        let clickedInside = false;
+        
+        dropdowns.forEach(dropdown => {
+          if (dropdown.contains(event.target) || 
+              event.target.closest('.dropdown-trigger')) {
+            clickedInside = true;
+          }
+        });
+        
+        if (!clickedInside) {
+          setShowRoleDropdown(false);
+          setShowAvailabilityDropdown(false);
+        }
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [showRoleDropdown, showAvailabilityDropdown]);
 
   // Handlers
   const handleLoadMore = () => {
@@ -30,6 +71,16 @@ const TalentSection = ({ talent: talents }) => {
 
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
+  };
+
+  const selectRole = (newRole) => {
+    setRole(newRole);
+    setShowRoleDropdown(false);
+  };
+
+  const selectAvailability = (newAvailability) => {
+    setAvailability(newAvailability);
+    setShowAvailabilityDropdown(false);
   };
 
   // Filter talents based on search query and filters
@@ -56,20 +107,6 @@ const TalentSection = ({ talent: talents }) => {
   // Get visible talents
   const visibleTalents = filteredTalents.slice(0, visibleDevelopers);
 
-  // Click handlers for dropdowns
-  const handleRoleClick = () => setShowRoleDropdown(!showRoleDropdown);
-  const handleAvailabilityClick = () => setShowAvailabilityDropdown(!showAvailabilityDropdown);
-  
-  const selectRole = (newRole) => {
-    setRole(newRole);
-    setShowRoleDropdown(false);
-  };
-
-  const selectAvailability = (newAvailability) => {
-    setAvailability(newAvailability);
-    setShowAvailabilityDropdown(false);
-  };
-
   return (
     <>
       <Container>
@@ -95,17 +132,17 @@ const TalentSection = ({ talent: talents }) => {
             <div className="relative w-full sm:w-1/2">
               <button
                 onClick={handleRoleClick}
-                className="w-full bg-white rounded-full shadow-sm px-6 py-4 text-gray-900 hover:shadow-md transition-shadow text-center relative"
+                className="dropdown-trigger w-full bg-white rounded-full shadow-sm px-6 py-4 text-gray-900 hover:shadow-md transition-shadow text-center relative"
               >
                 {role}
-                <span className="absolute right-6 top-1/2 transform -translate-y-1/2">▼</span>
+                <span className={`absolute right-6 top-1/2 transform -translate-y-1/2 transition-transform duration-200 ${showRoleDropdown ? 'rotate-180' : ''}`}>▼</span>
               </button>
               {showRoleDropdown && (
-                <div className="absolute mt-2 w-full bg-white rounded-lg shadow-lg z-50 py-2">
+                <div className="dropdown-content absolute mt-2 w-full bg-white rounded-lg shadow-lg z-50 py-2 max-h-60 overflow-y-auto">
                   {roleOptions.map((option) => (
                     <div
                       key={option}
-                      className="px-6 py-2 hover:bg-[--color-primary-50] cursor-pointer"
+                      className={`px-6 py-2 hover:bg-[--color-primary-50] cursor-pointer ${option === role ? 'bg-[--color-primary-50] text-[--color-primary-300] font-medium' : ''}`}
                       onClick={() => selectRole(option)}
                     >
                       {option}
@@ -117,17 +154,17 @@ const TalentSection = ({ talent: talents }) => {
             <div className="relative w-full sm:w-1/2">
               <button
                 onClick={handleAvailabilityClick}
-                className="w-full bg-white rounded-full shadow-sm px-6 py-4 text-gray-900 hover:shadow-md transition-shadow text-center relative"
+                className="dropdown-trigger w-full bg-white rounded-full shadow-sm px-6 py-4 text-gray-900 hover:shadow-md transition-shadow text-center relative"
               >
                 {availability}
-                <span className="absolute right-6 top-1/2 transform -translate-y-1/2">▼</span>
+                <span className={`absolute right-6 top-1/2 transform -translate-y-1/2 transition-transform duration-200 ${showAvailabilityDropdown ? 'rotate-180' : ''}`}>▼</span>
               </button>
               {showAvailabilityDropdown && (
-                <div className="absolute mt-2 w-full bg-white rounded-lg shadow-lg z-50 py-2">
+                <div className="dropdown-content absolute mt-2 w-full bg-white rounded-lg shadow-lg z-50 py-2">
                   {availabilityOptions.map((option) => (
                     <div
                       key={option}
-                      className="px-6 py-2 hover:bg-[--color-primary-50] cursor-pointer"
+                      className={`px-6 py-2 hover:bg-[--color-primary-50] cursor-pointer ${option === availability ? 'bg-[--color-primary-50] text-[--color-primary-300] font-medium' : ''}`}
                       onClick={() => selectAvailability(option)}
                     >
                       {option}
