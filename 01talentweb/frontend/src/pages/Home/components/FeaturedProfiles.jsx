@@ -4,11 +4,13 @@ import TalentCard from '../../../components/TalentCard.jsx';
 import { Container } from '../../../components/Layout.jsx';
 import './styles/carousel.css';
 import Button from '../../../components/Button.jsx';
-
+import ProfileCard from '../../../components/ProfileCard.jsx'; // Import the modal component
 
 const FeaturedProfiles = ({ talents = [] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [selectedTalent, setSelectedTalent] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   const maxIndex = talents.length > 0 ? talents.length - 1 : 0;
 
@@ -33,6 +35,11 @@ const FeaturedProfiles = ({ talents = [] }) => {
     setIsTransitioning(true);
     setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
     setTimeout(() => setIsTransitioning(false), 600);
+  };
+
+  const handleTalentClick = (talent) => {
+    setSelectedTalent(talent);
+    setShowModal(true);
   };
 
   // Create extended array for smooth infinite scrolling
@@ -72,13 +79,11 @@ const FeaturedProfiles = ({ talents = [] }) => {
     <section className="w-full bg-white">
       <Container className="md:py-20">
         <div className="mx-auto mt-8 sm:mt-0">
-          {/* <h2 className="text-4xl sm:text-5xl md:text-h1 text-center font-bold text-[var(--color-text-heading)] mb-4 md:mb-6"> */}
           <h2 className="text-h2 font-sans text-center text-gray-900 font-bold">
-
             Featured <span className="text-[--color-primary-500]">Profiles</span>
           </h2>
           <p className="text-body-l text-center font-sans pb-12 font-normal text-[var(--color-text-muted)]">
-          Our approach is personal. Each apprentice has a unique relationship with us from the start allowing us to fully vouch for their expertise and work ethic. Come meet them, hire them, see how good they are.
+            Our approach is personal. Each apprentice has a unique relationship with us from the start allowing us to fully vouch for their expertise and work ethic. Come meet them, hire them, see how good they are.
           </p>
         </div>
 
@@ -105,6 +110,7 @@ const FeaturedProfiles = ({ talents = [] }) => {
                     showSocialIcons={true}
                     showSkills={false}
                     showAvailability={false}
+                    onClick={() => handleTalentClick(talent)}
                   />
                 </div>
               ))}
@@ -195,6 +201,14 @@ const FeaturedProfiles = ({ talents = [] }) => {
           </div>
         </div>
       </Container>
+
+      {/* Profile Modal - Rendered at the root level */}
+      {showModal && selectedTalent && (
+        <ProfileCard 
+          developer={selectedTalent}
+          onClose={() => setShowModal(false)}
+        />
+      )}
     </section>
   );
 };
