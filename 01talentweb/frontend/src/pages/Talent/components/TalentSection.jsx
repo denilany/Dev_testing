@@ -168,6 +168,62 @@ const TalentSection = ({ talent: talents }) => {
               </button>
             </div>
           </div>
+          
+          {/* Active Filter Tags */}
+          {(role !== 'All Roles' || showOnlyAvailable || searchQuery) && (
+            <div className="mt-6 flex flex-wrap gap-2">
+              {/* Role filter tag */}
+              {role !== 'All Roles' && (
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm">
+                  <span className="text-sm text-gray-700">{role}</span>
+                  <button
+                    onClick={() => setRole('All Roles')}
+                    className="text-gray-400 hover:text-gray-600"
+                  >
+                    ×
+                  </button>
+                </div>
+              )}
+              
+              {/* Availability filter tag */}
+              {showOnlyAvailable && (
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm">
+                  <span className="text-sm text-gray-700">Available Only</span>
+                  <button
+                    onClick={() => setShowOnlyAvailable(false)}
+                    className="text-gray-400 hover:text-gray-600"
+                  >
+                    ×
+                  </button>
+                </div>
+              )}
+              
+              {/* Search query tag - only show if it looks like a skill search */}
+              {searchQuery && !searchQuery.includes(' ') && (
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm">
+                  <span className="text-sm text-gray-700">Search: {searchQuery}</span>
+                  <button
+                    onClick={() => setSearchQuery('')}
+                    className="text-gray-400 hover:text-gray-600"
+                  >
+                    ×
+                  </button>
+                </div>
+              )}
+              
+              {/* Clear all filters tag */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[--color-primary-50] text-[--color-primary-300] rounded-full shadow-sm cursor-pointer hover:bg-[--color-primary-100]"
+                onClick={() => {
+                  setSearchQuery('');
+                  setRole('All Roles');
+                  setShowOnlyAvailable(false);
+                }}
+              >
+                <span className="text-sm font-medium">Clear All</span>
+                <span>×</span>
+              </div>
+            </div>
+          )}
         </div>
       </Container>
 
