@@ -33,12 +33,15 @@ export default function Navbar() {
     : "/static/images/white-logo.png";
 
   return (
+
     <nav
       className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
         scrolled ? "bg-white shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="flex justify-between items-center py-4 px-6 md:px-10 ultra-xl:max-w-screen">
+    <Container>
+
+      <div className="flex justify-between items-center py-4 px-6 md:px-8 ultra-xl:max-w-screen">
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <img src={logoSrc} alt="Logo" className="h-8 md:h-8 xl:h-12 ultra-large:h-18" />
@@ -141,6 +144,9 @@ export default function Navbar() {
           </div>
         </div>
       )}
+          </Container>
+
     </nav>
+
   );
 }

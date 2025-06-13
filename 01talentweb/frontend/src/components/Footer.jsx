@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row flex-wrap gap-8">
           {/* Column 1 - Statement */}
           <div className="flex-1 min-w-[300px] pr-4 space-y-10">
-            <div className="flex justify-center md:justify-start w-full sm:w-auto">
+            <div className="flex justify-center md:justify-start w-full">
               <img src="/static/images/white-logo.png" alt="01Talent Logo" className="h-16 md:h-20" />
             </div>
             <p className="font-sans text-body-m mb-8 text-center md:text-left">

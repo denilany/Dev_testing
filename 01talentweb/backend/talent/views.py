@@ -41,14 +41,53 @@ def talents_list(request):
     # Get unique roles for filter dropdown
     all_roles = Talent.objects.exclude(profile__role='').values_list('profile__role', flat=True).distinct()
 
+    talents_list = []
+    for talent in talents:
+        skills = talent.profile.get('skills', [])
+        talent_dict = {
+            'id': talent.id,
+            'email': talent.email,
+            'name': talent.name,
+            'image': request.build_absolute_uri(talent.image.url) if talent.image else None,
+            'skills': skills,
+            'average_rating': talent.profile.get('average_rating', 4.5),
+            'profile': {
+                **talent.profile,
+                'is_available': talent.profile.get('is_available', True),  # Default to available
+            },
+            'created_at': talent.created_at,
+        }
+        talents_list.append(talent_dict)
+
     return {
-        'talents': list(talents.values(
-            'id', 'email', 'name', 'profile', 'created_at'
-        )),
+        'talents': talents_list,
         'filters': {
             'search': search_query,
             'role': role_filter,
         },
         'available_roles': list(all_roles)
+    }
+
+@inertia('Talent/Index')
+def talent_page(request):
+    """
+    Inertia view for the talent page that provides all developers.
+    """
+    talents = list(Talent.objects.all().order_by('id'))
+    formatted_talents = []
+    
+    for talent in talents:
+        skills = talent.profile.get('skills', [])
+        formatted_talents.append({
+            'id': str(talent.id),
+            'name': talent.name,
+            'image': request.build_absolute_uri(talent.image.url) if talent.image else None,
+            'skills': skills,
+            'average_rating': talent.profile.get('average_rating', 4.5),
+            'profile': talent.profile,
+        })
+    
+    return {
+        'talents': formatted_talents
     }
 
