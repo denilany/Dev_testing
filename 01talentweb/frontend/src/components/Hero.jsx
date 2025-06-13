@@ -53,8 +53,6 @@ export default function Hero({desktopBg, mobileBg, title, description, button = 
 
    
   </div>
-  </Container>
-
 </div>
 </section>
 
