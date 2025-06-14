@@ -25,9 +25,6 @@ export default function ProfileCard({ developer, onClose }) {
         >
           &times;
         </button> */}
-
-           
-
         
         {/* Profile content - flex container to manage internal spacing */}
         <div className="p-6 flex-1 flex flex-col">
@@ -37,59 +34,59 @@ export default function ProfileCard({ developer, onClose }) {
           <div className="flex items-start mb-4"> {/* Changed to flex-row */}
              
 
-  {/* Left side - Profile image with 3/4 blue semi-circle */}
-  <div className="relative mr-4"> {/* Added margin-right */}
-    {/* Blue semi-circle border */}
-    <div className="absolute -inset-1.5">
-      <svg
-        viewBox="0 0 100 100"
-        className="w-full h-full"
-        style={{
-          transform: 'rotate(-135deg)',
-          overflow: 'visible'
-        }}
-      >
-        <circle
-          cx="50"
-          cy="50"
-          r="48"
-          fill="none"
-          stroke="#3b82f6"
-          strokeWidth="3"
-          strokeDasharray="235 78"
-        />
-      </svg>
-    </div>
-    
-    {/* Profile image */}
-    <img
-      src="../../../static/images/kate.png"
-      alt="Profile"
-      className="relative w-24 h-24 rounded-full object-cover border-2 border-black"
-    />
-  </div>
+            {/* Left side - Profile image with 3/4 blue semi-circle */}
+            <div className="relative mr-4"> {/* Added margin-right */}
+              {/* Blue semi-circle border */}
+              <div className="absolute -inset-1.5">
+                <svg
+                  viewBox="0 0 100 100"
+                  className="w-full h-full"
+                  style={{
+                    transform: 'rotate(-135deg)',
+                    overflow: 'visible'
+                  }}
+                >
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="48"
+                    fill="none"
+                    stroke="#3b82f6"
+                    strokeWidth="3"
+                    strokeDasharray="235 78"
+                  />
+                </svg>
+              </div>
+              
+              {/* Profile image */}
+              <img
+                src="../../../static/images/kate.png"
+                alt="Profile"
+                className="relative w-24 h-24 rounded-full object-cover border-2 border-black"
+              />
+            </div>
 
-  {/* Right side - All other content */}
-  <div className="flex-1"> {/* Takes remaining space */}
-    <h2 className="text-xl font-bold">Kate Elodie Mohr</h2>
-    <p className="text-gray-600 mb-1">Web Developer || Product Designer</p>
-    <p className="text-blue-600 text-xs">
-      Kisumu · <span className="text-green-600">Available</span>
-    </p>
-    <div className="flex gap-3 mt-2 text-blue-600 text-md"> {/* Removed justify-center */}
-      <FaLinkedin className="cursor-pointer hover:text-blue-800" /> LinkedIn
-      <FaGithub className="cursor-pointer hover:text-gray-800" /> Github
-      <FaGlobe className="cursor-pointer hover:text-green-600" /> Portfolio
-      <FaFileAlt className="cursor-pointer hover:text-red-500" /> Articles
-    </div>
-  </div>
-  <button className="top-0 right-0 ml-auto  bg-blue-600 hover:bg-blue-700 text-white px-5 py-1.5 rounded-full text-sm transition">
-              Hire
+            {/* Right side - Personal info */}
+            <div className="flex-1"> {/* Takes remaining space */}
+              <h2 className="text-h3 font-bold">Kate Elodie Mohr</h2>
+              <p className="text-gray-600 mb-1">Web Developer || Product Designer</p>
+              <p className="text-blue-600 text-xs">
+                Kisumu · <span className="text-green-600">Available</span>
+              </p>
+              <div className="flex gap-3 mt-2 text-blue-600 text-md"> {/* Removed justify-center */}
+                <FaLinkedin className="cursor-pointer hover:text-blue-800" /> LinkedIn
+                <FaGithub className="cursor-pointer hover:text-gray-800" /> Github
+                <FaGlobe className="cursor-pointer hover:text-green-600" /> Portfolio
+                <FaFileAlt className="cursor-pointer hover:text-red-500" /> Articles
+              </div>
+            </div>
+            <button className="top-0 right-0 ml-auto  bg-blue-600 hover:bg-blue-700 text-white px-6 py-1.5 rounded-lg text-sm transition">
+                 Hire
             </button>
-</div>
+          </div>
 
           {/* About Section */}
-          <div className="mb-4 flex-1">
+          <div className="mb-4 mt-4 flex-1">
             <h3 className="text-md font-semibold mb-1">About</h3>
             <p className="text-gray-700 text-sm">
               {showFullAbout ? (
@@ -117,11 +114,11 @@ export default function ProfileCard({ developer, onClose }) {
           </div>
 
           {/* Skills Sections - Compact layout */}
-          <div className="space-y-3 mb-4 flex-1">
+          <div className="space-y-6 mb-4 mt-4 flex-1">
             {/* Core Skills */}
             <div className="bg-white rounded-lg p-3">
               <h4 className="text-sm font-semibold mb-1">Core skills</h4>
-              <div className="flex flex-wrap gap-1">
+              <div className="flex flex-wrap gap-6">
                 {['React', 'Javascript', 'HTML', 'Vue'].map((skill, i) => (
                   <span
                     key={i}
@@ -136,7 +133,7 @@ export default function ProfileCard({ developer, onClose }) {
             {/* Other Skills */}
             <div className="bg-white rounded-lg p-3">
               <h4 className="text-sm font-semibold mb-1">Other skills</h4>
-              <div className="flex flex-wrap gap-1">
+              <div className="flex flex-wrap gap-6">
                 {['React', 'HTML', 'Vue', 'Javascript', 'HTML', 'React', 'Javascript', 'HTML'].map((skill, i) => (
                   <span
                     key={`other-${i}`}
@@ -150,7 +147,7 @@ export default function ProfileCard({ developer, onClose }) {
           </div>
 
           {/* Video Section - Compact */}
-          <div className="mb-4 flex-1 text-center">
+          <div className="mb-4 mt-4 flex-1 text-center">
             <h3 className="text-md font-semibold mb-2">Hear from Doreen Atieno</h3>
             <div className="aspect-w-16 aspect-h-9">
               <a 
@@ -185,12 +182,7 @@ export default function ProfileCard({ developer, onClose }) {
             </div>
           </div>
 
-          {/* Hire Button - Sticky at bottom */}
-          <div className="sticky bottom-0 bg-[#EFF7FF] pt-2 pb-4 text-center">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-1.5 rounded-full text-sm transition">
-              Hire
-            </button>
-          </div>
+          
         </div>
       </div>
     </div>
