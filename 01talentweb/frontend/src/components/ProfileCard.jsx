@@ -107,14 +107,54 @@ export default function ProfileCard({ developer, onClose }) {
           </div>
 
           {/* Video Section */}
-          <div className="mt-8 text-center">
+          {/* <div className="mt-8 text-center">
             <h3 className="text-lg font-semibold mb-3">Hear from Doreen Atieno</h3>
             <div className="aspect-w-16 aspect-h-9">
               <div className="w-full h-40 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500">
                 [Video Placeholder - Meet Our Tech Tale]
               </div>
             </div>
-          </div>
+          </div> */}
+
+            {/* Video Section */}
+<div className="mt-8 text-center">
+  <h3 className="text-lg font-semibold mb-3">Hear from Doreen Atieno</h3>
+  <div className="aspect-w-16 aspect-h-9">
+    <a 
+      href="https://www.youtube.com/watch?v=EVtBa8HBjro&ab_channel=Zone01Kisumu" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="block relative group"
+    >
+      {/* YouTube thumbnail image */}
+      <img
+        src="../../../static/images/youtube.png"
+        alt="Meet Our Tech Tale"
+        className="w-full h-40 object-cover rounded-lg"
+      />
+      {/* Play button overlay */}
+      {/* <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 group-hover:bg-opacity-50 transition-all duration-200 rounded-lg">
+        <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
+          <svg 
+            className="w-6 h-6 text-white" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth="2" 
+              d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+            />
+          </svg>
+        </div>
+      </div> */}
+    </a>
+  </div>
+</div>
+
+
 
           {/* Hire Button */}
           <div className="mt-6 text-center">
