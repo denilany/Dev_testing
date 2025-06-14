@@ -10,7 +10,7 @@ export default function ProfileCard({ developer, onClose }) {
       onClick={onClose}
     >
       <div 
-        className="w-full max-w-3xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden"
+        className="w-full max-w-3xl mx-auto bg-[#EFF7FF] rounded-xl shadow-2xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
@@ -76,7 +76,7 @@ export default function ProfileCard({ developer, onClose }) {
           {/* Skills Sections */}
           <div className="space-y-4">
             {/* Core Skills */}
-            <div>
+            <div className="bg-white rounded-2xl p-4">
               <h4 className="text-md font-semibold mb-2">Core skills</h4>
               <div className="flex flex-wrap gap-2">
                 {['React', 'Javascript', 'HTML', 'Vue'].map((skill, i) => (
@@ -91,7 +91,7 @@ export default function ProfileCard({ developer, onClose }) {
             </div>
 
             {/* Other Skills */}
-            <div>
+            <div className="bg-white rounded-2xl p-4">
               <h4 className="text-md font-semibold mb-2">Other skills</h4>
               <div className="flex flex-wrap gap-2">
                 {['React', 'HTML', 'Vue', 'Javascript', 'HTML', 'React', 'Javascript', 'HTML'].map((skill, i) => (
