@@ -4,7 +4,7 @@ import TalentCard from '../../../components/TalentCard.jsx';
 import { Container } from '../../../components/Layout.jsx';
 import './styles/carousel.css';
 import Button from '../../../components/Button.jsx';
-import ProfileCard from '../../../components/ProfileCard.jsx'; // Import the modal component
+import ProfileCard from '../../../components/ProfileCard.jsx';
 
 const FeaturedProfiles = ({ talents = [] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -15,7 +15,7 @@ const FeaturedProfiles = ({ talents = [] }) => {
   const maxIndex = talents.length > 0 ? talents.length - 1 : 0;
 
   useEffect(() => {
-    if (talents.length <= 1) return; // No rotation if 0 or 1 talent
+    if (talents.length <= 1) return;
 
     const interval = setInterval(() => {
       handleNext();
@@ -42,36 +42,29 @@ const FeaturedProfiles = ({ talents = [] }) => {
     setShowModal(true);
   };
 
-  // Create extended array for smooth infinite scrolling
   const extendedTalents = talents.length > 0 ? [
     ...talents.slice(-2), 
     ...talents,
     ...talents.slice(0, 2) 
   ] : [];
 
-  // Calculate the transform offset for the carousel container
   const getTransformOffset = () => {
-    const cardWidth = 100 / 3; // 3 cards visible
+    const cardWidth = 100 / 3;
     const offset = (currentIndex + 2) * cardWidth;
     return `translateX(calc(-${offset}% + 46.333%))`;
   };
   
-  // Get card classes based on its position relative to center
   const getCardClasses = (index) => {
-    const centerIndex = currentIndex + 2; // Adjust for extended array
+    const centerIndex = currentIndex + 2;
     const position = index - centerIndex;
   
     const base = 'flex-shrink-0 w-1/3 px-4 flex justify-center items-center transition-all duration-500 ease-out';
   
     switch (position) {
-      case -1:
-        return `${base} opacity-70 scale-75 -mr-[10rem] z-0`; // left card
-      case 0:
-        return `${base} opacity-100 scale-100 z-10`; // center card
-      case 1:
-        return `${base} opacity-70 scale-75 -ml-[10rem] z-0`; // right card
-      default:
-        return `${base} opacity-0 scale-75 z-0 pointer-events-none`; // hidden
+      case -1: return `${base} opacity-70 scale-75 -mr-[10rem] z-0`;
+      case 0: return `${base} opacity-100 scale-100 z-10`;
+      case 1: return `${base} opacity-70 scale-75 -ml-[10rem] z-0`;
+      default: return `${base} opacity-0 scale-75 z-0 pointer-events-none`;
     }
   };
 
@@ -87,9 +80,7 @@ const FeaturedProfiles = ({ talents = [] }) => {
           </p>
         </div>
 
-        {/* Carousel Section with Blue Background */}
         <div className="relative bg-[var(--color-primary-0)] py-10 md:py-0 rounded-xl md:rounded-2xl overflow-hidden">
-          {/* Carousel Items Container */}
           <div className="relative min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px] mx-auto w-[70%] overflow-hidden">
             <div
               className="carousel-track flex duration-600 ease-out"
@@ -102,6 +93,7 @@ const FeaturedProfiles = ({ talents = [] }) => {
                 >
                   <TalentCard 
                     talent={talent}
+                    onClick={() => handleTalentClick(talent)}
                     variant="default"
                     showTitle={true}
                     showDescription={true}
@@ -110,7 +102,6 @@ const FeaturedProfiles = ({ talents = [] }) => {
                     showSocialIcons={true}
                     showSkills={false}
                     showAvailability={false}
-                    onClick={() => handleTalentClick(talent)}
                   />
                 </div>
               ))}
@@ -129,9 +120,7 @@ const FeaturedProfiles = ({ talents = [] }) => {
                        xl:w-[100px] xl:h-[100px] xl:left-8
                        2xl:w-[100px] 2xl:h-[100px] 2xl:left-8"
             aria-label="Previous profile"
-            style={{
-              transform: 'translateY(-50%) rotate(180deg)'
-            }}
+            style={{ transform: 'translateY(-50%) rotate(180deg)' }}
           >
             <svg
               className="mx-auto text-[--color-primary-500]
@@ -161,9 +150,7 @@ const FeaturedProfiles = ({ talents = [] }) => {
                        xl:w-[100px] xl:h-[100px] xl:right-8
                        2xl:w-[100px] 2xl:h-[100px] 2xl:right-8"
             aria-label="Next profile"
-            style={{
-              transform: 'translateY(-50%)'
-            }}
+            style={{ transform: 'translateY(-50%)' }}
           >
             <svg
               className="mx-auto text-[--color-primary-500]
@@ -202,7 +189,7 @@ const FeaturedProfiles = ({ talents = [] }) => {
         </div>
       </Container>
 
-      {/* Profile Modal - Rendered at the root level */}
+      {/* Profile Modal */}
       {showModal && selectedTalent && (
         <ProfileCard 
           developer={selectedTalent}
