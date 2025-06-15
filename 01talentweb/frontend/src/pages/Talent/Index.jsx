@@ -2,14 +2,14 @@ import React from 'react';
 import { usePage } from '@inertiajs/react';
 import Navbar from '../../components/Navbar.jsx';
 import Hero from '../../components/Hero.jsx';
-import SearchSection from './components/SearchSection.jsx';
-import DeveloperSection from './components/Developer_talent.jsx';
+import TalentSection from './components/TalentSection.jsx';
 import VetTalentSection from './components/How_we_vet.jsx';
 
 
 export default function Index() {
-  const { props } = usePage('../Home/Index');
-  const featured_developers = props.featured_developers || [];
+  const { props } = usePage();
+  const talents = props.talents || [];
+
     return (
       <>
             <Hero
@@ -23,8 +23,7 @@ export default function Index() {
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod  lobortis diam, nec bibendum ipsum tincidunt ut."
                   
             />
-            <SearchSection/>
-            <DeveloperSection talent={featured_developers} />
+            <TalentSection talent={talents} />
             <VetTalentSection />
        </>
      );

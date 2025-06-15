@@ -12,6 +12,7 @@ class Talent(models.Model):
     email = models.EmailField(unique=True)
     name = models.CharField(max_length=255)
     profile = models.JSONField(default=dict)
+    image = models.ImageField(upload_to='talents/', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     featured_order = models.IntegerField(null=True, blank=True)
 

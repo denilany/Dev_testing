@@ -19,7 +19,7 @@ const TalentCard = ({
 }) => {
   const initials = talent.name ? talent.name[0].toUpperCase() : '?';
   const skills = talent.skills || ['Golang', 'Docker', 'RESTful APIs', 'Database Design'];
-  const isAvailable = talent.availability !== false;
+  const isAvailable = talent.profile?.is_available !== false;  // Default to available if not specified
 
   // Size variants
   const variants = {
@@ -94,7 +94,7 @@ const TalentCard = ({
       
       {showTitle && (
         <p className={`font-montserrat text-[--color-primary-500] font-medium ${currentVariant.role}`}>
-          {talent.role}
+          {talent.profile?.role || 'Developer'}
         </p>
       )}
 
@@ -111,7 +111,7 @@ const TalentCard = ({
       {/* Description */}
       {showDescription && (
         <p className={`text-gray-600 leading-relaxed px-1 ${currentVariant.description}`}>
-          {talent.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod lobortis diam, nec bibendum ipsum tincudint ut.'}
+          {talent.profile?.bio || 'No bio available'}
         </p>
       )}
 

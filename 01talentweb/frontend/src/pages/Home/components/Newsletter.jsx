@@ -1,9 +1,12 @@
 // resources/js/components/NewsletterSection.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from '../../../components/Layout.jsx';
 import Button from '../../../components/Button.jsx';
+import HireFormModal from '../../../components/HireFormModal.jsx';
 
 const NewsletterSection = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <section className="w-full bg-[--color-primary-50] py-8 sm:py-12 md:py-16">
       <Container className="text-center">
@@ -41,6 +44,7 @@ const NewsletterSection = () => {
         <div className="flex justify-center mt-12 md:mt-16">
           <Button
             href="/hire"
+            onClick={() => setShowModal(true)}
             className="!text-button-l !font-bold !px-8 !py-6"
             style={{ minWidth: 'fit-content' }}
           >
@@ -48,6 +52,7 @@ const NewsletterSection = () => {
           </Button>
         </div>
       </Container>
+      <HireFormModal isOpen={showModal} onClose={() => setShowModal(false)} />
     </section>
   );
 };

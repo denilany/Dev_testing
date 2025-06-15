@@ -1,7 +1,10 @@
 import Button from './Button.jsx';
+import { Container } from './Layout.jsx';
+
 
 export default function Hero({desktopBg, mobileBg, title, description, button = null}) {
   return (
+
     <section className="relative  h-[85vh]  overflow-visible">
   {/* Background image for desktop */}
       <img
@@ -51,7 +54,6 @@ export default function Hero({desktopBg, mobileBg, title, description, button = 
    
   </div>
 </div>
-
 </section>
 
   );
