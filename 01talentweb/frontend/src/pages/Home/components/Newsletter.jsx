@@ -24,8 +24,8 @@ const NewsletterSection = () => {
               type="email"
               placeholder="Enter your email"
               className="w-full h-28 px-4 py-2 pr-[calc(theme(spacing.20)+var(--space-8))] sm:pr-[calc(theme(spacing.32)+var(--space-8))] 
-                       text-body-xs sm:text-body-s md:text-body-m
-                       rounded-md border border-[#0A142F] text-[var(--color-text)] bg-[var(--color-primary-50)]
+                       text-body-m
+                       rounded-md border border-[#0A142F1A] text-[var(--color-text)] bg-[var(--color-primary-50)]
                        focus:ring-2 focus:ring-[--color-primary-500] focus:border-[--color-primary-500] outline-none"
               required
               aria-label="Email address"
@@ -33,8 +33,8 @@ const NewsletterSection = () => {
             <Button
               type="submit"
               variant='filled'
-              className="absolute right-1 top-1/2 -translate-y-1/2 !mr-8 
-                       !text-button-s !font-bold !px-4 !py-5"
+              className="absolute right-1 top-1/2 -translate-y-1/2 !mr-3 md:!mr-6 
+                       !text-button-s !font-bold !px-10 md:!px-20 !py-3"
               style={{ minWidth: 'fit-content' }}
             >
               Subscribe
