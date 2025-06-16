@@ -10,6 +10,7 @@ Additional endpoints can be added here to support CRUD operations or custom quer
 """
 
 from django.db.models import Q
+from django.shortcuts import get_object_or_404
 from inertia import inertia
 from .models import Talent
 
@@ -89,5 +90,24 @@ def talent_page(request):
     
     return {
         'talents': formatted_talents
+    }
+@inertia('Talent/Show')
+def talent_detail(request, talent_id):
+    talent = get_object_or_404(Talent, id=talent_id)
+    profile = talent.profile or {}
+
+    return {
+        'id': str(talent.id),
+        'name': talent.name,
+        'image': request.build_absolute_uri(talent.image.url) if talent.image else None,
+        'role': profile.get('role', ''),
+        'about': profile.get('bio', ''),
+        'core_skills': profile.get('core_skills', []),
+        'other_skills': profile.get('other_skills', []),
+        'availability': profile.get('availability', ''),
+        'linkedin': profile.get('linkedin', ''),
+        'github': profile.get('github', ''),
+        'devto': profile.get('devto', ''),
+        'youtube_video': profile.get('youtube_video', ''),
     }
 
