@@ -71,22 +71,18 @@ module.exports = {
           600: 'var(--color-primary-600)',
           700: 'var(--color-primary-700)',
           800: 'var(--color-primary-800)',
+          900: 'var(--color-primary-900)',
         },
-         screens: {
-        'small-tablets': '768px',
-        'mid-tablets': {'min': '768px','max': '900px'},
-        
-        'large-phones': {'min': '439px','max': '766px'},
-
-        'small-phones': {'min': '320px','max': '425px'},
-        'ultra-large': {'min': '1710px', 'max': '639px'}, 
-        'ultra-xl': {'min': '1932px'}, 
-
-
       },
-
-
-      },
+      screens: {
+      'small-tablets': '768px',
+      'mid-tablets': {'min': '769px','max': '1024px'},
+      'large-phones': {'min': '439px','max': '766px'},
+      'small-phones': {'min': '320px','max': '425px'},
+      'small-laptop': {'min': '1025px', 'max': '1440px'},
+      'ultra-large': {'min': '1710px', 'max': '1932px'}, 
+      'ultra-xl': {'min': '1932px'}, 
+     },
       fontFamily: {
         sans: ['var(--font-sans)'],
       },
@@ -96,6 +92,16 @@ module.exports = {
         'mobile-headlines': 'var(--leading-mobile-headlines)',
         'body-l': 'var(--leading-body-l)',
         'body-m': 'var(--leading-body-m)',
+      },
+      spacing: {
+        // '0': 'var(--space-0)',
+        // '1': 'var(--space-1)',
+        // '2': 'var(--space-2)',
+        // '3': 'var(--space-3)',
+        // '4': 'var(--space-4)',
+        // '5': 'var(--space-5)',
+        // '6': 'var(--space-6)',
+        // '8': 'var(--space-8)'
       }
     }
   },

@@ -51,7 +51,7 @@ const FeaturedProfiles = ({ talents = [] }) => {
   const getTransformOffset = () => {
     const cardWidth = 100 / 3;
     const offset = (currentIndex + 2) * cardWidth;
-    return `translateX(calc(-${offset}% + 46.333%))`;
+    return `translateX(calc(-${offset}% + 50%))`;
   };
   
   const getCardClasses = (index) => {

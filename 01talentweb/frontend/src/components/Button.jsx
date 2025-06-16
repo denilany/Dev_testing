@@ -6,7 +6,7 @@ const Button = ({
   variant = 'filled',
   disabled = false,
   fontWeight = 500,
-  className = '',
+  className,
   ...props
 }) => {
   // Base styles that apply to all buttons

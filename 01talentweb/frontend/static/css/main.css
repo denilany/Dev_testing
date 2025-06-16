@@ -25,14 +25,14 @@
     --text-body-xl: clamp(24px, 2.5vw, 28px);
     --text-body-l: clamp(16px, 2vw, 22px);
     --text-body-m: clamp(14px, 1.5vw, 20px);
-    --text-body-s: clamp(5px, 1.25vw, 18px);
-    --text-body-xs: clamp(4px, 1.125vw, 10px);
+    --text-body-s: clamp(10px, 1.25vw, 18px);
+    --text-body-xs: clamp(8px, 1.125vw, 10px);
 
     /*buttons texts*/
     --text-button-s: clamp(7px, 1.5vw, 18px);
     --text-button-l: clamp(14px, 1.5vw, 24px);
-    --text-button-cards: clamp(7px, 1.125vw, 14px);
-    --text-button-cardm: clamp(8px, 1.25vw, 24px);
+    --text-button-cards: clamp(9px, 1.125vw, 14px);
+    --text-button-cardm: clamp(10px, 1.25vw, 24px);
 
     
     /* Line Heights - adjusted for better readability */
@@ -51,7 +51,7 @@
     --space-4: clamp(2rem, 4vw, 2.5rem);
     --space-5: clamp(2.5rem, 5vw, 3rem);
     --space-6: clamp(3rem, 6vw, 3.5rem);
-    --space-8: clamp(4rem, 8vw, 5rem);
+    --space-8: clamp(3rem, 8vw, 6rem);
     
     /* Color Palette - Primary Blues */
     --color-primary-0: #FFFFFF;
@@ -64,6 +64,7 @@
     --color-primary-600: #2B5290;
     --color-primary-700: #284B81;
     --color-primary-800: #000000;
+    --color-primary-900: #0F172A;
     --color-primary-button-600: #0063F9;
     --color-hero-text: #005AE0;
     --color-newsletter-border: #0A142F;
