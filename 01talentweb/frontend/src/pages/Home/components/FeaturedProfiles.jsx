@@ -46,7 +46,7 @@ const FeaturedProfiles = ({ talents = [] }) => {
   const getTransformOffset = () => {
     const cardWidth = 100 / 3; // 3 cards visible
     const offset = (currentIndex + 2) * cardWidth;
-    return `translateX(calc(-${offset}% + 46.333%))`;
+    return `translateX(calc(-${offset}% + 50%))`;
   };
   
   // Get card classes based on its position relative to center

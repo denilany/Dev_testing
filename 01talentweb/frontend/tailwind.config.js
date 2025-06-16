@@ -76,10 +76,11 @@ module.exports = {
       },
       screens: {
       'small-tablets': '768px',
-      'mid-tablets': {'min': '768px','max': '1200px'},
+      'mid-tablets': {'min': '769px','max': '1024px'},
       'large-phones': {'min': '439px','max': '766px'},
       'small-phones': {'min': '320px','max': '425px'},
-      'ultra-large': {'min': '1710px', 'max': '639px'}, 
+      'small-laptop': {'min': '1025px', 'max': '1440px'},
+      'ultra-large': {'min': '1710px', 'max': '1932px'}, 
       'ultra-xl': {'min': '1932px'}, 
      },
       fontFamily: {

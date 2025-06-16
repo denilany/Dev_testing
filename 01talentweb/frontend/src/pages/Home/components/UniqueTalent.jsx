@@ -285,13 +285,13 @@ const UniqueTalentSection = () => {
           {/* Connection lines - custom SVGs */}
           <div className="absolute inset-0 w-full h-full pointer-events-none z-10">
             {/* Single lines SVG - positioned for top connections */}
-            <div className="absolute" style={{
-              width: '40%',
-              aspectRatio: '1.1',
-              top: '0%',
-              left: '13%',
-              transform: 'rotate(8.73deg)'
-            }}>
+            <div className="absolute w-[40%] aspect-[1.1] top-0 left-[13%] rotate-[8.73deg]
+                      small-phones:w-[35%] small-phones:left-[20%] small-phones:top-[20%]
+                      large-phones:w-[38%] large-phones:left-[12%]
+                      small-tablets:w-[40%] small-tablets:left-[15%] small-tablets:top-[8%]
+                      mid-tablets:w-[42%] mid-tablets:left-[15%] mid-tablets:top-[15%]
+                      small-laptop:w-[40%] small-laptop:left-[15%] small-laptop:top-[12%]
+                      ultra-large:w-[38%] ultra-large:left-[12%]">
               <img 
                 src="/static/images/singlelines.svg" 
                 alt="Connection lines" 
@@ -300,12 +300,13 @@ const UniqueTalentSection = () => {
             </div>
             
             {/* Double lines SVG - positioned for bottom connections */}
-            <div className="absolute" style={{
-              width: '50%',
-              aspectRatio: '1.1',
-              top: '32%',
-              left: '15%',
-            }}>
+            <div className="absolute w-[50%] aspect-[1.1] top-[32%] left-[15%] rotate-[9.73deg]
+                        small-phones:w-[45%] small-phones:left-[15%] small-phones:top-[50%]
+                        large-phones:w-[48%] large-phones:left-[14%]
+                        small-tablets:w-[50%] small-tablets:left-[12%] small-tablets:top-[38%]
+                        mid-tablets:w-[52%] mid-tablets:left-[11%] mid-tablets:top-[45%] mid-tablets:rotate-[25.73deg]
+                        small-laptop:w-[50%] small-laptop:left-[12%] small-laptop:top-[40%]
+                        ultra-large:w-[48%] ultra-large:left-[14%]">
               <img 
                 src="/static/images/doublelines.svg" 
                 alt="Arrow lines" 
@@ -313,19 +314,17 @@ const UniqueTalentSection = () => {
               />
             </div>
           </div>
-
-          {/* Developer profiles with placeholder images */}
           
           {/* Developer profiles with responsive positioning */}
           {[
             // Top developer
-            { top: '20%', left: '20%', size: '11%' },
+            { top: '20%', left: '20%', size: '15%' },
             // Right middle developer
-            { top: '43%', left: '43%', size: '11%' },
+            { top: '43%', left: '43%', size: '15%' },
             // Left middle developer
-            { top: '45%', left: '25%', size: '11%' },
+            { top: '45%', left: '25%', size: '15%' },
             // Bottom developer
-            { top: '70%', left: '50%', size: '11%' }
+            { top: '70%', left: '50%', size: '15%' }
           ].map((pos, index) => (
             <div 
               key={index}
