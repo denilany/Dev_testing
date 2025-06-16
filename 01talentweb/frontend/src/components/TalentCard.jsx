@@ -164,7 +164,7 @@ const TalentCard = ({
               }}
               onClick={isAvailable ? handleButtonClick : undefined}
             >
-              {isAvailable ? 'Hire' : 'Not Available'}
+              {isAvailable ? 'Hire' : 'Hire'}
             </Button>
           )}
         </div>
