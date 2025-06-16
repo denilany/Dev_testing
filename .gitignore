@@ -4,7 +4,6 @@ env/
 myenv/
 .env
 
-backend/
 
 # Static files
 staticfiles/
