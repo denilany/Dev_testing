@@ -24,7 +24,7 @@ def inertia_share(get_response):
         share(
             request,
             ip = get_client_ip(request),
-            userAgent = request.META['HTTP_USER_AGENT'],
+            userAgent = request.META.get('HTTP_USER_AGENT', ''),
             isAuthenticated = request.user.is_authenticated,
             flash=message,
             user = lambda: request.user if request.user.is_authenticated else None
