@@ -1,6 +1,8 @@
-from django.test import TestCase
+import json
+from django.test import Client, TestCase
 from django.db import IntegrityError
 from django.contrib.postgres.indexes import GinIndex
+from django.urls import reverse
 from talent.models import Talent
 import uuid
 
@@ -10,9 +12,77 @@ class TalentModelTest(TestCase):
         self.talent_data = {
             'email': 'workerman@gmail.com',
             'name': 'Worker Man',
-            'profile': {'skills': ['Python', 'React'], 'experience_years': 1},
+            'profile': {
+                'skills': ['Python', 'React'],
+                'experience_years': 1,
+                'role': 'Backend',
+                'bio': 'Backend developer',
+                'location': 'Nairobi',
+                'core_skills': ['Python'],
+                'other_skills': ['React'],
+                'availability': 'Available',
+                'linkedin': 'https://linkedin.com/in/workerman',
+                'github': 'https://github.com/workerman',
+                'devto': 'https://dev.to/workerman',
+                'youtube_video': 'https://youtube.com/embed/test'
+            },
         }
         self.talent = Talent.objects.create(**self.talent_data)
+        self.client = Client()
+
+    def test_talent_detail_view(self):
+        """Test the individual talent profile view returns correct data."""
+        url = reverse('talent:talent_detail', args=[self.talent.id])
+        response = self.client.get(url, HTTP_X_INERTIA=True)
+        self.assertEqual(response.status_code, 200)
+        data = json.loads(response.content)
+        props = data['props']
+        self.assertEqual(props['id'], str(self.talent.id))
+        self.assertEqual(props['name'], self.talent.name)
+        self.assertEqual(props['role'], self.talent.profile['role'])
+        self.assertEqual(props['about'], self.talent.profile['bio'])
+        self.assertEqual(props['core_skills'], self.talent.profile['core_skills'])
+        self.assertEqual(props['other_skills'], self.talent.profile['other_skills'])
+        self.assertEqual(props['availability'], self.talent.profile['availability'])
+        self.assertEqual(props['linkedin'], self.talent.profile['linkedin'])
+        self.assertEqual(props['github'], self.talent.profile['github'])
+        self.assertEqual(props['devto'], self.talent.profile['devto'])
+        self.assertEqual(props['youtube_video'], self.talent.profile['youtube_video'])
+
+    def test_talents_list_filter_by_role(self):
+        """Test filtering talents by role."""
+        Talent.objects.create(
+            email='frontend@gmail.com',
+            name='Frontend Dev',
+            profile={'role': 'Frontend', 'skills': ['Vue'], 'bio': 'Frontend dev'}
+        )
+        url = reverse('talent:talent')
+        response = self.client.get(url, {'role': 'Frontend'}, HTTP_X_INERTIA=True)
+        self.assertEqual(response.status_code, 200)
+        data = json.loads(response.content)
+        props = data['props']
+        self.assertEqual(len(props['talents']), 2)
+        self.assertTrue(any(t['name'] == 'Frontend Dev' for t in props['talents']))
+
+    def test_talents_list_search(self):
+        """Test searching talents by name and profile fields."""
+        Talent.objects.create(
+            email='searchman@gmail.com',
+            name='Search Man',
+            profile={'role': 'Search', 'skills': ['Elastic'], 'bio': 'Find me'}
+        )
+        url = reverse('talent:talent')
+        # Search by name
+        response = self.client.get(url, {'q': 'Search'}, HTTP_X_INERTIA=True)
+        self.assertEqual(response.status_code, 200)
+        data = json.loads(response.content)
+        props = data['props']
+        self.assertTrue(any('Search Man' == t['name'] for t in props['talents']))
+        # Search by skill in profile
+        response = self.client.get(url, {'q': 'Elastic'}, HTTP_X_INERTIA=True)
+        data = json.loads(response.content)
+        props = data['props']
+        self.assertTrue(any('Search Man' == t['name'] for t in props['talents']))
 
     def test_talent_creation(self):
         """Test creating a Talent instance."""
@@ -48,7 +118,7 @@ class TalentModelTest(TestCase):
     def test_indexes(self):
         """Test that indexes are correctly defined."""
         indexes = Talent._meta.indexes
-        self.assertEqual(len(indexes), 2)
+        self.assertEqual(len(indexes), 3)
 
         index_fields_and_names = [(index.fields, index.name) for index in indexes]
 
