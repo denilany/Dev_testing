@@ -31,19 +31,22 @@ const WhoWeAre = () => {
 
       <div className="max-w-screen mx-auto relative z-10">
         {/* Section Title */}
-        <h2 className="text-3xl md:text-3xl lg:text-5xl ultra-large:text-h1 font-bold text-gray-900 mb-4 ultra-large:mb-8 text-center">
+        {/* <h2 className="text-3xl md:text-3xl lg:text-5xl ultra-large:text-h1 font-bold text-gray-900 mb-4 ultra-large:mb-8 text-center"> */}
+       <h2 className="text-h2 text-center text-gray-900 font-bold">
           <span className="text-blue-600">WHO</span> WE ARE
         </h2>
 
         {/* Intro Text */}
-        <p className="small-phones:hidden text-gray-700 text-sm font-normal **md:text-base** md:text-xl ultra-large:text-body-l leading-relaxed ultra-large:[line-height:200%] max-w-screen mb-8">
+        {/* <p className="small-phones:hidden text-gray-700 text-sm font-normal **md:text-base** md:text-xl ultra-large:text-body-l leading-relaxed ultra-large:[line-height:200%] max-w-screen mb-8"> */}
+        <p className="small-phones:hidden text-body-l text-gray-700 font-normal max-w-screen mb-8"> 
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod lobortis
           diam, nec bibendum ipsum tincidunt ut. Sed id pulvinar quam, et euismod ipsum.
           Nulla ut fermentum ante. Ut vitae lacus fringilla urna viverra rhoncus. Fusce
           elit felis, aliquam quis consectetur sed, fermentum a justo.  Ut vitae lacus fringilla urna viverra rhoncus. Fusce
           elit felis, aliquam quis consectetur sed, fermentum a justo.
         </p>
-        <p className="large-phones:hidden text-gray-700 text-md font-normal **md:text-base** md:text-xl ultra-large:text-body-l leading-relaxed ultra-large:[line-height:200%]">
+        {/* <p className="large-phones:hidden text-gray-700 text-md font-normal **md:text-base** md:text-xl ultra-large:text-body-l leading-relaxed ultra-large:[line-height:200%]"> */}
+        <p className="large-phones:hidden text-body-l text-gray-700 font-normal max-w-screen mb-8"> 
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod  lobortis diam, nec bibendum ipsum tincidunt ut. 
         </p>
 
@@ -74,7 +77,9 @@ const WhoWeAre = () => {
 
           {/* Right-side Text */}
           <div>
-            <p className="small-phones:hidden mid-tablets:hidden text-gray-700 text-sm font-normal **md:text-base** md:text-xl ultra-large:text-body-l leading-relaxed ultra-large:[line-height:200%]">
+            {/* <p className="small-phones:hidden mid-tablets:hidden text-gray-700 text-sm font-normal **md:text-base** md:text-xl ultra-large:text-body-l leading-relaxed ultra-large:[line-height:200%]"> */}
+            <p className="small-phones:hidden mid-tablets:hidden text-body-l text-gray-700 font-normal max-w-screen mb-8"> 
+
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod
               lobortis diam, nec bibendum ipsum tincidunt ut. Sed id pulvinar quam, et
               euismod ipsum. Nulla ut fermentum ante. Ut vitae lacus fringilla urna
@@ -85,7 +90,8 @@ const WhoWeAre = () => {
               viverra rhoncus. Fusce elit felis, aliquam quis consectetur sed, fermentum
               a justo.
             </p>
-            <p className="lg:hidden  text-gray-700 text-md font-normal md:text-xl ultra-large:text-body-l leading-relaxed ultra-large:[line-height:200%]">
+            {/* <p className="lg:hidden  text-gray-700 text-md font-normal md:text-xl ultra-large:text-body-l leading-relaxed ultra-large:[line-height:200%]"> */}
+            <p className="lg:hidden text-body-l text-gray-700 font-normal max-w-screen mb-8"> 
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod  lobortis diam, nec bibendum ipsum tincidunt ut. 
             </p>
           </div>
@@ -101,8 +107,7 @@ const WhoWeAre = () => {
             <Button
               href="/hire"
               variant="outline"
-
-              className="flex items-center justify-center text-blue-600 hover:bg-blue-500 hover:text-white bg-transparent border-2 border-blue-500 text-blue-500  font-medium rounded-lg md:rounded-[9.17px] hover:opacity-90 transition-opacity w-full max-w-sm sm:max-w-md h-14 sm:h-16 md:h-[75.69px] py-3 px-6 sm:px-8 md:py-[22.92px] md:px-[91.69px] text-lg sm:text-xl md:text-2xl lg:text-[24.45px] leading-none md:leading-[27.51px] tracking-normal text-center font-sans"
+              className="flex items-center justify-center hover:bg-blue-500 hover:text-white bg-transparent border-2 border-blue-500 text-blue-500  font-medium rounded-lg md:rounded-[9.17px] hover:opacity-90 transition-opacity w-full max-w-sm sm:max-w-md h-14 sm:h-16 md:h-[75.69px] py-3 px-6 sm:px-8 md:py-[22.92px] md:px-[91.69px] text-lg sm:text-xl md:text-2xl lg:text-[24.45px] leading-none md:leading-[27.51px] tracking-normal text-center font-sans"
             >
               Know more...
             </Button>

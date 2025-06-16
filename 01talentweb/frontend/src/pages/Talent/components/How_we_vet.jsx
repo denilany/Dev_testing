@@ -80,16 +80,23 @@ const HowWeVet = () => {
     <section className='pt-20'>
       <Container>
         {/* Section Title */}
-        <h2 className="text-[--color-text] text-h2 font-extrabold font-montserrat leading-tight text-center mb-20 px-4">
+        <h2 className="text-[--color-text] text-h2 font-extrabold font-sans text-center px-4">
           HOW WE VET OUR TALENTS
         </h2>
 
-        <div className="flex flex-col lg:flex-row justify-start gap-12">
+        <div className="flex flex-col lg:flex-row justify-start gap-12 my-12 md:my-20">
           {/* Profile Image */}
-          <div className=" w-full md:w-[40%] flex-shrink-0 relative aspect-square justify-center items-center lg:ml-12 xl:ml-16">
+          <div className="w-full md:w-[40%] flex-shrink-0 relative aspect-square justify-center items-center lg:ml-12 xl:ml-16">
             <div className="relative aspect-square">
               {/* Outer blue ring */}
-              <div className="absolute inset-0 rounded-full border-[3px] md:border-[4px] border-[--color-primary-300] p-20 sm:p-4 md:p-6 lg:p-8 xl:p-10 md:mb-20 md:ml-20">
+              <div 
+                className="absolute inset-0 rounded-full border-[3px] md:border-[4px] border-[--color-primary-300]"
+                style={{
+                  padding: 'clamp(1rem, 0.125vw, 2rem)',
+                  marginBottom: 'clamp(0.5rem, 0.125vw, 2rem)',
+                  marginLeft: 'clamp(0.5rem, 0.125vw, 2rem)'
+                }}
+              >
                 {/* Inner blue ring */}
                 <div className="absolute inset-0 rounded-full border-2 border-[--color-primary-300] pointer-events-none top-[12%] left-[12%] right-[12%] bottom-[12%]">
                 
@@ -108,10 +115,9 @@ const HowWeVet = () => {
           </div>
           
           {/* Vetting Process Steps */}
-          <div className="w-full md:w-[60%] h-[400px] md:h-[400px] 2xl:h-[600px] overflow-y-auto mt-[32px] pr-2 md:pr-4 relative">
+          <div className="w-full md:w-[60%] h-[350px] md:h-[400px] 2xl:h-[600px] overflow-y-auto md:my-5 pr-2 md:pr-4 relative">
             <div className="space-y-2 md:space-y-4">
                 {sections.map((section) => {
-                  const isExpanded = expandedSection === section.id;
                   const isActive = expandedSection === section.id;
                   return (
                     <div
@@ -124,14 +130,14 @@ const HowWeVet = () => {
                         transform: isActive ? 'translateX(4px)' : 'none',
                       }}
                     >
-                    <div className="p-4 md:p-6">
-                      <h3 className="text-[#0f172a] text-lg md:text-xl font-medium font-sans leading-6 mb-3 md:mb-4">
+                    <div className="p-4 md:p-8">
+                      <h3 className="text-[var(--color-text-900)] text-body-m font-bold font-sans mb-3 md:mb-5">
                         {section.title}
                       </h3>
                       
                       {section.description && (
                         <div className="animate-fadeIn">
-                          <p className="text-[#0f172a] text-base md:text-lg font-normal font-sans leading-relaxed md:leading-7 mb-4 md:mb-6">
+                          <p className="text-[var(--color-text-900)] text-body-m font-normal font-sans mb-4 md:mb-8">
                             {section.description}
                           </p>
                           
@@ -143,6 +149,8 @@ const HowWeVet = () => {
                                 section.id === 'rigorous' ? handleHireTalent() : handleGetStarted();
                               }}
                               fontFamily="var(--font-sans)"
+                              style={{ minWidth: 'fit-content' }}
+                              className={'text-button-l font-bold px-6 md:px-10 py-2'}
                             >
                               {section.buttonText}
                             </Button>

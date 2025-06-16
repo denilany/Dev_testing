@@ -7,10 +7,12 @@ const WhatsMoreSection = () => {
   return (
     <section className="bg-white ">
       <Container>
-        <h2 className="text-4xl sm:text-5xl md:text-h1 text-center font-bold text-gray-900 mb-6">
+        {/* <h2 className="text-4xl sm:text-5xl md:text-h1 text-center font-bold text-gray-900 mb-6"> */}
+        <h2 className="text-h2 text-center text-gray-900 font-bold">
+
           WHATS <span className="text-[--color-primary-500]">MORE?</span>
         </h2>
-        <p className="font-sans font-normal text-lg sm:text-xl md:text-2xl lg:text-[26.43px] leading-tight sm:leading-snug md:leading-normal text-[var(--color-text-700)] mb-12">
+        <p className="font-sans font-normal text-body-l text-[var(--color-text-700)] mb-12">
           Before you engage our talent, you will be able to:
         </p>
         <div className="w-full mb-10">

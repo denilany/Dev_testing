@@ -5,17 +5,13 @@ const Button = ({
   onClick,
   variant = 'filled',
   disabled = false,
-  size = 'md',
   fontWeight = 500,
-  padding = 'px-6 py-3',
-  className = '',
-  fontFamily = 'var(--font-sans)',
+  className,
   ...props
 }) => {
   // Base styles that apply to all buttons
   const baseStyle = {
     borderRadius: '9.17px',
-    fontFamily: fontFamily,
     fontWeight: fontWeight,
     textAlign: 'center',
     display: 'flex',
@@ -24,13 +20,6 @@ const Button = ({
     cursor: disabled ? 'not-allowed' : 'pointer',
     transition: 'all 0.3s ease',
     ...props.style,
-  };
-
-  // Size variants
-  const sizeVariants = {
-    sm: 'text-xs xs:text-sm sm:text-base',
-    md: 'text-sm xs:text-base sm:text-lg',
-    lg: 'text-base xs:text-lg sm:text-xl',
   };
 
   // Variant styles
@@ -46,13 +35,6 @@ const Button = ({
       : 'bg-blue-50 border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white active:bg-blue-700 active:border-blue-700',
   };
 
-  // Padding based on size if not explicitly provided
-  const paddingClass = padding || {
-    sm: 'px-4 py-2',
-    md: 'px-6 py-3',
-    lg: 'px-8 py-4',
-  }[size];
-
   // Merge base styles with any additional styles from props
   const mergedStyles = {
     ...baseStyle,
@@ -63,8 +45,6 @@ const Button = ({
     <button
       className={`
         ${variantStyles[variant] || variantStyles.filled}
-        ${sizeVariants[size] || sizeVariants.md}
-        ${paddingClass}
         ${className}
         leading-normal
         transition-all duration-200

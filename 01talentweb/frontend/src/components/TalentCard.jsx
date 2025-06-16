@@ -5,6 +5,7 @@ import { FaLinkedin, FaGithub, FaDev } from 'react-icons/fa';
 
 const TalentCard = ({ 
   talent,
+  onClick,
   variant = 'default',
   showTitle = true,
   showDescription = true,
@@ -18,7 +19,7 @@ const TalentCard = ({
 }) => {
   const initials = talent.name ? talent.name[0].toUpperCase() : '?';
   const skills = talent.skills || ['Golang', 'Docker', 'RESTful APIs', 'Database Design'];
-  const isAvailable = talent.availability !== false;
+  const isAvailable = talent.profile?.is_available !== false;  // Default to available if not specified
 
   // Size variants
   const variants = {
@@ -30,32 +31,39 @@ const TalentCard = ({
       description: 'text-montserrat text-body-xs',
       skills: 'mb-4',
       buttonContainer: 'gap-12 mt-auto',
-      button: 'text-body-l mt-6 w-[174px] h-[48px]',
+      button: 'text-body-l px-6 md:px-10 py-2 text-button-cards',
       socialIcons: 'my-12',
       socialIcon: 'w-[35px] h-[42px]',
       availability: 'mb-4'
     },
     compact: {
-      card: 'w-[375px] h-[485px] rounded-[34px] p-8 bg-[--color-primary-0]',
+      card: 'w-[275px] mid-tablets:w-[325px] xl:w-[375px] h-[485px] rounded-[34px] p-8 bg-[--color-primary-0]',
       image: 'w-[120px] h-[120px] mb-3',
       name: 'text-body-l font-bold',
       role: 'text-body-s mb-3',
-      description: 'font-montserrat text-[12px] mb-6 line-clamp-3',
+      description: 'font-sans text-[12px] mb-6',
       skills: 'mb-3',
-      buttonContainer: 'gap-12 mt-4',
-      button: 'text-body-xs py-2 w-[110px] h-[36px]',
+      buttonContainer: 'gap-6 lg:gap-12 mt-4',
+      button: 'text-button-cards font-bold px-6 md:px-10 py-2 ',
       socialIcons: 'mt-6 gap-3',
       socialIcon: 'w-[24px] h-[28px]',
-      availability: 'mb-3'
+      availability: ' text-body-xs mb-3'
     }
   };
 
   const currentVariant = variants[variant] || variants.default;
 
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (onClick) onClick();
+  };
+
   return (
     <div 
       className={`text-center transition-all hover:shadow-lg hover:-translate-y-1 flex flex-col items-center
         ${currentVariant.card} ${className}`}
+      onClick={onClick}
       {...props}
     >
       {/* Profile Image */}
@@ -72,7 +80,6 @@ const TalentCard = ({
               {initials}
             </div>
           )}
-          {/* <div className="absolute inset-0 border-4 border-[--color-primary-300] rounded-full animate-pulse pointer-events-none" /> */}
         </div>
         <div className="absolute inset-0 rounded-full border-[3px] border-transparent border-r-[--color-primary-300] border-t-[--color-primary-300] border-b-[--color-primary-300] animate-pulse pointer-events-none" style={{
           clipPath: 'polygon(25% 0, 100% 0, 100% 100%, 25% 100%)',
@@ -86,14 +93,14 @@ const TalentCard = ({
       </h2>
       
       {showTitle && (
-        <p className={`font-montserrat text-[--color-primary-500] font-medium ${currentVariant.role}`}>
-          {talent.role}
+        <p className={`font-montserrat text-[--color-primary-900] font-medium ${currentVariant.role}`}>
+          {talent.profile?.role || 'Developer'}
         </p>
       )}
 
       {/* Availability Status */}
       {showAvailability && (
-        <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${currentVariant.availability} ${
+        <div className={`inline-flex items-center px-3 py-1 rounded-full font-medium ${currentVariant.availability} ${
           isAvailable ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'
         }`}>
           <span className={`w-2 h-2 rounded-full mr-2 ${isAvailable ? 'bg-green-500' : 'bg-gray-500'}`}></span>
@@ -104,7 +111,7 @@ const TalentCard = ({
       {/* Description */}
       {showDescription && (
         <p className={`text-gray-600 leading-relaxed px-1 ${currentVariant.description}`}>
-          {talent.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod lobortis diam, nec bibendum ipsum tincudint ut.'}
+          {talent.profile?.bio || 'No bio available'}
         </p>
       )}
 
@@ -137,9 +144,11 @@ const TalentCard = ({
               variant="filled"
               className={currentVariant.button}
               style={{
+                minWidth: 'fit-content',
                 '--color-primary-500': 'var(--color-primary-500)',
                 '--color-primary-400': 'var(--color-primary-400)',
               }}
+              onClick={handleButtonClick}
             >
               Portfolio
             </Button>
@@ -153,7 +162,7 @@ const TalentCard = ({
                 '--color-primary-500': 'var(--color-primary-500)',
                 '--color-primary-100': 'var(--color-primary-100)'
               }}
-              onClick={() => {}}
+              onClick={isAvailable ? handleButtonClick : undefined}
             >
               {isAvailable ? 'Hire' : 'Not Available'}
             </Button>

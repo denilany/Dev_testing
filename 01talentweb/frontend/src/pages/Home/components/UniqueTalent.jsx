@@ -128,12 +128,14 @@ const UniqueTalentSection = () => {
     <section className="bg-[#EFF7FF] relative">
       <Container className="py-12 md:py-16 lg:py-20">
         <div className="mx-auto text-center lg:text-left">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] text-center font-bold text-[var(--color-text-heading)] mb-4 md:mb-6 mx-auto lg:mx-0 lg:-ml-16">
+          {/* <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] text-center font-bold text-[var(--color-text-heading)] mb-4 md:mb-6 mx-auto lg:mx-0 lg:-ml-16"> */}
+          <h2 className="text-h2 text-center text-gray-900 font-bold">
+
               <span className="whitespace-normal sm:whitespace-nowrap">WHAT MAKES </span>
               <span className="whitespace-normal sm:whitespace-nowrap text-[--color-primary-500]">OUR TALENT</span>
               <span className="whitespace-normal sm:whitespace-nowrap"> UNIQUE</span>
           </h2>
-          <p className="text-gray-700 mb-8 sm:mb-10 md:mb-12 font-sans font-normal text-lg sm:text-xl md:text-2xl lg:text-[26.43px] leading-tight sm:leading-snug md:leading-normal tracking-normal">
+          <p className="text-gray-700 mb-8 sm:mb-10 md:mb-12 font-sans font-normal text-body-l tracking-normal">
             Our tech talents are fully adaptable and equipped with hard and soft skills to work in fast-moving tech environments.
             We rigorously select the best tech talent from tens of thousands of applications across Kenya.
           </p>
@@ -143,7 +145,7 @@ const UniqueTalentSection = () => {
       <div className="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start mt-8 md:mt-12">
         {/* LEFT COLUMN */}
         <div className="px-4 sm:px-6 lg:px-0">
-          <h4 className="font-medium text-gray-800 mb-6 text-2xl md:text-3xl lg:text-[28.83px] leading-tight tracking-normal font-sans text-center lg:text-left">
+          <h4 className="font-medium text-gray-800 mb-6 text-body-l tracking-normal font-sans text-center lg:text-left">
             We then train them to:
           </h4>
 
@@ -164,7 +166,7 @@ const UniqueTalentSection = () => {
                 }}
               >
                 <h5 
-                  className="absolute font-mono font-medium text-lg sm:text-xl md:text-2xl leading-none"
+                  className="absolute font-mono font-medium text-body-l"
                   style={{
                     width: '40px',
                     height: '40px',
@@ -176,7 +178,7 @@ const UniqueTalentSection = () => {
                   0{i + 1}
                 </h5>
                 <p 
-                  className="font-sans text-base sm:text-lg md:text-xl leading-snug mt-12 sm:mt-14"
+                  className="font-sans text-body-m sm:text-lg md:text-xl leading-snug mt-12 sm:mt-14"
                   style={{
                     color: '#000000',
                     fontWeight: 400
@@ -283,13 +285,13 @@ const UniqueTalentSection = () => {
           {/* Connection lines - custom SVGs */}
           <div className="absolute inset-0 w-full h-full pointer-events-none z-10">
             {/* Single lines SVG - positioned for top connections */}
-            <div className="absolute" style={{
-              width: '40%',
-              aspectRatio: '1.1',
-              top: '0%',
-              left: '13%',
-              transform: 'rotate(8.73deg)'
-            }}>
+            <div className="absolute w-[40%] aspect-[1.1] top-0 left-[13%] rotate-[8.73deg]
+                      small-phones:w-[35%] small-phones:left-[20%] small-phones:top-[20%]
+                      large-phones:w-[38%] large-phones:left-[12%]
+                      small-tablets:w-[40%] small-tablets:left-[15%] small-tablets:top-[8%]
+                      mid-tablets:w-[42%] mid-tablets:left-[15%] mid-tablets:top-[15%]
+                      small-laptop:w-[40%] small-laptop:left-[15%] small-laptop:top-[12%]
+                      ultra-large:w-[38%] ultra-large:left-[12%]">
               <img 
                 src="/static/images/singlelines.svg" 
                 alt="Connection lines" 
@@ -298,12 +300,13 @@ const UniqueTalentSection = () => {
             </div>
             
             {/* Double lines SVG - positioned for bottom connections */}
-            <div className="absolute" style={{
-              width: '50%',
-              aspectRatio: '1.1',
-              top: '32%',
-              left: '15%',
-            }}>
+            <div className="absolute w-[50%] aspect-[1.1] top-[32%] left-[15%] rotate-[9.73deg]
+                        small-phones:w-[45%] small-phones:left-[15%] small-phones:top-[50%]
+                        large-phones:w-[48%] large-phones:left-[14%]
+                        small-tablets:w-[50%] small-tablets:left-[12%] small-tablets:top-[38%]
+                        mid-tablets:w-[52%] mid-tablets:left-[11%] mid-tablets:top-[45%] mid-tablets:rotate-[25.73deg]
+                        small-laptop:w-[50%] small-laptop:left-[12%] small-laptop:top-[40%]
+                        ultra-large:w-[48%] ultra-large:left-[14%]">
               <img 
                 src="/static/images/doublelines.svg" 
                 alt="Arrow lines" 
@@ -311,19 +314,17 @@ const UniqueTalentSection = () => {
               />
             </div>
           </div>
-
-          {/* Developer profiles with placeholder images */}
           
           {/* Developer profiles with responsive positioning */}
           {[
             // Top developer
-            { top: '20%', left: '20%', size: '11%' },
+            { top: '20%', left: '20%', size: '15%' },
             // Right middle developer
-            { top: '43%', left: '43%', size: '11%' },
+            { top: '43%', left: '43%', size: '15%' },
             // Left middle developer
-            { top: '45%', left: '25%', size: '11%' },
+            { top: '45%', left: '25%', size: '15%' },
             // Bottom developer
-            { top: '70%', left: '50%', size: '11%' }
+            { top: '70%', left: '50%', size: '15%' }
           ].map((pos, index) => (
             <div 
               key={index}

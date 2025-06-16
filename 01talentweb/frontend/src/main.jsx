@@ -1,6 +1,6 @@
 import {createRoot} from 'react-dom/client';
 import {createInertiaApp} from '@inertiajs/react';
-import Layout from '@/components/Layout.jsx'
+import Layout from '@/components/Layout.jsx';
 import axios from 'axios';
 
 document.addEventListener('DOMContentLoaded', () => {

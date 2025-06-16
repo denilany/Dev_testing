@@ -22,3 +22,8 @@ npm install react-icons
 ```bash
 npm install react-responsive-carousel
 ```
+## Installing aspect-ratio plugin
+```bash
+npm install -D @tailwindcss/aspect-ratio
+
+```
