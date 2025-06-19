@@ -27,7 +27,9 @@ APP_NAME = "zone01web"
 # See https://docs.djangozone01web.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+if not SECRET_KEY:
+    raise Exception("DJANGO_SECRET_KEY environment variable not set!")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -106,14 +108,13 @@ WSGI_APPLICATION = 'zone01web.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT'),
+        'NAME': os.getenv('POSTGRES_DB'),
+        'USER': os.getenv('POSTGRES_USER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'HOST': os.getenv('POSTGRES_HOST'),
+        'PORT': os.getenv('POSTGRES_PORT'),
     }
 }
-
 
 # Password validation
 # https://docs.djangozone01web.com/en/4.2/ref/settings/#auth-password-validators
